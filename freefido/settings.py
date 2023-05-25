@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-amylour-freefido-v2-6ev1mnumgv.us2.codeanyapp.com', 'localhost']
+    '8000-amylour-freefido-v2-6ev1mnumgv.us2.codeanyapp.com', 'freefido.herokuapp.com', 'localhost']
 
 
 # Application definition
