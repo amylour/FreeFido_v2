@@ -15,7 +15,7 @@
     --blue: #4ce0c3;
 
     /* Utils */
-    --small-box-shadow: ;
+    --smal-box-shadow: 1px -1px 7px 0 #00000061;
     --border: ;
 }
 
@@ -77,3 +77,15 @@ footer {
 
 /* img.logo {
     width: ; */
+
+.active {
+    font-weight: 400;
+}
+
+/* forms */
+
+.form {
+    width: 50%;
+    margin: 5% auto;
+    border-radius: 20px;
+}
