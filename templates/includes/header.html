@@ -1,15 +1,18 @@
+{% load static %}
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">FreeFido
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="logo">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">FreeFido</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
         <!-- Navbar items -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2">
+        <div class="collapse navbar-collapse nav-items" id="navbarNav">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
@@ -20,14 +23,16 @@
                     <a class="nav-link" href="#">Booking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Gallery</a>
+                    <a class="nav-link" href="#">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Find Us</a>
+                    <a class="nav-link" href="#">Find Us</a>
                 </li>
             </ul>
-            <!-- search bar form -->
-            <form class="d-flex" role="search">
+        </div>
+        <!-- search bar form -->
+        <div>
+            <form class="d-flex ml-auto" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
