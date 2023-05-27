@@ -89,3 +89,11 @@ footer {
     margin: 5% auto;
     border-radius: 20px;
 }
+
+/* icons */
+
+.like-icon {
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+}
