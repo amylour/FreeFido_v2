@@ -6,7 +6,7 @@
     --main-font: 'Montserrat', sans-serif;
 
     /* Colors */
-    --white: #f2f2f2;
+    --white: #ffffff;
     --black: #0d0d0d;
     --purple: #ac44f2;
     --green: #3bd952;
@@ -93,7 +93,29 @@ footer {
 /* icons */
 
 .like-icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 6px;
+}
+
+.comment-icon {
+    width: 30px;
+    height: 30px;
+    margin: 6px;
+}
+
+/* article 'cards' */
+
+.card {
+    --bs-card-border-width: 0px;
+}
+
+.card-img-top {
+    border-radius: 20px;
+}
+
+.jumboimage {
+    height: 400px;
+    width: 650px;
+    overflow: hidden;
 }
