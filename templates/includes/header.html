@@ -15,8 +15,23 @@
             <!-- Navbar items -->
             <div class="collapse navbar-collapse nav-items" id="navbarNav">
                 <ul class="navbar-nav">
+                    {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
+                            href="/accounts/logout/">Logout</a>
+                    </li>
+                    {% else %}
+                    <!-- <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}"
+                            href="/accounts/login/">Login</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
+                            href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'articles' %}active{% endif %}" href="#">Articles</a>
@@ -30,18 +45,7 @@
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'find_us' %}active{% endif %}" href="#">Find Us</a>
                     </li>
-                    {% if request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
-                    </li>
-                    {% endif %}
+
                 </ul>
             </div>
             <!-- search bar form -->
