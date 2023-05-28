@@ -95,13 +95,25 @@ footer {
 .like-icon {
     width: 30px;
     height: 30px;
-    margin: 6px;
+    margin: 6px
+}
+
+.like-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .comment-icon {
     width: 30px;
     height: 30px;
     margin: 6px;
+}
+
+.like-num {
+    font-weight: bold;
+    color: var(--black);
 }
 
 /* article 'cards' */
