@@ -34,14 +34,34 @@
                 </p>
                 <div class="row">
                     <div class="col-1">
-                        <strong class="text-secondary"><img src="{% static 'icons/heart.png' %}" class="like-icon"
-                                alt="pawprint heart like icon"> {{ article.number_of_likes }} </strong>
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="articlelike_id" value="{{post.slug}}" class="like-button">
+                                    <img src="{% static 'icons/heart.png' %}" class="like-icon"
+                                        alt="pawprint heart like icon">
+                                </button>
+                                {% else %}
+                                <button type="submit" name="articlelike_id" value="{{post.slug}}" class="like-button">
+                                    <img src="{% static 'icons/heart_outline.png' %}" class="like-icon"
+                                        alt="pawprint heart outline like icon">
+                                </button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="like-icon"><img src="{% static 'icons/heart_outline.png' %}" class="like-icon"
+                                    alt="pawprint heart outline like icon"></span>
+                            {% endif %}
+                            <span class="like-num"> {{ article.number_of_likes }}</span>
+                        </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><img src="{% static 'icons/bark.png' %}" class="comment-icon"
                                 alt="dog bark comment icon">
-                            {{ total_comments }}</strong>
+                            <span class="like-num"> {{ total_comments }}</span></strong>
                         {% endwith %}
                     </div>
                 </div>
