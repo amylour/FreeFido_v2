@@ -35,8 +35,8 @@ class Article(models.Model):
 
 class Comment(models.Model):
     """ A model to allow and manage comments on an article """
-    post = models.ForeignKey(Article, on_delete=models.CASCADE,
-                             related_name="comments")
+    article = models.ForeignKey(Article, on_delete=models.CASCADE,
+                             related_name="comments", null=True)
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
