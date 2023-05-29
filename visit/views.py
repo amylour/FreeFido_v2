@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+
+class VisitUs(TemplateView):
+    template_name = 'visit/visit_us.html'

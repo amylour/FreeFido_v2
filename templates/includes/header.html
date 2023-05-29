@@ -44,7 +44,8 @@
                         <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="#">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'find_us' %}active{% endif %}" href="#">Visit Us</a>
+                        <a class="nav-link {% if url_name == 'find_us' %}active{% endif %}"
+                            href="{% url 'visit_us' %}">Visit Us</a>
                     </li>
 
                 </ul>
