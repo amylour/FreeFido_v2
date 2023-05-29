@@ -131,3 +131,44 @@ footer {
     width: 650px;
     overflow: hidden;
 }
+
+/* alert messages */
+
+.alert-dismissible .btn-close {
+    padding: 0.8rem 1rem;
+}
+
+.debug-alert {
+    background-color: #c79be4;
+    border: 1px solid var(--purple);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.info-alert {
+    background-color: #ebc275;
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.success-alert {
+    background-color: #7ad187;
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.warning-alert {
+    background-color: #9deede;
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.error-alert {
+    background-color: #ee8a8a;
+    border: 1px solid var(--coral);
+    border-radius: 4px;
+    padding: 10px;
+}

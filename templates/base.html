@@ -26,12 +26,39 @@
 <body>
     {% include 'includes/header.html' %}
 
+    <!-- alert message content using Bootstrap HTML but my own CSS styling to suit my project
+         with the colours used still connected to the alert meaning -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}{{ message.tags }}{% endif %} alert-dismissible fade show"
+                    id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
     <main>
-        {% block content %} 
+        {% block content %}
         {% endblock %}
     </main>
 
     {% include 'includes/footer.html' %}
+
+    <!-- JS to close alert message after 3 seconds from Bootstrap's JS: https://getbootstrap.com/docs/5.0/components/alerts/ -->
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+    </script>
+
 </body>
 
 </html>

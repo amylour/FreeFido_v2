@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib import messages
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Article
@@ -52,6 +53,11 @@ class ArticlePage(View):
             comment = comment_form.save(commit=False)
             comment.article = article
             comment.save()
+
+            # alert message to user if they comment has been approved and posted
+            if comment.approved:
+                messages.success(
+                    request, 'Your comment has been approved and posted!')
 
             comments = article.comments.filter(
                 approved=True).order_by('created_on')
