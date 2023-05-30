@@ -41,7 +41,7 @@
                         <a class="nav-link {% if url_name == 'booking' %}active{% endif %}" href="#">Booking</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="#">Gallery</a>
+                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'find_us' %}active{% endif %}"
@@ -51,12 +51,14 @@
                 </ul>
             </div>
             <!-- search bar form -->
+            {% if url_name == 'articles' %}
             <div>
                 <form class="d-flex ml-auto" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
             </div>
+            {% endif %}
         </div>
     </nav>
     {% endwith %}
