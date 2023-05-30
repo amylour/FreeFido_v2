@@ -180,3 +180,11 @@ footer {
     height: 450px;
     width: 300px;
 }
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+.img-fluid {
+    border-radius: 20px;
+}
