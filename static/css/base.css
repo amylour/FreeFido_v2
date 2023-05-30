@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;400;600;700&display=swap');
 
 :root {
-    /* Fonts */
+    /* fonts */
     --title: 'Outfit', sans-serif;
     --main-font: 'Montserrat', sans-serif;
 
-    /* Colors */
+    /* colors */
     --white: #ffffff;
     --black: #0d0d0d;
     --purple: #ac44f2;
@@ -14,7 +14,7 @@
     --coral: #f25c5c;
     --blue: #4ce0c3;
 
-    /* Utils */
+    /* utils */
     --smal-box-shadow: 1px -1px 7px 0 #00000061;
     --border: ;
 }
@@ -59,7 +59,7 @@ footer {
     margin: 1rem;
 }
 
-/* Header */
+/* header */
 .navbar {
     background-color: var(--white);
 }
@@ -171,4 +171,12 @@ footer {
     border: 1px solid var(--coral);
     border-radius: 4px;
     padding: 10px;
+}
+
+/* images */
+
+#dogpark_lady {
+    border-radius: 20px;
+    height: 450px;
+    width: 300px;
 }
