@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container my-4 text-center">
+    <h1>Gallery</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner mb-4">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/two_dogs_run.webp' %}" class="d-block w-100 h-auto" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/two_dogs_run.webp' %}" class="d-block w-100 h-auto" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/two_dogs_run.webp' %}" class="d-block w-100 h-auto" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <img src="{% static 'images/placeholder_img.png' %}" class="img-fluid rounded-image" alt="">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <img src="{% static 'images/placeholder_img.png' %}" class="img-fluid rounded-image" alt="">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <img src="{% static 'images/placeholder_img.png' %}" class="img-fluid rounded-image" alt="">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
