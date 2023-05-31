@@ -1,10 +1,20 @@
 from .models import Article, Comment
+from slugify import slugify
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
 
 
 class ArticleForm(forms.ModelForm):
     """ Form to create an article """
+    title = forms.CharField(max_length=200)
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        instance.slug = slugify(instance.title)  # Set the slug value from the title
+        if commit:
+            instance.save()
+        return instance
+
     class Meta:
         model = Article
         fields = ['title', 'featured_image', 'image_alt', 'excerpt','content']
