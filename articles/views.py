@@ -1,9 +1,26 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from .models import Article
-from .forms import CommentForm
+from .forms import ArticleForm, CommentForm
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class AddArticle(LoginRequiredMixin, CreateView):
+    """
+    A model to create an article 
+    """
+    template_name = 'articles/article_create.html'
+    model = Article
+    form_class = ArticleForm
+    success_url = '/articles/'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(AddArticle, self).form_valid(form)
 
 
 class ArticleList(generic.ListView):
@@ -20,6 +37,7 @@ class ArticlePage(View):
     """
     A model to view an individual article & post a comment
     """
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
@@ -84,6 +102,7 @@ class ArticleLike(View):
     """
     A model to like/unlike the article
     """
+
     def post(self, request, slug):
         article = get_object_or_404(Article, slug=slug)
 

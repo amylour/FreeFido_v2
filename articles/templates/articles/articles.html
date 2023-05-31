@@ -59,4 +59,12 @@
     </nav>
     {% endif %}
 </div>
+
+<div class="container text-center">
+    {% if user.is_authenticated %}
+    <a href="{% url 'article_create' %}" class="btn btn-primary add-article-btn">
+        Add Article
+    </a>
+    {% endif %}
+</div>
 {% endblock %}
