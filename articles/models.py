@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from djrichtextfield.models import RichTextField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
@@ -12,9 +13,10 @@ class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="article_posts")
     featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
+    image_alt = models.CharField(max_length=100, default='default alt', null=False, blank=False)
+    excerpt = models.TextField(max_length=300, null=False, blank=False)
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
+    content = RichTextField(max_length=5000, null=False, blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='article_like',
@@ -36,7 +38,7 @@ class Article(models.Model):
 class Comment(models.Model):
     """ A model to allow and manage comments on an article """
     article = models.ForeignKey(Article, on_delete=models.CASCADE,
-                             related_name="comments", null=True)
+                                related_name="comments", null=True)
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
