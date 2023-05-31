@@ -7,6 +7,9 @@ from .forms import CommentForm
 
 
 class ArticleList(generic.ListView):
+    """
+    A model to view the article cards, no more than 6 to a page
+    """
     model = Article
     queryset = Article.objects.filter(status=1).order_by('-created_on')
     template_name = 'articles/articles.html'
@@ -14,7 +17,9 @@ class ArticleList(generic.ListView):
 
 
 class ArticlePage(View):
-
+    """
+    A model to view an individual article & post a comment
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
@@ -54,7 +59,7 @@ class ArticlePage(View):
             comment.article = article
             comment.save()
 
-            # alert message to user if they comment has been approved and posted
+            # alert message to user if their comment has been approved & posted
             if comment.approved:
                 messages.success(
                     request, 'Your comment has been approved and posted!')
@@ -76,7 +81,9 @@ class ArticlePage(View):
 
 
 class ArticleLike(View):
-
+    """
+    A model to like/unlike the article
+    """
     def post(self, request, slug):
         article = get_object_or_404(Article, slug=slug)
 
