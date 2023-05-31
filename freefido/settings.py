@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'cloudinary',
+    'djrichtextfield',
     'django_summernote',
     'articles',
     'home',
