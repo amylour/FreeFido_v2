@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Article
 from .forms import ArticleForm, CommentForm
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin
+)
 
 
 class AddArticle(LoginRequiredMixin, CreateView):
@@ -112,3 +114,12 @@ class ArticleLike(View):
             article.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('article_page', args=[slug]))
+
+
+class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete an article """
+    model = Article
+    success_url = '/articles/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
