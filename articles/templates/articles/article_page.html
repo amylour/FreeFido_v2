@@ -2,13 +2,15 @@
 
 {% load static %}
 
+{% block title %}Article - {{article.title}}{% endblock %}
+
 {% block content %}
 
 {% load crispy_forms_tags %}
 
 {% if request.user == article.author %}
 <div class="text-center">
-    <a href="" class="btn btn-primary w-25">Edit</a>
+    <a href="{% url 'article_edit' article.slug %}" class="btn btn-primary w-25">Edit</a>
     <a href="{% url 'article_delete' article.slug %}" class="btn btn-primary w-25">Delete</a>
 </div>
 {% endif %}
