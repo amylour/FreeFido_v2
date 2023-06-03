@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib import messages
 from django.views import generic, View
-from django.views.generic import CreateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Article
 from .forms import ArticleForm, CommentForm
@@ -114,6 +114,17 @@ class ArticleLike(View):
             article.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('article_page', args=[slug]))
+
+
+class EditArticle(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ Edit an article """
+    template_name = 'articles/article_edit.html'
+    model = Article
+    form_class = ArticleForm
+    success_url = '/articles/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
 
 
 class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
