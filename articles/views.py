@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 from .models import Article
 from .forms import ArticleForm, CommentForm
 
@@ -34,6 +35,20 @@ class ArticleList(generic.ListView):
     template_name = 'articles/articles.html'
     paginate_by = 6
 
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            articles = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(excerpt__icontains=query) |
+                Q(content__icontains=query) |
+                Q(author__icontains=query),
+                is_deleted=False
+            )
+        else:
+            articles = self.model.objects.filter(is_deleted=False)
+        return articles
+
 
 class ArticlePage(View):
     """
@@ -41,7 +56,7 @@ class ArticlePage(View):
     """
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Article.objects.filter(status=1)
+        queryset = Article.objects.filter(status=1, is_deleted=False)
         article = get_object_or_404(queryset, slug=slug)
         comments = article.comments.filter(
             approved=True).order_by('created_on')
@@ -134,3 +149,10 @@ class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().author
+
+    def delete(self, request, *args, **kwargs):
+        article = self.get_object()
+        article.is_deleted = True
+        article.save()
+        messages.success(request, "Article deleted successfully.")
+        return HttpResponseRedirect(self.success_url)

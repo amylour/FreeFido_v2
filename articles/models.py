@@ -21,6 +21,7 @@ class Article(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='article_like',
                                    blank=True)
+    is_deleted = models.BooleanField(default=False)                        
 
     class Meta:
         """ Order posts by created on date """

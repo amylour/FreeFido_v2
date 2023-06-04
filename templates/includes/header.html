@@ -50,11 +50,11 @@
 
                 </ul>
             </div>
-            <!-- search bar form -->
-            {% if url_name == 'articles' %}
+            <!-- search bar form only when article appears in url -->
+            {% if 'article' in url_name %}
             <div>
-                <form class="d-flex ml-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex ml-auto" role="search" action="{% url 'articles' %}">
+                    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
             </div>
