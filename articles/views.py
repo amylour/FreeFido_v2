@@ -41,8 +41,7 @@ class ArticleList(generic.ListView):
             articles = self.model.objects.filter(
                 Q(title__icontains=query) |
                 Q(excerpt__icontains=query) |
-                Q(content__icontains=query) |
-                Q(author__icontains=query),
+                Q(content__icontains=query),
                 is_deleted=False
             )
         else:
