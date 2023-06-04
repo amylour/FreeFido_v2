@@ -42,10 +42,11 @@ class ArticleList(generic.ListView):
                 Q(title__icontains=query) |
                 Q(excerpt__icontains=query) |
                 Q(content__icontains=query),
+                status=1,
                 is_deleted=False
             )
         else:
-            articles = self.model.objects.filter(is_deleted=False)
+            articles = self.model.objects.filter(status=1, is_deleted=False)
         return articles
 
 
