@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+
+{% load static %}  
+
+{% block title %}Profile - {{profile.user.username}}{% endblock %}
+
+{% block content %} 
+
+<div class="conatiner p-4">
+    <div class="profile">
+        <div class="profile-info">
+            <div class="profile-img text-center">
+                {% if profile.image.url is not none %} 
+                <img src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
+                {% else %} 
+                <img src="{% static '.icons/pawprint.png' %}" alt="Image not found icon">
+                {% endif %}
+            </div>
+            <h1>{{ profile.user.username }}</h1>
+            <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
+            <p><strong>Articles: </strong>{{ profile.user.article_posts.count}}</p>
+            {% if profile.bio is not none %}
+            {{ profile.bio|safe }}
+            {% endif %}
+        </div>
+        <div class="profile-articles">
+            <h2 class="text-center pb-4">Latest Articles</h2>
+            {% for article in profile.user.article_posts.all %} 
+            <a href="{% url 'article_page' article.slug %}"><h3>{{ article.title }}</h3></a>
+            {{ article.created_on }}
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
