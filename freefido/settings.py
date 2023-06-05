@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'articles',
     'home',
     'gallery',
+    'profiles',
     'visit',
     'crispy_forms',
     'crispy_bootstrap5',
