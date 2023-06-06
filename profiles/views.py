@@ -11,7 +11,8 @@ class ProfileView(TemplateView):
     def get_context_data(self, ** kwargs):
         profile = Profile.objects.get(user=self.kwargs["pk"])
         context = {
-            'profile':profile
+            'profile':profile,
+            'form': ProfileForm(instance=profile)
         }
 
         return context
@@ -19,7 +20,7 @@ class ProfileView(TemplateView):
 
 class ProfileEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """ edit profile view """
-    from_class = ProfileForm
+    form_class = ProfileForm
     model = Profile
     
     def form_valid(self, form):
