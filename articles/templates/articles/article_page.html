@@ -21,12 +21,13 @@
             <div class="col-md-6">
                 <h1 class="article-title">{{ article.title }}</h1>
                 <p class="article-details">{{ article.author }} | {{ article.created_on }}</p>
+                <p class="article-excerpt"><em>{{ article.excerpt }}</em></p>
             </div>
             <div class="d-none d-md-block col-md-6 jumboimage">
                 {% if "placeholder" in article.featured_image.url %}
-                <img src="{% static 'images/placeholder_img.png' %}" width="100%">
+                <img src="{% static 'images/placeholder_img.png' %}" class="article-img" width="100%">
                 {% else %}
-                <img src=" {{ article.featured_image.url }}" width="100%">
+                <img src=" {{ article.featured_image.url }}" class="article-img" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -97,6 +98,12 @@
                     </p>
                     <!-- linebreaks filter for better readability -->
                     {{ comment.body | linebreaks }}
+
+                    {% if request.user.username == comment.name %}
+                    <div class="text-center">
+                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-danger w-25">Delete</a>
+                    </div>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
