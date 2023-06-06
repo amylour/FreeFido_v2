@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .models import Article
+from .models import Article, Comment
 from .forms import ArticleForm, CommentForm
 
 from django.contrib.auth.mixins import (
@@ -23,7 +23,16 @@ class AddArticle(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super(AddArticle, self).form_valid(form)
+
+        # save the article instance
+        response = super().form_valid(form)
+
+        # check if the article is approved or awaiting approval
+        if self.object.status == 0:
+            messages.info(
+                self.request, 'Your article is awaiting approval.')
+
+        return response
 
 
 class ArticleList(generic.ListView):
@@ -136,10 +145,13 @@ class EditArticle(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'articles/article_edit.html'
     model = Article
     form_class = ArticleForm
-    success_url = '/articles/'
 
     def test_func(self):
         return self.request.user == self.get_object().author
+
+    def get_success_url(self):
+        # return the URL of the edited article page
+        return reverse('article_page', kwargs={'slug': self.get_object().slug})
 
 
 class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -156,3 +168,20 @@ class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         article.save()
         messages.success(request, "Article deleted successfully.")
         return HttpResponseRedirect(self.success_url)
+
+
+class DeleteComment(DeleteView):
+    """ Delete a comment """
+    model = Comment
+    success_url = '/articles/'
+    template_name = 'articles/comment_delete.html'
+
+    def test_func(self):
+        return self.request.user == self.get_object().name
+
+    def delete(self, request, *args, **kwargs):
+        comment = self.get_object()
+        comment.delete()
+        messages.success(request, "Comment deleted successfully.")
+        return HttpResponseRedirect(self.success_url)
+
