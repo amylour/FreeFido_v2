@@ -8,8 +8,8 @@
 
 {% load crispy_forms_tags %}
 
-<h1>Create Booking</h1>
-<form method="post">
+<h1 class="text-center w-25 mx-auto">Create Booking</h1>
+<form method="post" class="text-center w-25 mx-auto">
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-primary">Create</button>
