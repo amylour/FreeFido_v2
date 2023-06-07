@@ -1,14 +1,13 @@
 from django import forms
 from .models import Booking
-from bootstrap_datepicker_plus import DatePickerInput, TimePickerInput
 
 
 class BookingForm(forms.ModelForm):
     """ A form to create a booking """
-    date = forms.DateField(widget=DatePickerInput(format="%Y-%m-%d"))
-    time = forms.TimeField(widget=TimePickerInput(format="%H:%M"))
+    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), input_formats=['%Y-%m-%d'])
+    time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}), input_formats=['%H:%M'])
 
     class Meta:
         model = Booking
-        fields = ['dog_name', 'breed', 'color',
+        fields = ['user', 'email', 'dog_name', 'breed', 'color',
                   'is_vaccinated', 'gender', 'date', 'time']
