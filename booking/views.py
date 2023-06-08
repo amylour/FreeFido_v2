@@ -24,6 +24,15 @@ class CreateBooking(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('booking_success')
 
     def form_valid(self, form):
+        # check the number of active bookings for the user
+        user = self.request.user
+        active_bookings_count = Booking.objects.filter(user=user).count()
+
+        if active_bookings_count >= 4:
+            # show an error message and redirect to booking if 4 bookings active
+            messages.error(
+                self.request, 'You have reached the maximum number of bookings.')
+            return HttpResponseRedirect(self.success_url)
         form.instance.user = self.request.user
         messages.success(self.request, 'Your booking has been saved.')
         return super().form_valid(form)
@@ -38,7 +47,7 @@ class ActiveBookings(LoginRequiredMixin, generic.ListView):
     context_object_name = 'bookings'
 
     def get_queryset(self):
-        # Filter bookings based on the currently logged-in user
+        # show active bookings by user by date
         return Booking.objects.filter(user=self.request.user).order_by('-date')
 
 
@@ -56,8 +65,3 @@ class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         messages.success(request, "Booking deleted successfully.")
         return HttpResponseRedirect(self.success_url)
     
-
-
-
-
-
