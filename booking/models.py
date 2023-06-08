@@ -72,6 +72,8 @@ class Booking(models.Model):
     class Meta:
         """ Order bookings by date """
         ordering = ["-date"]
+        unique_together = ['date', 'time']
+
 
 
     def __str__(self):
