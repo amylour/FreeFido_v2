@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Active Bookings{% endblock %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h1 class="text-center w-25 mx-auto">Active Bookings</h1>
+
+{% if bookings %}
+<div class="text-center w-25 mx-auto">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Booking Date</th>
+            <th>Booking Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.time }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% else %}
+<p class="text-center mx-auto w-25">You have no active bookings.</p>
+{% endif %}
+
+{% endblock %}
