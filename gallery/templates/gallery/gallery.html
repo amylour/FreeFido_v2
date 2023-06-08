@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}Gallery{% endblock %}
 
 {% block content %}
 
+
 <div class="container my-4 text-center">
     <h1>Gallery</h1>
+</div>
+
+<div class="container text-center mb-4">
+    {% if user.is_authenticated %}
+    <a href="{% url 'add_photo' %}" class="btn btn-primary add-article-btn">
+        Upload Image
+    </a>
+    {% endif %}
 </div>
 
 <div class="container">
@@ -46,7 +56,24 @@
             </div>
         </div>
     </div>
+ 
+    <div class="row">
+        {% for gallery_post in gallery_posts %}
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
+            <div class="image-container">
+                <img src="{{ gallery_post.photo.url }}" alt="{{ gallery_post.image_alt }}" class="gallery-image">
+                <div class="image-overlay">
+                    <h3 class="image-title">{{ gallery_post.title }}</h3>
+                    <p class="image-info">Posted by: {{ gallery_post.photo_by }}</p>
+                    <p class="image-info">Posted on: {{ gallery_post.posted_on }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
+
+<!-- 
     <div class="row mt-4">
         <div class="col-lg-4 col-md-4 col-sm-6">
             <img src="{% static 'images/placeholder_img.png' %}" class="img-fluid rounded-image" alt="">
@@ -58,6 +85,6 @@
             <img src="{% static 'images/placeholder_img.png' %}" class="img-fluid rounded-image" alt="">
         </div>
     </div>
-</div>
+</div> -->
 
 {% endblock %}

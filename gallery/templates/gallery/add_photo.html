@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Gallery - Add Photo{% endblock %}
+
+{% block content %}
+
+<div class="container text-center w-25 mx-auto m-2">
+    <!-- add gallery image form -->
+    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+        <h1 class="text-center mx-auto mb-4">Add Image</h1>
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <button class="btn btn-primary" type="submit">Add Image</button>
+    </form>
+</div>
+</div>
+
+{% endblock %}
