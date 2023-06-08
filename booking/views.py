@@ -1,11 +1,16 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.contrib import messages
 from django.views import generic, View
-from django.views.generic import CreateView, ListView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.http import HttpResponseRedirect
+from django.core.exceptions import ValidationError
 from .models import Booking
 from .forms import BookingForm
 
-from django.urls import reverse_lazy
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin
+)
 
 
 class CreateBooking(LoginRequiredMixin, CreateView):
@@ -20,6 +25,7 @@ class CreateBooking(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        messages.success(self.request, 'Your booking has been saved.')
         return super().form_valid(form)
 
 
@@ -35,6 +41,20 @@ class ActiveBookings(LoginRequiredMixin, generic.ListView):
         # Filter bookings based on the currently logged-in user
         return Booking.objects.filter(user=self.request.user).order_by('-date')
 
+
+class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete a booking """
+    model = Booking
+    success_url = reverse_lazy('booking_success')
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+    def delete(self, request, *args, **kwargs):
+        booking = self.get_object()
+        booking.delete()
+        messages.success(request, "Booking deleted successfully.")
+        return HttpResponseRedirect(self.success_url)
     
 
 
