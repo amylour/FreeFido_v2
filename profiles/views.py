@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from .models import Profile 
+from .models import Profile
 from .forms import ProfileForm
 
 
@@ -10,9 +10,11 @@ class ProfileView(TemplateView):
 
     def get_context_data(self, ** kwargs):
         profile = Profile.objects.get(user=self.kwargs["pk"])
+        bookings = profile.user.bookings.all()
         context = {
             'profile':profile,
-            'form': ProfileForm(instance=profile)
+            'form': ProfileForm(instance=profile),
+            'bookings': bookings
         }
 
         return context

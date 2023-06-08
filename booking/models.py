@@ -56,7 +56,7 @@ TIME_CHOICES = [
 
 class Booking(models.Model):
     """ A model for making a booking """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
     first_name = models.CharField(max_length=20, blank=True, null=True)
     last_name = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField()
