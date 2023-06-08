@@ -1,13 +1,22 @@
 from django import forms
+from django.contrib.auth.models import User
 from .models import Booking
 
 
 class BookingForm(forms.ModelForm):
     """ A form to create a booking """
-    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), input_formats=['%Y-%m-%d'])
-    time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}), input_formats=['%H:%M'])
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        if user:
+            self.fields['email'].initial = user.email
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+
+        self.fields['date'].widget = forms.DateInput(attrs={'type': 'date'})
 
     class Meta:
         model = Booking
-        fields = ['user', 'email', 'dog_name', 'breed', 'color',
+        fields = ['first_name', 'last_name', 'email', 'dog_name', 'breed', 'color',
                   'is_vaccinated', 'gender', 'date', 'time']
