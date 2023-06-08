@@ -24,6 +24,11 @@
         <tr>
             <td>{{ booking.date }}</td>
             <td>{{ booking.time }}</td>
+            <td>{% if request.user == booking.user %}
+            <div class="text-center">
+                <a href="{% url 'booking_delete' booking.id %}" class="btn btn-danger w-100">Delete</a>
+            </div>
+            {% endif %}</td>
         </tr>
         {% endfor %}
     </tbody>
