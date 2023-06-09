@@ -45,29 +45,4 @@ class ProfileDelete(DeleteView):
     template_name = 'profiles/delete_profile.html'
     success_url = reverse_lazy('home')
 
-    def get_success_url(self):
-        # Get the user
-        user = self.object.user
-
-        # Delete the user's profile
-        profile = self.object
-        profile.delete()
-
-        # Delete the user's articles
-        Article.objects.filter(author=user).delete()
-
-        # Delete the user's comments
-        Comment.objects.filter(article__author=user).delete()
-
-        # Delete the user's gallery images
-        GalleryImage.objects.filter(photo_by=user).delete()
-
-        # Delete the user's bookings
-        Booking.objects.filter(user=user).delete()
-
-        # Delete the user
-        user.delete()
-
-        messages.success(
-            self.request, "Your profile and all associated data were deleted successfully.")
-        return super().get_success_url()
+    
