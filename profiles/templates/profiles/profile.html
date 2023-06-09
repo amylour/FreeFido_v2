@@ -66,6 +66,13 @@
         <p class="text-center mx-auto w-25">You have no active bookings.</p>
         {% endif %}
     </div>
+    
+    {% if request.user == profile.user %}
+    <div class="text-center mx-auto w-25">
+    <a href="{% url 'delete_profile' request.user.id %}" class="btn btn-danger">Delete Profile</a>
+    </div>
+    {% endif %}
+
     <!-- modal code from W3Schools -->
     <div id="myModal" class="modal mt-5">
     
