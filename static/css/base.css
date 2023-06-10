@@ -48,6 +48,26 @@ main {
     background-color: var(--white);
 }
 
+#id_first_name,
+#id_last_name,
+#id_email,
+#id_dog_name,
+#id_color,
+#id_date {
+    text-align: center;
+}
+
+select {
+    text-align: center;
+}
+
+/* is_vaccinated checkbox styling */
+.form-check .form-check-input {
+    float: none;
+    margin-left: -1.5em;
+    margin-right: 1em;
+} 
+
 /* footer */
 footer {
     flex-shrink: 0;
