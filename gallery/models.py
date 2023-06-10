@@ -8,8 +8,8 @@ class GalleryImage(models.Model):
         User, on_delete=models.CASCADE, related_name="gallery_posts")
     title = models.CharField(max_length=100, unique=True)
     photo = CloudinaryField('photo', default='placeholder', null=False, blank=False)
-    image_alt = models.CharField(
-        max_length=100, default='default alt', null=False, blank=False)
+    image_description = models.CharField(
+        max_length=100, default='', null=True)
     posted_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
