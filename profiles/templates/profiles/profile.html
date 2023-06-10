@@ -67,25 +67,25 @@
         {% endif %}
     </div>
     
-    {% if request.user == profile.user %}
+    <!-- {% if request.user == profile.user %}
     <div class="text-center mx-auto w-25">
     <a href="{% url 'delete_profile' request.user.id %}" class="btn btn-danger">Delete Profile</a>
     </div>
-    {% endif %}
+    {% endif %} -->
 
     <!-- modal code from W3Schools -->
     <div id="myModal" class="modal mt-5">
     
         <!-- modal content -->
         <div class="modal-content container">
-            <span class="close fs-1 pe-2">&times;</span>
+            <!-- <span class="close fs-1 pe-2">&times;</span> -->
             <form method="POST" action="{% url 'profile_edit' request.user.id %}" class="mb-2 p-2" enctype="multipart/form-data">
                 <h2 class="text-center fs-4">Edit Profile</h2>
                 {% csrf_token %}
                 {{ form|crispy }}
                 {{ form.media }}
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary w-25">Edit</button>
+                    <button type="submit" class="btn btn-primary w-25">Save Changes</button>
                 </div>
             </form>
         </div>
