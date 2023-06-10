@@ -13,6 +13,7 @@ class BookingForm(forms.ModelForm):
             self.fields['email'].initial = user.email
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
+        self.fields['date'].required = True
 
         self.fields['date'].widget = forms.DateInput(attrs={'type': 'date'})
 
