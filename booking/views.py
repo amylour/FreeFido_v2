@@ -20,8 +20,12 @@ class CreateBooking(LoginRequiredMixin, CreateView):
     model = Booking
     form_class = BookingForm
     template_name = 'booking/booking_create.html'
-    # Use the URL name of your booking success page
     success_url = reverse_lazy('booking_success')
+
+    def get_initial(self):
+        initial = super().get_initial()
+        initial['email'] = self.request.user.email
+        return initial
 
     def form_valid(self, form):
         # check the number of active bookings for the user
