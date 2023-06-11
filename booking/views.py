@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views import generic, View
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, TemplateView
 from django.http import HttpResponseRedirect
 from django.core.exceptions import ValidationError
 from .models import Booking
@@ -11,6 +11,10 @@ from .forms import BookingForm
 from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
+
+
+class BookingsPage(TemplateView):
+    template_name = 'booking/bookings_home_page.html'
 
 
 class CreateBooking(LoginRequiredMixin, CreateView):

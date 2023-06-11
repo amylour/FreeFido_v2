@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Bookings{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center mt-2">Make a Booking</h1>
+    <div class="d-flex justify-content-center pt-3">
+        <a href="{% url 'booking_create' %}" class="btn btn-primary">Create Booking</a>
+    </div>
+</div>
+
+{% endblock %}
