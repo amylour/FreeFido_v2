@@ -14,6 +14,22 @@ class BookingForm(forms.ModelForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['date'].required = True
+        
+
+        self.fields['first_name'].label = "First Name"
+        self.fields['last_name'].label = "Last Name"
+        self.fields['color'].label = "Dog Color"
+        self.fields['dog_name'].label = "Dog Name"
+        self.fields['breed'].label = "Dog Breed"
+        self.fields['gender'].label = "Dog Gender"
+
+        self.fields['dog_name2'].label = "Second Dog Name"
+        self.fields['breed2'].label = "Second Dog Breed"
+        self.fields['color2'].label = "Secong Dog Color"
+        self.fields['is_vaccinated2'].label = "Is vaccinated?"
+        self.fields['gender2'].label = "Second Dog Gender"
+
+        self.fields['is_vaccinated2'].widget = forms.CheckboxInput()
 
         self.fields['date'].widget = forms.DateInput(attrs={'type': 'date'})
 
@@ -32,5 +48,5 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ['first_name', 'last_name', 'email', 'dog_name', 'breed', 'color',
-                  'is_vaccinated', 'gender', 'date', 'time']
+                  'is_vaccinated', 'gender', 'date', 'time', 'dog_name2', 'breed2', 'color2', 'is_vaccinated2', 'gender2']
         unique_together = ['date', 'time']

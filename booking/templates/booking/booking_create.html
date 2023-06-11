@@ -26,9 +26,20 @@
             {{ form.date|as_crispy_field }}
             {{ form.time|as_crispy_field }}
         </div>
+        <div class="col m-4">
+        <h4 class="text-center">Book a second dog?<em>(Optional)</em></h4>
+        <div class="mx-auto text-center" id="dog2_section">
+            {{ form.dog_name2|as_crispy_field }}
+            {{ form.breed2|as_crispy_field }}
+            {{ form.color2|as_crispy_field }}
+            {{ form.is_vaccinated2|as_crispy_field }}
+            {{ form.gender2|as_crispy_field }}
+        </div>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
+
 
 
 {% endblock %}

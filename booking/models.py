@@ -69,6 +69,14 @@ class Booking(models.Model):
     date = models.DateField(default=datetime.now, blank=True)
     time = models.CharField(max_length=20, choices=TIME_CHOICES, default="11:00 - 12:00")
 
+    dog_name2 = models.CharField(max_length=20, blank=True, null=True)
+    breed2 = models.CharField(
+        max_length=30, choices=BREED_CHOICES, blank=True, null=True)
+    color2 = models.CharField(max_length=30, blank=True, null=True)
+    is_vaccinated2 = models.BooleanField(default=False, blank=True, null=True)
+    gender2 = models.CharField(max_length=6, choices=[
+                              ('M', 'Male'), ('F', 'Female')], blank=True, null=True)
+
     class Meta:
         """ Order bookings by date """
         ordering = ["-date"]
