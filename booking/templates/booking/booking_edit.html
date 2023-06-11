@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Edit Booking{% endblock %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h1 class="text-center">Edit Booking</h1>
+    <!-- enctype for file upload to cloudinary -->
+    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+        {% csrf_token %}
+        <div class="row mx-auto">
+            <div class="col m-4">
+                {{ form.first_name|as_crispy_field }}
+                {{ form.last_name|as_crispy_field}}
+                {{ form.email|as_crispy_field }}
+                {{ form.dog_name|as_crispy_field }}
+                {{ form.breed|as_crispy_field }}
+                {{ form.color|as_crispy_field }}
+                {{ form.is_vaccinated|as_crispy_field }}
+                {{ form.gender|as_crispy_field }}
+            </div>
+            <div class="col m-4">
+                {{ form.date|as_crispy_field }}
+                {{ form.time|as_crispy_field }}
+            </div>
+            <div class="col m-4">
+                <h4 class="text-center">Book a second dog?<em>(Optional)</em></h4>
+                <div class="mx-auto text-center" id="dog2_section">
+                    {{ form.dog_name2|as_crispy_field }}
+                    {{ form.breed2|as_crispy_field }}
+                    {{ form.color2|as_crispy_field }}
+                    {{ form.is_vaccinated2|as_crispy_field }}
+                    {{ form.gender2|as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-2">Edit Booking</button>
+        </div>
+    </form>
+
+
+
+{% endblock %}

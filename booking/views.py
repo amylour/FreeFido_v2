@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.contrib import messages
 from django.views import generic, View
-from django.views.generic import CreateView, ListView, DetailView, DeleteView, TemplateView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, TemplateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.core.exceptions import ValidationError
 from .models import Booking
@@ -58,6 +58,19 @@ class ActiveBookings(LoginRequiredMixin, generic.ListView):
         # show active bookings by user by date
         return Booking.objects.filter(user=self.request.user).order_by('-date')
 
+
+class BookingEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ Edit an article """
+    template_name = 'booking/booking_edit.html'
+    model = Booking
+    form_class = BookingForm
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+    def get_success_url(self):
+        # Return the URL of the booking success page
+        return reverse('booking_success')
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a booking """
