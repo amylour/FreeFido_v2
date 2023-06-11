@@ -149,9 +149,15 @@ class EditArticle(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user == self.get_object().author
 
+    def form_valid(self, form):
+        # set the author of the article to the current user
+        form.instance.author = self.request.user
+        messages.success(self.request, 'Your article has been updated.')
+        return super().form_valid(form)
+
     def get_success_url(self):
         # return the URL of the edited article page
-        return reverse('article_page', kwargs={'slug': self.get_object().slug})
+        return reverse('article_page', kwargs={'slug': self.object.slug})
 
 
 class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
