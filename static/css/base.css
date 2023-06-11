@@ -27,6 +27,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     font-family: var(--main-font);
 }
 
@@ -73,10 +74,38 @@ select {
 /* footer */
 footer {
     flex-shrink: 0;
-    background-color: var(--white);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-bg {
+    background-image: url('/../static/images/footer_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hours {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 1.5rem;
+}
+
+.hours-title {
+    font-family: Outfit, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.social {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -116,6 +145,92 @@ footer {
     border-radius: 20px;
 }
 
+/* Override crispy forms/bootstrap styling */
+#id_first_name,
+#id_last_name,
+#id_email,
+#id_dog_name,
+#id_color,
+#id_date,
+#id_dog_name,
+#id_color2 {
+    text-align: center;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #00000;
+    background-color: #d3d3d3;
+    background-clip: padding-box;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 8px 0 8px 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #d3d3d3;
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: none;
+    border-radius: 8px 0 8px 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.form-check .form-check-input {
+    float: none;
+    margin-left: -1.5em;
+    margin-right: 1em;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 0.25em;
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em;
+}
+
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #d3d3d3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+}
+
 
 /* icons */
 
@@ -147,7 +262,7 @@ footer {
 
 .article-img {
     border-radius: 20px;
-    object-fit: contain;
+    object-fit: cover;
     height: 400px;
     width: 550px;
 }
