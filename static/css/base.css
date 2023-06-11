@@ -53,7 +53,9 @@ main {
 #id_email,
 #id_dog_name,
 #id_color,
-#id_date {
+#id_date,
+#id_dog_name,
+#id_color2 {
     text-align: center;
 }
 
@@ -113,6 +115,7 @@ footer {
     margin: 5% auto;
     border-radius: 20px;
 }
+
 
 /* icons */
 
