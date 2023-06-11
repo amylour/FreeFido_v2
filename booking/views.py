@@ -69,8 +69,18 @@ class BookingEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == self.get_object().user
 
     def get_success_url(self):
-        # Return the URL of the booking success page
         return reverse('booking_success')
+
+    def form_valid(self, form):
+        active_bookings_count = Booking.objects.filter(user=self.request.user).count()
+        if active_bookings_count >= 4:
+            # Show an error message and redirect to booking if 4 bookings are active
+            messages.error(self.request, 'You have reached the maximum number of bookings.')
+            return HttpResponseRedirect(self.success_url)
+
+        form.instance.user = self.request.user
+        messages.success(self.request, 'Your booking has been saved.')
+        return super().form_valid(form)
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a booking """
