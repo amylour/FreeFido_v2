@@ -1,3 +1,25 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Home{% endblock %}
+
+{% block content %} 
+<div class="container">
+<div class="row justify-content-center align-items-center mt-5">
+    <div class="col-lg-6">
+    <div class="hero-text">
+       <h2 class="text-center lh-lg">A safe space for dogs to<br>
+        run, sniff, climb and<br>
+        explore!</h2>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="hero-img text-center">
+        <img class="img-fluid" src="{% static 'images/hero-beagle.png' %}" alt="beagle and ball">
+    </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
