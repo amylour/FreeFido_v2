@@ -1,4 +1,6 @@
 from django.views import generic
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import GalleryImage
 from .forms import GalleryImageForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -25,3 +27,18 @@ class AddPhoto(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.photo_by = self.request.user
         return super().form_valid(form)
+
+class DeletePhoto(DeleteView):
+    """ Delete photo """
+    model = GalleryImage
+    success_url = '/gallery/'
+    template_name = 'gallery/delete_photo.html'
+
+    def test_func(self):
+        return self.request.user == self.get_object().photo_by
+
+    def delete(self, request, *args, **kwargs):
+        photo = self.get_object()
+        photo.delete()
+        messages.success(request, "Photo deleted successfully.")
+        return HttpResponseRedirect(self.success_url)

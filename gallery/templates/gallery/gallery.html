@@ -63,6 +63,12 @@
             <div class="image-container">
                 <img src="{{ gallery_post.photo.url }}" alt="{{ gallery_post.image_alt }}" class="gallery-image">
                 <div class="image-overlay">
+                    {% if user.is_authenticated and gallery_post.photo_by == user %}
+                    <form method="POST" action="{% url 'delete_photo' pk=gallery_post.pk %}" class="delete-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger delete-button">Delete</button>
+                    </form>
+                    {% endif %}
                     <h3 class="image-title">{{ gallery_post.title }}</h3>
                     <p class="image-info">Posted by: {{ gallery_post.photo_by }}</p>
                     <p class="image-info"> <em>{{ gallery_post.image_description }}</em></p>
