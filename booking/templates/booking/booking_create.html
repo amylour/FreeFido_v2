@@ -13,6 +13,7 @@
     {% csrf_token %}
     <div class="row mx-auto">
         <div class="col m-4">
+            <h4 class="text-center mb-2">Your Details</h4>
             {{ form.first_name|as_crispy_field }}
             {{ form.last_name|as_crispy_field}}
             {{ form.email|as_crispy_field }}
@@ -23,6 +24,7 @@
             {{ form.gender|as_crispy_field }}
         </div>
         <div class="col m-4">
+            <h4 class="text-center mb-2">Choose Date & Time</h4>
             {{ form.date|as_crispy_field }}
             {{ form.time|as_crispy_field }}
         </div>

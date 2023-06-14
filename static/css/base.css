@@ -44,6 +44,10 @@ a {
     text-decoration: none;
 }
 
+em {
+    font-size: medium;
+}
+
 main {
     flex: 1 0 auto;
     background-color: var(--white);
@@ -145,7 +149,7 @@ footer {
 
 .form {
     width: 50%;
-    margin: 5% auto;
+    margin: 1% auto;
     border-radius: 20px;
 }
 
@@ -271,6 +275,13 @@ footer {
 }
 
 .error-alert {
+    background-color: #ee8a8a;
+    border: 1px solid var(--coral);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.alert-danger {
     background-color: #ee8a8a;
     border: 1px solid var(--coral);
     border-radius: 4px;

@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
-
+from django.utils import timezone
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -24,6 +24,14 @@ class CreateBooking(LoginRequiredMixin, CreateView):
         # Set the current user as the booking user
         form.instance.user = self.request.user
 
+        selected_date = form.cleaned_data.get('date')
+        selected_time = form.cleaned_data.get('time')
+        current_datetime = timezone.now()
+
+        if selected_date < current_datetime.date() or (selected_date == current_datetime.date() and selected_time < current_datetime.time()):
+            form.add_error('date', 'Great Scott! Do you have a time machine?')
+            return self.form_invalid(form)
+
         # Check the number of active bookings for the current user
         active_bookings_count = Booking.objects.filter(
             user=self.request.user).count()
@@ -33,6 +41,8 @@ class CreateBooking(LoginRequiredMixin, CreateView):
             messages.error(
                 self.request, "You have reached the maximum number of active bookings.")
             return redirect(self.success_url)
+
+        messages.success(self.request, "Your booking has been saved.")
 
         return super().form_valid(form)
 
@@ -60,23 +70,28 @@ class BookingEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             existing_booking = Booking.objects.filter(
                 date=new_date, time=new_time).exclude(pk=self.object.pk).first()
             if existing_booking:
-                messages.error(
-                    self.request, 'This time and date is already booked.')
+                form.add_error('time', 'This time and date is already booked.')
+                return self.form_invalid(form)
+
+        messages.success(self.request, "Your booking has been saved.")
 
         return super().form_valid(form)
-
-
-
 
 
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Booking
     template_name = 'booking/booking_confirm_delete.html'
-    success_url = '/booking_home_page/'
+    success_url = reverse_lazy('booking_home_page')
 
     def test_func(self):
         booking = self.get_object()
         return self.request.user == booking.user
+
+    def delete(self, request, *args, **kwargs):
+        # Display success message
+        messages.success(self.request, "Your booking has been deleted.")
+
+        return super().delete(request, *args, **kwargs)
 
 
 
