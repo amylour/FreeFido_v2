@@ -5,7 +5,7 @@ from .models import Booking
 
 
 class BookingForm(forms.ModelForm):
-    """ A form to create a booking """
+    """A form to create a booking"""
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
@@ -15,7 +15,6 @@ class BookingForm(forms.ModelForm):
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['date'].required = True
-        
 
         self.fields['first_name'].label = "First Name"
         self.fields['last_name'].label = "Last Name"
@@ -26,7 +25,7 @@ class BookingForm(forms.ModelForm):
 
         self.fields['dog_name2'].label = "Second Dog Name"
         self.fields['breed2'].label = "Second Dog Breed"
-        self.fields['color2'].label = "Secong Dog Color"
+        self.fields['color2'].label = "Second Dog Color"
         self.fields['is_vaccinated2'].label = "Is vaccinated?"
         self.fields['gender2'].label = "Second Dog Gender"
 
@@ -34,20 +33,27 @@ class BookingForm(forms.ModelForm):
 
         self.fields['date'].widget = forms.DateInput(attrs={'type': 'date'})
 
-        def form_valid(self, form):
-            form.instance.user = self.request.user
+    def clean(self):
+        cleaned_data = super().clean()
+        date = cleaned_data.get('date')
+        time = cleaned_data.get('time')
 
-            # Check if a booking with the same date and time already exists
-            if Booking.objects.filter(date=form.instance.date, time=form.instance.time).exists():
-                messages.error(
-                    self.request, 'This date and time is already booked.')
-                return self.form_invalid(form)
-
-            messages.success(self.request, 'Your booking has been saved.')
-            return super().form_valid(form)
+        # Check if a booking with the same date and time already exists
+        if date and time and Booking.objects.filter(date=date, time=time).exists():
+            self.add_error('time', 'This date and time is already booked.')
 
     class Meta:
         model = Booking
         fields = ['first_name', 'last_name', 'email', 'dog_name', 'breed', 'color',
                   'is_vaccinated', 'gender', 'date', 'time', 'dog_name2', 'breed2', 'color2', 'is_vaccinated2', 'gender2']
-        unique_together = ['date', 'time']
+
+    def clean(self):
+        cleaned_data = super().clean()
+        instance = getattr(self, 'instance', None)
+        if instance:
+            # Exclude date and time from cleaning if they haven't been changed
+            if cleaned_data.get('date') == instance.date:
+                cleaned_data.pop('date', None)
+            if cleaned_data.get('time') == instance.time:
+                cleaned_data.pop('time', None)
+        return cleaned_data

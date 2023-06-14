@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
-from agenda.models import Task
 
 # Breed choices for user in profile dropdown menu in tuple format for database value and site viewable value for the user
 BREED_CHOICES = [

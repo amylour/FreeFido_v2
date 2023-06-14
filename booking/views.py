@@ -1,98 +1,82 @@
-from django.shortcuts import render
-from django.urls import reverse, reverse_lazy
+from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
-from django.views import generic, View
-from django.views.generic import CreateView, ListView, DetailView, DeleteView, TemplateView, UpdateView
-from django.http import HttpResponseRedirect
-from django.core.exceptions import ValidationError
+
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .models import Booking
 from .forms import BookingForm
 
-from django.contrib.auth.mixins import (
-    UserPassesTestMixin, LoginRequiredMixin
-)
 
-
-class BookingsPage(TemplateView):
-    template_name = 'booking/bookings_home_page.html'
+class BookingsPage(LoginRequiredMixin, ListView):
+    model = Booking
+    template_name = 'booking/booking_home_page.html'
+    context_object_name = 'booking'
 
 
 class CreateBooking(LoginRequiredMixin, CreateView):
-    """
-    A view to create a booking
-    """
     model = Booking
     form_class = BookingForm
     template_name = 'booking/booking_create.html'
-    success_url = reverse_lazy('booking_success')
-
-    def get_initial(self):
-        initial = super().get_initial()
-        initial['email'] = self.request.user.email
-        return initial
+    success_url = reverse_lazy('booking_home_page')
 
     def form_valid(self, form):
-        # check the number of active bookings for the user
-        user = self.request.user
-        active_bookings_count = Booking.objects.filter(user=user).count()
-
-        if active_bookings_count >= 4:
-            # show an error message and redirect to booking if 4 bookings active
-            messages.error(
-                self.request, 'You have reached the maximum number of bookings.')
-            return HttpResponseRedirect(self.success_url)
+        # Set the current user as the booking user
         form.instance.user = self.request.user
-        messages.success(self.request, 'Your booking has been saved.')
+
+        # Check the number of active bookings for the current user
+        active_bookings_count = Booking.objects.filter(
+            user=self.request.user).count()
+
+        # Limit the maximum number of active bookings to 4
+        if active_bookings_count >= 4:
+            messages.error(
+                self.request, "You have reached the maximum number of active bookings.")
+            return redirect(self.success_url)
+
         return super().form_valid(form)
-
-
-class ActiveBookings(LoginRequiredMixin, generic.ListView):
-    """
-    A view to display the user's bookings
-    """
-    model = Booking
-    template_name = 'booking/booking_success.html'
-    context_object_name = 'bookings'
-
-    def get_queryset(self):
-        # show active bookings by user by date
-        return Booking.objects.filter(user=self.request.user).order_by('-date')
 
 
 class BookingEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    """ Edit an article """
-    template_name = 'booking/booking_edit.html'
     model = Booking
     form_class = BookingForm
+    template_name = 'booking/booking_edit.html'
+    success_url = reverse_lazy('booking_home_page')
 
     def test_func(self):
-        return self.request.user == self.get_object().user
-
-    def get_success_url(self):
-        return reverse('booking_success')
+        booking = self.get_object()
+        return self.request.user == booking.user
 
     def form_valid(self, form):
-        active_bookings_count = Booking.objects.filter(user=self.request.user).count()
-        if active_bookings_count >= 4:
-            # Show an error message and redirect to booking if 4 bookings are active
-            messages.error(self.request, 'You have reached the maximum number of bookings.')
-            return HttpResponseRedirect(self.success_url)
-
         form.instance.user = self.request.user
-        messages.success(self.request, 'Your booking has been saved.')
+
+        # Exclude date and time fields from cleaned data
+        cleaned_data = form.cleaned_data
+        new_date = cleaned_data.get('date')
+        new_time = cleaned_data.get('time')
+
+        # Check if the new time and date are available
+        if new_date and new_time:
+            existing_booking = Booking.objects.filter(
+                date=new_date, time=new_time).exclude(pk=self.object.pk).first()
+            if existing_booking:
+                messages.error(
+                    self.request, 'This time and date is already booked.')
+
         return super().form_valid(form)
 
+
+
+
+
 class DeleteBooking(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    """ Delete a booking """
     model = Booking
-    success_url = reverse_lazy('booking_success')
+    template_name = 'booking/booking_confirm_delete.html'
+    success_url = '/booking_home_page/'
 
     def test_func(self):
-        return self.request.user == self.get_object().user
-
-    def delete(self, request, *args, **kwargs):
         booking = self.get_object()
-        booking.delete()
-        messages.success(request, "Booking deleted successfully.")
-        return HttpResponseRedirect(self.success_url)
-    
+        return self.request.user == booking.user
+
+
+
