@@ -1,6 +1,7 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.contrib.auth.models import User
+from agenda.models import Task
 
 # Breed choices for user in profile dropdown menu in tuple format for database value and site viewable value for the user
 BREED_CHOICES = [
@@ -38,20 +39,16 @@ BREED_CHOICES = [
 ]
 
 
-TIME_CHOICES = [
-    ('08:00 - 09:00', '08:00 - 09:00'),
-    ('09:00 - 10:00', '09:00 - 10:00'),
-    ('10:00 - 11:00', '10:00 - 11:00'),
-    ('11:00 - 12:00', '11:00 - 12:00'),
-    ('12:00 - 13:00', '12:00 - 13:00'),
-    ('13:00 - 14:00', '13:00 - 14:00'),
-    ('14:00 - 15:00', '14:00 - 15:00'),
-    ('15:00 - 16:00', '15:00 - 16:00'),
-    ('16:00 - 17:00', '16:00 - 17:00'),
-    ('17:00 - 18:00', '17:00 - 18:00'),
-    ('18:00 - 19:00', '18:00 - 19:00'),
-    ('19:00 - 20:00', '19:00 - 20:00'),
-    ]
+# generate hourly time slots from 8 am to 8 pm
+TIME_CHOICES = []
+start_time = datetime.strptime("08:00", "%H:%M")
+end_time = datetime.strptime("20:00", "%H:%M")
+
+while start_time < end_time:
+    time_slot = start_time.strftime(
+        "%H:%M") + " - " + (start_time + timedelta(hours=1)).strftime("%H:%M")
+    TIME_CHOICES.append((time_slot, time_slot))
+    start_time += timedelta(hours=1)
 
 
 class Booking(models.Model):
@@ -81,8 +78,6 @@ class Booking(models.Model):
         """ Order bookings by date """
         ordering = ["-date"]
         unique_together = ['date', 'time']
-
-
 
     def __str__(self):
         return f"Booking for {self.user.username}"
