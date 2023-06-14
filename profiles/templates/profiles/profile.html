@@ -33,7 +33,6 @@
             {% for article in profile.user.article_posts.all %} 
             <a href="{% url 'article_page' article.slug %}"><h3>{{ article.title }}</h3></a>
             {{ article.created_on }}
-            <hr>
             {% endfor %}
         </div>
         <hr class="w-25 mx-auto mt-3">
