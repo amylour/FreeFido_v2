@@ -79,7 +79,7 @@ select {
 footer {
     flex-shrink: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -88,12 +88,12 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 120px;
+    padding-top: 140px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-.hours {
+/* .hours {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -104,7 +104,7 @@ footer {
     font-family: Outfit, sans-serif;
     font-weight: 600;
     text-align: center;
-}
+} */
 
 .social {
     display: flex;
