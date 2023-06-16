@@ -24,30 +24,30 @@
                         <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
+                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/"><img class="nav-icons" src="{% static 'icons/login.png' %}" alt="login icon"></a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'articles' %}active{% endif %}"
-                            href="{% url 'articles' %}">Articles</a>
+                            href="{% url 'articles' %}"><img class="nav-icons" src="{% static 'icons/articles.png' %}" alt="articles icon"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'booking' %}active{% endif %}" href="{% url 'booking_home_page' %}">Booking</a>
+                        <a class="nav-link {% if url_name == 'booking' %}active{% endif %}" href="{% url 'booking_home_page' %}"><img class="nav-icons" src="{% static 'icons/book.png' %}" alt="booking icon"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}">Gallery</a>
+                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}"><img class="nav-icons" src="{% static 'icons/gallery.png' %}" alt="gallery icon"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'visit_us' %}active{% endif %}"
-                            href="{% url 'visit_us' %}">Visit Us</a>
+                            href="{% url 'visit_us' %}"><img class="nav-icons" src="{% static 'icons/visit_us.png' %}" alt="visit icon"></a>
                     </li>
 
                 </ul>

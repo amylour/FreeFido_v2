@@ -134,6 +134,11 @@ footer {
     justify-content: flex-end;
 }
 
+.nav-icons {
+    height: 84px;
+    width: 84px;
+}
+
 
 /* img.logo {
     width: ; */
