@@ -9,7 +9,7 @@
     <h1 class="m-4">{% trans "Sign In" %}</h1>
 
     <p>{% blocktrans %}If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+        <a href="{{ signup_url }}" class="special-anchor">sign up</a> first.{% endblocktrans %}
     </p>
 
 
@@ -19,8 +19,8 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-primary w-25 mb-2" type="submit">{% trans "Sign In" %}</button>
-        <a class="button secondaryAction d-block" href="{% url 'account_reset_password' %}">
+        <button class="btn btn-custom-form px-3 mt-2 mb-3" type="submit">{% trans "Sign In" %}</button>
+        <a class="button secondaryAction d-block special-anchor" href="{% url 'account_reset_password' %}">
             {% trans "Forgot Password?"%}</a>
     </form>
 </div>
