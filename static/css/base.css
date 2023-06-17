@@ -53,6 +53,11 @@ main {
     background-color: var(--white);
 }
 
+/* target the anchor tags within the allauth template html */
+.special-anchor {
+    color: var(--purple);
+}
+
 #id_first_name,
 #id_last_name,
 #id_email,
@@ -172,7 +177,38 @@ footer {
 }
 
 /* hero section */
+.hero-image {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
+.btn-custom {
+    background-image: url('../icons/btn_pattern.png');
+    background-color: #b163e5;
+    background-size: cover;
+    border-radius: 50px;
+    font-family: var(--title);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    /* transform point to assist smooth animation */
+    transform-origin: top center;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+    background-color: #b163e5;
+    color: var(--white);
+}
+
+.btn-custom:active {
+    transform: scale(0.95);
+    /* override bootstrap css btn active properties with !important */
+    background-color: #b163e5 !important;
+    color: var(--white) !important;
+}
 
 /* forms */
 
@@ -180,6 +216,35 @@ footer {
     width: 50%;
     margin: 1% auto;
     border-radius: 20px;
+}
+
+.btn-custom-form {
+    background-image: url('../icons/btn_pattern.png');
+    background-color: #b163e5;
+    background-size: cover;
+    border-radius: 30px;
+    font-family: var(--title);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s;
+    /* transform point to assist smooth animation */
+    transform-origin: top center;
+}
+
+.btn-custom-form:hover {
+    background-color: #b163e5;
+    color: var(--white);
+}
+
+.btn-custom-form:active {
+    transform: scale(0.95);
+    /* override bootstrap css btn active properties with !important */
+    background-color: #b163e5 !important;
+    color: var(--white) !important;
+    border: none;
 }
 
 /* Override crispy forms/bootstrap styling */

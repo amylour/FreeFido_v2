@@ -18,49 +18,37 @@
                 <ul class="navbar-nav">
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
-                            href="{% url 'profile' request.user.id %}"><img class="nav-icons" src="{% static 'icons/profile.png' %}"
-                            alt="profile icon"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}"
-                            href="/accounts/logout/">Logout</a>
-                    </li>
-                    {% else %}
-                    <!-- <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}"
-                            href="/accounts/login/"><img class="nav-icons" src="{% static 'icons/login.png' %}"
-                                alt="login icon"></a>
+                        <a class="nav-link {% if url_name == 'profile' %}active{% endif %}" href="{% url 'profile' request.user.id %}" title="Profile"><img
+                                class="nav-icons" src="{% static 'icons/profile.png' %}" alt="profile icon"></a>
                     </li>
                     {% endif %}
-                    <!-- <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
-                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'articles' %}active{% endif %}"
-                            href="{% url 'articles' %}"><img class="nav-icons" src="{% static 'icons/articles.png' %}"
-                                alt="articles icon"></a>
+                        <a class="nav-link {% if url_name == 'articles' %}active{% endif %}" href="{% url 'articles' %}" title="Articles"><img
+                                class="nav-icons" src="{% static 'icons/articles.png' %}" alt="articles icon"></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'booking_home_page' %}active{% endif %}"
-                            href="{% url 'booking_home_page' %}"><img class="nav-icons"
-                                src="{% static 'icons/book.png' %}" alt="booking icon"></a>
+                            href="{% url 'booking_home_page' %}" title="Booking"><img class="nav-icons" src="{% static 'icons/book.png' %}"
+                                alt="booking icon"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}"
-                            href="{% url 'gallery' %}"><img class="nav-icons" src="{% static 'icons/gallery.png' %}"
-                                alt="gallery icon"></a>
+                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}" title="Gallery"><img
+                                class="nav-icons" src="{% static 'icons/gallery.png' %}" alt="gallery icon"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'visit_us' %}active{% endif %}"
-                            href="{% url 'visit_us' %}"><img class="nav-icons" src="{% static 'icons/visit_us.png' %}"
-                                alt="visit icon"></a>
+                        <a class="nav-link {% if url_name == 'visit_us' %}active{% endif %}" href="{% url 'visit_us' %}" title="Visit Us"><img
+                                class="nav-icons" src="{% static 'icons/visit_us.png' %}" alt="visit icon"></a>
                     </li>
-
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/" title="Logout"><img class="nav-icons" src="{% static 'icons/logout.png' %}" alt="logout icon"></a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/" title="Log In"><img
+                                class="nav-icons" src="{% static 'icons/login.png' %}" alt="login icon"></a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- search bar form only when article appears in url -->
