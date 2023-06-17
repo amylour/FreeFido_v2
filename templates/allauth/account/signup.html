@@ -8,7 +8,7 @@
 <div class="container text-center">
     <h1>{% trans "Sign Up" %}</h1>
 
-    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="special-anchor">sign in</a>.{% endblocktrans %}
     </p>
 
     <form class="form p-3" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -17,7 +17,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button type="submit" class="btn btn-primary w-25">Sign Up</button>
+        <button type="submit" class="btn btn-custom-form px-3 mt-2">Sign Up</button>
     </form>
 </div>
 {% endblock %}
