@@ -27,9 +27,16 @@
                                 class="nav-icons" src="{% static 'icons/articles.png' %}" alt="articles icon"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'booking_home_page' %}active{% endif %}"
-                            href="{% url 'booking_home_page' %}" title="Booking"><img class="nav-icons" src="{% static 'icons/book.png' %}"
-                                alt="booking icon"></a>
+                        {% if request.user.is_authenticated %}
+                        <a class="nav-link {% if url_name == 'booking_home_page' %}active{% endif %}" href="{% url 'booking_home_page' %}"
+                            title="Booking">
+                            <img class="nav-icons" src="{% static 'icons/book.png' %}" alt="booking icon">
+                        </a>
+                        {% else %}
+                        <a class="nav-link" href="{% url 'account_login' %}?next={% url 'booking_home_page' %}" title="Booking">
+                            <img class="nav-icons" src="{% static 'icons/book.png' %}" alt="booking icon">
+                        </a>
+                        {% endif %}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}" title="Gallery"><img

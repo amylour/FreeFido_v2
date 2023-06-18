@@ -53,6 +53,11 @@ main {
     background-color: var(--white);
 }
 
+/* filter back shadow for images */
+.img-shadow {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 /* target the anchor tags within the allauth template html */
 .special-anchor {
     color: var(--purple);
@@ -219,19 +224,35 @@ footer {
     font-size: xx-large;
 }
 
+/* dashed underline effect */
 #about {
     display: inline-block;
     border-bottom: 10px dashed var(--orange);
+    line-height: 3rem;
 }
 
-#safety {
+#visit {
     display: inline-block;
     border-bottom: 10px dashed var(--coral);
+    line-height: 3rem;
 }
 
 #benefits {
     display: inline-block;
     border-bottom: 10px dashed var(--green);
+    line-height: 3rem;
+}
+
+#auth {
+    display: inline-block;
+    border-bottom: 10px dashed var(--purple);
+    line-height: 3rem;
+}
+
+#gallery {
+    display: inline-block;
+    border-bottom: 10px dashed var(--green);
+    line-height: 3rem;
 }
 
 .section-img {
@@ -310,6 +331,10 @@ footer {
     font-size: 20px;
 }
 
+.btn-custom-article {
+    font-size: 22px;
+}
+
 /* Override crispy forms/bootstrap styling */
 #id_first_name,
 #id_last_name,
@@ -323,7 +348,7 @@ footer {
 }
 
 .form-control {
-    background-color: #d3d3d3;
+    background-color: #b163e52e;
     border: none;
     border-radius: 8px 0 8px 0;
 }
@@ -343,6 +368,13 @@ footer {
 .form-check-input {
     background-color: #d3d3d3;
     border: none;
+}
+
+/* selector for the 'Choose File' button */
+input[type="file"]::file-selector-button {
+    background-color: var(--purple);
+    color: white;
+    border-radius: 8px 0 8px 0;
 }
 
 /* icons */
@@ -507,6 +539,7 @@ footer {
 .image-info {
     font-size: 14px;
 }
+
 
 /* media queries */
 
