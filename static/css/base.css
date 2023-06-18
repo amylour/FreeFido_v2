@@ -242,6 +242,11 @@ footer {
     font-family: var(--main-font);
     font-size: 22px;
     font-weight: 400;
+    line-height: 2.5rem;
+}
+
+.section-em {
+    font-size: 22px;
 }
 
 .section-list {
@@ -249,6 +254,18 @@ footer {
     font-size: 22px;
     font-weight: bold;
     text-align: left;
+}
+
+#section-articles {
+    color: var(--purple);
+}
+
+#section-signup {
+    color: var(--orange);
+}
+
+#section-visit {
+    color: var(--coral);
 }
 
 /* forms */
@@ -286,6 +303,11 @@ footer {
     background-color: #b163e5 !important;
     color: var(--white) !important;
     border: none;
+}
+
+.btn-custom-search {
+    border-radius: 15px;
+    font-size: 20px;
 }
 
 /* Override crispy forms/bootstrap styling */
@@ -494,9 +516,7 @@ footer {
         flex-direction: row;
         align-items: center;
     }
-
 }
-
 
 /* footer media query */
 @media (max-width: 767.98px) {
