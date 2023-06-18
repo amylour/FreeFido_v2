@@ -121,6 +121,7 @@ footer {
 .social-icon {
     height: 1.5rem;
     margin: 1rem;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
 /* header */
@@ -208,6 +209,46 @@ footer {
     /* override bootstrap css btn active properties with !important */
     background-color: #b163e5 !important;
     color: var(--white) !important;
+}
+
+/* home page */
+
+.section-title {
+    font-family: var(--title);
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+#about {
+    display: inline-block;
+    border-bottom: 10px dashed var(--orange);
+}
+
+#safety {
+    display: inline-block;
+    border-bottom: 10px dashed var(--coral);
+}
+
+#benefits {
+    display: inline-block;
+    border-bottom: 10px dashed var(--green);
+}
+
+.section-img {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.section-p {
+    font-family: var(--main-font);
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.section-list {
+    font-family: var(--main-font);
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
 }
 
 /* forms */
@@ -446,6 +487,16 @@ footer {
 }
 
 /* media queries */
+
+/* hamburger menu to center under logo on mobile */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+
 
 /* footer media query */
 @media (max-width: 767.98px) {
