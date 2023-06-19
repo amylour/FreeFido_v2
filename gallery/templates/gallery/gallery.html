@@ -9,7 +9,18 @@
 
 
 <div class="container my-4 text-center">
-    <h1 class="section-title mb-4" id="benefits">Gallery</h1>
+    <div class="row align-items-center">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="section-title mb-4" id="benefits">Gallery</h1>
+        </div>
+        <div class="col-md-3 text-md-end">
+            {% if user.is_authenticated %}
+            <a href="{% url 'add_photo' %}" class="my-4">
+                <img src="{% static '../static/icons/add_photo.png' %}" alt="add photo" class="add-photo-btn">
+            </a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 <!-- carousel of images changing every 3 seconds and buttons for user to change the images -->
 <div class="container">
@@ -49,16 +60,6 @@
         </div>
     </div>
     
-    <!-- upload image button -->
-    <div class="container text-center">
-        {% if user.is_authenticated %}
-        <a href="{% url 'add_photo' %}" class="btn btn-custom-form my-4">
-            + Upload Image
-        </a>
-        {% endif %}
-    </div>
-
-
     <div class="row mt-4">
         {% for gallery_post in gallery_posts %}
         <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
@@ -68,8 +69,9 @@
                     {% if user.is_authenticated and gallery_post.photo_by == user %}
                     <form method="POST" action="{% url 'delete_photo' pk=gallery_post.pk %}" class="delete-form">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-danger delete-button">Delete</button>
-                    </form>
+                        <button type="submit" class="delete-button btn btn-link">
+                            <img src="{% static '../static/icons/delete_photo.png' %}" alt="delete photo" class="icon-delete-btn">
+                        </button>
                     {% endif %}
                     <h3 class="image-title">{{ gallery_post.title }}</h3>
                     <p class="image-info"> <em>{{ gallery_post.image_description }}</em></p>
