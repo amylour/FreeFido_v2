@@ -9,7 +9,7 @@
 
 
 <div class="container my-4 text-center">
-    <h1 class="section-title mb-4" id="gallery">Gallery</h1>
+    <h1 class="section-title mb-4" id="benefits">Gallery</h1>
 </div>
 <!-- carousel of images changing every 3 seconds and buttons for user to change the images -->
 <div class="container">
@@ -53,7 +53,7 @@
     <div class="container text-center">
         {% if user.is_authenticated %}
         <a href="{% url 'add_photo' %}" class="btn btn-custom-form my-4">
-            Upload Image
+            + Upload Image
         </a>
         {% endif %}
     </div>
@@ -72,9 +72,9 @@
                     </form>
                     {% endif %}
                     <h3 class="image-title">{{ gallery_post.title }}</h3>
-                    <p class="image-info">Posted by: {{ gallery_post.photo_by }}</p>
                     <p class="image-info"> <em>{{ gallery_post.image_description }}</em></p>
-                    <p class="image-info">Posted on: {{ gallery_post.posted_on }}</p>
+                    <p class="image-info"><strong>Posted by:</strong> {{ gallery_post.photo_by }}</p>
+                    <p class="image-info"><strong>{{ gallery_post.posted_on }}</strong></p>
                 </div>
             </div>
         </div>
