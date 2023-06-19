@@ -8,7 +8,7 @@
 <div class="container text-center">
     <h1 class="section-title" id="auth">{% trans "Sign Out" %}</h1>
 
-    <p class="section-p mt-2 mb-3">{% trans 'Are you sure you want to sign out?' %}</p>
+    <p class="section-p mt-2 mb-3">Are you sure you'd like to go?</p>
 
     <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
