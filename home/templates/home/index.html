@@ -13,7 +13,11 @@
         run, sniff, climb and<br>
         explore!</h1>
         <div class="text-center mt-4">
+            {% if not user.is_authenticated %}
             <a href="{% url 'account_signup' %}" class="btn btn-custom p-2 px-4 mb-4">Sign Up</a>
+            {% else %} 
+            <a href="{% url 'booking_home_page' %}" class="btn btn-custom p-2 px-4 mb-4">Book Today!</a>
+            {% endif %}
         </div>
     </div>
     </div>
@@ -28,11 +32,11 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="section-content text-center rounded-30">
-                <h2 class="section-title" id="visit">About</h2>
+                <h2 class="section-title" id="about">About</h2>
                 <img src="{% static 'images/dog_jump_log.webp' %}" alt="dog jumping log" class="img-fluid mx-auto section-img my-5">
                 <p class="text-center section-p mb-5">FreeFido is a dog park with a difference, acres of nature just for you and your dogs. At our private dog park, you'll find various amenities designed to enhance your visit.
                      We provide shaded areas and water stations throughout the park, ensuring your dogs stay hydrated and comfortable even on warm days. You can relax and unwind in designated seating areas (with a yummy coffee from our coffee hut!)
-                     and allow your dog to run and play freely, promoting their physical fitness and overall well-being. Come and <a href="{% url 'visit_us' %}" id="section-visit">visit</a> us just outside of Mullingar, Co.Westmeath.</p>
+                     and allow your dog to run and play freely, promoting their physical fitness and overall well-being. Come and <a href="{% url 'visit_us' %}" id="section-visit" title="Check out our Visit Us page!">visit</a> us just outside of Mullingar, Co.Westmeath.</p>
             </div>
         </div>
     </div>
@@ -57,13 +61,13 @@
     <div class="row justify-content-center">
         <div class="col-lg-8">
             <div class="section-content text-center rounded-30">
-                <h2 class="section-title" id="safety">Safety</h2>
+                <h2 class="section-title" id="visit">Safety</h2>
                 <img src="{% static 'images/beagle_collie.webp' %}" alt="collie and beagle dog"
                     class="img-fluid mx-auto section-img my-5">
                 <p class="text-center section-p mb-5">At Freefido, safety is of utmost importance to us. As you build a connection with your dog, positive interaction is key. 
                     In our private, fully-fenced dog park, you can book a time that is yours alone knowing that there will be no escapes or concerns as our parks entrance is fully monitored.
                     Additionally, we only allow registered members and their dogs inside the
-                    park, guaranteeing a controlled and safe environment. <a href="{% url 'account_signup' %}" id="section-signup">Join</a> us today and make a booking!</p>
+                    park, guaranteeing a controlled and safe environment. <a href="{% url 'account_signup' %}" id="section-signup" title="Join FreeFido today!">Join</a> us today and make a booking!</p>
             </div>
         </div>
     </div>
@@ -92,7 +96,7 @@
                 <img src="{% static 'images/sleepy_dog.webp' %}" alt="dog sleeping" class="img-fluid mx-auto section-img my-5">
                 <p class="text-center section-p mb-5">Come and let your dog run and sniff in a safe environment that benefits both their mental and physical health. Dogs <em class="section-em">need</em> to sniff and we guarantee that 
                     our park will provide them with all of the stimulation that they need. Bring some treats, or pick some up from our coffee hut, and work on your dogs recall. Spend time with your dog off leash
-                     and strengthen your bond with some playtime. Check out our <a href="{% url 'articles' %}" id="section-articles">articles</a> section and discover some new tips or share your training wisdom with other park users.
+                     and strengthen your bond with some playtime. Check out our <a href="{% url 'articles' %}" id="section-articles" title="Check out our recent articles!">articles</a> section and discover some new tips or share your training wisdom with other park users.
                 </p>
 
             </div>
