@@ -9,7 +9,7 @@
 <div class="container p-4">
     <div class="row">
         <!-- profile left side on tablets/large screens -->
-        <div class="col-lg-6">
+        <div class="col-lg-5">
             <div class="profile">
                 <div class="profile-info text-center">
                     <div class="mb-4">
@@ -20,22 +20,24 @@
                         <img src="{% static '.icons/pawprint.png' %}" alt="Image not found icon">
                         {% endif %}
                     </div>
+                    {% if request.user == profile.user %}
+                    <button id="myBtn" class="btn edit-button btn btn-link my-2">
+                        <img src="{% static '../static/icons/edit_profile.png' %}" alt="edit profile" class="icon-delete-btn">
+                    </button>
+                    {% endif %}
                     <h1 class="text-center section-title" id="auth">{{ profile.user.username }}</h1>
                     <p class="section-p my-2"><strong class="profile-strong">Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
-                    <p class="section-p my-2"><strong class="profile-strong">Articles: </strong>{{ profile.user.article_posts.count }}</p>
+                    <p class="section-p"><strong class="profile-strong">Articles: </strong>{{ profile.user.article_posts.count }}</p>
                     {% if profile.bio %}
-                    <p class="section-title my-4" id="auth">Bio: </p>
+                    <p class="section-title my-2" id="auth">Bio: </p>
                     <p class="section-p w-25">{{ profile.bio|safe }}</p>
-                    {% endif %}
-                    {% if request.user == profile.user %}
-                    <button id="myBtn" class="btn btn-custom-form mb-4">Edit</button>
                     {% endif %}
                 </div>
             </div>
         </div>
 
         <!-- profile right side on tablets/large screens -->
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-5 offset-lg-2 text-center mt-2">
             <div class="profile-articles text-center">
                 <h2 class="text-center section-title mb-4" id="auth">Latest Articles</h2>
                 {% for article in profile.user.article_posts.all %}
@@ -99,15 +101,15 @@
     <div id="myModal" class="modal mt-5">
     
         <!-- modal content -->
-        <div class="modal-content container">
+        <div class="modal-content container text-center shadow">
             <!-- <span class="close fs-1 pe-2">&times;</span> -->
             <form method="POST" action="{% url 'profile_edit' request.user.id %}" class="mb-2 p-2" enctype="multipart/form-data">
-                <h2 class="text-center fs-4">Edit Profile</h2>
+                <h2 class="text-center section-title fs-4 mb-4" id="auth">Edit Profile</h2>
                 {% csrf_token %}
                 {{ form|crispy }}
                 {{ form.media }}
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary w-25">Save Changes</button>
+                    <button type="submit" class="btn btn-custom-form">Save Changes</button>
                 </div>
             </form>
         </div>
