@@ -48,6 +48,10 @@ em {
     font-size: medium;
 }
 
+strong {
+    font-family: var(--title);
+}
+
 main {
     flex: 1 0 auto;
     background-color: var(--white);
@@ -200,7 +204,7 @@ footer {
     transition: transform 0.3s;
     /* transform point to assist smooth animation */
     transform-origin: top center;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
 .btn-custom:hover {
@@ -249,9 +253,9 @@ footer {
     line-height: 3rem;
 }
 
-#gallery {
+#booking {
     display: inline-block;
-    border-bottom: 10px dashed var(--green);
+    border-bottom: 10px dashed var(--blue);
     line-height: 3rem;
 }
 
@@ -265,6 +269,7 @@ footer {
     font-weight: 400;
     line-height: 2.5rem;
 }
+
 
 .section-em {
     font-size: 22px;
@@ -307,7 +312,7 @@ footer {
     font-size: 28px;
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     transition: transform 0.3s;
     /* transform point to assist smooth animation */
     transform-origin: top center;
@@ -354,20 +359,48 @@ footer {
 }
 
 .form-select {
-    background-color: #d3d3d3;
+    background-color: #b163e52e;
     border: none;
     border-radius: 8px 0 8px 0;
 }
 
 .form-check .form-check-input {
+    background-color: #b163e52e;
     float: none;
     margin-left: -1.5em;
     margin-right: 1em;
 }
 
 .form-check-input {
-    background-color: #d3d3d3;
+    background-color: #b163e52e;
     border: none;
+}
+
+/* override browser text input prefill colour */
+/* Webkit (Chrome, Safari) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #b163e54f inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* Firefox */
+input:-moz-autofill {
+    -moz-box-shadow: 0 0 0 30px #b163e54f inset !important;
+    background-color:#ffffff !important;
+    color: fieldtext !important;
+}
+
+/* Microsoft Edge */
+input:-ms-input-placeholder,
+input:-ms-autofill {
+    -ms-box-shadow: 0 0 0 30px #b163e54f inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+input {
+    text-align: center;
 }
 
 /* selector for the 'Choose File' button */
@@ -475,6 +508,52 @@ input[type="file"]::file-selector-button {
     border: 1px solid var(--coral);
     border-radius: 4px;
     padding: 10px;
+}
+
+/* profile */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    border: 10px solid var(--blue);
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+p {
+    font-family: var(--main-font);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+
+.profile-strong {
+    font-size: 26px;
+}
+
+@media (max-width: 576px) {
+    .profile-info,
+    .profile-details {
+        flex-direction: column;
+    }
+
+    .profile-picture {
+        margin-bottom: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 /* images */
