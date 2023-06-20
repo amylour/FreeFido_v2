@@ -378,6 +378,7 @@ footer {
 
 .form-check .form-check-input {
     background-color: #b163e52e;
+    color: var(--black);
     float: none;
     margin-left: -1.5em;
     margin-right: 1em;
@@ -385,6 +386,7 @@ footer {
 
 .form-check-input {
     background-color: #b163e52e;
+    color: var(--black);
     border: none;
 }
 
@@ -427,6 +429,10 @@ input[type="file"]::file-selector-button {
 .add-article-btn {
     width: 88px;
     height: 92px;
+}
+
+.article-title {
+    font-weight: bold;
 }
 
 .like-icon {
@@ -672,9 +678,9 @@ tr {
     transition: opacity 0.3s ease;
 }
 
-/* .image-container:hover .image-overlay {
+.image-container:hover .image-overlay {
     opacity: 1;
-} */
+}
 
 .image-title {
     font-size:20px;
