@@ -113,7 +113,7 @@ footer {
 }
 
 .footer-bg {
-    background-image: url('/../static/images/footer_bg.png');
+    background-image: url('../static/images/footer_bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
