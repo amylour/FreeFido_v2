@@ -42,17 +42,17 @@
                 <h2 class="text-center section-title mb-4" id="auth">Latest Articles</h2>
                 {% for article in profile.user.article_posts.all %}
                 <a href="{% url 'article_page' article.slug %}">
-                    <h3>{{ article.title }}</h3>
+                    <h3 class="special-anchor-article">{{ article.title }}</h3>
                 </a>
                 <p>{{ article.created_on|date:'d M Y' }}</p>
                 {% endfor %}
             </div>
-            <hr class="w-50 mx-auto mt-3">
+            <!-- <img src="{% static '../static/icons/tennis-ball.png' %}" alt="hr-tennis ball" class="mx-auto my-3 hr-special"> -->
             <h2 class="text-center section-title my-4" id="booking">Active Bookings</h2>
             {% if bookings %}
-            <div class="text-center">
-                <table class="table table-striped">
-                    <thead>
+            <div class="text-center my-3">
+                <table class="table table-striped rounded-table">
+                    <thead class="rounded-table">
                         <tr>
                             <th>Booking Date</th>
                             <th>Booking Time</th>
@@ -71,13 +71,21 @@
                             <td>
                                 {% if request.user == booking.user %}
                                 <div class="text-center">
-                                    <a href="{% url 'booking_edit' booking.id %}"
-                                        class="btn btn-primary w-50 m-1">Edit</a>
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link" title="Edit Booking">
+                                                <img src="{% static '../static/icons/edit_booking.png' %}" alt="edit booking" class="icon-delete-btn">
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link" title="Delete Booking">
+                                                <img src="{% static '../static/icons/delete_booking.png' %}" alt="delete booking"
+                                                    class="icon-delete-btn">
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    <a href="{% url 'booking_delete' booking.id %}"
-                                        class="btn btn-danger w-50 m-1">Delete</a>
-                                </div>
+
                                 {% endif %}
                             </td>
                         </tr>
