@@ -48,11 +48,11 @@
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/" title="Logout"><img class="nav-icons" src="{% static 'icons/logout.png' %}" alt="logout icon"></a>
+                        <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}" href="/account/logout/" title="Logout"><img class="nav-icons" src="{% static 'icons/logout.png' %}" alt="logout icon"></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/" title="Log In"><img
+                        <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}" href="/account/login/" title="Log In"><img
                                 class="nav-icons" src="{% static 'icons/login.png' %}" alt="login icon"></a>
                     </li>
                     {% endif %}
