@@ -69,6 +69,8 @@ main {
 
 .special-anchor-article {
     color: var(--black);
+    font-weight: bold;
+    z-index: 3;
 }
 
 .hr-special {
@@ -422,12 +424,17 @@ input[type="file"]::file-selector-button {
     border-radius: 8px 0 8px 0;
 }
 
-/* icons */
+/* article icons */
+
+.add-article-btn {
+    width: 88px;
+    height: 92px;
+}
 
 .like-icon {
     width: 30px;
     height: 30px;
-    margin: 6px
+    margin: 6px;
 }
 
 .like-button {
@@ -450,6 +457,12 @@ input[type="file"]::file-selector-button {
 
 /* article 'cards' */
 
+.author {
+   font-family: var(--main-font);
+   font-size: 18px;
+   font-weight: bold;
+}
+
 .article-img {
     border-radius: 20px;
     object-fit: cover;
@@ -459,19 +472,36 @@ input[type="file"]::file-selector-button {
 
 .card {
     --bs-card-border-width: 0px;
+    position: relative;
+    border: none;
 }
 
 .card-img-top {
-    border-radius: 20px;
-    object-fit: contain;
-    height: 300px;
-    width: 450px;
+    position: relative;
+    z-index: 2;
+    border-radius: 40px;
+    object-fit: cover;
+    height: 337px;
+    width: 100%;
 }
 
 .jumboimage {
     height: 400px;
     width: 650px;
     overflow: hidden;
+}
+
+.overlay-card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #b163e52e;
+    z-index: 1;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    pointer-events: none;
 }
 
 /* alert messages */
@@ -569,7 +599,12 @@ p {
     }
 }
 
-/* booking table */
+/* booking */
+
+.add-booking-btn {
+    height: 100px;
+    width: 100px;
+}
 
 tr {
     background-color: #4ce0c24f;
@@ -607,6 +642,14 @@ tr {
     overflow: hidden;
 }
 
+.image-container-article {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+
 .gallery-image {
     width: 100%;
     height: 280px;
@@ -631,9 +674,9 @@ tr {
     transition: opacity 0.3s ease;
 }
 
-.image-container:hover .image-overlay {
+/* .image-container:hover .image-overlay {
     opacity: 1;
-}
+} */
 
 .image-title {
     font-size:20px;
