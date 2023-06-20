@@ -207,7 +207,6 @@ footer {
 }
 
 .btn-custom {
-    background-image: url('../icons/btn_pattern.png');
     background-color: #b163e5;
     background-size: cover;
     border-radius: 50px;
@@ -317,7 +316,6 @@ footer {
 }
 
 .btn-custom-form {
-    background-image: url('../icons/btn_pattern.png');
     background-color: #b163e5;
     background-size: cover;
     border-radius: 30px;
