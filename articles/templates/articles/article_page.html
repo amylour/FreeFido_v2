@@ -10,8 +10,8 @@
 
 {% if request.user == article.author %}
 <div class="text-center">
-    <a href="{% url 'article_edit' article.slug %}" class="btn btn-primary w-25">Edit</a>
-    <a href="{% url 'article_delete' article.slug %}" class="btn btn-primary w-25">Delete</a>
+    <a href="{% url 'article_edit' article.slug %}" class="btn btn-link" title="edit article"><img src="{% static '../static/icons/edit_profile.png' %}" alt="edit article" class="icon-delete-btn"></a>
+    <a href="{% url 'article_delete' article.slug %}" class="btn btn-link" title="delete article"><img src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
 </div>
 {% endif %}
 
@@ -55,7 +55,7 @@
                                 </button>
                                 {% else %}
                                 <button type="submit" name="articlelike_id" value="{{post.slug}}" class="like-button">
-                                    <img src="{% static 'icons/heart_outline.png' %}" class="like-icon"
+                                    <img src="{% static 'icons/heart.png' %}" class="like-icon"
                                         alt="pawprint heart outline like icon">
                                 </button>
                                 {% endif %}
@@ -101,7 +101,7 @@
 
                     {% if request.user.username == comment.name %}
                     <div class="text-center">
-                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-danger w-25">Delete</a>
+                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-link"><img src="{% static '../static/icons/delete_booking.png' %}" alt="delete article" class="icon-delete-btn"></a>
                     </div>
                     {% endif %}
                 </div>
@@ -122,7 +122,7 @@
                 <form method="post" class="m-4">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-custom">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}
