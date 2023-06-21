@@ -8,27 +8,30 @@
 
 {% load crispy_forms_tags %}
 
-{% if request.user == article.author %}
-<div class="text-center">
-    <a href="{% url 'article_edit' article.slug %}" class="btn btn-link" title="edit article"><img src="{% static '../static/icons/edit_profile.png' %}" alt="edit article" class="icon-delete-btn"></a>
-    <a href="{% url 'article_delete' article.slug %}" class="btn btn-link" title="delete article"><img src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
-</div>
-{% endif %}
+
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6">
+                <div class="d-flex align-items-center mt-5">
                 <h1 class="article-title">{{ article.title }}</h1>
+                {% if request.user == article.author %}
+                    <a href="{% url 'article_edit' article.slug %}" class="btn btn-link" title="edit article"><img
+                            src="{% static '../static/icons/edit_profile.png' %}" alt="edit article" class="icon-delete-btn"></a>
+                    <a href="{% url 'article_delete' article.slug %}" class="btn btn-link" title="delete article"><img
+                            src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
+                {% endif %}
+                </div>
                 <p class="article-details">{{ article.author }} | {{ article.created_on }}</p>
                 <p class="article-excerpt"><em>{{ article.excerpt }}</em></p>
-            </div>
             <div class="d-none d-md-block col-md-6 jumboimage">
                 {% if "placeholder" in article.featured_image.url %}
                 <img src="{% static 'images/placeholder_img.png' %}" class="article-img" width="100%">
                 {% else %}
                 <img src=" {{ article.featured_image.url }}" class="article-img" width="100%">
                 {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -85,7 +88,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4 mt-3">
-            <h3>Comments:</h3>
+            <h3 class="section-title">Comments:</h3>
             <div class="card-body">
                 <!-- Iterate through comments -->
                 {% for comment in comments %}
@@ -117,12 +120,12 @@
                 {% else %}
 
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
+                <h3 class="section-title">Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" class="m-4">
+                <form method="post" class="">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-custom">Submit</button>
+                    <button type="submit" class="btn btn-custom my-3">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}
