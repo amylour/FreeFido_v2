@@ -433,6 +433,7 @@ input[type="file"]::file-selector-button {
 
 .article-title {
     font-weight: bold;
+    margin-right: 40px;
 }
 
 .like-icon {
