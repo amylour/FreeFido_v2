@@ -14,12 +14,38 @@
         <h1 class="text-center section-title my-3" id="auth">Edit Article</h1>
         {% csrf_token %}
         {{ form.media }}
-        {{ form|crispy }}
+        <div id="div_id_title" class="mb-3">
+            <label for="id_title" class="form-label requiredField">Title<span class="asteriskField">*</span></label>
+            <input type="text" name="title" value="{{ form.title.value }}" maxlength="200"
+                class="textinput form-control" required id="id_title">
+        </div>
+        <div id="div_id_featured_image" class="mb-3">
+            <label for="id_featured_image" class="form-label requiredField">Article Image<span
+                    class="asteriskField">*</span></label>
+            <input type="file" name="featured_image" class="form-control" id="id_featured_image">
+        </div>
+        <div id="div_id_image_alt" class="mb-3">
+            <label for="id_image_alt" class="form-label requiredField">Describe Image<span
+                    class="asteriskField">*</span></label>
+            <input type="text" name="image_alt" value="{{ form.image_alt.value }}" maxlength="100"
+                class="textinput form-control" required id="id_image_alt">
+        </div>
+        <div id="div_id_excerpt" class="mb-3">
+            <label for="id_excerpt" class="form-label requiredField">Excerpt<span class="asteriskField">*</span></label>
+            <textarea name="excerpt" cols="40" rows="10" maxlength="300" class="textarea form-control" required
+                id="id_excerpt">{{ form.excerpt.value }}</textarea>
+        </div>
+        <div id="div_id_content" class="mb-3">
+            <label for="id_content" class="form-label requiredField">Content<span class="asteriskField">*</span></label>
+            <div class="fieldBox">
+                <textarea name="content" cols="40" rows="10" class="djrichtextfield richtextwidget form-control"
+                    maxlength="5000" required id="id_content">{{ form.content.value }}</textarea>
+            </div>
+        </div>
         <div class="text-center">
             <button type="submit" class="btn btn-custom mt-2">Edit Article</button>
         </div>
     </form>
 </div>
-
 
 {% endblock %}

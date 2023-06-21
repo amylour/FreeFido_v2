@@ -6,7 +6,7 @@ class GalleryImageForm(forms.ModelForm):
     """ A form to upload an image to the gallery wall """
     class Meta:
         model = GalleryImage
-        fields = ['title', 'photo', 'image_description']
+        fields = ['photo', 'title', 'image_description']
         widgets = {
             'photo_by': forms.HiddenInput(),  # add a hidden input widget for photo_by
         }

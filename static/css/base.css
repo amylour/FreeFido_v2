@@ -97,11 +97,17 @@ select {
     text-align: center;
 }
 
+.richtextwidget {
+    border-radius: 20px;
+}
+
+
 /* is_vaccinated checkbox styling */
 .form-check .form-check-input {
     float: none;
     margin-left: -1.5em;
     margin-right: 1em;
+    color: #0d0d0d;
 }
 
 /* footer */
@@ -234,6 +240,44 @@ footer {
     color: var(--white) !important;
 }
 
+/*  booking button styling */
+.booking-btn {
+    background-color: var(--blue);
+}
+
+.booking-btn:hover {
+    transform: scale(1.05);
+    background-color: #34dfbc;
+    color: var(--white);
+}
+
+.booking-btn:active {
+    transform: scale(0.95);
+    /* override bootstrap css btn active properties with !important */
+    background-color: #34dfbc !important;
+    color: var(--white) !important;
+    border: none;
+}
+
+/* gallery button styling */
+.gallery-btn {
+    background-color: var(--green);
+}
+
+.gallery-btn:hover {
+    transform: scale(1.05);
+    background-color: #3bd9534f;
+    color: var(--white);
+}
+
+.gallery-btn:active {
+    transform: scale(0.95);
+    /* override bootstrap css btn active properties with !important */
+    background-color: #3bd9534f !important;
+    color: var(--white) !important;
+    border: none;
+}
+
 /* home page */
 
 .section-title {
@@ -364,8 +408,10 @@ footer {
     text-align: center;
 }
 
+/* Auth/Articles form styling */
 .form-control {
     background-color: #b163e52e;
+    color: var(--black);
     border: none;
     border-radius: 20px;
 }
@@ -390,7 +436,7 @@ footer {
     border: none;
 }
 
-/* override browser text input prefill colour */
+/* Override browser text input prefill colour */
 /* Webkit (Chrome, Safari) */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #b163e54f inset !important;
@@ -417,15 +463,100 @@ input {
     text-align: center;
 }
 
-/* selector for the 'Choose File' button */
+/* Selector for the 'Choose File' button */
 input[type="file"]::file-selector-button {
-    background-color: var(--purple);
-    color: rgb(255, 255, 255);
+    background-color: #b163e54f;
+    color: #0d0d0d;
+    border-radius: 8px 0 8px 0;
+}
+
+/* Booking section form styling */
+.booking-section .form-control {
+    background-color: #4ce0c24d;
+}
+
+.booking-section .form-select {
+    background-color: #4ce0c24d;
+}
+
+.booking-section .form-check-input {
+    background-color: #4ce0c24d;
+}
+
+/*  Booking section active field box */
+/* Webkit (Chrome, Safari) */
+.booking-section input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #4ce0c27c inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* Firefox */
+.booking-section input:-moz-autofill {
+    -moz-box-shadow: 0 0 0 30px #4ce0c27c inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* Microsoft Edge */
+.booking-section input:-ms-input-placeholder,
+.booking-sectioninput:-ms-autofill {
+    -ms-box-shadow: 0 0 0 30px #4ce0c27c inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* selector for the 'Choose File' button */
+.booking-section input[type="file"]::file-selector-button {
+    background-color: #4ce0c27c;
+    color: #0d0d0d;
+    border-radius: 8px 0 8px 0;
+}
+
+/* gallery section form styling */
+.gallery-section .form-control {
+    background-color: #3bd95342;
+}
+
+.gallery-section .form-select {
+    background-color: #3bd95342;
+}
+
+.gallery-section .form-check-input {
+    background-color: #3bd95342;
+}
+
+/*  Gallery section active field box */
+/* Webkit (Chrome, Safari) */
+.gallery-section input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #3bd95342 inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* Firefox */
+.gallery-section input:-moz-autofill {
+    -moz-box-shadow: 0 0 0 30px #3bd95342 inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* Microsoft Edge */
+.gallery-section input:-ms-input-placeholder,
+.gallery-section input:-ms-autofill {
+    -ms-box-shadow: 0 0 0 30px #3bd95342 inset !important;
+    background-color: #ffffff !important;
+    color: fieldtext !important;
+}
+
+/* selector for the 'Choose File' button */
+.gallery-section input[type="file"]::file-selector-button {
+    background-color:#3bd95342;
+    color: #0d0d0d;
     border-radius: 8px 0 8px 0;
 }
 
 /* article icons */
-
 .add-article-btn {
     width: 88px;
     height: 92px;
@@ -458,6 +589,10 @@ input[type="file"]::file-selector-button {
 .like-num {
     font-weight: bold;
     color: var(--black);
+}
+
+.article-object-title {
+    font-size: x-large;
 }
 
 /* article 'cards' */

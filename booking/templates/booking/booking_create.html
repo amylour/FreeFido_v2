@@ -9,7 +9,7 @@
 {% load crispy_forms_tags %}
 <div class="text-center">
 <h1 class="text-center mx-auto section-title" id="booking">Create Booking</h1>
-<form method="post" class="text-center w-75 mx-auto">
+<form method="post" class="text-center w-75 mx-auto booking-section">
     {% csrf_token %}
     <div class="row mx-auto">
         <div class="col m-4">
@@ -39,7 +39,7 @@
         </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-custom">Create</button>
+    <button type="submit" class="btn btn-custom booking-btn">Create</button>
 </form>
 </div>
 
