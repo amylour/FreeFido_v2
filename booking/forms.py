@@ -26,7 +26,7 @@ class BookingForm(forms.ModelForm):
         self.fields['dog_name2'].label = "Second Dog Name"
         self.fields['breed2'].label = "Second Dog Breed"
         self.fields['color2'].label = "Second Dog Color"
-        self.fields['is_vaccinated2'].label = "Is vaccinated?"
+        self.fields['is_vaccinated2'].label = "Is vaccinated"
         self.fields['gender2'].label = "Second Dog Gender"
 
         self.fields['is_vaccinated2'].widget = forms.CheckboxInput()
