@@ -11,14 +11,21 @@
         <div class="col-md-6 offset-md-3">
             <h1 class="section-title mb-5" id="booking">Booking</h1>
         </div>
-        <div class="col-md-3 text-md-end">
+        <div class="col-md-3 text-center text-md-end">
+            {% if request.user.bookings.count >= 4 %}
+            <div class="message-box">
+                <p class="text-center">You have reached the maximum number of active bookings.</p>
+            </div>
+            {% else %}
             <a href="{% url 'booking_create' %}" class="my-4" title="Make a Booking">
-                <img src="{% static '../static/icons/add_booking.png' %}" alt="add booking" class="add-photo-btn add-booking-btn">
+                <img src="{% static '../static/icons/add_booking.png' %}" alt="add booking"
+                    class="add-photo-btn add-booking-btn">
             </a>
+            {% endif %}
         </div>
     </div>
 {% if request.user.bookings.all %}
-<div class="text-center w-75 mx-auto my-4">
+<div class="table-responsive my-4 w-75 mx-auto">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -37,22 +44,20 @@
                 <td>{{ booking.dog_name }}</td>
                 <td>{{ booking.dog_name2 }}</td>
                 <td>{% if request.user == booking.user %}
-                    <div class="text-center">
-                        <div class="d-flex">
-                            <div class="col">
-                                <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link" title="Edit Booking"><img
-                                        src="{% static '../static/icons/edit_booking.png' %}" alt="edit booking"
-                                        class="icon-delete-btn"></a>
-                            </div>
-                            <div class="text-center">
-                                <div class="col">
-                                    <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link" title="Delete Booking"><img
-                                            src="{% static '../static/icons/delete_booking.png' %}" alt="delete booking"
-                                            class="icon-delete-btn"></a>
-                                </div>
-                            </div>
+                <div class="text-center">
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <div class="col">
+                            <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link" title="Edit Booking"><img
+                                    src="{% static '../static/icons/edit_booking.png' %}" alt="edit booking"
+                                    class="icon-delete-btn"></a>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link" title="Delete Booking"><img
+                                    src="{% static '../static/icons/delete_booking.png' %}" alt="delete booking"
+                                    class="icon-delete-btn"></a>
                         </div>
                     </div>
+                </div>
                     {% endif %}
                 </td>
             </tr>

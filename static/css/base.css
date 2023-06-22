@@ -200,6 +200,14 @@ footer {
     transform: scale(0.9);
 }
 
+.custom-toggler {
+    padding: 10px 15px;
+    font-size: 20px;
+    background-color: #b163e52e;
+    border: none;
+    border-radius: 5px;
+}
+
 /* img.logo {
     width: ; */
 
@@ -889,6 +897,16 @@ tr {
     .navbar-nav {
         flex-direction: row;
         align-items: center;
+    }
+
+    .nav-icons {
+        height: 55px;
+        width: 55px;
+    }
+
+    .nav-logo {
+        height: 90px;
+        width: auto;
     }
 }
 
