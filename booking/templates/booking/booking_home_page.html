@@ -9,12 +9,12 @@
 <div class="container my-4 text-center">
     <div class="row align-items-center">
         <div class="col-md-6 offset-md-3">
-            <h1 class="section-title mb-5" id="booking">Booking</h1>
+            <h1 class="section-title mb-3" id="booking">Your Bookings</h1>
         </div>
         <div class="col-md-3 text-center text-md-end">
             {% if request.user.bookings.count >= 4 %}
-            <div class="message-box">
-                <p class="text-center">You have reached the maximum number of active bookings.</p>
+            <div class="message-box mb-2 mr-5">
+                <p class="text-center booking-p">You have reached the maximum number of <strong>4</strong> active bookings.</p>
             </div>
             {% else %}
             <a href="{% url 'booking_create' %}" class="my-4" title="Make a Booking">
@@ -66,6 +66,18 @@
     </table>
 </div>
 {% endif %}
+
+<div class="container my-4 w-75">
+    <h2 class="section-title" id="booking">Park Rules</h2>
+    <ol class="park-rules section-p my-3">
+        <li> Please ensure to use the park only within your allocated time. Repeated late leaving of the park will result in a booking ban.</li>
+        <li> No more than <strong>2</strong> dogs per person.</li>
+        <li> Extra dogs and owners are most welcome to join your booking but please ensure to follow rule no.2.</li>
+        <li> Dogs are the responsibility of the owner at all times.</li>
+        <li> We strive to maintain a clean and safe park for all members - please pick up after your dog and leave no rubbish behind.</li>
+    </ol>
+    <div class="text-center"><p class="section-p-rules">Thank you for using FreeFido Dog Park - we hope you have a ball!</p></div>
+</div>
 
 
 {% endblock %}
