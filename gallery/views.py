@@ -50,3 +50,4 @@ class DeletePhoto(DeleteView):
         self.object.delete()
         messages.success(request, "Photo deleted successfully.")
         return redirect(success_url)
+# bug deletion of most recent photo uploaded by user rather than chosen photo
