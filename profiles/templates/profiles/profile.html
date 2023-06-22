@@ -38,8 +38,8 @@
 
         <!-- profile right side on tablets/large screens -->
         <div class="col-lg-5 offset-lg-2 text-center mt-5">
-            <div class="profile-articles text-center">
-                <h2 class="text-center section-title mb-4" id="auth">Latest Articles</h2>
+            <h2 class="text-center section-title mb-4" id="auth">Latest Articles</h2>
+            <div class="profile-articles text-center mb-2 p-2">
                 {% for article in profile.user.article_posts.all %}
                 <a href="{% url 'article_page' article.slug %}">
                     <h3 class="special-anchor-article">{{ article.title }}</h3>
@@ -47,8 +47,9 @@
                 <p>{{ article.created_on|date:'d M Y' }}</p>
                 {% endfor %}
             </div>
+            <hr class="my-2">
             <!-- <img src="{% static '../static/icons/tennis-ball.png' %}" alt="hr-tennis ball" class="mx-auto my-3 hr-special"> -->
-            <h2 class="text-center section-title my-4" id="booking">Active Bookings</h2>
+            <h2 class="text-center section-title my-2" id="booking">Active Bookings</h2>
             {% if bookings %}
             <div class="text-center my-3">
                 <table class="table table-striped">
