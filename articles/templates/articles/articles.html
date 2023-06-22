@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-3 text-md-end">
             {% if user.is_authenticated %}
-            <a href="{% url 'article_create' %}" class="my-5">
+            <a href="{% url 'article_create' %}" class="my-5" title="Add an Article">
                 <img src="{% static '../static/icons/add_article.png' %}" alt="add article" class="add-photo-btn add-article-btn">
             </a>
             {% endif %}
