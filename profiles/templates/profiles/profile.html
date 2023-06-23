@@ -28,7 +28,7 @@
                     <h1 class="text-center section-title" id="auth">{{ profile.user.username }}</h1>
                     <p class="section-p my-2"><strong class="profile-strong">Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
                     <p class="section-p"><strong class="profile-strong">Articles: </strong>{{ profile.user.article_posts.count }}</p>
-                    {% if profile.bio %}
+                    {% if profile.bio is not none %}
                     <p class="section-title my-2" id="auth">Bio: </p>
                     <p class="section-p w-25">{{ profile.bio|safe }}</p>
                     {% endif %}
