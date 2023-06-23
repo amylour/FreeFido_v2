@@ -10,7 +10,7 @@
     {% block extra_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
         integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -21,7 +21,7 @@
     {% endblock %}
 
     <!-- favicon -->
-    <link rel="icon" href="{% static '../static/icons/ball_favicon.png'  %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'icons/ball_favicon.png'  %}" type="image/x-icon">
 
     <title>FreeFido - {% block title %}{% endblock %}</title>
 </head>
@@ -62,8 +62,8 @@
         }, 3000);
     </script>
 
-    {% block extra_js %} 
-    
+    {% block extra_js %}
+
 
     {% endblock %}
 

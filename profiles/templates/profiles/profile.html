@@ -1,10 +1,10 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
-{% load static %}  
+{% load static %}
 
 {% block title %}Profile - {{profile.user.username|default:'User' }}{% endblock %}
 
-{% block content %} 
+{% block content %}
 
 <div class="container p-4">
     <div class="row">
@@ -15,20 +15,23 @@
                 <div class="profile-info text-center">
                     <div class="mb-4">
                         {% if profile.image.url is not none %}
-                        <img class="profile-img rounded-circle"
-                            src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
+                        <img class="profile-img rounded-circle" src="{{ profile.image.url }}"
+                            alt="{{ profile.user.username }}'s profile image">
                         {% else %}
-                        <img class="profile-img rounded-circle" src="{% static '/icons/tennis-ball.png' %}" alt="Image not found icon">
+                        <img class="profile-img rounded-circle" src="{% static 'icons/tennis-ball.png' %}"
+                            alt="Image not found icon">
                         {% endif %}
                     </div>
                     {% if request.user == profile.user %}
                     <button id="myBtn" class="btn edit-button btn btn-link my-2">
-                        <img src="{% static '../static/icons/edit_profile.png' %}" alt="edit profile" class="icon-delete-btn">
+                        <img src="{% static 'icons/edit_profile.png' %}" alt="edit profile" class="icon-delete-btn">
                     </button>
                     {% endif %}
                     <h1 class="text-center section-title" id="auth">{{ profile.user.username }}</h1>
-                    <p class="section-p my-2"><strong class="profile-strong">Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
-                    <p class="section-p"><strong class="profile-strong">Articles: </strong>{{ profile.user.article_posts.count }}</p>
+                    <p class="section-p my-2"><strong class="profile-strong">Joined: </strong>{{
+                        profile.user.date_joined|date:'d M Y' }}</p>
+                    <p class="section-p"><strong class="profile-strong">Articles: </strong>{{
+                        profile.user.article_posts.count }}</p>
                     {% if profile.bio is not none %}
                     <p class="section-title my-2" id="auth">Bio: </p>
                     <p class="section-p w-25">{{ profile.bio|safe }}</p>
@@ -75,13 +78,16 @@
                                 <div class="text-center">
                                     <div class="d-flex">
                                         <div class="col">
-                                            <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link" title="Edit Booking">
-                                                <img src="{% static '../static/icons/edit_booking.png' %}" alt="edit booking" class="icon-delete-btn">
+                                            <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link"
+                                                title="Edit Booking">
+                                                <img src="{% static 'icons/edit_booking.png' %}" alt="edit booking"
+                                                    class="icon-delete-btn">
                                             </a>
                                         </div>
                                         <div class="col">
-                                            <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link" title="Delete Booking">
-                                                <img src="{% static '../static/icons/delete_booking.png' %}" alt="delete booking"
+                                            <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link"
+                                                title="Delete Booking">
+                                                <img src="{% static 'icons/delete_booking.png' %}" alt="delete booking"
                                                     class="icon-delete-btn">
                                             </a>
                                         </div>
@@ -103,15 +109,16 @@
         <p class="text-center mx-auto w-50">No profile information available.</p>
         {% endif %}
 
-    </div>   
+    </div>
 
     <!-- modal code from W3Schools -->
     <div id="myModal" class="modal mt-5">
-    
+
         <!-- modal content -->
         <div class="modal-content container text-center shadow">
             <!-- <span class="close fs-1 pe-2">&times;</span> -->
-            <form method="POST" action="{% url 'profile_edit' request.user.id %}" class="mb-2 p-2" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'profile_edit' request.user.id %}" class="mb-2 p-2"
+                enctype="multipart/form-data">
                 <h2 class="text-center section-title fs-4 mb-4" id="auth">Edit Profile</h2>
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -126,7 +133,7 @@
 
 {% endblock %}
 
-{% block extra_js %} 
+{% block extra_js %}
 {{ block.super }}
 <script>
     // Get the modal - W3Schools
@@ -139,21 +146,20 @@
     const span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function() {
-    modal.style.display = "block";
-    }
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
 
     // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
-        }
+    };
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
         if (event.target == modal) {
-        modal.style.display = "none";
+            modal.style.display = "none";
         }
-        }
+    }
 </script>
 {% endblock %}
-
