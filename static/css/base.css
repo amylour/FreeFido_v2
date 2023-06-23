@@ -86,7 +86,8 @@ hr {
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
 }
 
-label, em {
+label,
+em {
     font-size: 18px;
 }
 
@@ -146,7 +147,7 @@ footer {
 }
 
 .footer-bg {
-    background-image: url('../images/footer_bg.png');
+    background-image: url('../images/footer.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -503,7 +504,7 @@ input:-webkit-autofill {
 /* Firefox */
 input:-moz-autofill {
     -moz-box-shadow: 0 0 0 30px #b163e54f inset !important;
-    background-color:#ffffff !important;
+    background-color: #ffffff !important;
     color: fieldtext !important;
 }
 
@@ -607,7 +608,7 @@ input[type="file"]::file-selector-button {
 
 /* selector for the 'Choose File' button */
 .gallery-section input[type="file"]::file-selector-button {
-    background-color:#3bd95342;
+    background-color: #3bd95342;
     color: #0d0d0d;
     border-radius: 8px 0 8px 0;
 }
@@ -654,9 +655,9 @@ input[type="file"]::file-selector-button {
 /* article 'cards' */
 
 .author {
-   font-family: var(--main-font);
-   font-size: 18px;
-   font-weight: bold;
+    font-family: var(--main-font);
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .article-img {
@@ -878,7 +879,7 @@ tr {
 }
 
 .image-title {
-    font-size:20px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
