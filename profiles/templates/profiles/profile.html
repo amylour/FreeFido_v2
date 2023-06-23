@@ -2,12 +2,13 @@
 
 {% load static %}  
 
-{% block title %}Profile - {{profile.user.username}}{% endblock %}
+{% block title %}Profile - {{profile.user.username|default:'User' }}{% endblock %}
 
 {% block content %} 
 
 <div class="container p-4">
     <div class="row">
+        {% if profile %}
         <!-- profile left side on tablets/large screens -->
         <div class="col-lg-5">
             <div class="profile">
@@ -98,6 +99,10 @@
             <p class="text-center mx-auto w-50">You have no active bookings.</p>
             {% endif %}
         </div>
+        {% else %}
+        <p class="text-center mx-auto w-50">No profile information available.</p>
+        {% endif %}
+
     </div>   
 
     <!-- modal code from W3Schools -->
@@ -116,7 +121,6 @@
                 </div>
             </form>
         </div>
-    
     </div>
 </div>
 

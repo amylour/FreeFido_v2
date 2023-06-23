@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProfileView, ProfileEdit, ProfileDelete
+from .views import ProfileView, ProfileEdit
 
 urlpatterns = [
     path('user/<int:pk>/', ProfileView.as_view(), name='profile'),

@@ -14,12 +14,19 @@ class ProfileView(TemplateView):
     """ Profile View """
     template_name = 'profiles/profile.html'
 
-    def get_context_data(self, ** kwargs):
-        profile = Profile.objects.get(user=self.kwargs["pk"])
-        bookings = profile.user.bookings.all()
+    def get_context_data(self, **kwargs):
+        try:
+            profile = Profile.objects.get(user=self.kwargs["pk"])
+            bookings = profile.user.bookings.all()
+            form = ProfileForm(instance=profile)
+        except Profile.DoesNotExist:
+            profile = None
+            bookings = []
+            form = ProfileForm()
+
         context = {
             'profile': profile,
-            'form': ProfileForm(instance=profile),
+            'form': form,
             'bookings': bookings
         }
 
@@ -38,11 +45,5 @@ class ProfileEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user == self.get_object().user
 
-
-class ProfileDelete(DeleteView):
-    """Delete profile view"""
-    model = Profile
-    template_name = 'profiles/delete_profile.html'
-    success_url = reverse_lazy('home')
 
     
