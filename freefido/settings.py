@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'djrichtextfield',
     'django_summernote',
-    'django_agenda',
     'articles',
     'booking',
     'home',
