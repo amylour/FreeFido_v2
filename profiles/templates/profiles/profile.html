@@ -13,11 +13,11 @@
             <div class="profile">
                 <div class="profile-info text-center">
                     <div class="mb-4">
-                        {% if profile.image.url %}
+                        {% if profile.image.url is not none %}
                         <img class="profile-img rounded-circle"
                             src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
                         {% else %}
-                        <img src="{% static '.icons/pawprint.png' %}" alt="Image not found icon">
+                        <img class="profile-img rounded-circle" src="{% static '/icons/tennis-ball.png' %}" alt="Image not found icon">
                         {% endif %}
                     </div>
                     {% if request.user == profile.user %}
@@ -98,13 +98,7 @@
             <p class="text-center mx-auto w-50">You have no active bookings.</p>
             {% endif %}
         </div>
-    </div>
-    
-    <!-- {% if request.user == profile.user %}
-    <div class="text-center mx-auto w-25">
-    <a href="{% url 'delete_profile' request.user.id %}" class="btn btn-danger">Delete Profile</a>
-    </div>
-    {% endif %} -->
+    </div>   
 
     <!-- modal code from W3Schools -->
     <div id="myModal" class="modal mt-5">
