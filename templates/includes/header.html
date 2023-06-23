@@ -14,6 +14,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+            <!-- search bar form only when article appears in url -->
+            {% if 'article' in url_name %}
+            <div class="mx-auto">
+                <form class="d-flex ml-auto" role="search" action="{% url 'articles' %}">
+                    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-custom btn-custom-search" type="submit">Fetch!</button>
+                </form>
+            </div>
+            {% endif %}
             <div class="collapse navbar-collapse nav-items" id="navbarNav">
                 <ul class="navbar-nav">
                     {% if request.user.is_authenticated %}
@@ -58,15 +67,7 @@
                     {% endif %}
                 </ul>
             </div>
-            <!-- search bar form only when article appears in url -->
-            {% if 'article' in url_name %}
-            <div>
-                <form class="d-flex ml-auto" role="search" action="{% url 'articles' %}">
-                    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-custom btn-custom-search" type="submit">Fetch!</button>
-                </form>
-            </div>
-            {% endif %}
+            
         </div>
     </nav>
     {% endwith %}
