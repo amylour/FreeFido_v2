@@ -254,13 +254,14 @@ footer {
     border-radius: 50px;
     font-family: var(--title);
     font-weight: 700;
-    font-size: 32px;
+    font-size: 28px;
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
     /* transform point to assist smooth animation */
     transform-origin: top center;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+    padding: 10px;
 }
 
 .btn-custom:hover {
@@ -942,6 +943,31 @@ tr {
     transform: scale(0.95);
 }
 
+/* Confirm delete modal */
+.modal-photo {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-photo-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px;
+    height: auto;
+    text-align: center;
+    border-radius: 30px;
+}
+
+
 /* media queries */
 
 /* hamburger menu to center under logo on mobile */
@@ -957,7 +983,7 @@ tr {
     }
 
     .nav-logo {
-        height: 90px;
+        height: 80px;
         width: auto;
     }
 }
