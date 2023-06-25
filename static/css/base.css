@@ -986,6 +986,10 @@ tr {
         height: 80px;
         width: auto;
     }
+
+    .hero-image {
+        padding: 20px;
+    }
 }
 
 /* footer media query */
