@@ -1,6 +1,6 @@
 # FreeFido
 
-![freefido responsive screenshot](documentaion/final_views/freefido_amiresponsive.png)
+![freefido responsive screenshot](documentation/final_views/freefido_amiresponsive.png)
 
 ## Introduction
 
