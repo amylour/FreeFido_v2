@@ -1,6 +1,12 @@
 # FreeFido
 
+![freefido responsive screenshot](documentaion/final_views/freefido_amiresponsive.png)
+
 ## Introduction
+
+FreeFido is a social media and booking app for a private dog park. I have created this app for the Code Institute's Full-Stack Developer Course and it is for educational purposes only. FreeFido has been developed as part of the Code Institute's Full-Stack Developer course as my 4th project - focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality.
+
+View live site here : [FreeFido](https://https://freefido.herokuapp.com/)
 
 <hr>
 
@@ -30,7 +36,6 @@
     - [Libraries \& Frameworks](#libraries--frameworks)
     - [Tools \& Programs](#tools--programs)
   - [Testing](#testing)
-    - [Bugs](#bugs)
   - [Deployment](#deployment)
     - [Heroku deployment](#heroku-deployment)
     - [Cloudinary API](#cloudinary-api)
@@ -43,6 +48,18 @@
   - [Acknowledgements](#acknowledgements)
 
 ## Overview
+
+FreeFido is an social media and booking app for a private dog park. Users are invited to:
+
+- Join the Freefido community
+- Create their own profiles
+- Add and interact with articles
+- Create and manage their bookings
+- Upload their favourite snaps from the park
+- Discover more about the dog park
+
+
+
 
 ## UX
 
@@ -177,16 +194,7 @@ Business Owner/Django Admin Panel/Superuser
 
 ## Testing
 
-- TESTING.MD link -> Testing includes bugs/TDD/Python Testing etc/Validation/Linters
-- Security Features and Defensive Design -> Form validation/csrf token/error pages/User Auth
-  
-### Bugs
-
-| No. | Bug | Solved | Fix | Solution Credit | Commit no. |
-| --- | ---------------- | ---- | ------------- | -------------- | ------------|
-| 1   |   Slug not saving as prepopulated field with 'Title' data entered by user  |    U+2713    |   <https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models>  |   e6fb88e  |
-| 2   |  Search function not yielding article return  |  U+2713  | removed 'author', a ForeighKey from the search function in articles/views.py   |   <https://stackoverflow.com/questions/11754877/troubleshooting-related-field-has-invalid-lookup-icontains>         |          |
-| 3   |     |       |     |          |            |
+- For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
 
