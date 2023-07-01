@@ -4,9 +4,9 @@
 
 ## Introduction
 
-FreeFido is a social media and booking app for a private dog park. I have created this app for the Code Institute's Full-Stack Developer Course and it is for educational purposes only. FreeFido has been developed as part of the Code Institute's Full-Stack Developer course as my 4th project - focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality.
+FreeFido is a social media and booking app for a private dog park. FreeFido has been developed as part of the Code Institute's Full-Stack Developer course as my 4th project - focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality. It is for educational purposes only.
 
-View live site here : [FreeFido](https://https://freefido.herokuapp.com/)
+View live site here : [FreeFido](https://freefido.herokuapp.com/)
 
 <hr>
 
@@ -17,6 +17,7 @@ View live site here : [FreeFido](https://https://freefido.herokuapp.com/)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [UX](#ux)
+    - [Design Inspiration](#design-inspiration)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
     - [Agile Methodologies](#agile-methodologies)
@@ -58,10 +59,20 @@ FreeFido is an social media and booking app for a private dog park. Users are in
 - Upload their favourite snaps from the park
 - Discover more about the dog park
 
-
+FreeFido is accessible via all browsers with full responsiveness on different screen sizes. Its aim is to create a safe, informed community of dog owners who can interact and share with each other and avail of the essential booking feature to reserve a spot in the secure, private dog park. I have created this site to meet the needs of the growing private dog park business. Private dog parks have become a highly sought after service for dog owners to exercise and train their dogs in a safe, secure area, without the fear of a strange dog running up to them. Dog reactivity is unfortunately on the rise at public dog parks due to some dog owners being unaware of dog body language and basic etiquette. FreeFido aims to offer a starting point for creating a community of regular users of this dog park who can book one hour slots through the basic booking system. In future development of this project, I hope to offer users an upgraded booking system with payment options, the opportunity to connect with other parks users with compatible dogs via adding a friend and direct messaging, hire a trainer and purchase merchandise and training equipment.
 
 
 ## UX
+
+### Design Inspiration
+I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fischer-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
+
+![Fischer Price controller](documentation/final_views/fp_toy.webp)
+*Original inspiration for the design process*
+
+![FreeFido logo](documentation/final_views/logo.png)
+*FreeFido logo in font 'Outfit' using colours inspired by the toy*
+
 
 ## Strategy Plane
 
