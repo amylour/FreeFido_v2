@@ -24,7 +24,28 @@ Return back to the [README.md](README.md) file.
 
 ## Validation
 
+I like to ensure that I have completed a thorough testing of my project so that no surprises are left for the user. 
+
 ### HTML Validation
+
+For validation of my HTML files I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+I have had to follow a different approach for validating my HTML for this project as the majority of my pages are developed using Jinja syntax such as '{% extends "base.html" %}' and '{{ form|crispy }}' and most require user authentication. The HTML validator will throw errors if I were to use my website's URL so I have had to follow the below approach for every page:
+
+- Via the deployed Heroku app link, I have navigated to each individual page.
+- Right clicking on the screen/CTRL+U/⌘+U on Mac, allows a menu to appear, giving me the option to 'View page source'.
+- The complete HTML code for the deployed page will appear, allowing you to select the entire code using CTRL+A/⌘+A on Mac.
+- Paste the copied code into the [validate by input](https://validator.w3.org/#validate_by_input) option.
+- Check for errors and warnings, fix any issues, revalidate by following the above steps and record the results.
+
+| Page | Screenshot | Errors | Warnings |
+| ---- | ---------- | ------ | -------- | 
+| Home | ![screenshot of home page validation](documentation/testing/) |   |   |
+| Sign In | ![screenshot of sign in page validation](documentation/testing/) |  |  |
+| Sign Up | ![screenshot of sign up page validation](documentation/testing/) |  |  |
+| Profile | ![screenshot of profile page validation](documentation/testing/) |  |  |
+| Edit Profile | ![screenshot of edit profile page validation](documentation/testing/) |  |  |
+
 
 ### JavaScript Validation
 
