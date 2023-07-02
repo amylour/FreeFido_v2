@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, UpdateView, DeleteView
+from django.shortcuts import redirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -32,12 +33,13 @@ class ProfileEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Profile
 
     def form_valid(self, form):
-        self.success_url = f'/profiles/user/{self.kwargs["pk"]}/'
-        return super().form_valid(form)
+        self.object = form.save()
+        return redirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse_lazy('profile', kwargs={'pk': self.kwargs['pk']})
 
     def test_func(self):
         return self.request.user == self.get_object().user
 
-
-
-    
+ 
