@@ -8,12 +8,12 @@
 <div class="container text-center">
     <h1 class="m-4 section-title" id="auth">{% trans "Sign In" %}</h1>
 
-    <p>{% blocktrans %}If you have not created an account yet, then please
+    <p class="w-75 mx-auto">{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}" class="special-anchor">sign up</a> first.{% endblocktrans %}
     </p>
 
 
-    <form class="form p-2" method="POST" action="{% url 'account_login' %}">
+    <form class="form p-2 w-75" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form|crispy }}
         {% if redirect_field_value %}

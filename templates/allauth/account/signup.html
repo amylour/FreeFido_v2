@@ -11,7 +11,7 @@
     <p class="my-3">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="special-anchor">sign in</a>.{% endblocktrans %}
     </p>
 
-    <form class="form p-3" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <form class="form p-3 w-75" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form|crispy }}
         {% if redirect_field_value %}

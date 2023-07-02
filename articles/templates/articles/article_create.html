@@ -10,13 +10,13 @@
 
 <div class="container text-center">
     <!-- enctype for file upload to cloudinary -->
-    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+    <form method="POST" enctype="multipart/form-data" class="p-1 w-75 form">
         <h1 class="text-center section-title my-5" id="auth">Add Article</h1>
         {% csrf_token %}
         {{ form.media }}
         {{ form|crispy }}
         <div class="text-center">
-            <button type="submit" class="btn btn-custom-form mt-2">Post Article</button>
+            <button type="submit" class="btn btn-custom-form mt-2">Submit</button>
         </div>
     </form>
 </div>

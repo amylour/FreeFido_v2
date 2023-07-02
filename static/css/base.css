@@ -147,7 +147,7 @@ footer {
 }
 
 .footer-bg {
-    background-image: url('../images/footer.png');
+    background-image: url('../images/footer-wave.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -399,14 +399,17 @@ footer {
 
 #section-articles {
     color: var(--purple);
+    font-weight: bold;
 }
 
 #section-signup {
     color: var(--orange);
+    font-weight: bold;
 }
 
 #section-visit {
     color: var(--coral);
+    font-weight: bold;
 }
 
 /* forms */
@@ -789,7 +792,6 @@ p {
     overflow-y: auto;
 }
 
-
 /* booking */
 
 .add-booking-btn {
@@ -974,7 +976,9 @@ tr {
 @media (max-width: 991.98px) {
     .navbar-nav {
         flex-direction: row;
+        justify-content: center;
         align-items: center;
+        margin-left: 10px;
     }
 
     .nav-icons {
@@ -985,6 +989,7 @@ tr {
     .nav-logo {
         height: 80px;
         width: auto;
+        margin-left: 20px;
     }
 
     .hero-image {
@@ -992,7 +997,7 @@ tr {
     }
 }
 
-/* footer media query */
+/* tablet/large mobile media queries */
 @media (max-width: 767.98px) {
     .footer-bg {
         justify-content: center;
@@ -1003,9 +1008,17 @@ tr {
         height: 1.25rem;
         margin: .75rem;
     }
+
+    .mobile-articles {
+        margin-right: 40px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
 }
 
-/* profile media queries */
+/* mobile media queries */
 @media (max-width: 576px) {
 
     .profile-info,
@@ -1018,4 +1031,36 @@ tr {
         margin-right: auto;
         margin-left: auto;
     }
+
+    .section-p {
+        font-size: 18px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .section-img {
+        padding: 15px;
+        border-radius: 40px;
+    }
+
+    .section-list,
+    .section-em,
+    .mobile-edit-article {
+        font-size: 18px;
+    }
+
+    .btn-custom-form {
+        font-size: 22px;
+    }
+
+    .article-img {
+        height: 360px;
+        width: 360px;
+    }
+
+    .article-details {
+        font-size: 18px;
+    }
+    
+
 }

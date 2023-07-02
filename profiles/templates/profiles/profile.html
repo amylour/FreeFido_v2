@@ -53,9 +53,9 @@
             </div>
             <hr class="my-2">
             <!-- <img src="{% static '../static/icons/tennis-ball.png' %}" alt="hr-tennis ball" class="mx-auto my-3 hr-special"> -->
-            <h2 class="text-center section-title my-2" id="booking">Active Bookings</h2>
+            <h2 class="text-center section-title my-3" id="booking">Active Bookings</h2>
             {% if bookings %}
-            <div class="text-center my-3">
+            <div class="table-responsive text-center my-3">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -115,8 +115,8 @@
     <div id="myModal" class="modal mt-5">
 
         <!-- modal content -->
-        <div class="modal-content container text-center shadow">
-            <span class="close fs-1 pe-2">&times;</span>
+        <div class="modal-content container text-center shadow w-75">
+            <span class="close fs-1 pe-2 position-absolute top-0 end-0 font-weight-bold">&times;</span>
             <form method="POST" action="{% url 'profile_edit' request.user.id %}" class="mb-2 p-2"
                 enctype="multipart/form-data">
                 <h2 class="text-center section-title fs-4 mb-4" id="auth">Edit Profile</h2>

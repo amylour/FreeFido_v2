@@ -7,9 +7,9 @@
 
 {% block content %}
 
-<div class="container text-center w-75 mx-auto m-2">
+<div class="container text-center mx-auto m-2">
     <!-- add gallery image form -->
-    <form method="POST" enctype="multipart/form-data" class="p-2 form gallery-section">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form gallery-section w-75">
         <h1 class="text-center mx-auto mb-4 section-title" id="benefits">Upload Image</h1>
         {% csrf_token %}
         {{ form.media }}

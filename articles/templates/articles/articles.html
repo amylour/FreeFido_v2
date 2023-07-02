@@ -23,10 +23,10 @@
 
 
 <div class="container-fluid">
-    <div class="row justify-content-center mx-auto w-75">
+    <div class="row justify-content-center mx-auto">
         <!-- Articles entered col -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+        <div class="col-12 mt-3">
+            <div class="row justify-content-center mobile-articles">
                 {% for article in article_list %}
                 <div class="col-md-4">
                     <div class="card">
@@ -43,7 +43,7 @@
                                     <a href="{% url 'article_page' article.slug %}" class="article-link">
                                         <h2 class="card-title special-anchor-article my-2">{{ article.title }}</h2>
                                     </a>
-                                    <p class="card-text text-mutd h6">{{ article.created_on }} <img src="{% static 'icons/heart.png' %}"
+                                    <p class="card-text h6">{{ article.created_on }} <img src="{% static 'icons/heart.png' %}"
                                             class="like-icon" alt="pawprint heart like icon">
                                         {{ article.number_of_likes }}</p>
                                 </div>
