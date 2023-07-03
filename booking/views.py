@@ -26,7 +26,10 @@ class CreateBooking(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
 
         selected_date = form.cleaned_data.get('date')
-        selected_time = form.cleaned_data.get('time')
+        selected_time_str = form.cleaned_data.get('time')
+        # fix for same day booking bug - '<' TypeError due to selected_time variable or the current_datetime.time() value is not of the expected type
+        if selected_time_str is not None:
+            selected_time = datetime.strptime(selected_time_str.split(' - ')[0], '%H:%M').time()
         current_datetime = timezone.now()
 
         if selected_date < current_datetime.date() or (selected_date == current_datetime.date() and selected_time < current_datetime.time()):
