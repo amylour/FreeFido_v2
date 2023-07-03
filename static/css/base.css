@@ -993,7 +993,7 @@ tr {
     }
 
     .mobile-articles {
-        margin: 0 auto;
+        padding-right: 45px;
     }
 
     .hero-image {
