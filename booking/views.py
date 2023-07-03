@@ -27,7 +27,7 @@ class CreateBooking(LoginRequiredMixin, CreateView):
 
         selected_date = form.cleaned_data.get('date')
         selected_time_str = form.cleaned_data.get('time')
-        # fix for same day booking bug - '<' TypeError due to selected_time variable or the current_datetime.time() value is not of the expected type
+        # fix for same day booking bug - '<' TypeError due to selected_time variable or the current_datetime.time() value is not of the expected type - https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object
         if selected_time_str is not None:
             selected_time = datetime.strptime(selected_time_str.split(' - ')[0], '%H:%M').time()
         current_datetime = timezone.now()
