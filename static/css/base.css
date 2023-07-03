@@ -973,7 +973,7 @@ tr {
 /* media queries */
 
 /* hamburger menu to center under logo on mobile */
-@media (max-width: 991.98px) {
+@media (max-width: 1024.98px) {
     .navbar-nav {
         flex-direction: row;
         justify-content: center;
@@ -990,6 +990,10 @@ tr {
         height: 80px;
         width: auto;
         margin-left: 20px;
+    }
+
+    .mobile-articles {
+        margin: 0 auto;
     }
 
     .hero-image {
