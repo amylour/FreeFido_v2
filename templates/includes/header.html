@@ -27,41 +27,41 @@
                 <ul class="navbar-nav">
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'profile' %}active{% endif %}" href="{% url 'profile' request.user.id %}" title="Profile"><img
+                        <a class="nav-link nav-link-mobile {% if url_name == 'profile' %}active{% endif %}" href="{% url 'profile' request.user.id %}" title="Profile"><img
                                 class="nav-icons" src="{% static 'icons/profile.png' %}" alt="profile icon"></a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'articles' %}active{% endif %}" href="{% url 'articles' %}" title="Articles"><img
+                        <a class="nav-link nav-link-mobile {% if url_name == 'articles' %}active{% endif %}" href="{% url 'articles' %}" title="Articles"><img
                                 class="nav-icons" src="{% static 'icons/articles.png' %}" alt="articles icon"></a>
                     </li>
                     <li class="nav-item">
                         {% if request.user.is_authenticated %}
-                        <a class="nav-link {% if url_name == 'booking_home_page' %}active{% endif %}" href="{% url 'booking_home_page' %}"
+                        <a class="nav-link nav-link-mobile {% if url_name == 'booking_home_page' %}active{% endif %}" href="{% url 'booking_home_page' %}"
                             title="Booking">
                             <img class="nav-icons" src="{% static 'icons/book.png' %}" alt="booking icon">
                         </a>
                         {% else %}
-                        <a class="nav-link" href="{% url 'account_login' %}?next={% url 'booking_home_page' %}" title="Booking">
+                        <a class="nav-link nav-link-mobile" href="{% url 'account_login' %}?next={% url 'booking_home_page' %}" title="Booking">
                             <img class="nav-icons" src="{% static 'icons/book.png' %}" alt="booking icon">
                         </a>
                         {% endif %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}" title="Gallery"><img
+                        <a class="nav-link nav-link-mobile {% if url_name == 'gallery' %}active{% endif %}" href="{% url 'gallery' %}" title="Gallery"><img
                                 class="nav-icons" src="{% static 'icons/gallery.png' %}" alt="gallery icon"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'visit_us' %}active{% endif %}" href="{% url 'visit_us' %}" title="Visit Us"><img
+                        <a class="nav-link nav-link-mobile {% if url_name == 'visit_us' %}active{% endif %}" href="{% url 'visit_us' %}" title="Visit Us"><img
                                 class="nav-icons" src="{% static 'icons/visit_us.png' %}" alt="visit icon"></a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}" href="/accounts/logout/" title="Logout"><img class="nav-icons" src="{% static 'icons/logout.png' %}" alt="logout icon"></a>
+                        <a class="nav-link nav-link-mobile {% if url_name == 'account_logout' %}active{% endif %}" href="/accounts/logout/" title="Logout"><img class="nav-icons" src="{% static 'icons/logout.png' %}" alt="logout icon"></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}" href="/accounts/login/" title="Log In"><img
+                        <a class="nav-link nav-link-mobile {% if url_name == 'account_login' %}active{% endif %}" href="/accounts/login/" title="Log In"><img
                                 class="nav-icons" src="{% static 'icons/login.png' %}" alt="login icon"></a>
                     </li>
                     {% endif %}
