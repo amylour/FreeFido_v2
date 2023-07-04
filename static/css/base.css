@@ -1005,7 +1005,6 @@ tr {
 @media (max-width: 767.98px) {
     .footer-bg {
         justify-content: center;
-
     }
 
     .social-icon {
@@ -1019,6 +1018,36 @@ tr {
 
     .card-text {
         font-size: 14px;
+    }
+    
+    /* Mobile tooltip for icon accessibility */
+    .nav-link-mobile {
+        position: relative;
+        font-family: var(--main-font);
+    }
+
+    .nav-link-mobile:hover::after {
+        content: attr(title);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #b163e5;;
+        color: #fff;
+        font-weight: bold;
+        padding: 0.5rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+        z-index: 2;
+    }
+
+    .nav-link-mobile:hover::after {
+        visibility: visible;
+        opacity: 1;
     }
 }
 
