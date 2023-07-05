@@ -19,6 +19,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
 - [UX - User Experience](#ux---user-experience)
   - [Design Inspiration](#design-inspiration)
     - [Colour Scheme](#colour-scheme)
+    - [Font](#font)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
     - [Agile Methodologies](#agile-methodologies)
@@ -83,10 +84,33 @@ I was really excited to get working on this project's frontend as I could see th
 
 ### Colour Scheme
 
-As mentioned above, the colour scheme drove the design of the website. I wanted to create a 'fun' environment for the user to create the connection with the enjoyment that they would have with their dog at the park. The colours represent different sections/features of the website. I balanced the vibrant shades with a white background and an off-black shade of #0d0d0d, as I felt that it yielded a slightly more matte effect that #000 black.
+As mentioned above, the colour scheme and logo drove the design of the website. I wanted to create a 'fun' environment for the user to create the connection with the enjoyment that they would have with their dog at the park. The colours represent different sections/features of the website. I balanced the vibrant shades with a classic, #fff white background and an off-black shade of #0d0d0d, as I felt that it yielded a slightly more matte effect that #000 black. This combination also yielded a high contrast ratio of 19.44 for accessibility, with my colour scheme also passing a Colour Blind Safe check via [Adobe Color](https://color.adobe.com/create/color-wheel). This check was important for accessibility as the colours would form the base for my page and feature icons. Each colour in the scheme was also contrast checked with black #0d0d0d to ensure no contrast issue, all passed.
 
-![screenshot of colour scheme](documentation/final_views/)
+The corresponding sections and colours are:
 
+- Authentication: #AC44F2
+- Gallery: #3BD952
+- User Profile: #F29F05
+- Visiting Information: #F25C5C
+- Booking: #4CE0C3
+
+For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
+
+![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)
+*Black, white and grey used for backgrounds, text and Login/Logout icon*
+
+![screenshot of colour scheme](documentation/final_views/color_small.png)
+*Colour Scheme for FreeFido website*
+
+![colour blind safe colour swatch](documentation/final_views/color_bling_safe.png)
+*Accessibility check for colour scheme*
+
+### Font
+
+Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montserrat' as a complementary font to my CSS file. Outfit is a playful, clear sans-serif which I felt worked well in designing my logo and for headers in my project. For future use, I envisoned merchandise bearing the logo for the FreeFido stall at the dog park. Montserrat was chosen as it gave more structure to the paragraph sections.
+
+![outfit font design sheet](documentation/final_views/outfit.png)
+*Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
 
 
