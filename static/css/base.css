@@ -13,10 +13,6 @@
     --orange: #f29f05;
     --coral: #f25c5c;
     --blue: #4ce0c3;
-
-    /* utils */
-    --smal-box-shadow: 1px -1px 7px 0 #00000061;
-    --border: ;
 }
 
 html,
@@ -973,7 +969,7 @@ tr {
 /* media queries */
 
 /* hamburger menu to center under logo on mobile */
-@media (max-width: 1024.98px) {
+@media (max-width: 1025px) {
     .navbar-nav {
         flex-direction: row;
         justify-content: center;
@@ -998,6 +994,10 @@ tr {
 
     .hero-image {
         padding: 20px;
+    }
+
+    .article-container {
+        overflow: hidden;
     }
 }
 
