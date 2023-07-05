@@ -147,7 +147,7 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 140px;
+    padding-top: 200px;
     display: flex;
     justify-content: flex-end;
 }
@@ -168,7 +168,7 @@ footer {
 .social {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -1003,10 +1003,6 @@ tr {
 
 /* tablet/large mobile media queries */
 @media (max-width: 767.98px) {
-    .footer-bg {
-        justify-content: center;
-    }
-
     .social-icon {
         height: 1.25rem;
         margin: .75rem;
