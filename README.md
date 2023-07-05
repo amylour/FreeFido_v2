@@ -23,6 +23,12 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Agile Methodologies](#agile-methodologies)
     - [Epics/Milestones](#epicsmilestones)
     - [User Stories](#user-stories)
+  - [Visitor User Stories](#visitor-user-stories)
+    - [Epic - User Profile](#epic---user-profile)
+    - [Epic - Articles](#epic---articles)
+    - [Epic - Booking](#epic---booking)
+    - [Epic - Photo Gallery](#epic---photo-gallery)
+    - [Epic - Visit Us/Reviews](#epic---visit-usreviews)
   - [Scope Plane](#scope-plane)
   - [Structural Plane](#structural-plane)
   - [Skeleton Plane](#skeleton-plane)
@@ -84,24 +90,61 @@ I was really excited to get working on this project's frontend as I could see th
 
 ### User Stories
 
-User stories and features recorded and managed on GitHub Projects -> (<https://github.com/....>)
+User stories and features recorded and managed on GitHub Projects -> (<https://github.com/users/amylour/projects/4>)
 
-- Business Owner/Site Admin
-- Visitor
-- Regular Visitor
+## Visitor User Stories
 
-**EPIC | Site Navigation**
-- As a User I can easily navigate around the site so that I can view different pages and sections on the site.
-- As a User I can click on the about page so that so that I can find out what the website is about and how to use it.
+    - As a user, I would like to view the websites home page so that I can learn about it and the services it offers.
+    - As a user, I can find the websites navigation area so that I may easily navigate around the website.
+    - As a user, I can see the sites social media links at the bottom of the webpage so that I can visit, contact the business and follow them online.
+    - As a user, I can view any error pages with a 'Home' button so that I can get back to the homepage easily.
 
-**EPIC | Crud Functionality**
+### Epic - User Profile
+    
+    - As a user, I can use my email and password to login to my profile account so that I can use my profile to connect to the websites features.
+    - As a user, I can enter my email and password so that I can register an account with the website.
+    - As a user, I can enter my personal details so that I can create an account with FreeFido.
+    - As a user, I can receive feedback in the form of a logout page so that I can confirm that I have been logged out successfully.
+    - As a user, I can edit my user profile to update my personal details.
+    - As a user, I can click a delete button in my user profile setup so that I can delete all personal data, photos and bookings that are connected to me on the website.
 
-**EPIC | Administration**
-- As a Site admin I can administer the site so that I can manage the sites content.
-- As a User I can reset my password so that I can change it if I have forgotten it or want to change it.
+### Epic - Articles
 
-**EPIC | Register / Sign in and out**
+    - As an user, I want to be able to create and view articles so that I can learn more about dog related topics.
+    - As a user, I would like to move to the next page so that I can view all of the articles.
+    - As a user, I would like to view an article's likes so that I can find the most interesting articles.
+    - As a user, I can visit the articles page so that I can read and interact with the articles.
+    - As a user, I can click on an article so that I can view it's contents.
+    - As a user, I can click a button icon so that I can like/unlike and article.
+    - As a user, I can comment on a post so that I can interact and get involved with the conversation.
+    - As a user, I can fill-in, edit and save an article text field so that I can create and share an article from my profile.
+    - As a user, I can click on the edit button of my article so that I can edit the article and save it again.
+    - As a user, I can click on the delete button on my own article page so that I can delete the article.
+    - As a user, I can enter a search term into the search bar so that I can search for particular articles and articles with information topics that I am interested in.
+    - As a user, I can click a delete button so that I can remove a comment that I have made.
+  
+### Epic - Booking
 
+    - As a user, I can view the booking home page so that I can learn about booking and see my active bookings.
+    - As a user, I can use the bookings page so that I can make a booking at the dog park.
+    - As a user, I can receive feedback via email when I make a booking so that I can confirm my booking and keep a copy of it in my email account.
+    - As a user, I can edit my confirmed bookings so that I can choose a different day or time slot or add an extra dog.
+    - As a user, I can click the 'Trash' icon under my booking so that I can delete that booking from my bookings list.
+
+### Epic - Photo Gallery
+
+    - As a user, I can visit the gallery page so that I can view the gallery wall of photos.
+    - As a user, I can click the upload image button on the Gallery page so that I can upload an image of my dog have fun in the park.
+    - As a user, I can click the trash can icon when I hover/click on a photo so that I can delete the photo.
+
+### Epic - Visit Us/Reviews
+
+    - As a user, I can view the 'Visit Us' page so that I can see the businesses location and details.
+    - As a user, I can get feedback from the website that will explain that only four active bookings are allowed per person.
+    - As a user, I can fill out a review form so that I can leave feedback about my park visit.
+    - As a user, I can edit my review so that I can correct a mistake or change my review.
+    - As a user I can click the delete button beside my review so that I can delete a review that I made.
+    
 ## Scope Plane
 
 - MVP/Identifying necessary features/Sprints
