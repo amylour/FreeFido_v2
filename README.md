@@ -76,10 +76,12 @@ FreeFido is accessible via all browsers with full responsiveness on different sc
 
 I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fischer-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
 
-![Fischer Price controller](documentation/final_views/fp_toy.webp)
+![Fischer Price controller](documentation/final_views/fp_toy.webp)  
+
 *Original inspiration for the design process*
 
-![FreeFido logo](documentation/final_views/logo.png)
+![FreeFido logo](documentation/final_views/logo.png)  
+
 *FreeFido logo in font 'Outfit' using colours inspired by the toy*
 
 ### Colour Scheme
@@ -96,13 +98,16 @@ The corresponding sections and colours are:
 
 For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
 
-![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)
+![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)  
+
 *Black, white and grey used for backgrounds, text and Login/Logout icon*
 
 ![screenshot of colour scheme](documentation/final_views/color_small.png)
+
 *Colour Scheme for FreeFido website*
 
 ![colour blind safe colour swatch](documentation/final_views/color_bling_safe.png)
+
 *Accessibility check for colour scheme*
 
 ### Font
@@ -110,6 +115,7 @@ For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this
 Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montserrat' as a complementary font to my CSS file. Outfit is a playful, clear sans-serif which I felt worked well in designing my logo and for headers in my project. For future use, I envisoned merchandise bearing the logo for the FreeFido stall at the dog park. Montserrat was chosen as it gave more structure to the paragraph sections.
 
 ![outfit font design sheet](documentation/final_views/outfit.png)
+
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
 
@@ -210,28 +216,125 @@ Planning my project thoroughly from the start allowed me to identify areas of im
 
 ## Structural Plane
 
-- Accessibility
-- Responsiveness
-- Navigation
+From initial concept to finished product, icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from Flaticon and my colour scheme, I created my navbar icons. I edited my Login/Logout icons with a pawprint to have them fit the theme better.
+
+
+![navbar icons](documentation/final_views/icons_row.png)  
+
+*Navigation icons for FreeFido*
+
+Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
+
+![desktop tooltips](documentation/final_views/)  
+  
+*Navigation bar tooltips demonstrated on Desktop*
+
+
+
 
 ## Skeleton Plane
 
 ### Wireframes
 
-- Mobile/Tablets/Desktop
-- Index/Home
-- Register
-- Login
+The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. Figma is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes. 
+
+Mobile/Tablet view for:
+
+- Home
+- Sign Up
 - Profile
-- About
-- Booking
-- Contact Us/Map
+
+Originally I had planned for the home page to be mostly icon based for quick and easy use. However, I felt that this format would suit a downloadable app version of FreeFido, instead of the web version, which regular users might avail of to give them quicker access to the booking page, especially if they are one-handed, walking the dog on the way to the park. This will be part of my future features for the project growth.
 
 <details>
-    <summary>Home Page</summary>  
-
-![Wireframe of home page](readme-docs/wireframes/wireframe-home.jpg)  
+    <summary>Mobile/Tablet Home Page</summary>  
+![Figma wireframe of mobile/tablet home page](documentation/wireframes/mt_home.png)  
 </details>
+
+<details>
+    <summary>Mobile/Tablet Sign Up Page</summary>  
+![Figma wireframe of mobile/tablet Sign up page](documentation/wireframes/mobile_tablet_sign_up.png)  
+</details>
+
+<details>
+    <summary>Mobile/Tablet Profile Page</summary>  
+![Figma wireframe of mobile/tablet profile page](documentation/wireframes/profile_mt.png)  
+</details>
+
+Desktop view for:
+
+- Home
+- Sign Up
+- Profile
+- Booking
+- Gallery
+- Find Us
+- Contact Us
+
+<details>
+    <summary>Desktop Home Page</summary>  
+![Figma wireframe of desktop home page](documentation/wireframes/home_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Home Page Footer</summary>  
+![Figma wireframe of desktop home page footer](documentation/wireframes/home_2_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Sign Up Page</summary>  
+![Figma wireframe of desktop Sign up page](documentation/wireframes/signup_in_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Profile Create Page</summary>  
+![Figma wireframe of desktop profile create page](documentation/wireframes/profile_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Profile View Page</summary>  
+![Figma wireframe of desktop profile view page](documentation/wireframes/profile_view_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Booking Page</summary>  
+![Figma wireframe of desktop booking page](documentation/wireframes/booking_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Booking Create Page</summary>  
+![Figma wireframe of desktop booking page](documentation/wireframes/booking_create_desktop.png)  
+</details>
+
+I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django agenda, scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
+
+<details>
+    <summary>Desktop Gallery Page</summary>  
+![Figma wireframe of desktop gallery page](documentation/wireframes/gallery_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Gallery Add Photo Page</summary>  
+![Figma wireframe of desktop gallery add photo page](documentation/wireframes/photo_desktop.png)  
+</details>
+
+<details>
+    <summary>Desktop Find Us/Contact Us Page</summary>  
+![Figma wireframe of desktop find us/contact us page](documentation/wireframes/map_contact_desktop.png)  
+</details>
+
+
+Through the early development of FreeFido, I created an Article section to help with my learning and understanding of Django before I tackled a booking system. This feature stayed in and helped to grow the idea of having a social/educational theme to the website. There are no wireframes for my Article section but I was able to continue my modular approach to it's design by using other elements from the project's planning in it's creation.
+
+
+
+
+
+
+
+
+
+
 
 ### Database Schema
 
