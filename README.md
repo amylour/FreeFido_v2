@@ -245,17 +245,17 @@ Mobile/Tablet view for:
 
 Originally I had planned for the home page to be mostly icon based for quick and easy use. However, I felt that this format would suit a downloadable app version of FreeFido, instead of the web version, which regular users might avail of to give them quicker access to the booking page, especially if they are one-handed, walking the dog on the way to the park. This will be part of my future features for the project growth.
 
-<details>
+<details open>
     <summary>Mobile/Tablet Home Page</summary>  
     <img src="documentation/wireframes/mt_home.png">  
 </details>
 
-<details>
+<details open>
     <summary>Mobile/Tablet Sign Up Page</summary>  
     <img src="documentation/wireframes/mobile_tablet_sign_up.png">
 </details>
 
-<details>
+<details open>
     <summary>Mobile/Tablet Profile Page</summary>  
     <img src="documentation/wireframes/profile_mt.png">
 </details>
@@ -270,17 +270,17 @@ Desktop view for:
 - Find Us
 - Contact Us
 
-<details>
+<details open>
     <summary>Desktop Home Page</summary>  
     <img src="documentation/wireframes/home_desktop.png">  
 </details>
 
-<details>
+<details open>
     <summary>Desktop Home Page Footer</summary>  
     <ing src="documentation/wireframes/home_2_desktop.png">
 </details>
 
-<details>
+<details open>
     <summary>Desktop Sign Up Page</summary>  
     <img src="documentation/wireframes/signup_in_desktop.png">
 </details>
@@ -290,7 +290,7 @@ Desktop view for:
     <img src="documentation/wireframes/profile_desktop.png">
 </details>
 
-<details>
+<details open>
     <summary>Desktop Profile View Page</summary>  
     <img src="documentation/wireframes/profile_view_desktop.png"> 
 </details>
@@ -300,7 +300,7 @@ Desktop view for:
     <img src="documentation/wireframes/booking_desktop.png">
 </details>
 
-<details>
+<details open>
     <summary>Desktop Booking Create Page</summary>  
     <img src="documentation/wireframes/booking_create_desktop.png">  
 </details>
@@ -312,7 +312,7 @@ I had grand ideas for re-creating this exact booking page in this deployment of 
     <img src="documentation/wireframes/gallery_desktop.png">
 </details>
 
-<details>
+<details open>
     <summary>Desktop Gallery Add Photo Page</summary>  
     <img src="documentation/wireframes/photo_desktop.png">
 </details>
