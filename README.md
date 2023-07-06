@@ -22,7 +22,10 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Font](#font)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
-    - [Agile Methodologies](#agile-methodologies)
+  - [Agile Methodologies -Project Management](#agile-methodologies--project-management)
+    - [MoSCoW Prioritisation](#moscow-prioritisation)
+    - [GitHub Projects](#github-projects)
+    - [Sprints](#sprints)
   - [User Stories](#user-stories)
     - [Visitor User Stories](#visitor-user-stories)
     - [Epic - User Profile](#epic---user-profile)
@@ -38,6 +41,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Security](#security)
   - [Features](#features)
   - [Features](#features-1)
+    - [User View - Registered/Unregistered](#user-view---registeredunregistered)
   - [Future Features](#future-features)
   - [Technologies \& Languages Used](#technologies--languages-used)
     - [Libraries \& Frameworks](#libraries--frameworks)
@@ -131,9 +135,13 @@ The project goal was to build a simple booking app for a service. The 'product' 
 - UX remains the same whther on mobile, tablet or desktop
 - Scalable idea, for addition of future features to easily grow the business
 
-### Agile Methodologies
+## Agile Methodologies -Project Management
 
+### MoSCoW Prioritisation
 
+### GitHub Projects
+
+### Sprints
 
 
 ## User Stories
@@ -229,7 +237,7 @@ Accessibility is very important to me and in case I missed the mark with my icon
 
 Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
 
-![image with rounded corners](documentation/final_views_article_card_br.png)
+![image with rounded corners](documentation/final_views/article_card_br.png)
   
 *Article card from the Articles section with rounded corner styling*
 
@@ -349,6 +357,8 @@ Through the early development of FreeFido, I created an Article section to help 
 
 ## Features
 
+### User View - Registered/Unregistered
+
 **Header & Navigation**
     - details
     - details
@@ -459,10 +469,15 @@ Advanced User Profile creation using allauth/signals (<https://dev.to/thepylot/c
 Override Django's save method (<https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models>)
 TypeError Datetime object issue for same day bookings - (<https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object>)
                                                       - (<https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.>)
+Find the parent form element of delete confirm button (<https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/>)
 
 ### Code
 
 ### Media
+
+- Code Institute Student Channel on Youtube: for guidance on project setup, tips and guidance.
+- [Daisy McGirr's Youtube playlist on Django](https://www.youtube.com/@IonaFrisbee) a great help for understanding how to get a Django project moving from the beginning stages.
+- 
 
 ### Additional reading/tutorials/books/blogs
 
