@@ -12,19 +12,20 @@ Return back to the [README.md](README.md) file.
     - [HTML Validation](#html-validation)
     - [JavaScript Validation](#javascript-validation)
     - [Python Validation](#python-validation)
+    - [CSS Validation](#css-validation)
     - [Lighthouse Scores](#lighthouse-scores)
-    - [Wave Accessibility Score](#wave-accessibility-score)
-  - [User Input Validation](#user-input-validation)
+    - [Wave Accessibility Evaluation](#wave-accessibility-evaluation)
+  - [User Input/Form Validation](#user-inputform-validation)
+    - [Browser Compatibility](#browser-compatibility)
   - [Defensive Design](#defensive-design)
-  - [Browser Testing](#browser-testing)
   - [Manual Testing](#manual-testing)
     - [Testing User Stories](#testing-user-stories)
+    - [Dev Tools/Real World Device Testing](#dev-toolsreal-world-device-testing)
   - [Bugs](#bugs)
     - [Known Bugs](#known-bugs)
 
 ## Validation
 
-I like to ensure that I have completed a thorough testing of my project so that no surprises are left for the user. 
 
 ### HTML Validation
 
@@ -44,42 +45,119 @@ I have had to follow a different approach for validating my HTML for this projec
 | Sign In | ![screenshot of sign in page validation](documentation/testing/) |  |  |
 | Sign Up | ![screenshot of sign up page validation](documentation/testing/) |  |  |
 | Profile | ![screenshot of profile page validation](documentation/testing/) |  |  |
-| Edit Profile | ![screenshot of edit profile page validation](documentation/testing/) |  |  |
+| Edit Profile Modal | ![screenshot of edit profile modal validation](documentation/testing/) |  |  |
+| Articles | ![screenshot of articles page validation](documentation/testing/) |  |  |
+| Add Article | ![screenshot of add article page validation](documentation/testing/) |  |  |
+| View Article | ![screenshot of view article page validation](documentation/testing/) |  |  |
+| Edit Article | ![screenshot of edit article page validation](documentation/testing/) |  |  |
+| Delete Article | ![screenshot of delete article page validation](documentation/testing/) |  |  |
+| Delete Comment | ![screenshot of delete comment page validation](documentation/testing/) |  |  |
+| Booking | ![screenshot of add article page validation](documentation/testing/) |  |  |
+| Create Booking | ![screenshot of create booking page validation](documentation/testing/) |  |  |
+| Edit Booking | ![screenshot of edit booking page validation](documentation/testing/) |  |  |
+| Delete Booking| ![screenshot of delete booking page validation](documentation/testing/) |  |  |
+| Gallery | ![screenshot of gallery page validation](documentation/testing/) |  |  |
+| Add Photo | ![screenshot of add photo page validation](documentation/testing/) |  |  |
+| Delete Photo Modal | ![screenshot of delete photo modal validation](documentation/testing/) |  |  |
+| Visit Us | ![screenshot of visit us page validation](documentation/testing/) |  |  |
+| Forgot Password | ![screenshot of forgot password page validation](documentation/testing/) |  |  |
+| Error 400 | ![screenshot of error 400 page validation](documentation/testing/) |  |  |
+| Error 404 | ![screenshot of error 404 page validation](documentation/testing/) |  |  |
+| Error 500 | ![screenshot of error 500 page validation](documentation/testing/) |  |  |
 
 
 ### JavaScript Validation
 
+[JSHint](https://jshint.com/) was used to validate the small amount JavaScript code added to the project. External JS, for Bootstrap purposes, obtained via [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js) was not validated through JSHint
+
+| Page | Screenshot | Errors | Warnings |
+| ---- | ---------- | ------ | -------- |
+| base.html | ![js from base.html](documentation/testing/base_js.png) | none | none |
+| gallery.html | ![js from gallery.html](documentation/testing/gallery_js.png) | none | none |
+| profile.html | ![js from profile.html](documentation/testing/profile_js.png) | none | none |
+
+
 ### Python Validation
 
-![Pep8 Linter Validation]()  
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files that were created or edited by myself.
+
+| Page | Screenshot | Errors | Warnings |
+| ---- | ---------- | ------ | -------- |
+
+### CSS Validation 
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested.
+
+![css validation](documentation/testing/css_validation.png)
 
 ### Lighthouse Scores
 
-![Lighthouse scores]()
+*Desktop*  
 
-### Wave Accessibility Score
+![Lighthouse scores desktop]()
+  
+*Mobile*  
 
-<hr>
+![Lighthouse scores mobile]()
 
-## User Input Validation
+### Wave Accessibility Evaluation
 
-| Feature                    | Tested?  | User Input Required | User Feedback Provided     |
-|----------------------------|----------|---------------------|----------------------------|
+![WAVE Web Accessibility Evaluation Tools]()
 
-<hr>
+## User Input/Form Validation
+
+Testing was carried out on desktop using a Chrome browser to ensure all forms take the intended input and process the input appropriately.
+
+| Feature                    | Tested?  | User Input Required | User Feedback Provided     | Pass/Fail | Fix |
+|----------------------------|----------|---------------------|----------------------------|-----------|-----|
+
+
+### Browser Compatibility
+
+Freefido was tested on the following browsers:
+
+- Chrome v
+- Firefox v
+- Edge v
+- Safari v
+
+| Browser | Features   | Issue  | Fix  | 
+| ------- | ---------- | ------ |------|
+
 
 ## Defensive Design
 
 - Security features, AllAuth, csrf tokens, error pages
-- Google deceptive site issue docs/info
+- Google deceptive site issue docs/info -> https:// issue resolved
 
-## Browser Testing
 
 <hr>
 
 ## Manual Testing
 
 ### Testing User Stories
+
+| User Story                 | Feature  | Tested | Response     | Pass/Fail | Fix    |
+|----------------------------|----------|--------|--------------|-----------|--------|
+
+
+### Dev Tools/Real World Device Testing
+
+Responsiveness testing was carried out using Google Dev Tools on the devices detailed within the below table. Responsiveness was evident on all features throughout all tested devices. Occassionally I would have to refresh the page by clicking the 'FreeFido' logo as the page would load zoomed in or out on the simualted device. When refreshed and CSS checked the desired outcome was observed. I put this down to a caching issue in Chrome as this issue was not observed when testing on the available real world devices.
+
+*Dev Tools Device Testing*
+| Device  | Feature    | Issue  | Fix  | 
+| ------- | ---------- | ------ |------|
+  
+
+*Real World Device Testing*
+| Device      | Feature    | Issue  | Fix  | 
+| ------------| ---------- | ------ |------|
+| OPPO Reno 8 Lite |       |        |      |
+| iPhone XR |              |        |      |
+| iPhone 12  |             |        |      |
+| iPad Pro 2021 |          |        |      |
+| Acer Aspire 3 2019 |     |        |      |
 
 
 ## Bugs
