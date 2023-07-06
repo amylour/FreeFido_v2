@@ -277,7 +277,7 @@ Desktop view for:
 
 <details open>
     <summary>Desktop Home Page Footer</summary>  
-    <ing src="documentation/wireframes/home_2_desktop.png">
+    <img src="documentation/wireframes/home_2_desktop.png">
 </details>
 
 <details open>
@@ -307,17 +307,17 @@ Desktop view for:
 
 I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django agenda, scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
 
-<details>
+<details open>
     <summary>Desktop Gallery Page</summary>  
     <img src="documentation/wireframes/gallery_desktop.png">
 </details>
 
-<details open>
+<details>
     <summary>Desktop Gallery Add Photo Page</summary>  
     <img src="documentation/wireframes/photo_desktop.png">
 </details>
 
-<details>
+<details open>
     <summary>Desktop Find Us/Contact Us Page</summary>  
     <img src="documentation/wireframes/map_contact_desktop.png">  
 </details>
