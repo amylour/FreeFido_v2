@@ -68,13 +68,12 @@ FreeFido is an social media and booking app for a private dog park. Users are in
 
 FreeFido is accessible via all browsers with full responsiveness on different screen sizes. Its aim is to create a safe, informed community of dog owners who can interact and share with each other and avail of the essential booking feature to reserve a spot in the secure, private dog park. I have created this site to meet the needs of the growing private dog park business. Private dog parks have become a highly sought after service for dog owners to exercise and train their dogs in a safe, secure area, without the fear of a strange dog running up to them. Dog reactivity is unfortunately on the rise at public dog parks due to some dog owners being unaware of dog body language and basic etiquette. FreeFido aims to offer a starting point for creating a community of regular users of this dog park who can book one hour slots through the basic booking system. In future development of this project, I hope to offer users an upgraded booking system with payment options, the opportunity to connect with other parks users with compatible dogs via adding a friend and direct messaging, hire a trainer and purchase merchandise and training equipment.
 
-<hr>
 
 # UX - User Experience
 
 ## Design Inspiration
 
-I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fischer-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
+I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fisher-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
 
 ![Fischer Price controller](documentation/final_views/fp_toy.webp)  
 
@@ -106,7 +105,7 @@ For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this
 
 *Colour Scheme for FreeFido website*
 
-![colour blind safe colour swatch](documentation/final_views/color_bling_safe.png)
+![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)
 
 *Accessibility check for colour scheme*
 
@@ -122,7 +121,7 @@ Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montse
 
 ## Strategy Plane
 
-The project goal was to build a simple booking app for a service. The 'product' was one hour slots in a private, secure dog park and the 'user' was dog owners, trainers and walkers. As the service itself was uncomplicated, I aimed to create an easy, uncomplicated booking system for the user. Through planning and design prep work, I realised that there was an opportunity to treat this service like a 'brand' and develop the idea further. A social element was born from this with an idea for dog owners to be able to share advice and images of their furry friends on the website. This would hopefully help to create a happy group of park users who would recommend the park to others, share articles outside of the core group, and attract more users to sign up. Following common social-media design trends, I planned to use icons, high-quality, photographic images and an attractive, connected colour scheme.
+The project goal was to build a simple booking app for a service. The 'product' was a one hour slot in a private, secure dog park and the 'user' was dog owners, trainers and walkers. As the service itself was uncomplicated, I aimed to create an easy, uncomplicated booking system for the user. Through planning and design prep work, I realised that there was an opportunity to treat this service like a 'brand' and develop the idea further. A social element was born from this with an idea for dog owners to be able to share advice and images of their furry friends on the website. This would hopefully help to create a happy group of park users who would recommend the park to others, share articles outside of the core group, and attract more users to sign up. Following common social-media design trends, I planned to use icons, high-quality, photographic images and an attractive, connected colour scheme.
 
 ### Site Goals
 
@@ -198,7 +197,7 @@ User stories and features recorded and managed on GitHub Projects -> (<https://g
     
 ## Scope Plane
 
-As this would be a dual learning/building project using technologies that were new to me, such as Django, SQL, Bootstrap and Cloudinary, I was cautious to maintain consistent control over the scope of the project and not let my idea grow too big. With the sheer amount of files, I needed to lockdown my project features early on into manageable blocks so as not to lose track of the MVP. Following my learning of the Django MVC framework I was able to identify how to change the templated structure to produce different website features from my base html. This allowed me to build upon my original idea of 'Booking app' only, and to add a social experience around articles and shared images. Following Agile Planning Methodologies, I added my Developer Tasks, User Stories and Testing Tasks as issues on my [GitHub project board](https://github.com/users/amylour/projects/4), and set up Sprints to keep the flow of the project in check.
+As this would be a dual learning/building project using technologies that were new to me, such as Django, SQL, Bootstrap and Cloudinary, I was cautious to maintain consistent control over the scope of the project and not let my idea grow too big. With the sheer amount of files, I needed to lockdown my project features early on into manageable blocks so as not to lose track of the MVP. Following my learning of the Django MVC framework I was able to identify how to change the templated structure to produce different website features from my base HTML. This allowed me to build upon my original idea of 'Booking app' only, and to add a social experience around articles and shared images. Following Agile Planning Methodologies, I added my Developer Tasks, User Stories and Testing Tasks as issues on my [GitHub project board](https://github.com/users/amylour/projects/4), and set up Sprints to keep the flow of the project in check.
 
 Essential features of my project were:
 
@@ -248,17 +247,17 @@ Originally I had planned for the home page to be mostly icon based for quick and
 
 <details>
     <summary>Mobile/Tablet Home Page</summary>  
-![Figma wireframe of mobile/tablet home page](documentation/wireframes/mt_home.png)  
+    <img src="documentation/wireframes/mt_home.png">  
 </details>
 
 <details>
     <summary>Mobile/Tablet Sign Up Page</summary>  
-![Figma wireframe of mobile/tablet Sign up page](documentation/wireframes/mobile_tablet_sign_up.png)  
+    <img src="documentation/wireframes/mobile_tablet_sign_up.png">
 </details>
 
 <details>
     <summary>Mobile/Tablet Profile Page</summary>  
-![Figma wireframe of mobile/tablet profile page](documentation/wireframes/profile_mt.png)  
+    <img src="documentation/wireframes/profile_mt.png">
 </details>
 
 Desktop view for:
@@ -273,66 +272,58 @@ Desktop view for:
 
 <details>
     <summary>Desktop Home Page</summary>  
-![Figma wireframe of desktop home page](documentation/wireframes/home_desktop.png)  
+    <img src="documentation/wireframes/home_desktop.png">  
 </details>
 
 <details>
     <summary>Desktop Home Page Footer</summary>  
-![Figma wireframe of desktop home page footer](documentation/wireframes/home_2_desktop.png)  
+    <ing src="documentation/wireframes/home_2_desktop.png">
 </details>
 
 <details>
     <summary>Desktop Sign Up Page</summary>  
-![Figma wireframe of desktop Sign up page](documentation/wireframes/signup_in_desktop.png)  
+    <img src="documentation/wireframes/signup_in_desktop.png">
 </details>
 
 <details>
     <summary>Desktop Profile Create Page</summary>  
-![Figma wireframe of desktop profile create page](documentation/wireframes/profile_desktop.png)  
+    <img src="documentation/wireframes/profile_desktop.png">
 </details>
 
 <details>
     <summary>Desktop Profile View Page</summary>  
-![Figma wireframe of desktop profile view page](documentation/wireframes/profile_view_desktop.png)  
+    <img src="documentation/wireframes/profile_view_desktop.png"> 
 </details>
 
 <details>
     <summary>Desktop Booking Page</summary>  
-![Figma wireframe of desktop booking page](documentation/wireframes/booking_desktop.png)  
+    <img src="documentation/wireframes/booking_desktop.png">
 </details>
 
 <details>
     <summary>Desktop Booking Create Page</summary>  
-![Figma wireframe of desktop booking page](documentation/wireframes/booking_create_desktop.png)  
+    <img src="documentation/wireframes/booking_create_desktop.png">  
 </details>
 
 I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django agenda, scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
 
 <details>
     <summary>Desktop Gallery Page</summary>  
-![Figma wireframe of desktop gallery page](documentation/wireframes/gallery_desktop.png)  
+    <img src="documentation/wireframes/gallery_desktop.png">
 </details>
 
 <details>
     <summary>Desktop Gallery Add Photo Page</summary>  
-![Figma wireframe of desktop gallery add photo page](documentation/wireframes/photo_desktop.png)  
+    <img src="documentation/wireframes/photo_desktop.png">
 </details>
 
 <details>
     <summary>Desktop Find Us/Contact Us Page</summary>  
-![Figma wireframe of desktop find us/contact us page](documentation/wireframes/map_contact_desktop.png)  
+    <img src="documentation/wireframes/map_contact_desktop.png">  
 </details>
 
 
 Through the early development of FreeFido, I created an Article section to help with my learning and understanding of Django before I tackled a booking system. This feature stayed in and helped to grow the idea of having a social/educational theme to the website. There are no wireframes for my Article section but I was able to continue my modular approach to it's design by using other elements from the project's planning in it's creation.
-
-
-
-
-
-
-
-
 
 
 
@@ -341,8 +332,8 @@ Through the early development of FreeFido, I created an Article section to help 
 - AllAuth User Model
 - ERD Diagram
 - Custom Models
-  - Profile Model
-  - Booking Model
+- Profile Model
+- Booking Model
 
 ### Security
 
@@ -404,6 +395,8 @@ Business Owner/Django Admin Panel/Superuser
 ### Libraries & Frameworks
 
 ### Tools & Programs
+
+- [EZGif](<https://ezgif.com/>)
 
 ## Testing
 
