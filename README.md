@@ -39,8 +39,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
   - [Features](#features)
   - [Features](#features-1)
   - [Future Features](#future-features)
-  - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
+  - [Technologies \& Languages Used](#technologies--languages-used)
     - [Libraries \& Frameworks](#libraries--frameworks)
     - [Tools \& Programs](#tools--programs)
   - [Testing](#testing)
@@ -224,12 +223,24 @@ From initial concept to finished product, icons as the navigation area was an id
 
 Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
 
-![desktop tooltips](documentation/final_views/)  
+![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
   
 *Navigation bar tooltips demonstrated on Desktop*
 
+Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
+
+![image with rounded corners](documentation/final_views_article_card_br.png)
+  
+*Article card from the Articles section with rounded corner styling*
+
+Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
+
+![header with underline](documentation/final_views/header_underline.png)  
+  
+*Sign Up page header with purple underline for Authentication related sections*  
 
 
+To allow for ease of responsiveness, each section was designed keeping in mind the switch from 'row' to 'column' when moving from Desktop to Mobile/Tablet view. This approach allowed me to add more features to the project early on by reusing and repurposing sections of code.
 
 ## Skeleton Plane
 
@@ -238,7 +249,6 @@ Accessibility is very important to me and in case I missed the mark with my icon
 The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. Figma is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes. 
 
 Mobile/Tablet view for:
-
 - Home
 - Sign Up
 - Profile
@@ -261,7 +271,6 @@ Originally I had planned for the home page to be mostly icon based for quick and
 </details>
 
 Desktop view for:
-
 - Home
 - Sign Up
 - Profile
@@ -326,7 +335,6 @@ I had grand ideas for re-creating this exact booking page in this deployment of 
 Through the early development of FreeFido, I created an Article section to help with my learning and understanding of Django before I tackled a booking system. This feature stayed in and helped to grow the idea of having a social/educational theme to the website. There are no wireframes for my Article section but I was able to continue my modular approach to it's design by using other elements from the project's planning in it's creation.
 
 
-
 ### Database Schema
 
 - AllAuth User Model
@@ -388,15 +396,46 @@ Business Owner/Django Admin Panel/Superuser
 
 ## Future Features
 
-## Technologies Used
+## Technologies & Languages Used
 
-### Languages Used
+- HTML
+- CSS
+- JavaScript
+- Python
+- [Git](https://git-scm.com/) used for version control.
+- [Github](https://www.github.com) used for online storage of codebase and Projects tool.
+- [CodeAnywhere](https://app.codeanywhere.com) as an online, cloud-based IDE for development.
+- [Figma](https://www.figma.com) for project design planning and wireframe creation.
+- [Adobe Color](https://color.adobe.com) for colour theme creation and accessibility checkers.
+- [Django](https://www.djangoproject.com/) was used as the Python framework for the site.
+- [Cloudinary]()
+- [ElephantSQL]()
+- [Heroku]()
+- [WAVE](https://wave.webaim.org/) to evaluate the accessibility of the site.
+- [Procreate](https://procreate.com/) for image creation and editing.
+- 
 
 ### Libraries & Frameworks
 
+- Bootstrap v5.2.3
+- Django v3.2.19
+- Django AllAuth v0.54.0
+- Django Crispy Forms v2.0
+- Crispy Bootstrap5 v0.7
+- Django Resized v1.0.2
+- Django RichTextField v1.6.1
+- Django Summernote v0.8.2
+- Python Slugify v8.0.1
+- Pillow v9.5
+
 ### Tools & Programs
 
-- [EZGif](<https://ezgif.com/>)
+- [EZGif](<https://ezgif.com/>) for gif conversion.
+- [Convertio](https://convertio.co/) for file conversion to PNG, WEBP.
+- [Tiny Png](https://tinypng.com/) for file size reduction.
+- [Lucidchart](https://www.lucidchart.com/pages) for ERD (entity relationship diagram) creation.
+- [Trello](https://www.trello.com) for intial project agile planning.
+- [Perplexity AI](https://www.perplexity.ai/) for breaking down Python concepts and documentation into more understandable chunks.
 
 ## Testing
 
