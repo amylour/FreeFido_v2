@@ -664,6 +664,23 @@ input[type="file"]::file-selector-button {
     font-size: x-large;
 }
 
+.pagination {
+    margin-top: 20px;
+}
+
+.page-arrow {
+    width: 50px;    
+    height: 50px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: none;
+}
+
+.page-link {
+    border-radius: 30px;
+    border: none;
+    background-color: none;
+}
+
 /* article 'cards' */
 
 .author {
@@ -1004,9 +1021,6 @@ tr {
         margin-left: 20px;
     }
 
-    .mobile-articles {
-        padding-right: 45px;
-    }
 
     .hero-image {
         padding: 20px;
@@ -1072,6 +1086,8 @@ tr {
         width: 200%;
         overflow: hidden;
     }
+
+
 }
 
 /* mobile media queries */
@@ -1126,4 +1142,5 @@ tr {
         width: 200%;
         overflow: hidden;
     }
+
 }
