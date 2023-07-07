@@ -137,8 +137,47 @@ Freefido was tested on the following browsers:
 
 ### Testing User Stories
 
-| User Story                 | Feature  | Tested | Response     | Pass/Fail | Fix    |
-|----------------------------|----------|--------|--------------|-----------|--------|
+User Stories are documented in the FreeFido [GitHub Projects Board](https://github.com/users/amylour/projects/4). User Stories are numbered, with Acceptance Criteria and Tasks detailed within. Testing was carried out on Dev Tools for desktop/tablet/mobile, by creating 2 accounts for test users: FidoTest1 and FidoTest2, and following through by ensuring that the Acceptance Criteria ware met. All features were tested to ensure that they provided the user with the expected output and action.
+
+
+| User Story                 | Acceptance Criteria Met?  | Tested | Response     | Pass/Fail | Fix    |
+|----------------------------|---------------------------|--------|--------------|-----------|--------|
+| #1 - Home/About Template   | Yes                       | Yes    | No issues    | Pass      |        |
+| #2 - Navigation            | Yes                       | Yes    | No issues    | Pass      |        |
+| #3 - Footer                | Yes                       | Yes    | No issues    | Pass      |        |
+| #4 - Login Page            | Yes                       | Yes    | No issues    | Pass      |        |
+| #5 - SignUp/Register Page  | Yes                       | Yes    | No issues    | Pass      |        |
+| #6 - Profile SetUp         | Yes                       | Yes    | No issues    | Pass      |        |
+| #7 - Make a Booking Page   | Yes                       | Yes    | No issues    | Pass      |        |
+| #8 - Create a Booking Page | Yes                       | Yes    | No issues    | Pass      |        |
+| #9 - Visit Us Page         | Yes                       | Yes    | No issues    | Pass      |        |
+| #10 - Logout Page          | Yes                       | Yes    | No issues    | Pass      |        |
+| #11 - Booking Confirmation Email | Feature not included in this version - 'Should Have' item | | | | |
+| #12 - Edit User Profile    | Yes                       | Yes    | No issues    | Pass      |        |
+| #13 - Delete User Profile  | Feature left in backlog as currently unnecessary, User can delete individual items and Admin can delete complete account, future version will include delete account | | | | |
+| #14 - Edit Booking         | Yes                       | Yes    | No issues    | Pass      |        |
+| #15 - Delete Booking       | Yes                       | Yes    | No issues    | Pass      |        |
+| #16 - Error Pages          | Yes                       | Yes    | No issues    | Pass      |        |
+| #17 - Articles             | Yes                       | Yes    | No issues    | Pass      |        |
+| #18 - Site Pagination      | Yes                       | Yes    | No issues    | Pass      |        |
+| #19 - View Likes           | Yes                       | Yes    | No issues    | Pass      |        |
+| #20 - View Articles        | Yes                       | Yes    | No issues    | Pass      |        |
+| #21 - Open Article         | Yes                       | Yes    | No issues    | Pass      |        |
+| #22 - Like/Unlike Article  | Yes                       | Yes    | No issues    | Pass      |        |
+| #23 - Comment on a Post    | Yes                       | Yes    | No issues    | Pass      |        |
+| #24 - Gallery Page         | Yes                       | Yes    | No issues    | Pass      |        |
+| #25 - Create Article       | Yes                       | Yes    | No issues    | Pass      |        |
+| #26 - Delete Article       | Yes                       | Yes    | No issues    | Pass      |        |
+| #27 - Edit Article         | Yes                       | Yes    | No issues    | Pass      |        |
+| #28 - Search Function      | Yes                       | Yes    | No issues    | Pass      |        |
+| #29 - Delete Comment       | Yes                       | Yes    | No issues    | Pass      |        |
+| #30 - User Feedback for max Booking Allowance | Yes                       | Yes    | No issues    | Pass      |        |
+| #31 - Upload Image to Gallery Wall | Yes                       | Yes    | No issues    | Pass      |        |
+| #32 - Add Review           | Feature not included in this version - 'Could Have' item | | | | |
+| #33 - Edit Review          | Feature not included in this version - 'Could Have' item | | | | |
+| #34 - Delete Review        | Feature not included in this version - 'Could Have' item | | | | |
+| #35 - Delete Photo         | Yes                       | Yes    | No issues    | Pass      |        |
+ 
 
 
 ### Dev Tools/Real World Device Testing
