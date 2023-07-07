@@ -26,54 +26,65 @@
     <div class="row justify-content-center mx-auto">
         <!-- Articles entered col -->
         <div class="col-12 mt-3">
-            <div class="row justify-content-center mobile-articles">
+            <div class="row justify-content-center">
                 {% for article in article_list %}
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card mb-4">
-                            <div class="image-container-article mx-4">
-                                <a href="{% url 'article_page' article.slug %}" class="article-link"></a>
-                                {% if "placeholder" in article.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/placeholder_img.png' %}"
-                                    alt="leaves pattern placeholder image in purple and white">
-                                {% else %}
-                                <img class="card-img-top" src="{{ article.featured_image.url }}" alt="">
-                                {% endif %}
-                                <div class="card-body">
-                                    <a href="{% url 'article_page' article.slug %}" class="article-link">
-                                        <h2 class="card-title special-anchor-article my-2">{{ article.title }}</h2>
-                                    </a>
-                                    <p class="card-text h6">{{ article.created_on }} <img src="{% static 'icons/heart.png' %}"
-                                            class="like-icon" alt="pawprint heart like icon">
-                                        {{ article.number_of_likes }}</p>
-                                </div>
-                                <div class="overlay-card"></div>
+                {% if article_list|length == 1 %}
+                <div class="col-12">
+                    {% else %}
+                    <div class="col-12 col-sm-6 col-md-4">
+                        {% endif %}
+                    <div class="card mb-4">
+                        <div class="image-container-article">
+                            <a href="{% url 'article_page' article.slug %}" class="article-link"></a>
+                            {% if "placeholder" in article.featured_image.url %}
+                            <img class="card-img-top" src="{% static 'images/placeholder_img.png' %}"
+                                alt="leaves pattern placeholder image in purple and white">
+                            {% else %}
+                            <img class="card-img-top" src="{{ article.featured_image.url }}" alt="">
+                            {% endif %}
+                            <div class="card-body">
+                                <a href="{% url 'article_page' article.slug %}" class="article-link">
+                                    <h2 class="card-title special-anchor-article my-2">{{ article.title }}</h2>
+                                </a>
+                                <p class="card-text h6">{{ article.created_on }} <img src="{% static 'icons/heart.png' %}"
+                                        class="like-icon" alt="pawprint heart like icon">
+                                    {{ article.number_of_likes }}</p>
                             </div>
+                            <div class="overlay-card"></div>
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
-            <div class="row mobile-articles">
+            <div class="row">
                 {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
-    <!-- Site pagination code for page navigation from Django ListView -->
-    {% if is_paginated %}
+</div>
+<!-- Site pagination code for page navigation from Django ListView -->
+{% if is_paginated %}
+<div class="row justify-content-center">
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            <li class="page-item">
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous">
+                    <img class="page-arrow" src="{% static 'icons/prev.png' %}" alt="previous">
+                </a>
+            </li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
+            <li class="page-item">
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link" aria-label="Next">
+                    <img class="page-arrow" src="{% static 'icons/next.png' %}" alt="next">
+                </a>
+            </li>
             {% endif %}
         </ul>
     </nav>
-    {% endif %}
 </div>
+{% endif %}
 
 {% endblock %}
