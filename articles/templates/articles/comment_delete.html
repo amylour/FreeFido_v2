@@ -7,13 +7,13 @@
 {% block content %}
 
 
-<div class="container">
-    <h1 class="text-center mt-2 section-title" id="auth">Confirm Comment Deletion</h1>
+<div class="container text-center">
+    <h1 class="mt-2 section-title" id="auth">Confirm Comment Deletion</h1>
     <div class="d-flex justify-content-center pt-3">
         <form method="post" class="text-center">
             {% csrf_token %}
-            <p class="section-p">Are you sure you want to delete this comment?</p>
-            <input type="submit" class="btn btn-custom" value="Confirm">
+            <p class="section-p my-4">Are you sure you want to delete this comment?</p>
+            <input type="submit" class="btn btn-custom my-3" value="Confirm">
         </form>
     </div>
     <div class="mb-3 mx-auto text-center">
