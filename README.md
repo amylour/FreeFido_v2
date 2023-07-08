@@ -22,7 +22,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Font](#font)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
-  - [Agile Methodologies -Project Management](#agile-methodologies--project-management)
+  - [Agile Methodologies - Project Management](#agile-methodologies---project-management)
     - [MoSCoW Prioritisation](#moscow-prioritisation)
     - [GitHub Projects](#github-projects)
     - [Sprints](#sprints)
@@ -40,8 +40,8 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Database Schema](#database-schema)
     - [Security](#security)
   - [Features](#features)
-  - [Features](#features-1)
     - [User View - Registered/Unregistered](#user-view---registeredunregistered)
+    - [CRUD Functionality](#crud-functionality)
   - [Future Features](#future-features)
   - [Technologies \& Languages Used](#technologies--languages-used)
     - [Libraries \& Frameworks](#libraries--frameworks)
@@ -90,13 +90,13 @@ I was really excited to get working on this project's frontend as I could see th
 
 As mentioned above, the colour scheme and logo drove the design of the website. I wanted to create a 'fun' environment for the user to create the connection with the enjoyment that they would have with their dog at the park. The colours represent different sections/features of the website. I balanced the vibrant shades with a classic, #fff white background and an off-black shade of #0d0d0d, as I felt that it yielded a slightly more matte effect that #000 black. This combination also yielded a high contrast ratio of 19.44 for accessibility, with my colour scheme also passing a Colour Blind Safe check via [Adobe Color](https://color.adobe.com/create/color-wheel). This check was important for accessibility as the colours would form the base for my page and feature icons. Each colour in the scheme was also contrast checked with black #0d0d0d to ensure no contrast issue, all passed.
 
-The corresponding sections and colours are:
+The corresponding sections and colours and identifying CSS variables are:
 
-- Authentication: #AC44F2
-- Gallery: #3BD952
-- User Profile: #F29F05
-- Visiting Information: #F25C5C
-- Booking: #4CE0C3
+- Authentication: #AC44F2 '--purple'
+- Gallery: #3BD952 '--green'
+- User Profile: #F29F05 '--orange'
+- Visiting Information: #F25C5C '--coral'
+- Booking: #4CE0C3 '--blue'
 
 For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
 
@@ -120,7 +120,7 @@ Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montse
 
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
-
+In development, 'Outfit' was identified by variable '--title', whilst 'Montserrat' was set as '--main-font' within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
 
 ## Strategy Plane
 
@@ -135,7 +135,7 @@ The project goal was to build a simple booking app for a service. The 'product' 
 - UX remains the same whther on mobile, tablet or desktop
 - Scalable idea, for addition of future features to easily grow the business
 
-## Agile Methodologies -Project Management
+## Agile Methodologies - Project Management
 
 ### MoSCoW Prioritisation
 
@@ -147,6 +147,7 @@ The project goal was to build a simple booking app for a service. The 'product' 
 ## User Stories
 
 User stories and features recorded and managed on GitHub Projects -> (<https://github.com/users/amylour/projects/4>)
+
 
 ### Visitor User Stories
 
@@ -345,56 +346,191 @@ Through the early development of FreeFido, I created an Article section to help 
 
 ### Database Schema
 
+![ERD Image](documentation/wireframes/)
+
 - AllAuth User Model
 - ERD Diagram
 - Custom Models
 - Profile Model
 - Booking Model
+- 
 
 ### Security
 
 ## Features
 
-## Features
-
 ### User View - Registered/Unregistered
 
-**Header & Navigation**
-    - details
-    - details
+It was important to me from the beginning that FreeFido be accessible to an unregistered user, in some capacitites. I wanted the website to sell the product to a new user quickly by immediately inviting them into the community through the park's information, articles and gallery sections. The following is a breakdown of the site's accessibility for registered/unregistered users:
 
+| Feature   | Unregistered User | Registered User |
+|-----------|-------------------|-----------------|
+| Home Page | Visable           | Visable         |
+| Profile   | Not Visible - 'Profile' icon only appears for registered users | Visable and full feature interaction available |
+| Articles  | Visable but not interactable via 'Likes/Comments', 'Add Article' button not visible | Visable and full feature interaction available |
+| Booking   | Icon visible but redirected to Sign In page/Sign Up through link | Visable and full feature interaction available |
+| Gallery   | Visable but no option to 'Add Photo' | Visable and full feature interaction available |
+| Visit Us  | Visable and map interaction available | Visible and map interaction available |
+
+
+### CRUD Functionality
+
+Users are able to Create, Read, Update and Delete their shared information on FreeFido. Some features make full CRUD functionality available, whilst others present the necessary options only. Here is my CRUD breakdown for FreeFido:
+
+| Feature | Create | Read | Update | Delete |
+|---------|--------|------|--------|--------|
+| Profile | Created upon registration | Yes | Yes | Full Profile deletion is currently only available to Admin upon User Account deletion, the profile dashboard clears automatically if a user removes all of their articles or bookings |
+| Articles | Yes | Yes | Yes | Yes |
+| Bookings | Yes | Yes | Yes | Yes |
+| Gallery | Yes | Yes | No - this feature felt unneccessary as it's intention is a 'quick-sharing' of a photo, a minimal amount of information is required and users are able to delete the image if they wish | Yes |
+
+
+**Header & Navigation**
+
+*For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
+
+<details open>
+    <summary>Header & Navigation</summary>  
+    <img src="documentation/final_views/nav.png">  
+</details>
+    
 **Home Page**
+
+<details open>
+    <summary>Home Page</summary>  
+    <img src="documentation/final_views/home.png">  
+</details>
 
 **About Page**
 
-**Registration**
-    - Email
-    - Username (unique)
-    - First Name
-    - Last Name
-    - Password
-    - Password repeat
+<details open>
+    <summary>About Page</summary>  
+    <img src="documentation/final_views/about.png">  
+</details>
+
+**Registration/SignUp**
+
+<details open>
+    <summary>SignUp Page</summary>  
+    <img src="documentation/final_views/signup.png">  
+</details>
 
 **Login**
-- It includes a small welcome back message and a link to the Registration form for users who have not yet registered for an account.
-- It uses django-allauth to provide all the settings for user authentication and includes the following fields:  
 
-  - Email
-  - Password
+<details>
+    <summary>Login Page</summary>  
+    <img src="documentation/final_views/login.png">  
+</details>
 
 **Logout**
 
+<details>
+    <summary>Logout Page</summary>  
+    <img src="documentation/final_views/logout.png">  
+</details>
+
 **Profile**
 
-**Relevant pages included in build........
+<details open>
+    <summary>Profile Page</summary>  
+    <img src="documentation/final_views/profile.png">  
+</details>
 
-**CRUD Booking**
+**Profile Edit**
 
-**Footer**
+<details>
+    <summary>Edit Profile Modal</summary>  
+    <img src="documentation/final_views/edit_modal_profile.png">  
+</details>
+
+**Articles**
+
+<details open>
+    <summary>Articles Page</summary>  
+    <img src="documentation/final_views/articles.png">  
+</details>
+
+**Edit Article**
+
+<details open>
+    <summary>Edit Article Page</summary>  
+    <img src="documentation/final_views/edit_article.png">  
+</details>
+
+**Delete Article**
+
+<details open>
+    <summary>Delete Article Page</summary>  
+    <img src="documentation/final_views/delete_article.png">  
+</details>
+
+**Search Function**
+
+<details open>
+    <summary>Search Function</summary>  
+    <img src="documentation/final_views/search.png">  
+</details>
+
+**Bookings**
+
+<details open>
+    <summary>Bookings Page</summary>  
+    <img src="documentation/final_views/booking.png">  
+</details>
+
+**Booking Create**
+
+<details open>
+    <summary>Booking Create Page</summary>  
+    <img src="documentation/final_views/booking_c.png">  
+</details>
+
+**Edit Booking**
+
+<details open>
+    <summary>Edit Booking Page</summary>  
+    <img src="documentation/final_views/booking_e.png">  
+</details>
+
+**Delete Booking**
+
+<details>
+    <summary>Delete Booking Page</summary>  
+    <img src="documentation/final_views/booking_d.png">  
+</details>
+
+**Gallery**
+
+<details open>
+    <summary>Gallery Page</summary>  
+    <img src="documentation/final_views/gallery.png">  
+</details>
+
+**Add Photo**
+
+<details open>
+    <summary>Add Photo Page</summary>  
+    <img src="documentation/final_views/add_photo.png">  
+</details>
+
+**Delete Photo**
+
+<details open>
+    <summary>Delete Photo Page</summary>  
+    <img src="documentation/final_views/delete_photo.png">  
+</details>
+
+**Visit Us**
+
+<details>
+    <summary>Visit Us Page</summary>  
+    <img src="documentation/final_views/visit.png">  
+</details>
+
 
 **403, 404, 500 Pages**
 
-These templates were added to this project in order to give the user the functionality to return to the website by using the links in the navigation bar or the Back to Homepage button at the bottom of the page.
+These templates were added to this project in order to give the user the functionality to return to the website by using the links in the navigation bar or the Back to Homepage button on the Error page.
 
 - They are triggered when a user tries to access:
   - information that is not theirs - 403,
@@ -405,6 +541,14 @@ These templates were added to this project in order to give the user the functio
 Business Owner/Django Admin Panel/Superuser
 
 ## Future Features
+
+- Admin key icon for superuser login
+- Updated Booking system using django agenda/scheduler that shows unavailable dates and times
+- Downloable app with quicker access to booking system for regular users
+- Member to member contact via DM, connecting profiles to allow for sharing bookings with compatible dogs
+- Merchandise section with dog training items/treats available for collection at the Freefido coffee hut at dog park entrance
+- Book a Trainer/Join training classes
+- Quick info about local area for visitors eg pet stores/vets/dog-friendly restaurants
 
 ## Technologies & Languages Used
 
