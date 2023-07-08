@@ -295,6 +295,24 @@ footer {
     color: var(--white) !important;
 }
 
+.btn-gallery {
+    background-color: var(--green);
+}
+
+.btn-gallery:hover {
+    transform: scale(1.05);
+    background-color: #3bc750;
+    color: var(--white);
+}
+
+.btn-gallery:active {
+    transform: scale(0.95);
+    /* override bootstrap css btn active properties with !important */
+    background-color: #3bc750 !important;
+    color: var(--white) !important;
+    border: none;
+}
+
 /*  booking button styling */
 .booking-btn {
     background-color: var(--blue);
