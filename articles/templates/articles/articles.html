@@ -65,8 +65,8 @@
 </div>
 <!-- Site pagination code for page navigation from Django ListView -->
 {% if is_paginated %}
-<div class="row justify-content-center">
-    <nav aria-label="Page navigation">
+<div class="justify-content-center">
+    <nav aria-label="Page navigation" class="mx-auto">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li class="page-item">
