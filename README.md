@@ -397,45 +397,60 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 *For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
 
 <details open>
-    <summary>Header & Navigation</summary>  
+    <summary>Header & Navigation - All Users (Profile Icon only visible to Registered, Logged In Users)</summary>  
     <img src="documentation/final_views/nav.png">  
 </details>
+
+![Profile Icon](documentation/final_views/profileicon_nav.png)  
+*Registered, Logged In view with Profile Icon*
     
     
 **Home Page**
 
 <details open>
-    <summary>Home Page</summary>  
+    <summary>Home Page - Visible to all Users</summary>  
     <img src="documentation/final_views/home.png">  
 </details>
+
+In the Home Page 'Hero' section, when a user is not registered they will see a 'Sign Up' button under the section text, which will bring them to the sign up page. When logged in, they will see 'Book Today!' which will bring them to the booking page.
 
 
 **About Page**
 
 <details open>
-    <summary>About Page</summary>  
+    <summary>About Page - Visible to all Users</summary>  
     <img src="documentation/final_views/about.png">  
 </details>
+
+The 'About' section of the Home Page contains three sections of information for the user, 'About', 'Safety', 'Benefits'. These sections display paragraphs and bulleted lists of information about the park and its positive values and benefits. Within each paragraph is a colour-coded word which acts as a link to bring the user to an important section of the website.
+
+![Paragraph link](documentation/final_views/linkarea.png)
 
 
 **Registration/SignUp**
 
 <details open>
-    <summary>SignUp Page</summary>  
+    <summary>Sign Up Page</summary>  
     <img src="documentation/final_views/signup.png">  
 </details>
 
 
 **Sign In**
 
-<details>
+<details open>
     <summary>Sign In Page</summary>  
     <img src="documentation/final_views/login.png">  
 </details>
 
 On successful Sign In, the user is greeted with feedback through a message which confirms sign in. The 'open padlock' Log In icon now changes to a 'closed padlock' Log Out icon that the user can click to begin the Log Out process.
 
-<details>
+![incorrect username/email warning](documentation/final_views/incorrect_sign_in.png)  
+*User is given feedback if they submit incorrect details where one item is correct and the other is incorrect*
+
+![fill out field warning](documentaion/final_views/fill_field_warning.png)  
+*Django built in field warnings for incorrect/forgotten fields input*
+
+<details open>
     <summary>Sign In Message and Log In icon change</summary>  
     <img src="documentation/final_views/signin_message.png">  
 </details>
@@ -448,11 +463,13 @@ On successful Sign In, the user is greeted with feedback through a message which
     <img src="documentation/final_views/logout.png">  
 </details>
 
+![sign out message](documentation/final_views/signed_out.png)
+
 
 **Profile**
 
 <details open>
-    <summary>Profile Page</summary>  
+    <summary>Profile Page - Registered Users only</summary>  
     <img src="documentation/final_views/profile.png">  
 </details>
 
@@ -477,10 +494,19 @@ On successful Sign In, the user is greeted with feedback through a message which
     <img src="documentation/final_views/article_unreg.png">  
 </details>
 
+![like/comment count under article](documentation/final_views/like_comment.png)  
+*A Likes and Comments counter is visible under every article. Users can interact by clicking the heart outline to like. 'Heart outline' icon is replaced by filled Heart icon*
+
+![zero likes icon](documentation/final_views/zero_likes.png)  
+*Likes icon is represented by an outlined heart icon. When it receives a like, it becomes a filled heart icon*
+
 <details open>
     <summary>Add a Comment - Registered User View</summary>  
     <img src="documentation/final_views/comments.png">  
 </details>
+
+![comment awaiting approval message](documentation/final_views/approval_comment.png)  
+*Comment is awaiting approval message displayed after comment submit*
 
 <details open>
     <summary>Read Article - Unregistered User View</summary>  
@@ -488,16 +514,29 @@ On successful Sign In, the user is greeted with feedback through a message which
 </details>
 
 
+**Create Article**
+
+<details open>
+    <summary>Create Article Page - Registered, Logged In User View</summary>  
+    <img src="documentation/final_views/art_eddel_reg.png">  
+</details>
+
+
 **Edit Article**
 
 <details open>
-    <summary>Edit Article Page - Registered User View - Article Author View - Edit/Delete Icon</summary>  
+    <summary>Edit Article Page - Registered, Logged In User View - Article Author View - Edit/Delete Icon</summary>  
     <img src="documentation/final_views/art_eddel_reg.png">  
 </details>
 
 <details open>
     <summary>Edit Article Page - Only accessible to the Article Author</summary>  
     <img src="documentation/final_views/edit_article.png">  
+</details>
+
+<details open>
+    <summary>Edit Article Message</summary>  
+    <img src="documentation/final_views/art_updated_msg.png">  
 </details>
 
 
@@ -539,15 +578,18 @@ On successful Sign In, the user is greeted with feedback through a message which
 **Booking Create**
 
 <details open>
-    <summary>Booking Create Page</summary>  
+    <summary>Booking Create Page - Visible only to Logged-In Users</summary>  
     <img src="documentation/final_views/booking_c.png">  
 </details>
+
+![booking saved message](documentation/final_views/booking_saved_msg.png)  
+*User feedback is delivered by message once a booking has been submitted through creation or edit- message dissappears after 3 seconds*
 
 
 **Edit Booking**
 
 <details open>
-    <summary>Edit Booking Page</summary>  
+    <summary>Edit Booking Page - Visible for Logged-In Users who have made a previous Booking</summary>  
     <img src="documentation/final_views/booking_e.png">  
 </details>
 
@@ -555,20 +597,23 @@ On successful Sign In, the user is greeted with feedback through a message which
 **Delete Booking**
 
 <details>
-    <summary>Delete Booking Page</summary>  
+    <summary>Delete Booking Page - Visible for Logged-In Users who have made a previous Booking</summary>  
     <img src="documentation/final_views/booking_d.png">  
 </details>
+
+![deleted booking message](documentation/final_views/booking_del_msg.png)  
+*User feedback is delivered by message once a booking has been deleted - message dissappears after 3 seconds*
 
 
 **Gallery**
 
 <details open>
-    <summary>Gallery Page</summary>  
+    <summary>Gallery Page - Registered User View with 'Add Photo' icon, Unregistered User View without icon</summary>  
     <img src="documentation/final_views/gallery.png">  
 </details>
 
 <details open>
-    <summary>Gallery Page</summary>  
+    <summary>Gallery Page - Unregistered User view with photo info on hover(Desktop)/touch (on Mobile)</summary>  
     <img src="documentation/final_views/gal_unreg_info.png">  
 </details>
 
@@ -576,7 +621,7 @@ On successful Sign In, the user is greeted with feedback through a message which
 **Add Photo**
 
 <details open>
-    <summary>Add Photo Page</summary>  
+    <summary>Add Photo Page - Registered Users only</summary>  
     <img src="documentation/final_views/add_photo.png">  
 </details>
 
@@ -584,7 +629,7 @@ On successful Sign In, the user is greeted with feedback through a message which
 **Delete Photo**
 
 <details open>
-    <summary>Photo Delete - Registered User View</summary>  
+    <summary>Photo Delete - Registered User View - delete icon only visible over the photos uploaded by that logged-in user. </summary>  
     <img src="documentation/final_views/gal_reg_del.png">  
 </details>
 
@@ -614,7 +659,27 @@ These templates were added to this project in order to give the user the functio
   - something has gone wrong with the server and cannot retrieve database - 500
 
 **Admin Panel**
-Business Owner/Django Admin Panel/Superuser
+
+Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users.
+
+![django admin panel view](documentation/final_views/dj_adminpanel.png)  
+*Django Admin panel view for FreeFido Administrator - content selection menu on left hand side*
+
+Users articles and comments require approval by the Admin of FreeFido to keep the website content on topic. Admin can change the status of articles from 'Draft' to 'Published'.
+
+![dj admin panel articles approval](documentation/final_views/draft_art.png)  
+*Dropdown menu allowing Admin to 'publish' a users article*  
+    
+    
+![dj admin panel comments approval](documentation/final_views/comment_approval.png)  
+*Dropdown menu allowing Admin to 'approve' a users comment*
+  
+Admin can control users booking via the panel.
+
+![dj admin panel bookings](documentation/final_views/dj_booking.png)  
+*All bookings are made available to the Admin*
+
+
 
 ## Future Features
 
