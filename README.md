@@ -226,23 +226,30 @@ Planning my project thoroughly from the start allowed me to identify areas of im
 From initial concept to finished product, icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from Flaticon and my colour scheme, I created my navbar icons. I edited my Login/Logout icons with a pawprint to have them fit the theme better.
 
 
+
 ![navbar icons](documentation/final_views/icons_row.png)  
 
 *Navigation icons for FreeFido*
+  
 
 Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
+  
 
 ![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
   
 *Navigation bar tooltips demonstrated on Desktop*
+  
 
 Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
+  
 
 ![image with rounded corners](documentation/final_views/article_card_br.png)
   
 *Article card from the Articles section with rounded corner styling*
+  
 
 Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
+  
 
 ![header with underline](documentation/final_views/header_underline.png)  
   
@@ -394,12 +401,14 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/nav.png">  
 </details>
     
+    
 **Home Page**
 
 <details open>
     <summary>Home Page</summary>  
     <img src="documentation/final_views/home.png">  
 </details>
+
 
 **About Page**
 
@@ -408,6 +417,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/about.png">  
 </details>
 
+
 **Registration/SignUp**
 
 <details open>
@@ -415,19 +425,29 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/signup.png">  
 </details>
 
-**Login**
+
+**Sign In**
 
 <details>
-    <summary>Login Page</summary>  
+    <summary>Sign In Page</summary>  
     <img src="documentation/final_views/login.png">  
 </details>
 
-**Logout**
+On successful Sign In, the user is greeted with feedback through a message which confirms sign in. The 'open padlock' Log In icon now changes to a 'closed padlock' Log Out icon that the user can click to begin the Log Out process.
 
 <details>
-    <summary>Logout Page</summary>  
+    <summary>Sign In Message and Log In icon change</summary>  
+    <img src="documentation/final_views/signin_message.png">  
+</details>
+
+
+**Sign Out**
+
+<details>
+    <summary>Sign Out Page</summary>  
     <img src="documentation/final_views/logout.png">  
 </details>
+
 
 **Profile**
 
@@ -436,6 +456,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/profile.png">  
 </details>
 
+
 **Profile Edit**
 
 <details>
@@ -443,40 +464,77 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/edit_modal_profile.png">  
 </details>
 
+
 **Articles**
 
 <details open>
-    <summary>Articles Page</summary>  
+    <summary>Articles Page - Registered User View</summary>  
     <img src="documentation/final_views/articles.png">  
 </details>
+
+<details open>
+    <summary>Articles Page - Unregistered User View</summary>  
+    <img src="documentation/final_views/article_unreg.png">  
+</details>
+
+<details open>
+    <summary>Add a Comment - Registered User View</summary>  
+    <img src="documentation/final_views/comments.png">  
+</details>
+
+<details open>
+    <summary>Read Article - Unregistered User View</summary>  
+    <img src="documentation/final_views/article_unreg.png">  
+</details>
+
 
 **Edit Article**
 
 <details open>
-    <summary>Edit Article Page</summary>  
+    <summary>Edit Article Page - Registered User View - Article Author View - Edit/Delete Icon</summary>  
+    <img src="documentation/final_views/art_eddel_reg.png">  
+</details>
+
+<details open>
+    <summary>Edit Article Page - Only accessible to the Article Author</summary>  
     <img src="documentation/final_views/edit_article.png">  
 </details>
+
 
 **Delete Article**
 
 <details open>
-    <summary>Delete Article Page</summary>  
+    <summary>Delete Article Page - Only accessible to the Article Author </summary>  
     <img src="documentation/final_views/delete_article.png">  
 </details>
+
 
 **Search Function**
 
 <details open>
-    <summary>Search Function</summary>  
+    <summary>Search Function - Visible on Article pages only</summary>  
     <img src="documentation/final_views/search.png">  
 </details>
+
+<details open>
+    <summary>Search Function No Articles Found - Visible on Article pages only</summary>  
+    <img src="documentation/final_views/no_articles.png">  
+</details>
+
 
 **Bookings**
 
 <details open>
-    <summary>Bookings Page</summary>  
+    <summary>Bookings Page - Registered Users only</summary>  
     <img src="documentation/final_views/booking.png">  
 </details>
+
+
+<details open>
+    <summary>Bookings Page - Max Bookings Reached</summary>  
+    <img src="documentation/final_views/maxbooking.png">  
+</details>
+
 
 **Booking Create**
 
@@ -485,12 +543,14 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/booking_c.png">  
 </details>
 
+
 **Edit Booking**
 
 <details open>
     <summary>Edit Booking Page</summary>  
     <img src="documentation/final_views/booking_e.png">  
 </details>
+
 
 **Delete Booking**
 
@@ -499,12 +559,19 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/booking_d.png">  
 </details>
 
+
 **Gallery**
 
 <details open>
     <summary>Gallery Page</summary>  
     <img src="documentation/final_views/gallery.png">  
 </details>
+
+<details open>
+    <summary>Gallery Page</summary>  
+    <img src="documentation/final_views/gal_unreg_info.png">  
+</details>
+
 
 **Add Photo**
 
@@ -513,12 +580,19 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/add_photo.png">  
 </details>
 
+
 **Delete Photo**
 
 <details open>
-    <summary>Delete Photo Page</summary>  
-    <img src="documentation/final_views/delete_photo.png">  
+    <summary>Photo Delete - Registered User View</summary>  
+    <img src="documentation/final_views/gal_reg_del.png">  
 </details>
+
+<details open>
+    <summary>Delete Photo Page</summary>  
+    <img src="documentation/final_views/del_photo_modal.png">  
+</details>
+
 
 **Visit Us**
 
@@ -531,6 +605,8 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 **403, 404, 500 Pages**
 
 These templates were added to this project in order to give the user the functionality to return to the website by using the links in the navigation bar or the Back to Homepage button on the Error page.
+
+![404 error page](documentation/final_views/404error.png)
 
 - They are triggered when a user tries to access:
   - information that is not theirs - 403,
