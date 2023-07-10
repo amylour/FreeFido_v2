@@ -137,6 +137,15 @@ The project goal was to build a simple booking app for a service. The 'product' 
 
 ### Sprints
 
+| Sprint No. | Sprint Content | Start/Finish Dates |
+|------------|----------------|--------------------|
+| #1 | Project Setup | 23/05/23 -> 25/05/23 |
+| #2 | All Auth Setup/Site Navigation | 25/05/23 -> 01/06/23 |
+| #3 | Profile/Articles Features | 27/05/23 -> 06/06/23 |
+| #4 | Booking/Gallery Features | 07/06/23 -> 12/06/23 |
+| #5 | Frontend Development | 13/06/23 -> 20/06/23 |
+| #6 | Testing/Documentation | 04/07/23 -> 11/07/23 |
+
 
 ## User Stories
 
@@ -229,7 +238,7 @@ Accessibility is very important to me and in case I missed the mark with my icon
   
 Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
   
-![image with rounded corners](documentation/final_views/article_card_br.png)
+![image with rounded corners](documentation/final_views/article_card_br.png)  
 *Article card from the Articles section with rounded corner styling*
   
 Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
@@ -340,6 +349,10 @@ Through the early development of FreeFido, I created an Article section to help 
 
 
 ### Security
+
+- AllAuth
+- Defensive Design
+- CSRF Tokens
 
 ## Features
 
