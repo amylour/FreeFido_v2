@@ -78,10 +78,10 @@ FreeFido is accessible via all browsers with full responsiveness on different sc
 
 I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fisher-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
 
-![Fischer Price controller](documentation/final_views/fp_toy.webp)  
+![Fischer Price controller](documentation/final_views/fp_toy.webp) 
 *Original inspiration for the design process*
 
-![FreeFido logo](documentation/final_views/logo.png)  
+![FreeFido logo](documentation/final_views/logo.png)
 *FreeFido logo in font 'Outfit' using colours inspired by the toy*
 
 ### Colour Scheme
@@ -98,20 +98,20 @@ The corresponding sections and colours and identifying CSS variables are:
 
 For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
 
-![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)  
+![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)
 *Black, white and grey used for backgrounds, text and Login/Logout icon*
 
-![screenshot of colour scheme](documentation/final_views/color_small.png)  
+![screenshot of colour scheme](documentation/final_views/color_small.png)
 *Colour Scheme for FreeFido website*
 
-![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)  
+![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)
 *Accessibility check for colour scheme*
 
 ### Font
 
 Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montserrat' as a complementary font to my CSS file. Outfit is a playful, clear sans-serif which I felt worked well in designing my logo and for headers in my project. For future use, I envisoned merchandise bearing the logo for the FreeFido stall at the dog park. Montserrat was chosen as it gave more structure to the paragraph sections.
 
-![outfit font design sheet](documentation/final_views/outfit.png)  
+![outfit font design sheet](documentation/final_views/outfit.png)
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
 In development, 'Outfit' was identified by variable '--title', whilst 'Montserrat' was set as '--main-font' within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
@@ -494,6 +494,9 @@ Modal appears over the Profile page and allows users to edit their Profile Pictu
     <img src="documentation/final_views/art_unregview.png">  
 </details>
 
+![site pagination arrow for moving page every 6 articles](documentation/final_views/site_pag.png)  
+*Site pagination kicks in to display 6 articles per page. Arrows at the base of the article section allow users to move forward and back*
+
 Unregistered Users are free to read the articles and comments left on FreeFido but they cannot 'Like/Comment' them until they have signed up and logged in.
 
 ![like/comment count under article](documentation/final_views/like_comment.png)  
@@ -511,6 +514,13 @@ A comment box is visible to logged-in users only. Their comment is submitted for
 
 ![comment awaiting approval message](documentation/final_views/approval_comment.png)  
 *Comment is awaiting approval message displayed after comment submit*
+
+<details>
+    <summary>Delete Comment - Registered User View for Comment Author only</summary>  
+    <img src="documentation/final_views/comm_del_icon.png">  
+</details>
+
+For the author of the comment, when logged in, a trash icon will appear to allow them to delete the comment if they wish. 
 
 
 **Create Article**
