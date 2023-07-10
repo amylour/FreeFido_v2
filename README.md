@@ -78,10 +78,10 @@ FreeFido is accessible via all browsers with full responsiveness on different sc
 
 I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fisher-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
 
-![Fischer Price controller](documentation/final_views/fp_toy.webp) 
+![Fischer Price controller](documentation/final_views/fp_toy.webp)  
 *Original inspiration for the design process*
 
-![FreeFido logo](documentation/final_views/logo.png)
+![FreeFido logo](documentation/final_views/logo.png)  
 *FreeFido logo in font 'Outfit' using colours inspired by the toy*
 
 ### Colour Scheme
@@ -98,20 +98,20 @@ The corresponding sections and colours and identifying CSS variables are:
 
 For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
 
-![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)
+![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)  
 *Black, white and grey used for backgrounds, text and Login/Logout icon*
 
-![screenshot of colour scheme](documentation/final_views/color_small.png)
+![screenshot of colour scheme](documentation/final_views/color_small.png)  
 *Colour Scheme for FreeFido website*
 
-![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)
+![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)  
 *Accessibility check for colour scheme*
 
 ### Font
 
 Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montserrat' as a complementary font to my CSS file. Outfit is a playful, clear sans-serif which I felt worked well in designing my logo and for headers in my project. For future use, I envisoned merchandise bearing the logo for the FreeFido stall at the dog park. Montserrat was chosen as it gave more structure to the paragraph sections.
 
-![outfit font design sheet](documentation/final_views/outfit.png)
+![outfit font design sheet](documentation/final_views/outfit.png)  
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
 In development, 'Outfit' was identified by variable '--title', whilst 'Montserrat' was set as '--main-font' within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
@@ -219,30 +219,22 @@ Planning my project thoroughly from the start allowed me to identify areas of im
 
 From initial concept to finished product, icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from Flaticon and my colour scheme, I created my navbar icons. I edited my Login/Logout icons with a pawprint to have them fit the theme better.
 
-
-
-![navbar icons](documentation/final_views/icons_row.png)
+![navbar icons](documentation/final_views/icons_row.png)  
 *Navigation icons for FreeFido*
   
-
 Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
   
-
-![desktop tooltips](documentation/final_views/tooltip_gif.gif)
+![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
 *Navigation bar tooltips demonstrated on Desktop*
   
-
 Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
   
-
 ![image with rounded corners](documentation/final_views/article_card_br.png)
 *Article card from the Articles section with rounded corner styling*
   
-
 Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
   
-
-![header with underline](documentation/final_views/header_underline.png)
+![header with underline](documentation/final_views/header_underline.png)  
 *Sign Up page header with purple underline for Authentication related sections*  
 
 
