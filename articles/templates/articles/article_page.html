@@ -106,7 +106,7 @@
 
                     {% if request.user.username == comment.name %}
                     <div class="text-center">
-                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-link"><img src="{% static '../static/icons/delete_booking.png' %}" alt="delete article" class="icon-delete-btn"></a>
+                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-link"><img src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
                     </div>
                     {% endif %}
                 </div>
