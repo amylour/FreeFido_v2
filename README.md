@@ -79,11 +79,9 @@ FreeFido is accessible via all browsers with full responsiveness on different sc
 I was really excited to get working on this project's frontend as I could see the final product from the very beginning. I wanted to create a website that had plenty of clean whitespace that allowed colourful, bright icons to pop for each section of the website. The colours chosen were very specific from the beginning and I was careful to manipulate the CSS for each section to carry the relevant, related colour through. Original inspiration was from the Fisher-Price toy games controller, I had wanted to create an interactive, service-based website, with it's own logo using the colour scheme of the games controller. Once I had chosen the font of 'Outfit' and created the logo on Procreate, the website content followed swiftly and I had great fun developing it.
 
 ![Fischer Price controller](documentation/final_views/fp_toy.webp)  
-
 *Original inspiration for the design process*
 
 ![FreeFido logo](documentation/final_views/logo.png)  
-
 *FreeFido logo in font 'Outfit' using colours inspired by the toy*
 
 ### Colour Scheme
@@ -101,23 +99,19 @@ The corresponding sections and colours and identifying CSS variables are:
 For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
 
 ![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)  
-
 *Black, white and grey used for backgrounds, text and Login/Logout icon*
 
-![screenshot of colour scheme](documentation/final_views/color_small.png)
-
+![screenshot of colour scheme](documentation/final_views/color_small.png)  
 *Colour Scheme for FreeFido website*
 
-![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)
-
+![colour blind safe colour swatch](documentation/final_views/color_blind_safe.png)  
 *Accessibility check for colour scheme*
 
 ### Font
 
 Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montserrat' as a complementary font to my CSS file. Outfit is a playful, clear sans-serif which I felt worked well in designing my logo and for headers in my project. For future use, I envisoned merchandise bearing the logo for the FreeFido stall at the dog park. Montserrat was chosen as it gave more structure to the paragraph sections.
 
-![outfit font design sheet](documentation/final_views/outfit.png)
-
+![outfit font design sheet](documentation/final_views/outfit.png)  
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
 In development, 'Outfit' was identified by variable '--title', whilst 'Montserrat' was set as '--main-font' within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
@@ -262,9 +256,9 @@ To allow for ease of responsiveness, each section was designed keeping in mind t
 
 ### Wireframes
 
-The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. Figma is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes. 
+The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. [Figma](www.figma.com) is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes. 
 
-Mobile/Tablet view for:
+**Mobile/Tablet view for:**
 - Home
 - Sign Up
 - Profile
@@ -272,21 +266,21 @@ Mobile/Tablet view for:
 Originally I had planned for the home page to be mostly icon based for quick and easy use. However, I felt that this format would suit a downloadable app version of FreeFido, instead of the web version, which regular users might avail of to give them quicker access to the booking page, especially if they are one-handed, walking the dog on the way to the park. This will be part of my future features for the project growth.
 
 <details open>
-    <summary>Mobile/Tablet Home Page</summary>  
+    <summary>Mobile/Tablet Home Page Wireframe</summary>  
     <img src="documentation/wireframes/mt_home.png">  
 </details>
 
-<details open>
-    <summary>Mobile/Tablet Sign Up Page</summary>  
+<details>
+    <summary>Mobile/Tablet Sign Up Page Wireframe</summary>  
     <img src="documentation/wireframes/mobile_tablet_sign_up.png">
 </details>
 
-<details open>
-    <summary>Mobile/Tablet Profile Page</summary>  
+<details>
+    <summary>Mobile/Tablet Profile Page Wireframe</summary>  
     <img src="documentation/wireframes/profile_mt.png">
 </details>
 
-Desktop view for:
+**Desktop view for:**
 - Home
 - Sign Up
 - Profile
@@ -296,54 +290,54 @@ Desktop view for:
 - Contact Us
 
 <details open>
-    <summary>Desktop Home Page</summary>  
+    <summary>Desktop Home Page Wireframe</summary>  
     <img src="documentation/wireframes/home_desktop.png">  
 </details>
 
-<details open>
-    <summary>Desktop Home Page Footer</summary>  
+<details>
+    <summary>Desktop Home Page Footer Wireframe</summary>  
     <img src="documentation/wireframes/home_2_desktop.png">
 </details>
 
-<details open>
-    <summary>Desktop Sign Up Page</summary>  
+<details>
+    <summary>Desktop Sign Up Page Wireframe</summary>  
     <img src="documentation/wireframes/signup_in_desktop.png">
 </details>
 
 <details>
-    <summary>Desktop Profile Create Page</summary>  
+    <summary>Desktop Profile Create Page Wireframe</summary>  
     <img src="documentation/wireframes/profile_desktop.png">
 </details>
 
 <details open>
-    <summary>Desktop Profile View Page</summary>  
+    <summary>Desktop Profile View Page Wireframe</summary>  
     <img src="documentation/wireframes/profile_view_desktop.png"> 
 </details>
 
 <details>
-    <summary>Desktop Booking Page</summary>  
+    <summary>Desktop Booking Page Wireframe</summary>  
     <img src="documentation/wireframes/booking_desktop.png">
 </details>
 
 <details open>
-    <summary>Desktop Booking Create Page</summary>  
+    <summary>Desktop Booking Create Page Wireframe</summary>  
     <img src="documentation/wireframes/booking_create_desktop.png">  
 </details>
 
 I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django agenda, scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
 
 <details open>
-    <summary>Desktop Gallery Page</summary>  
+    <summary>Desktop Gallery Page Wireframe</summary>  
     <img src="documentation/wireframes/gallery_desktop.png">
 </details>
 
 <details>
-    <summary>Desktop Gallery Add Photo Page</summary>  
+    <summary>Desktop Gallery Add Photo Page Wireframe</summary>  
     <img src="documentation/wireframes/photo_desktop.png">
 </details>
 
-<details open>
-    <summary>Desktop Find Us/Contact Us Page</summary>  
+<details>
+    <summary>Desktop Find Us/Contact Us Page Wireframe</summary>  
     <img src="documentation/wireframes/map_contact_desktop.png">  
 </details>
 
@@ -360,7 +354,8 @@ Through the early development of FreeFido, I created an Article section to help 
 - Custom Models
 - Profile Model
 - Booking Model
-- 
+- Articles Model
+- Gallery Model
 
 ### Security
 
@@ -397,7 +392,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 *For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
 
 <details open>
-    <summary>Header & Navigation - All Users (Profile Icon only visible to Registered, Logged In Users)</summary>  
+    <summary>Header & Navigation - All Users (Profile Icon only visible to Registered, Logged-In Users)</summary>  
     <img src="documentation/final_views/nav.png">  
 </details>
 
@@ -424,8 +419,10 @@ In the Home Page 'Hero' section, when a user is not registered they will see a '
 
 The 'About' section of the Home Page contains three sections of information for the user, 'About', 'Safety', 'Benefits'. These sections display paragraphs and bulleted lists of information about the park and its positive values and benefits. Within each paragraph is a colour-coded word which acts as a link to bring the user to an important section of the website.
 
-![Paragraph link](documentation/final_views/linkarea.png)
+![Paragraph link](documentation/final_views/linkarea.png)  
+*'visit' provides a link to the Visit Us page as the user reads through the park's information*
 
+<hr>
 
 **Registration/SignUp**
 
@@ -447,24 +444,24 @@ On successful Sign In, the user is greeted with feedback through a message which
 ![incorrect username/email warning](documentation/final_views/incorrect_sign_in.png)  
 *User is given feedback if they submit incorrect details where one item is correct and the other is incorrect*
 
-![fill out field warning](documentaion/final_views/fill_field_warning.png)  
+![fill out field warning](documentation/final_views/fill_field_warning.png)  
 *Django built in field warnings for incorrect/forgotten fields input*
 
-<details open>
-    <summary>Sign In Message and Log In icon change</summary>  
-    <img src="documentation/final_views/signin_message.png">  
-</details>
+![Sign In message and Log In icon change](documentation/final_views/signin_message.png)  
+*Sign In message and Log In icon change*
 
 
 **Sign Out**
 
-<details>
+<details open>
     <summary>Sign Out Page</summary>  
     <img src="documentation/final_views/logout.png">  
 </details>
 
-![sign out message](documentation/final_views/signed_out.png)
+![sign out message](documentation/final_views/signed_out.png)  
+*User is given feedback in message format to confirm sign out, Profile icon no longer visible in navigation bar - message disappears after 3 seconds*  
 
+<hr>
 
 **Profile**
 
@@ -478,48 +475,53 @@ On successful Sign In, the user is greeted with feedback through a message which
 
 <details>
     <summary>Edit Profile Modal</summary>  
-    <img src="documentation/final_views/edit_modal_profile.png">  
+    <img src="documentation/final_views/edit_profile.png">  
 </details>
 
+Modal appears over the Profile page and allows users to edit their Profile Picture, Display Name (Display Name will be required for the future features of leaving Feedback/Reviews and Direct Messaging) and Bio. Using the RichTextField input field, user's have more control of the formatting of their text if they wish.
+
+<hr>
 
 **Articles**
 
 <details open>
-    <summary>Articles Page - Registered User View</summary>  
+    <summary>Articles Page - Unregistered User View (mobile/tablet), Registered User View with 'Add Article' icon (desktop)</summary>  
     <img src="documentation/final_views/articles.png">  
 </details>
 
 <details open>
-    <summary>Articles Page - Unregistered User View</summary>  
-    <img src="documentation/final_views/article_unreg.png">  
+    <summary>Read Article Page - Unregistered User View</summary>  
+    <img src="documentation/final_views/art_unregview.png">  
 </details>
 
-![like/comment count under article](documentation/final_views/like_comment.png)  
-*A Likes and Comments counter is visible under every article. Users can interact by clicking the heart outline to like. 'Heart outline' icon is replaced by filled Heart icon*
+Unregistered Users are free to read the articles and comments left on FreeFido but they cannot 'Like/Comment' them until they have signed up and logged in.
 
-![zero likes icon](documentation/final_views/zero_likes.png)  
-*Likes icon is represented by an outlined heart icon. When it receives a like, it becomes a filled heart icon*
+![like/comment count under article](documentation/final_views/like_comment.png)  
+*A Likes and Comments counter is visible under every article. Logged-In Users can interact by clicking the heart outline to like. 'Heart outline' icon is replaced by filled Heart icon*
+
+![zero likes icon](documentation/final_views/zerolikes.png)  
+*Likes icon is represented by an outlined heart icon. When it receives a like from the logged-in user, it becomes a filled heart icon*
 
 <details open>
     <summary>Add a Comment - Registered User View</summary>  
     <img src="documentation/final_views/comments.png">  
 </details>
 
+A comment box is visible to logged-in users only. Their comment is submitted for review by the Admin, once approved, the comment appears on the website.
+
 ![comment awaiting approval message](documentation/final_views/approval_comment.png)  
 *Comment is awaiting approval message displayed after comment submit*
-
-<details open>
-    <summary>Read Article - Unregistered User View</summary>  
-    <img src="documentation/final_views/article_unreg.png">  
-</details>
 
 
 **Create Article**
 
 <details open>
     <summary>Create Article Page - Registered, Logged In User View</summary>  
-    <img src="documentation/final_views/art_eddel_reg.png">  
+    <img src="documentation/final_views/add_article.png">  
 </details>
+
+![feedback that article is awaiting spproval by Admin](documentation/final_views/art_approve.png)  
+*Admin approval is required for articles to keep FreeFido on topic. Feedback is provided to the user by message that the article is awaiting approval*
 
 
 **Edit Article**
@@ -547,6 +549,9 @@ On successful Sign In, the user is greeted with feedback through a message which
     <img src="documentation/final_views/delete_article.png">  
 </details>
 
+![delete article successful message](documentation/final_views/del_art_msg.png)  
+*User is informed that their article has been deleted - message disappears after 3 seconds*
+
 
 **Search Function**
 
@@ -555,11 +560,12 @@ On successful Sign In, the user is greeted with feedback through a message which
     <img src="documentation/final_views/search.png">  
 </details>
 
-<details open>
+<details>
     <summary>Search Function No Articles Found - Visible on Article pages only</summary>  
     <img src="documentation/final_views/no_articles.png">  
 </details>
 
+<hr>
 
 **Bookings**
 
@@ -583,7 +589,7 @@ On successful Sign In, the user is greeted with feedback through a message which
 </details>
 
 ![booking saved message](documentation/final_views/booking_saved_msg.png)  
-*User feedback is delivered by message once a booking has been submitted through creation or edit- message dissappears after 3 seconds*
+*User feedback is delivered by message once a booking has been submitted through creation or edit- message disappears after 3 seconds*
 
 
 **Edit Booking**
@@ -604,6 +610,7 @@ On successful Sign In, the user is greeted with feedback through a message which
 ![deleted booking message](documentation/final_views/booking_del_msg.png)  
 *User feedback is delivered by message once a booking has been deleted - message dissappears after 3 seconds*
 
+<hr>
 
 **Gallery**
 
@@ -617,14 +624,12 @@ On successful Sign In, the user is greeted with feedback through a message which
     <img src="documentation/final_views/gal_unreg_info.png">  
 </details>
 
-
 **Add Photo**
 
 <details open>
     <summary>Add Photo Page - Registered Users only</summary>  
     <img src="documentation/final_views/add_photo.png">  
 </details>
-
 
 **Delete Photo**
 
@@ -637,6 +642,9 @@ On successful Sign In, the user is greeted with feedback through a message which
     <summary>Delete Photo Page</summary>  
     <img src="documentation/final_views/del_photo_modal.png">  
 </details>
+
+![delete photo user message, successful deletion](documentation/final_views/photo_del_msg.png)  
+*User feedback is provided by message, informing user that the photo has been deleted successfully - message disappears after 3 seconds*
 
 
 **Visit Us**
