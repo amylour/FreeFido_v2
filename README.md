@@ -37,7 +37,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
   - [Structural Plane](#structural-plane)
   - [Skeleton Plane](#skeleton-plane)
     - [Wireframes](#wireframes)
-    - [Database Schema](#database-schema)
+    - [Database Schema - Entity Relationship Diagram](#database-schema---entity-relationship-diagram)
     - [Security](#security)
   - [Features](#features)
     - [User View - Registered/Unregistered](#user-view---registeredunregistered)
@@ -221,16 +221,14 @@ From initial concept to finished product, icons as the navigation area was an id
 
 
 
-![navbar icons](documentation/final_views/icons_row.png)  
-
+![navbar icons](documentation/final_views/icons_row.png)
 *Navigation icons for FreeFido*
   
 
 Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
   
 
-![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
-  
+![desktop tooltips](documentation/final_views/tooltip_gif.gif)
 *Navigation bar tooltips demonstrated on Desktop*
   
 
@@ -238,15 +236,13 @@ Continuing with a similar shape of the icons, images and buttons on the Freefido
   
 
 ![image with rounded corners](documentation/final_views/article_card_br.png)
-  
 *Article card from the Articles section with rounded corner styling*
   
 
 Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
   
 
-![header with underline](documentation/final_views/header_underline.png)  
-  
+![header with underline](documentation/final_views/header_underline.png)
 *Sign Up page header with purple underline for Authentication related sections*  
 
 
@@ -345,17 +341,11 @@ I had grand ideas for re-creating this exact booking page in this deployment of 
 Through the early development of FreeFido, I created an Article section to help with my learning and understanding of Django before I tackled a booking system. This feature stayed in and helped to grow the idea of having a social/educational theme to the website. There are no wireframes for my Article section but I was able to continue my modular approach to it's design by using other elements from the project's planning in it's creation.
 
 
-### Database Schema
+### Database Schema - Entity Relationship Diagram
 
-![ERD Image](documentation/wireframes/)
+![ERD Image](documentation/wireframes/freefidov2.png)  
+*Database Schema (ERD) for FreeFido displaying relationships between feature components saved within the database*
 
-- AllAuth User Model
-- ERD Diagram
-- Custom Models
-- Profile Model
-- Booking Model
-- Articles Model
-- Gallery Model
 
 ### Security
 
@@ -685,11 +675,12 @@ Through Django's built-in Administration Panel, the Admin has full access over t
 
 Users articles and comments require approval by the Admin of FreeFido to keep the website content on topic. Admin can change the status of articles from 'Draft' to 'Published'.
 
+
 ![dj admin panel articles approval](documentation/final_views/draft_art.png)  
 *Dropdown menu allowing Admin to 'publish' a users article*  
     
     
-![dj admin panel comments approval](documentation/final_views/comment_approval.png)  
+![dj admin panel comments approval](documentation/final_views/comment_apprv.png)  
 *Dropdown menu allowing Admin to 'approve' a users comment*
   
 Admin can control users booking via the panel.
@@ -780,7 +771,7 @@ Find the parent form element of delete confirm button (<https://www.geeksforgeek
 
 - Code Institute Student Channel on Youtube: for guidance on project setup, tips and guidance.
 - [Daisy McGirr's Youtube playlist on Django](https://www.youtube.com/@IonaFrisbee) a great help for understanding how to get a Django project moving from the beginning stages.
-- 
+- [Adel Codes - Youtube - Service Appointment Sys using Django](https://www.youtube.com/watch?v=HTHqEr3R_Kw&t=81s)
 
 ### Additional reading/tutorials/books/blogs
 
