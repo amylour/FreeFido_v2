@@ -1190,4 +1190,14 @@ tr {
     .footer-img {
         height: 105px;
     }
+
+    .success-alert {
+        font-size: 14px;
+    }
+
+    .article-img {
+        width: 300px;
+        height: 300px;
+    }
+
 }
