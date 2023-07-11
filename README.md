@@ -23,8 +23,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
   - [Agile Methodologies - Project Management](#agile-methodologies---project-management)
-    - [MoSCoW Prioritisation](#moscow-prioritisation)
-    - [GitHub Projects](#github-projects)
+    - [MoSCoW Prioritization](#moscow-prioritization)
     - [Sprints](#sprints)
   - [User Stories](#user-stories)
     - [Visitor User Stories](#visitor-user-stories)
@@ -131,11 +130,25 @@ The project goal was to build a simple booking app for a service. The 'product' 
 
 ## Agile Methodologies - Project Management
 
-### MoSCoW Prioritisation
+FreeFido is my first project following Agile planning methods. As someone who loves to prepare and plan, it was a joy to get to know and use. I used my [Github Projects Board](https://github.com/users/amylour/projects/4) to plan and document all of my work, initially I started with a Trello board to allow myself to make some mistakes and gather any scraps of notes or information that I had and then refined them into my Projects board. I'm sure the next time around will be a smoother process.
 
-### GitHub Projects
+### MoSCoW Prioritization
+
+I chose to follow the MoSCoW Prioritization method for Freefido, identifying and labelling my:
+
+- **Must Haves**: the 'required', critical components of the project. Completing my 'Must Haves' helped me to reach the MVP (Minimum Viable Product) for this project early, allowing me to develop the project further than originally planned.
+  
+- **Should Haves**: the components that are valuable to the project but not absolutely 'vital' at the MVP stage. The 'Must Haves' must receive priority over the 'Should Haves'.
+- **Could Haves**: these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows.
+- **Won't Haves**: the features or components that either no longer fit the project's brief or are of very low priority for this release. 
 
 ### Sprints
+
+I broke down the time available to me before project submission and pushed to have the MVP completed a month out from the submission date of 17th July 2023. This was primarily due to family duties and wanting to have the bulk of the project completed before my son's school finished for summer. It was a busy time frame and I reached MVP status ahead of schedule, allowing me to push my learning and add some extra features. Initially I had started FreeFido (v1) in a separate repo and I was utilising my simultaneous learning of Tailwind to great success, until I ran into issues with my database. This was to be expected on my first project using database schemas and Django. I understood what my issues were and even after flushing the database successfully, I felt that time allowed to start afresh. This version of Freefido was set up much quicker, I had more confidence in understanding the process and I chose to stick with Bootstrap this time around to concentrate on reaching MVP. 
+
+I broke my process into Dev (Developer) Tasks, User Stories and Testing Tasks, which I converted into issues and labelled fully on my projects board. I found adding comments to my issues helpful, as I could quickly record information/sources/fixes for developing later in my README.
+
+My Sprints are representative of a general timeframe of focus on the stated areas, with study, project work and running a household, some sprints timeframes blended with each other as work was completed during every available free moment.
 
 | Sprint No. | Sprint Content | Start/Finish Dates |
 |------------|----------------|--------------------|
@@ -154,56 +167,57 @@ User stories and features recorded and managed on GitHub Projects -> (<https://g
 
 ### Visitor User Stories
 
-  - As a user, I would like to view the websites home page so that I can learn about it and the services it offers.
-  - As a user, I can find the websites navigation area so that I may easily navigate around the website.
-  - As a user, I can see the sites social media links at the bottom of the webpage so that I can visit, contact the business and follow them online.
-  - As a user, I can view any error pages with a 'Home' button so that I can get back to the homepage easily.
+- As a **user**, I would like to **view the websites home page** so that I can **learn about it and the services it offers** - **MUST HAVE**
+- As a **user**, I can **find the websites navigation area** so that I **may easily navigate around the website** - **MUST HAVE**
+- As a **user**, I can **see the sites social media links at the bottom of the webpage** so that I can **visit, contact the business and follow them online** - **MUST HAVE**
+- As a **user**, I can **view any error pages with a 'Home' button** so that I **can get back to the homepage easily** - **MUST HAVE**
+- As a **user** I want **to see a message when I have successfully/unsuccessfully completed an action** so that I can **receive feedback from my interaction with the website** - **MUST HAVE**
 
 ### Epic - User Profile
     
-  - As a user, I can use my email and password to login to my profile account so that I can use my profile to connect to the websites features.
-  - As a user, I can enter my email and password so that I can register an account with the website.
-  - As a user, I can enter my personal details so that I can create an account with FreeFido.
-  - As a user, I can receive feedback in the form of a logout page so that I can confirm that I have been logged out successfully.
-  - As a user, I can edit my user profile to update my personal details.
-  - As a user, I can click a delete button in my user profile setup so that I can delete all personal data, photos and bookings that are connected to me on the website.
+- As a **user**, I can **use my email and password to login to my profile account** so that I can **use my profile to connect to the websites features** - **MUST HAVE**
+- As a **user**, I can **enter my email and password** so that I can **register an account with the website** - **MUST HAVE**
+- As a **user**, I can **enter my personal details** so that I can **create an account with FreeFido** - **MUST HAVE**
+- As a **user**, I can **receive feedback in the form of a logout page** so that **I can confirm that I have been logged out successfully** - **MUST HAVE**
+- As a **user**, I can **edit my user profile** to **update my personal details** - **MUST HAVE**
+- As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website** - **COULD HAVE**
 
 ### Epic - Articles
 
-  - As a user, I want to be able to create and view articles so that I can learn more about dog related topics.
-  - As a user, I would like to move to the next page so that I can view all of the articles.
-  - As a user, I would like to view an article's likes so that I can find the most interesting articles.
-  - As a user, I can visit the articles page so that I can read and interact with the articles.
-  - As a user, I can click on an article so that I can view it's contents.
-  - As a user, I can click a button icon so that I can like/unlike and article.
-  - As a user, I can comment on a post so that I can interact and get involved with the conversation.
-  - As a user, I can fill-in, edit and save an article text field so that I can create and share an article from my profile.
-  - As a user, I can click on the edit button of my article so that I can edit the article and save it again.
-  - As a user, I can click on the delete button on my own article page so that I can delete the article.
-  - As a user, I can enter a search term into the search bar so that I can search for particular articles and articles with information topics that I am interested in.
-  - As a user, I can click a delete button so that I can remove a comment that I have made.
+  - As an **user**, I want to be able to **create and view articles** so that I can **learn more about dog related topics** - **MUST HAVE**
+  - As a **user**, I would like to **move to the next page** so that I can **view all of the articles** - **SHOULD HAVE**
+  - As a **user**, I would like to **view an article's likes** so that I can **find the most interesting articles** - **COULD HAVE**
+  - As a **user** I can **visit the articles page** so that I **can read and interact with the articles** - **MUST HAVE**
+  - As a **user** I can **click on an article** so that I **can view it's contents** - **MUST HAVE**
+  - As a **user** I can **click a button icon** so that I **can like/unlike and article** - **COULD HAVE**
+  - As a **user** I can **comment on a post** so that I can **interact and get involved with the conversation** - **SHOULD HAVE**
+  - As a **user**, I can **fill-in, edit and save an article text field** so that I can **create and share an article from my profile** - **MUST HAVE**
+  - As a **user** I can **click on the edit button of my article** so that I can **edit the article and save it again** - **MUST HAVE**
+  - As a **user**, I can **click on the delete button on my own article page** so that I can **delete the article** - **MUST HAVE**
+  - As a **user**, I can **enter a search term into the search bar** so that I can **search for particular articles and articles with information topics that I am interested in** - **SHOULD HAVE**
+  - As a **user**, I can **click a delete button** so that I **can remove a comment that I have made** - **COULD HAVE**
   
 ### Epic - Booking
 
-  - As a user, I can view the booking home page so that I can learn about booking and see my active bookings.
-  - As a user, I can use the bookings page so that I can make a booking at the dog park.
-  - As a user, I can receive feedback via email when I make a booking so that I can confirm my booking and keep a copy of it in my email account.
-  - As a user, I can edit my confirmed bookings so that I can choose a different day or time slot or add an extra dog.
-  - As a user, I can click the 'Trash' icon under my booking so that I can delete that booking from my bookings list.
+  - As a **user**, I can **view the booking home page** so that I can **learn about booking and see my active bookings** - **MUST HAVE**
+  - As a **user**, I can **use the bookings page** so that I can **make a booking at the dog park** - **MUST HAVE**
+  - As a **user**, I can **receive feedback via email when I make a booking** so that I **can confirm my booking and keep a copy of it in my email account** - **COULD HAVE**
+  - As a **user**, I can **edit my confirmed bookings** so that I **can choose a different day or time slot or add an extra dog** - **MUST HAVE**
+  - As a **user**, I can **click the 'Trash' icon under my booking** so that I can **delete that booking from my bookings list** - **MUST HAVE**
+- As a **user**, I can **get feedback from the website** that will **explain that only four active bookings are allowed per person** - **SHOULD HAVE**
 
 ### Epic - Photo Gallery
 
-  - As a user, I can visit the gallery page so that I can view the gallery wall of photos.
-  - As a user, I can click the upload image button on the Gallery page so that I can upload an image of my dog have fun in the park.
-  - As a user, I can click the trash can icon when I hover/click on a photo so that I can delete the photo.
+  - As a **user**, I can **visit the gallery page** so that I can **view the gallery wall of photos** - **COULD HAVE**
+  - As a **user** I can **click the upload image button on the Gallery page** so that I can **upload an image of my dog have fun in the park** - **COULD HAVE**
+  - As a **user**, I can **click the trash can icon when I hover/click on a photo** so that I can **delete the photo** - **COULD HAVE**
 
 ### Epic - Visit Us/Reviews
 
-  - As a user, I can view the 'Visit Us' page so that I can see the businesses location and details.
-  - As a user, I can get feedback from the website that will explain that only four active bookings are allowed per person.
-  - As a user, I can fill out a review form so that I can leave feedback about my park visit.
-  - As a user, I can edit my review so that I can correct a mistake or change my review.
-  - As a user, I can click the delete button beside my review so that I can delete a review that I made.
+  - As a **user**, I can **view the 'Visit Us' page** so that I can **see the businesses location and details** - **MUST HAVE**
+  - As a **user** I can **fill out a review form** so that I can **leave feedback about my park visit** - **COULD HAVE**
+  - As a **user** I can **edit my review** so that I can **correct a mistake or change my review** - **COULD HAVE**
+  - As a **user** I can **click the delete button beside my review** so that I can **delete a review that I made** - **COULD HAVE**
     
     
 ## Scope Plane
@@ -246,6 +260,9 @@ Headings were given thick, dashed, underline styling in the coordinating colour 
 ![header with underline](documentation/final_views/header_underline.png)  
 *Sign Up page header with purple underline for Authentication related sections*  
 
+A favicon was added of a purple tennis ball to fit with the theme of the website, keeping it playful.
+
+![tennis ball favicon](documentation/final_views/ball_favicon.png)
 
 To allow for ease of responsiveness, each section was designed keeping in mind the switch from 'row' to 'column' when moving from Desktop to Mobile/Tablet view. This approach allowed me to add more features to the project early on by reusing and repurposing sections of code.
 
@@ -591,7 +608,13 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 <details open>
     <summary>Booking Create Page - Visible only to Logged-In Users</summary>  
     <img src="documentation/final_views/booking_c.png">  
-</details>
+</details>  
+  
+![past booking warning](documentation/final_views/past_book.png)  
+*Warning shown to Users if they choose a date in the past, can only save a booking with a valid date/time*  
+  
+![unavaialable date/time](documentation/final_views/unavailable_datetime.png)  
+*If a date/time combo is unavailable then the user is informed via warning message - future version of the booking system will have shaded out portions for the unavailable dates/times to make it easier on the user*
 
 ![booking saved message](documentation/final_views/booking_saved_msg.png)  
 *User feedback is delivered by message once a booking has been submitted through creation or edit- message disappears after 3 seconds*
