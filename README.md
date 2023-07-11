@@ -167,57 +167,69 @@ User stories and features recorded and managed on GitHub Projects -> (<https://g
 
 ### Visitor User Stories
 
-- As a **user**, I would like to **view the websites home page** so that I can **learn about it and the services it offers** - **MUST HAVE**
-- As a **user**, I can **find the websites navigation area** so that I **may easily navigate around the website** - **MUST HAVE**
-- As a **user**, I can **see the sites social media links at the bottom of the webpage** so that I can **visit, contact the business and follow them online** - **MUST HAVE**
-- As a **user**, I can **view any error pages with a 'Home' button** so that I **can get back to the homepage easily** - **MUST HAVE**
-- As a **user** I want **to see a message when I have successfully/unsuccessfully completed an action** so that I can **receive feedback from my interaction with the website** - **MUST HAVE**
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| As a **user**, I would like to **view the websites home page** so that I can **learn about it and the services it offers** | **MUST HAVE** |
+| As a **user**, I can **find the websites navigation area** so that I **may easily navigate around the website** | **MUST HAVE** |
+| As a **user**, I can **see the sites social media links at the bottom of the webpage** so that I can **visit, contact the business and follow them online** | **MUST HAVE** |
+| As a **user**, I can **view any error pages with a 'Home' button** so that I **can get back to the homepage easily** | **MUST HAVE** |
+| As a **user**, I want **to see a message when I have successfully/unsuccessfully completed an action** so that I can **receive feedback from my interaction with the website** | **MUST HAVE** |
 
 ### Epic - User Profile
-    
-- As a **user**, I can **use my email and password to login to my profile account** so that I can **use my profile to connect to the websites features** - **MUST HAVE**
-- As a **user**, I can **enter my email and password** so that I can **register an account with the website** - **MUST HAVE**
-- As a **user**, I can **enter my personal details** so that I can **create an account with FreeFido** - **MUST HAVE**
-- As a **user**, I can **receive feedback in the form of a logout page** so that **I can confirm that I have been logged out successfully** - **MUST HAVE**
-- As a **user**, I can **edit my user profile** to **update my personal details** - **MUST HAVE**
-- As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website** - **COULD HAVE**
+
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|    
+| As a **user**, I can **use my email and password to login to my profile account** so that I can **use my profile to connect to the websites features** | **MUST HAVE** |
+| As a **user**, I can **enter my email and password** so that I can **register an account with the website** | **MUST HAVE** |
+| As a **user**, I can **enter my personal details** so that I can **create an account with FreeFido** | **MUST HAVE** |
+| As a **user**, I can **receive feedback in the form of a logout page** so that **I can confirm that I have been logged out successfully** | **MUST HAVE** |
+| As a **user**, I can **edit my user profile** to **update my personal details** | **MUST HAVE** |
+| As a **user**, I can **click a delete button in my user profile setup** so that I **can delete all personal data, photos and bookings that are connected to me on the website** | **COULD HAVE** |
 
 ### Epic - Articles
 
-  - As an **user**, I want to be able to **create and view articles** so that I can **learn more about dog related topics** - **MUST HAVE**
-  - As a **user**, I would like to **move to the next page** so that I can **view all of the articles** - **SHOULD HAVE**
-  - As a **user**, I would like to **view an article's likes** so that I can **find the most interesting articles** - **COULD HAVE**
-  - As a **user** I can **visit the articles page** so that I **can read and interact with the articles** - **MUST HAVE**
-  - As a **user** I can **click on an article** so that I **can view it's contents** - **MUST HAVE**
-  - As a **user** I can **click a button icon** so that I **can like/unlike and article** - **COULD HAVE**
-  - As a **user** I can **comment on a post** so that I can **interact and get involved with the conversation** - **SHOULD HAVE**
-  - As a **user**, I can **fill-in, edit and save an article text field** so that I can **create and share an article from my profile** - **MUST HAVE**
-  - As a **user** I can **click on the edit button of my article** so that I can **edit the article and save it again** - **MUST HAVE**
-  - As a **user**, I can **click on the delete button on my own article page** so that I can **delete the article** - **MUST HAVE**
-  - As a **user**, I can **enter a search term into the search bar** so that I can **search for particular articles and articles with information topics that I am interested in** - **SHOULD HAVE**
-  - As a **user**, I can **click a delete button** so that I **can remove a comment that I have made** - **COULD HAVE**
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| As an **user**, I want to be able to **create and view articles** so that I can **learn more about dog related topics** | **MUST HAVE** |
+| As a **user**, I would like to **move to the next page** so that I can **view all of the articles** | **SHOULD HAVE** |
+| As a **user**, I would like to **view an article's likes** so that I can **find the most interesting articles** | **COULD HAVE** |
+| As a **user**, I can **visit the articles page** so that I **can read and interact with the articles** | **MUST HAVE** |
+| As a **user**, I can **click on an article** so that I **can view it's contents** | **MUST HAVE** |
+| As a **user**, I can **click a button icon** so that I **can like/unlike and article** | **COULD HAVE** |
+| As a **user**, I can **comment on a post** so that I can **interact and get involved with the conversation** | **SHOULD HAVE** |
+| As a **user**, I can **fill-in, edit and save an article text field** so that I can **create and share an article from my profile** | **MUST HAVE** |
+| As a **user**, I can **click on the edit button of my article** so that I can **edit the article and save it again** | **MUST HAVE** |
+| As a **user**, I can **click on the delete button on my own article page** so that I can **delete the article** | **MUST HAVE** |
+| As a **user**, I can **enter a search term into the search bar** so that I can **search for particular articles and articles with information topics that I am interested in** | **SHOULD HAVE** |
+| As a **user**, I can **click a delete button** so that I **can remove a comment that I have made** | **COULD HAVE** |
   
 ### Epic - Booking
 
-  - As a **user**, I can **view the booking home page** so that I can **learn about booking and see my active bookings** - **MUST HAVE**
-  - As a **user**, I can **use the bookings page** so that I can **make a booking at the dog park** - **MUST HAVE**
-  - As a **user**, I can **receive feedback via email when I make a booking** so that I **can confirm my booking and keep a copy of it in my email account** - **COULD HAVE**
-  - As a **user**, I can **edit my confirmed bookings** so that I **can choose a different day or time slot or add an extra dog** - **MUST HAVE**
-  - As a **user**, I can **click the 'Trash' icon under my booking** so that I can **delete that booking from my bookings list** - **MUST HAVE**
-- As a **user**, I can **get feedback from the website** that will **explain that only four active bookings are allowed per person** - **SHOULD HAVE**
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| As a **user**, I can **view the booking home page** so that I can **learn about booking and see my active bookings** | **MUST HAVE** |
+| As a **user**, I can **use the bookings page** so that I can **make a booking at the dog park** | **MUST HAVE** |
+| As a **user**, I can **receive feedback via email when I make a booking** so that I **can confirm my booking and keep a copy of it in my email account** | **COULD HAVE** |
+| As a **user**, I can **edit my confirmed bookings** so that I **can choose a different day or time slot or add an extra dog** | **MUST HAVE** |
+| As a **user**, I can **click the 'Trash' icon under my booking** so that I can **delete that booking from my bookings list** | **MUST HAVE** |
+| As a **user**, I can **get feedback from the website** that will **explain that only four active bookings are allowed per person** | **SHOULD HAVE** |
 
 ### Epic - Photo Gallery
 
-  - As a **user**, I can **visit the gallery page** so that I can **view the gallery wall of photos** - **COULD HAVE**
-  - As a **user** I can **click the upload image button on the Gallery page** so that I can **upload an image of my dog have fun in the park** - **COULD HAVE**
-  - As a **user**, I can **click the trash can icon when I hover/click on a photo** so that I can **delete the photo** - **COULD HAVE**
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| As a **user**, I can **visit the gallery page** so that I can **view the gallery wall of photos** | **COULD HAVE** |
+| As a **user**, I can **click the upload image button on the Gallery page** so that I can **upload an image of my dog have fun in the park** | **COULD HAVE** |
+| As a **user**, I can **click the trash can icon when I hover/click on a photo** so that I can **delete the photo** | **COULD HAVE** |
 
 ### Epic - Visit Us/Reviews
 
-  - As a **user**, I can **view the 'Visit Us' page** so that I can **see the businesses location and details** - **MUST HAVE**
-  - As a **user** I can **fill out a review form** so that I can **leave feedback about my park visit** - **COULD HAVE**
-  - As a **user** I can **edit my review** so that I can **correct a mistake or change my review** - **COULD HAVE**
-  - As a **user** I can **click the delete button beside my review** so that I can **delete a review that I made** - **COULD HAVE**
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| As a **user**, I can **view the 'Visit Us' page** so that I can **see the businesses location and details** | **MUST HAVE** |
+| As a **user**, I can **fill out a review form** so that I can **leave feedback about my park visit** | **COULD HAVE** |
+| As a **user**, I can **edit my review** so that I can **correct a mistake or change my review** | **COULD HAVE** |
+| As a **user**, I can **click the delete button beside my review** so that I can **delete a review that I made** | **COULD HAVE** |
     
     
 ## Scope Plane
