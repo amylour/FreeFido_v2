@@ -8,14 +8,14 @@
 
 {% load crispy_forms_tags %}
 
-
-
+<!-- Article image section -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container article-container">
-        <div class="row g-0">
+        <div class="row">
             <div class="col-md-6">
                 <div class="d-flex align-items-center mt-5">
                 <h1 class="article-title">{{ article.title }}</h1>
+                <!-- Show edit/delete buttons if the author is viewing the article logged in -->
                 {% if request.user == article.author %}
                     <a href="{% url 'article_edit' article.slug %}" class="btn btn-link" title="edit article"><img
                             src="{% static '../static/icons/edit_profile.png' %}" alt="edit article" class="icon-delete-btn"></a>
@@ -26,6 +26,7 @@
                 <p class="article-details">{{ article.author }} | {{ article.created_on }}</p>
                 <p class="article-excerpt"><em>{{ article.excerpt }}</em></p>
             <div class="col-md-6 jumboimage">
+                <!-- Set placeholder image if user has not submitted the image or if image is unavailable -->
                 {% if "placeholder" in article.featured_image.url %}
                 <img src="{% static 'images/placeholder_img.png' %}" class="article-img" width="100%">
                 {% else %}
@@ -37,17 +38,19 @@
     </div>
 </div>
 
+<!-- Article text section -->
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
                 <p class="card-text ">
-                    <!-- safe filter to tell Django to treat the content as HTML and render the content as is -->
+                    <!-- Safe filter to tell Django to treat the content as HTML and render the content as is -->
                     {{ article.content | safe }}
                 </p>
                 <div class="row">
                     <div class="col-4">
                         <div class="d-flex flex-row flex-md-column">
+                            <!-- Allow logged in users to interact with like icon -->
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
@@ -72,6 +75,7 @@
                         </strong>
                         </div>
                     </div>
+                    <!-- Comment icon with comment count for article -->
                     <div class="col-4">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><img src="{% static 'icons/bark.png' %}" class="comment-icon"
@@ -101,9 +105,9 @@
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <!-- linebreaks filter for better readability -->
+                    <!-- Linebreaks filter for better readability -->
                     {{ comment.body | linebreaks }}
-
+                    <!-- Allow author of comment to see and use delete icon if logged in -->
                     {% if request.user.username == comment.name %}
                     <div class="text-center">
                         <a href="{% url 'comment_delete' comment.id %}" class="btn btn-link"><img src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
@@ -113,6 +117,7 @@
                 {% endfor %}
             </div>
         </div>
+        <!-- Comment approval message once comment is submitted -->
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if commented %}

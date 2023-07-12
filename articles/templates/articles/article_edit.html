@@ -9,7 +9,7 @@
 {% load crispy_forms_tags %}
 
 <div class="container text-center">
-    <!-- enctype for file upload to cloudinary -->
+    <!-- enctype for file upload to cloudinary -> https://www.w3schools.com/tags/att_form_enctype.asp -->
     <form method="POST" enctype="multipart/form-data" class="p-1 w-75 form">
         <h1 class="text-center section-title my-3" id="auth">Edit Article</h1>
         {% csrf_token %}

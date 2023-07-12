@@ -11,6 +11,7 @@
         <div class="col-md-6 offset-md-3">
             <h1 class="section-title mb-4" id="auth">Articles</h1>
         </div>
+        <!-- If user is logged in, show Add Article icon -->
         <div class="col-md-3 text-md-end">
             {% if user.is_authenticated %}
             <a href="{% url 'article_create' %}" class="my-5" title="Add an Article">
@@ -27,6 +28,7 @@
     <div class="row justify-content-center mx-auto">
         <!-- Articles entered col -->
         <div class="col-12 mt-3">
+            <!-- Display text when no articles present, control grid sizing when pagination occurs leaving 1 article on next page -->
             <div class="row justify-content-center">
                 {% if article_list|length == 0 %}
                     <div class="col-12 text-center">
