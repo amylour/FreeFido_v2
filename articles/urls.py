@@ -8,7 +8,8 @@ urlpatterns = [
     path('<slug:slug>/', views.ArticlePage.as_view(), name='article_page'),
     path('like/<slug:slug>', views.ArticleLike.as_view(), name='article_like'),
     path('edit/<slug:slug>', views.EditArticle.as_view(), name='article_edit'),
-    path('delete/<slug:slug>', views.DeleteArticle.as_view(), name='article_delete'),
+    path('delete/<slug:slug>',
+         views.DeleteArticle.as_view(), name='article_delete'),
     path('comment/delete/<int:pk>/',
          views.DeleteComment.as_view(), name='comment_delete'),
 ]

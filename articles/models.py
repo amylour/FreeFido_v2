@@ -13,7 +13,8 @@ class Article(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="article_posts")
     featured_image = CloudinaryField('image', default='placeholder')
-    image_alt = models.CharField(max_length=100, default='default alt', null=False, blank=False)
+    image_alt = models.CharField(
+        max_length=100, default='default alt', null=False, blank=False)
     excerpt = models.TextField(max_length=300, null=False, blank=False)
     updated_on = models.DateTimeField(auto_now=True)
     content = RichTextField(max_length=5000, null=False, blank=False)
@@ -21,8 +22,8 @@ class Article(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='article_like',
                                    blank=True)
-    is_deleted = models.BooleanField(default=False)                        
-
+    is_deleted = models.BooleanField(default=False)
+   
     class Meta:
         """ Order posts by created on date """
         ordering = ["-created_on"]

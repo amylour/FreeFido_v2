@@ -1,3 +1,4 @@
+/* Google font import for Outfit/Montserrat fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;400;600;700&display=swap');
 
 :root {
@@ -27,10 +28,6 @@ body {
     font-family: var(--main-font);
 }
 
-/* * {
-    border: 1px red solid;
-} */
-
 h1,
 h2,
 h3,
@@ -48,6 +45,7 @@ em {
     font-size: medium;
 }
 
+/* Use Outfit font in stong tags */
 strong {
     font-family: var(--title);
 }
@@ -57,12 +55,12 @@ main {
     background-color: var(--white);
 }
 
-/* filter back shadow for images */
+/* Filter back shadow for images */
 .img-shadow {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* target the anchor tags within the allauth template html */
+/* Target the anchor tags within the allauth template html */
 .special-anchor {
     color: var(--purple);
 }
@@ -110,6 +108,7 @@ em {
     height: 50px;
 }
 
+/* Style for form input sections found through using Dev Tools */
 #id_first_name,
 #id_last_name,
 #id_email,
@@ -125,11 +124,6 @@ select {
     text-align: center;
 }
 
-.richtextwidget {
-    border-radius: 20px;
-}
-
-
 /* is_vaccinated checkbox styling */
 .form-check .form-check-input {
     float: none;
@@ -138,7 +132,7 @@ select {
     color: #0d0d0d;
 }
 
-/* footer */
+/* Footer */
 footer {
     box-sizing: border-box;
     display: flex;
@@ -150,7 +144,6 @@ footer {
 
 .footer-wave-center {
     overflow: hidden;
-    
 }
 
 .footer-img {
@@ -163,29 +156,7 @@ footer {
     overflow: hidden;
 }
 
-/* .footer-bg {
-    background-image: url('/static/images/footer-wave.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 200px;
-    display: flex;
-    justify-content: flex-end;
-} */
-
-/* .hours {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-left: 1.5rem;
-}
-
-.hours-title {
-    font-family: Outfit, sans-serif;
-    font-weight: 600;
-    text-align: center;
-} */
-
+/* Footer icons */
 .social {
     display: flex;
     flex-direction: row;
@@ -200,7 +171,7 @@ footer {
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
-/* header */
+/* Header */
 .navbar {
     background-color: var(--white);
 }
@@ -229,6 +200,7 @@ footer {
     margin-left: 10px;
 }
 
+/* Nav icon animation */
 .nav-icons {
     height: 70px;
     width: 70px;
@@ -246,6 +218,7 @@ footer {
     transform: scale(0.9);
 }
 
+/* Styling for mobile toggler */
 .custom-toggler {
     padding: 10px 15px;
     font-size: 20px;
@@ -253,9 +226,6 @@ footer {
     border: none;
     border-radius: 5px;
 }
-
-/* img.logo {
-    width: ; */
 
 .active {
     font-weight: 400;
@@ -266,6 +236,7 @@ footer {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+/* Button styling - overriding bootstrap classes */
 .btn-custom {
     background-color: #b163e5;
     background-size: cover;
@@ -313,7 +284,7 @@ footer {
     border: none;
 }
 
-/*  booking button styling */
+/*  Booking button styling */
 .booking-btn {
     background-color: var(--blue);
 }
@@ -332,6 +303,7 @@ footer {
     border: none;
 }
 
+/* Booking Park Rules */
 .park-rules {
     text-align: left;
 }
@@ -346,7 +318,7 @@ footer {
     font-family: var(--title);
 }
 
-/* gallery button styling */
+/* Gallery button styling */
 .gallery-btn {
     background-color: var(--green);
 }
@@ -365,15 +337,14 @@ footer {
     border: none;
 }
 
-/* home page */
-
+/* Home page */
 .section-title {
     font-family: var(--title);
     font-weight: 700;
     font-size: xx-large;
 }
 
-/* dashed underline effect */
+/* Dashed underline effect for different colour coded sections */
 #about {
     display: inline-block;
     border-bottom: 10px dashed var(--orange);
@@ -393,7 +364,6 @@ footer {
     line-height: 3rem;
 }
 
-
 #auth,
 #auth-bio,
 #auth-articles,
@@ -410,6 +380,7 @@ footer {
     line-height: 3rem;
 }
 
+/* Section styling for colour coded sections */
 .section-img {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -454,8 +425,7 @@ footer {
     font-weight: bold;
 }
 
-/* forms */
-
+/* Forms */
 .form {
     width: 50%;
     margin: 1% auto;
@@ -539,7 +509,7 @@ footer {
     border: none;
 }
 
-/* Override browser text input prefill colour */
+/* Override browser text input prefill colour - found through Dev Tools and https: //stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css */
 /* Webkit (Chrome, Safari) */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #b163e54f inset !important;
@@ -659,7 +629,7 @@ input[type="file"]::file-selector-button {
     border-radius: 8px 0 8px 0;
 }
 
-/* article icons */
+/* Article icon and button styling */
 .add-article-btn {
     width: 88px;
     height: 92px;
@@ -712,11 +682,10 @@ input[type="file"]::file-selector-button {
 .page-link {
     border-radius: 30px;
     border: none;
-    background-color: none;
+    background-color: #fff;
 }
 
-/* article 'cards' */
-
+/* Article 'cards' */
 .author {
     font-family: var(--main-font);
     font-size: 18px;
@@ -764,8 +733,7 @@ input[type="file"]::file-selector-button {
     pointer-events: none;
 }
 
-/* alert messages */
-
+/* Alert messages - changed from default Bootstrap styling */
 .alert-dismissible .btn-close {
     padding: 0.8rem 1rem;
 }
@@ -812,7 +780,7 @@ input[type="file"]::file-selector-button {
     padding: 10px;
 }
 
-/* profile */
+/* Profile */
 .profile {
     display: flex;
     flex-direction: column;
@@ -851,8 +819,7 @@ p {
     overflow-y: auto;
 }
 
-/* booking */
-
+/* Booking */
 .add-booking-btn {
     height: 100px;
     width: 100px;
@@ -883,8 +850,7 @@ tr {
     width: 80px;
 }
 
-/* images */
-
+/* Images */
 #dogpark_lady {
     border-radius: 20px;
     height: 450px;
@@ -1033,14 +999,8 @@ tr {
     border-radius: 30px;
 }
 
-
-/* media queries */
-
-@media (max-width: 1300px) {
-
-}
-
-/* hamburger menu to center under logo on mobile */
+/* Media Queries */
+/* Styling for screen sizes under 1025px */
 @media (max-width: 1025px) {
     .navbar-nav {
         flex-direction: row;
@@ -1060,7 +1020,6 @@ tr {
         margin-left: 20px;
     }
 
-
     .hero-image {
         padding: 20px;
     }
@@ -1076,16 +1035,12 @@ tr {
 
 }
 
-/* tablet/large mobile media queries */
+/* Tablet/large mobile media queries - screen sizes below 768px */
 @media (max-width: 768px) {
     .social-icon {
         height: 1.25rem;
         margin: .75rem;
     }
-
-    /* .mobile-articles {
-        margin-right: 40px;
-    } */
 
     .card-text {
         font-size: 14px;
@@ -1126,12 +1081,10 @@ tr {
         overflow: hidden;
     }
 
-
 }
 
-/* mobile media queries */
+/* Mobile media queries - screen sizes below 576px */
 @media (max-width: 576px) {
-
     .profile-info,
     .profile-details {
         flex-direction: column;
@@ -1185,9 +1138,8 @@ tr {
 
 }
 
-
+/* Extra small mobile - iPhone 4 tested - screen sizes below 350px */
 @media (max-width: 350px) {
-
     .nav-logo {
         height: 60px;
         width: auto;

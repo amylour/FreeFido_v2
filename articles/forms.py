@@ -10,14 +10,15 @@ class ArticleForm(forms.ModelForm):
 
     def save(self, commit=True):
         instance = super().save(commit=False)
-        instance.slug = slugify(instance.title)  # Set the slug value from the title
+        # Set the slug value from the title
+        instance.slug = slugify(instance.title)
         if commit:
             instance.save()
         return instance
 
     class Meta:
         model = Article
-        fields = ['title', 'featured_image', 'image_alt', 'excerpt','content']
+        fields = ['title', 'featured_image', 'image_alt', 'excerpt', 'content']
 
         contents = forms.CharField(widget=RichTextWidget())
 
@@ -32,7 +33,6 @@ class ArticleForm(forms.ModelForm):
             "excerpt": "Excerpt",
             "content": "Content",
         }
-
 
 
 class CommentForm(forms.ModelForm):

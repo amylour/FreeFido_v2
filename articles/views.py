@@ -14,7 +14,7 @@ from django.contrib.auth.mixins import (
 
 class AddArticle(LoginRequiredMixin, CreateView):
     """
-    A model to create an article 
+    A model to create an article
     """
     template_name = 'articles/article_create.html'
     model = Article
@@ -44,6 +44,7 @@ class ArticleList(generic.ListView):
     template_name = 'articles/articles.html'
     paginate_by = 6
 
+    # search functionality
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
         if query:
@@ -63,7 +64,6 @@ class ArticlePage(View):
     """
     A model to view an individual article & post a comment
     """
-
     def get(self, request, slug, *args, **kwargs):
         queryset = Article.objects.filter(status=1, is_deleted=False)
         article = get_object_or_404(queryset, slug=slug)
@@ -93,7 +93,7 @@ class ArticlePage(View):
         liked = False
         if article.likes.filter(id=self.request.user.id).exists():
             liked = True
-
+        # save comment to user using email and name for approval
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
@@ -102,7 +102,6 @@ class ArticlePage(View):
             comment = comment_form.save(commit=False)
             comment.article = article
             comment.save()
-
             # alert message to user if their comment has been approved & posted
             if comment.approved:
                 messages.success(
@@ -128,7 +127,6 @@ class ArticleLike(View):
     """
     A model to like/unlike the article
     """
-
     def post(self, request, slug):
         article = get_object_or_404(Article, slug=slug)
 
@@ -141,7 +139,9 @@ class ArticleLike(View):
 
 
 class EditArticle(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    """ Edit an article """
+    """
+    A model to edit an article
+    """
     template_name = 'articles/article_edit.html'
     model = Article
     form_class = ArticleForm
@@ -161,7 +161,9 @@ class EditArticle(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    """ Delete an article """
+    """
+    A model to delete an article
+    """
     model = Article
     success_url = '/articles/'
 
@@ -170,6 +172,8 @@ class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         article = self.get_object()
+        # Confirm deletion to ensure deleted articles aren't returned in
+        # article search function
         article.is_deleted = True
         article.save()
         messages.success(request, "Article deleted successfully.")
@@ -177,7 +181,9 @@ class DeleteArticle(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class DeleteComment(DeleteView):
-    """ Delete a comment """
+    """
+    Delete a comment
+    """
     model = Comment
     success_url = '/articles/'
     template_name = 'articles/comment_delete.html'
@@ -188,6 +194,6 @@ class DeleteComment(DeleteView):
     def delete(self, request, *args, **kwargs):
         comment = self.get_object()
         comment.delete()
+        # inform user of comment deletion
         messages.success(request, "Comment deleted successfully.")
         return HttpResponseRedirect(self.success_url)
-
