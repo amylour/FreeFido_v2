@@ -45,12 +45,13 @@ All HTML pages were validated and received a 'No errors or warning to show' resu
 
 Initially my Profile and Article Page HTML were receiving [errors](documentation/testing/extra_p_tag.png) of having an extra p tag due to Summernotes rendering. I fixed this issue by replacing the p tags with divs, redeployed and checked for any styling issues. All clear on re-validation thankfully.
 
-| Page | Errors | Warnings |
+
+| HTML Source Code/Page | Errors | Warnings |
 | ---- | ------ | -------- | 
 | Home | 0 | 0 |
 | Sign In | 0 | 0 |
 | Sign Up | 0 | 0 |
-| Profile |  |  |
+| Profile | 0 | 0 |
 | Edit Profile Modal | 0 | 0 |
 | Articles | 0 | 0 |
 | Add Article | 0 | 0 |
@@ -70,7 +71,8 @@ Initially my Profile and Article Page HTML were receiving [errors](documentation
 | Error 403 | 0 | 0 |
 | Error 404 | 0 | 0 |
 | Error 500 | 0  | 0 |
-
+  
+<hr>  
 
 ### JavaScript Validation
 
@@ -82,10 +84,11 @@ Initially my Profile and Article Page HTML were receiving [errors](documentation
 | gallery.html | ![js from gallery.html](documentation/testing/gallery_js.png) | none | none |
 | profile.html | ![js from profile.html](documentation/testing/profile_js.png) | none | none |
 
+<hr>
 
 ### Python Validation
 
-[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files that were created or edited by myself.
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files that were created or edited by myself. No issues presented and line lengths were double checked.
 
 | Feature | admin.py | forms.py | models.py | urls.py | views.py |
 |---------|----------|----------|-----------|---------|----------|
@@ -97,25 +100,45 @@ Initially my Profile and Article Page HTML were receiving [errors](documentation
 | Profiles | no errors | no errors | no errors | no errors | no errors |
 | Visit | na | na | na | no errors | no errors |
 
+<hr>
+
 ### CSS Validation 
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested.
 
 ![css validation](documentation/testing/css_valid.png)
-
+  
+<hr> 
+   
 ### Lighthouse Scores
 
-*Desktop*  
+Lighthouse testing was carried out in Incognito mode to acheive the best result. Performance was lower than preferred due to the site being image heavy. Images used in the sites design were saved in webp and png format, and compressed using [tinypng.com](www.tinypng.com) and [Convertio](www.convertio.co) to offer the best chance for a decent performance score. The CDNs used for Bootstrap were also noted in the Lighthouse report as causing issue with performance. This report will be reviewed for future development of Freefido to raise this score.
 
-![Lighthouse scores desktop]()
+**Desktop**  
+
+![Lighthouse scores desktop](documentation/testing/desktop_lh.png)  
+*Desktop Home Page*  
   
-*Mobile*  
+![Lighthouse scores desktop](documentation/testing/dt_art_lh.png)  
+*Desktop Article Page*
+  
+**Mobile**  
 
-![Lighthouse scores mobile]()
+![Lighthouse scores mobile](documentation/testing/mobile_lh.png) 
+*Mobile Home Page*  
+  
+![Lighthouse scores mobile](documentation/testing/mob_art_lh.png) 
+*Mobile Home Page*
+  
+<hr>  
 
 ### Wave Accessibility Evaluation
 
-![WAVE Web Accessibility Evaluation Tools]()
+![WAVE Web Accessibility Evaluation Tools](documentation/testing/wave_rep.png)  
+  
+Accessibility was included in every planning stage for FreeFido, through the use of the WAVE report tool I could ensure that any necessary changes were made to make the website as accessible as it could be. A minor contrast issue with a word rendered in orange for the feature theme and the absence of text in article image cards, due to their design, was noted in the report. These will be considered in the next version of FreeFido to better it's score.
+  
+<hr>  
 
 ## User Input/Form Validation
 
@@ -134,8 +157,6 @@ Freefido was tested on the following browsers:
 - Edge v
 - Safari v
 
-| Browser | Features   | Issue  | Fix  | 
-| ------- | ---------- | ------ |------|
 
 
 ## Defensive Design
@@ -191,8 +212,6 @@ User Stories are documented in the FreeFido [GitHub Projects Board](https://gith
 | #33 - Edit Review          | Feature not included in this version - 'Could Have' item | | | | |
 | #34 - Delete Review        | Feature not included in this version - 'Could Have' item | | | | |
 | #35 - Delete Photo         | Yes                       | Yes    | No issues    | Pass      |    -    |
-
- 
 
 
 ### Dev Tools/Real World Device Testing

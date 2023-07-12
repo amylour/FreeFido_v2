@@ -274,7 +274,13 @@ Headings were given thick, dashed, underline styling in the coordinating colour 
 
 A favicon was added of a purple tennis ball to fit with the theme of the website, keeping it playful.
 
-![tennis ball favicon](documentation/final_views/ball_favicon.png)
+![tennis ball favicon](documentation/final_views/ball_favicon.png)  
+*Ball Favicon*
+
+I utilised webkits to change the appearance of my scrollbar to include rounded endpoints and a muted, purple/teal colour-gradient. This was especially so the smaller scrollbar within the profile dashboard would fit in with the projects design.  
+  
+![scrollbar](documentation/final_views/scrollbar.png)  
+*Modified Scrollbar*
 
 To allow for ease of responsiveness, each section was designed keeping in mind the switch from 'row' to 'column' when moving from Desktop to Mobile/Tablet view. This approach allowed me to add more features to the project early on by reusing and repurposing sections of code.
 
@@ -335,7 +341,7 @@ Originally I had planned for the home page to be mostly icon based for quick and
     <img src="documentation/wireframes/profile_desktop.png">
 </details>
 
-<details open>
+<details>
     <summary>Desktop Profile View Page Wireframe</summary>  
     <img src="documentation/wireframes/profile_view_desktop.png"> 
 </details>
@@ -352,7 +358,7 @@ Originally I had planned for the home page to be mostly icon based for quick and
 
 I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django agenda, scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
 
-<details open>
+<details>
     <summary>Desktop Gallery Page Wireframe</summary>  
     <img src="documentation/wireframes/gallery_desktop.png">
 </details>
@@ -367,15 +373,20 @@ I had grand ideas for re-creating this exact booking page in this deployment of 
     <img src="documentation/wireframes/map_contact_desktop.png">  
 </details>
 
-
 Through the early development of FreeFido, I created an Article section to help with my learning and understanding of Django before I tackled a booking system. This feature stayed in and helped to grow the idea of having a social/educational theme to the website. There are no wireframes for my Article section but I was able to continue my modular approach to it's design by using other elements from the project's planning in it's creation.
-
 
 ### Database Schema - Entity Relationship Diagram
 
 ![ERD Image](documentation/wireframes/freefidov2.png)  
 *Database Schema (ERD) for FreeFido displaying relationships between feature components saved within the database*
 
+This Entity Relationship Diagram(ERD) demonstrates how each feature interacts with each other and the connected database. Using Django's User Model, and Django AllAuth to carry out all user authentication, a user_id is created when the user registers with their username and email. This allows the user to edit a blank profile, create new articles, add comments and photos which will display their username, and create and manage their bookings. For future development, a Feedback system will be included allowing users to leave a review of the park.
+
+The Profile, Articles and Comments Models were inspired by the blog walkthrough by the Code Institute and the [Recipe App by Daisy McGirr](https://github.com/Daisy-McG/Recipe-Tutorial) during my learning of Django. They helped me to get a good and secure grasp of the templating structure and connected Python files to push my features further, make them my own and then develop my Booking and Gallery Models.
+
+My Booking Model collects data from the user about them and their dog(s) which can be used by the Admin to confirm the booking and entry to the park at their alloted time. The booking form displays a dropdown menu for Breed Choices and the hourly slots that are available for booking. A DateField allows that booking date to be chosen.
+
+Through the Admin Django Dashboard, the connected user_id to all data entered to the site means that the Admin can remove a User and their data completely through the additon of on_delete=models.CASCADE. At the moment, a user can remove any data they share with the site, but they cannot delete their account completely. This feature will come in the next version.
 
 ### Security
 
