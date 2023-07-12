@@ -39,28 +39,32 @@ I have had to follow a different approach for validating my HTML for this projec
 - Paste the copied code into the [validate by input](https://validator.w3.org/#validate_by_input) option.
 - Check for errors and warnings, fix any issues, revalidate by following the above steps and record the results.
 
+![html validation](documentation/testing/html_valid.png)  
+
+All HTML pages were validated and received a 'No errors or warning to show' result as shown above.
+
 | Page | Errors | Warnings |
 | ---- | ------ | -------- | 
 | Home | 0 | 0 |
 | Sign In | 0 | 0 |
 | Sign Up | 0 | 0 |
 | Profile |  |  |
-| Edit Profile Modal | ![screenshot of edit profile modal validation](documentation/testing/) |  |  |
+| Edit Profile Modal | 0 | 0 |
 | Articles | 0 | 0 |
 | Add Article | 0 | 0 |
-| View Article | ![screenshot of view article page validation](documentation/testing/) |  |  |
+| View Article | 0 | 0 |
 | Edit Article | 0 | 0 |
-| Delete Article | ![screenshot of delete article page validation](documentation/testing/) |  |  |
+| Delete Article | 0 | 0 |
 | Delete Comment | 0 | 0 |
-| Booking | ![screenshot of add article page validation](documentation/testing/) |  |  |
+| Booking | 0 | 0 |
 | Create Booking | 0 | 0 |
 | Edit Booking | 0 | 0 |
 | Delete Booking| 0 | 0 |
-| Gallery | ![screenshot of gallery page validation](documentation/testing/) |  |  |
+| Gallery | 0 | 0 |
 | Add Photo | 0 | 0 |
 | Delete Photo Modal | 0 | 0 |
 | Visit Us | 0 | 0 |
-| Forgot Password | ![screenshot of forgot password page validation](documentation/testing/) | 0 | 0 |
+| Forgot Password | 0 | 0 |
 | Error 403 | 0 | 0 |
 | Error 404 | 0 | 0 |
 | Error 500 | 0  | 0 |

@@ -35,7 +35,7 @@
                         </strong>{{profile.user.article_posts.count }}</p>
                     {% if profile.bio is not none %}
                     <p class="section-title my-2" id="auth-bio">Bio: </p>
-                    <p class="section-p w-25">{{ profile.bio|safe }} </p>
+                    <div class="section-p">{{ profile.bio|safe }}</div>
                     {% endif %}
                 </div>
             </div>
