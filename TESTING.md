@@ -1,6 +1,6 @@
 # Testing
 
-This is the TESTING file for the [FreeFido](https://github.com/amylour/FreeFido_v2) website.
+This is the TESTING file for the [FreeFido](https://freefido.herokuapp.com/) website.
 
 Return back to the [README.md](README.md) file.
 
@@ -39,15 +39,15 @@ I have had to follow a different approach for validating my HTML for this projec
 - Paste the copied code into the [validate by input](https://validator.w3.org/#validate_by_input) option.
 - Check for errors and warnings, fix any issues, revalidate by following the above steps and record the results.
 
-| Page | Screenshot | Errors | Warnings |
-| ---- | ---------- | ------ | -------- | 
-| Home | ![screenshot of home page validation](documentation/testing/) |   |   |
-| Sign In | ![screenshot of sign in page validation](documentation/testing/) |  |  |
-| Sign Up | ![screenshot of sign up page validation](documentation/testing/) |  |  |
-| Profile | ![screenshot of profile page validation](documentation/testing/) |  |  |
+| Page | Errors | Warnings |
+| ---- | ------ | -------- | 
+| Home | 0 | 0 |
+| Sign In | 0 | 0 |
+| Sign Up | 0 | 0 |
+| Profile |  |  |
 | Edit Profile Modal | ![screenshot of edit profile modal validation](documentation/testing/) |  |  |
-| Articles | ![screenshot of articles page validation](documentation/testing/) |  |  |
-| Add Article | ![screenshot of add article page validation](documentation/testing/) |  |  |
+| Articles | 0 | 0 |
+| Add Article | 0 | 0 |
 | View Article | ![screenshot of view article page validation](documentation/testing/) |  |  |
 | Edit Article | ![screenshot of edit article page validation](documentation/testing/) |  |  |
 | Delete Article | ![screenshot of delete article page validation](documentation/testing/) |  |  |
@@ -60,7 +60,7 @@ I have had to follow a different approach for validating my HTML for this projec
 | Add Photo | ![screenshot of add photo page validation](documentation/testing/) |  |  |
 | Delete Photo Modal | ![screenshot of delete photo modal validation](documentation/testing/) |  |  |
 | Visit Us | ![screenshot of visit us page validation](documentation/testing/) |  |  |
-| Forgot Password | ![screenshot of forgot password page validation](documentation/testing/) |  |  |
+| Forgot Password | ![screenshot of forgot password page validation](documentation/testing/) | 0 | 0 |
 | Error 400 | ![screenshot of error 400 page validation](documentation/testing/) |  |  |
 | Error 404 | ![screenshot of error 404 page validation](documentation/testing/) |  |  |
 | Error 500 | ![screenshot of error 500 page validation](documentation/testing/) |  |  |
