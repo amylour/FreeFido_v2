@@ -2,7 +2,8 @@ from django.db import models
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
 
-# Breed choices for user in profile dropdown menu in tuple format for database value and site viewable value for the user
+# Breed choices for user in profile dropdown menu in tuple format for database
+#  value and site viewable value for the user
 BREED_CHOICES = [
     ('Australian Shepard', 'Australian Shepard'),
     ('Bassett Hound', 'Bassett Hound'),
@@ -52,7 +53,8 @@ while start_time < end_time:
 
 class Booking(models.Model):
     """ A model for making a booking """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='bookings')
     first_name = models.CharField(max_length=20, blank=True, null=True)
     last_name = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField()
@@ -63,15 +65,20 @@ class Booking(models.Model):
     gender = models.CharField(max_length=6, choices=[
                               ('M', 'Male'), ('F', 'Female')])
     date = models.DateField(default=datetime.now, blank=True)
-    time = models.CharField(max_length=20, choices=TIME_CHOICES, default="11:00 - 12:00")
+    time = models.CharField(
+        max_length=20, choices=TIME_CHOICES, default="11:00 - 12:00")
 
     dog_name2 = models.CharField(max_length=20, blank=True, null=True)
     breed2 = models.CharField(
         max_length=30, choices=BREED_CHOICES, blank=True, null=True)
     color2 = models.CharField(max_length=30, blank=True, null=True)
     is_vaccinated2 = models.BooleanField(default=False, blank=True, null=True)
-    gender2 = models.CharField(max_length=6, choices=[
-                              ('M', 'Male'), ('F', 'Female')], blank=True, null=True)
+    gender2 = models.CharField(
+        max_length=6,
+        choices=[('M', 'Male'), ('F', 'Female')],
+        blank=True,
+        null=True
+    )
 
     class Meta:
         """ Order bookings by date """

@@ -39,14 +39,20 @@ class BookingForm(forms.ModelForm):
         time = cleaned_data.get('time')
 
         # Check if a booking with the same date and time already exists
-        if date and time and Booking.objects.filter(date=date, time=time).exists():
+        if (date and time and
+                Booking.objects.filter(date=date, time=time).exists()):
             self.add_error('time', 'This date and time is already booked.')
 
     class Meta:
         model = Booking
-        fields = ['first_name', 'last_name', 'email', 'dog_name', 'breed', 'color',
-                  'is_vaccinated', 'gender', 'date', 'time', 'dog_name2', 'breed2', 'color2', 'is_vaccinated2', 'gender2']
-
+        fields = [
+            'first_name', 'last_name', 'email', 'dog_name', 'breed', 'color',
+            'is_vaccinated', 'gender', 'date', 'time', 'dog_name2', 'breed2',
+            'color2', 'is_vaccinated2', 'gender2'
+        ]
+     
+    # cleaned data how to https://overiq.com/django-1-10/django-form-basics/
+    # ?utm_content=cmp-true
     def clean(self):
         cleaned_data = super().clean()
         instance = getattr(self, 'instance', None)
