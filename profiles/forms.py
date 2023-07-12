@@ -1,7 +1,8 @@
 from django import forms
 from .models import Profile
 
-class ProfileForm(forms.ModelForm): 
+
+class ProfileForm(forms.ModelForm):
     """ form for user to create a profile """
     class Meta:
         model = Profile
