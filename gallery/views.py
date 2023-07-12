@@ -11,7 +11,9 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 class Gallery(generic.ListView):
+    """ View Gallery Page """
     model = GalleryImage
     queryset = GalleryImage.objects.order_by('-posted_on')
     template_name = 'gallery/gallery.html'
@@ -19,7 +21,7 @@ class Gallery(generic.ListView):
     context_object_name = 'gallery_posts'
 
 
-class AddPhoto(LoginRequiredMixin, CreateView): 
+class AddPhoto(LoginRequiredMixin, CreateView):
     """ A view to upload an image """
     template_name = 'gallery/add_photo.html'
     model = GalleryImage
@@ -50,4 +52,3 @@ class DeletePhoto(DeleteView):
         self.object.delete()
         messages.success(request, "Photo deleted successfully.")
         return redirect(success_url)
-# bug deletion of most recent photo uploaded by user rather than chosen photo
