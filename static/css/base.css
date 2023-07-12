@@ -386,13 +386,18 @@ footer {
     line-height: 3rem;
 }
 
-#benefits {
+#benefits,
+#benefits-modal {
     display: inline-block;
     border-bottom: 10px dashed var(--green);
     line-height: 3rem;
 }
 
-#auth {
+
+#auth,
+#auth-bio,
+#auth-articles,
+#auth-profile {
     display: inline-block;
     border-bottom: 10px dashed var(--purple);
     line-height: 3rem;

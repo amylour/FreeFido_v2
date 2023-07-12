@@ -9,7 +9,7 @@
 <div class="container p-4">
     <div class="row">
         {% if profile %}
-        <!-- profile left side on tablets/large screens -->
+        <!-- Profile left side on tablets/large screens -->
         <div class="col-lg-5">
             <div class="profile">
                 <div class="profile-info text-center">
@@ -22,6 +22,7 @@
                             alt="Image not found icon">
                         {% endif %}
                     </div>
+                    <!-- Edit button for profile -->
                     {% if request.user == profile.user %}
                     <button id="myBtn" class="btn edit-button btn btn-link my-2">
                         <img src="{% static 'icons/edit_profile.png' %}" alt="edit profile" class="icon-delete-btn">
@@ -33,16 +34,16 @@
                     <p class="section-p"><strong class="profile-strong">Articles:
                         </strong>{{profile.user.article_posts.count }}</p>
                     {% if profile.bio is not none %}
-                    <p class="section-title my-2" id="auth">Bio: </p>
-                    <p class="section-p w-25">{{ profile.bio|safe }}</p>
+                    <p class="section-title my-2" id="auth-bio">Bio: </p>
+                    <p class="section-p w-25">{{ profile.bio|safe }} </p>
                     {% endif %}
                 </div>
             </div>
         </div>
 
-        <!-- profile right side on tablets/large screens -->
+        <!-- Profile right side on tablets/large screens, User articles and bookings dashboard -->
         <div class="col-lg-5 offset-lg-2 text-center mt-5">
-            <h2 class="text-center section-title mb-4" id="auth">Latest Articles</h2>
+            <h2 class="text-center section-title mb-4" id="auth-articles">Latest Articles</h2>
             <div class="profile-articles text-center mb-2 p-2">
                 {% for article in profile.user.article_posts.all %}
                 <a href="{% url 'article_page' article.slug %}">
@@ -52,7 +53,6 @@
                 {% endfor %}
             </div>
             <hr class="my-2">
-            <!-- <img src="{% static '../static/icons/tennis-ball.png' %}" alt="hr-tennis ball" class="mx-auto my-3 hr-special"> -->
             <h2 class="text-center section-title my-3" id="booking">Active Bookings</h2>
             {% if bookings %}
             <div class="table-responsive text-center my-3">
@@ -111,7 +111,7 @@
 
     </div>
 
-    <!-- modal code from W3Schools -->
+    <!-- modal code from W3Schools https://www.w3schools.com/howto/howto_css_modal -->
     <div id="myModal" class="modal mt-5">
 
         <!-- modal content -->
@@ -119,7 +119,7 @@
             <span class="close fs-1 pe-2 position-absolute top-0 end-0 font-weight-bold">&times;</span>
             <form method="POST" action="{% url 'profile_edit' request.user.id %}" class="mb-2 p-2"
                 enctype="multipart/form-data">
-                <h2 class="text-center section-title fs-4 mb-4" id="auth">Edit Profile</h2>
+                <h2 class="text-center section-title fs-4 mb-4" id="auth-profile">Edit Profile</h2>
                 {% csrf_token %}
                 {{ form|crispy }}
                 {{ form.media }}
@@ -135,6 +135,7 @@
 
 {% block extra_js %}
 {{ block.super }}
+<!-- Profile edit modal functionality - W3Schools -->
 <script>
     // Get the modal - W3Schools
     const modal = document.getElementById("myModal");
