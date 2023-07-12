@@ -12,9 +12,11 @@
             <h1 class="section-title mb-3" id="booking">Your Bookings</h1>
         </div>
         <div class="col-md-3 text-center text-md-end">
+            <!-- Warning message for user about max bookings reached, only displays when 4 bookings reached -->
             {% if request.user.bookings.count >= 4 %}
             <div class="message-box mb-2 mr-5">
-                <p class="text-center booking-p">You have reached the maximum number of <strong>4</strong> active bookings.</p>
+                <p class="text-center booking-p">You have reached the maximum number of <strong>4</strong> active
+                    bookings.</p>
             </div>
             {% else %}
             <a href="{% url 'booking_create' %}" class="my-4" title="Make a Booking">
@@ -24,61 +26,68 @@
             {% endif %}
         </div>
     </div>
-{% if request.user.bookings.all %}
-<div class="table-responsive my-4 w-75 mx-auto">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Booking Date</th>
-                <th>Booking Time</th>
-                <th>Dog Name</th>
-                <th>Second Dog Name</th>
-                <th>Edit/Delete Booking</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for booking in request.user.bookings.all %}
-            <tr>
-                <td>{{ booking.date }}</td>
-                <td>{{ booking.time }}</td>
-                <td>{{ booking.dog_name }}</td>
-                <td>{{ booking.dog_name2 }}</td>
-                <td>{% if request.user == booking.user %}
-                <div class="text-center">
-                    <div class="d-flex justify-content-center justify-content-md-start">
-                        <div class="col">
-                            <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link" title="Edit Booking"><img
-                                    src="{% static '../static/icons/edit_booking.png' %}" alt="edit booking"
-                                    class="icon-delete-btn"></a>
+    {% if request.user.bookings.all %}
+    <div class="table-responsive my-4 w-75 mx-auto">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Booking Date</th>
+                    <th>Booking Time</th>
+                    <th>Dog Name</th>
+                    <th>Second Dog Name</th>
+                    <th>Edit/Delete Booking</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in request.user.bookings.all %}
+                <tr>
+                    <td>{{ booking.date }}</td>
+                    <td>{{ booking.time }}</td>
+                    <td>{{ booking.dog_name }}</td>
+                    <td>{{ booking.dog_name2 }}</td>
+                    <td>{% if request.user == booking.user %}
+                        <div class="text-center">
+                            <!-- edit/delete icon display -->
+                            <div class="d-flex justify-content-center justify-content-md-start">
+                                <div class="col">
+                                    <a href="{% url 'booking_edit' booking.id %}" class="btn btn-link"
+                                        title="Edit Booking"><img src="{% static '../static/icons/edit_booking.png' %}"
+                                            alt="edit booking" class="icon-delete-btn"></a>
+                                </div>
+                                <div class="col">
+                                    <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link"
+                                        title="Delete Booking"><img
+                                            src="{% static '../static/icons/delete_booking.png' %}" alt="delete booking"
+                                            class="icon-delete-btn"></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <a href="{% url 'booking_delete' booking.id %}" class="btn btn-link" title="Delete Booking"><img
-                                    src="{% static '../static/icons/delete_booking.png' %}" alt="delete booking"
-                                    class="icon-delete-btn"></a>
-                        </div>
-                    </div>
-                </div>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-{% endif %}
-
-<div class="container my-4 w-100">
-    <h2 class="section-title" id="booking">Park Rules</h2>
-    <ol class="park-rules section-p my-3">
-        <li> The park is open everyday 8am to 8pm. Bookings are for <strong>1 hour</strong>.Please abide by your entry and exit time. Repeated late leaving of the park will result in a booking ban.</li>
-        <li> No more than <strong>2</strong> dogs per person.</li>
-        <li> Extra dogs and owners are most welcome to join your booking but please ensure to follow rule no.2.</li>
-        <li> Dogs are the responsibility of the owner at all times.</li>
-        <li> We strive to maintain a clean and safe park for all members - please pick up after your dog and leave no rubbish behind.</li>
-    </ol>
-    <div class="text-center"><p class="section-p-rules">Thank you for using FreeFido Dog Park - we hope you have a ball!</p></div>
-    <img src="{% static 'icons/tennis-ball-booking.png' %}" alt="tennis ball" class="mx-auto mt-4" height="80px" width="auto">
-</div>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    <!-- Park rules section -->
+    <div class="container my-4 w-100">
+        <h2 class="section-title" id="booking">Park Rules</h2>
+        <ol class="park-rules section-p my-3">
+            <li> The park is open everyday 8am to 8pm. Bookings are for <strong>1 hour</strong>.Please abide by your
+                entry and exit time. Repeated late leaving of the park will result in a booking ban.</li>
+            <li> No more than <strong>2</strong> dogs per person.</li>
+            <li> Extra dogs and owners are most welcome to join your booking but please ensure to follow rule no.2.</li>
+            <li> Dogs are the responsibility of the owner at all times.</li>
+            <li> We strive to maintain a clean and safe park for all members - please pick up after your dog and leave
+                no rubbish behind.</li>
+        </ol>
+        <div class="text-center">
+            <p class="section-p-rules">Thank you for using FreeFido Dog Park - we hope you have a ball!</p>
+        </div>
+        <img src="{% static 'icons/tennis-ball-booking.png' %}" alt="tennis ball" class="mx-auto mt-4" height="80px"
+            width="auto">
+    </div>
 
 
-{% endblock %}
+    {% endblock %}

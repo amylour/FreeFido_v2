@@ -14,24 +14,26 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="d-flex align-items-center mt-5">
-                <h1 class="article-title">{{ article.title }}</h1>
-                <!-- Show edit/delete buttons if the author is viewing the article logged in -->
-                {% if request.user == article.author %}
+                    <h1 class="article-title">{{ article.title }}</h1>
+                    <!-- Show edit/delete buttons if the author is viewing the article logged in -->
+                    {% if request.user == article.author %}
                     <a href="{% url 'article_edit' article.slug %}" class="btn btn-link" title="edit article"><img
-                            src="{% static '../static/icons/edit_profile.png' %}" alt="edit article" class="icon-delete-btn"></a>
+                            src="{% static '../static/icons/edit_profile.png' %}" alt="edit article"
+                            class="icon-delete-btn"></a>
                     <a href="{% url 'article_delete' article.slug %}" class="btn btn-link" title="delete article"><img
-                            src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
-                {% endif %}
+                            src="{% static '../static/icons/delete_article.png' %}" alt="delete article"
+                            class="icon-delete-btn"></a>
+                    {% endif %}
                 </div>
                 <p class="article-details">{{ article.author }} | {{ article.created_on }}</p>
                 <p class="article-excerpt"><em>{{ article.excerpt }}</em></p>
-            <div class="col-md-6 jumboimage">
-                <!-- Set placeholder image if user has not submitted the image or if image is unavailable -->
-                {% if "placeholder" in article.featured_image.url %}
-                <img src="{% static 'images/placeholder_img.png' %}" class="article-img" width="100%">
-                {% else %}
-                <img src=" {{ article.featured_image.url }}" class="article-img" width="100%">
-                {% endif %}
+                <div class="col-md-6 jumboimage">
+                    <!-- Set placeholder image if user has not submitted the image or if image is unavailable -->
+                    {% if "placeholder" in article.featured_image.url %}
+                    <img src="{% static 'images/placeholder_img.png' %}" class="article-img" width="100%">
+                    {% else %}
+                    <img src=" {{ article.featured_image.url }}" class="article-img" width="100%">
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -51,28 +53,30 @@
                     <div class="col-4">
                         <div class="d-flex flex-row flex-md-column">
                             <!-- Allow logged in users to interact with like icon -->
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="articlelike_id" value="{{post.slug}}" class="like-button">
-                                    <img src="{% static 'icons/heart.png' %}" class="like-icon"
-                                        alt="pawprint heart like icon">
-                                </button>
+                            <strong>
+                                {% if user.is_authenticated %}
+                                <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
+                                    {% csrf_token %}
+                                    {% if liked %}
+                                    <button type="submit" name="articlelike_id" value="{{post.slug}}"
+                                        class="like-button">
+                                        <img src="{% static 'icons/heart.png' %}" class="like-icon"
+                                            alt="pawprint heart like icon">
+                                    </button>
+                                    {% else %}
+                                    <button type="submit" name="articlelike_id" value="{{post.slug}}"
+                                        class="like-button">
+                                        <img src="{% static 'icons/heart_outline.png' %}" class="like-icon"
+                                            alt="pawprint heart outline like icon">
+                                    </button>
+                                    {% endif %}
+                                </form>
                                 {% else %}
-                                <button type="submit" name="articlelike_id" value="{{post.slug}}" class="like-button">
-                                    <img src="{% static 'icons/heart_outline.png' %}" class="like-icon"
-                                        alt="pawprint heart outline like icon">
-                                </button>
+                                <span class="like-icon"><img src="{% static 'icons/heart.png' %}" class="like-icon"
+                                        alt="pawprint heart outline like icon"></span>
                                 {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="like-icon"><img src="{% static 'icons/heart.png' %}" class="like-icon"
-                                    alt="pawprint heart outline like icon"></span>
-                            {% endif %}
-                            <span class="like-num"> {{ article.number_of_likes }}</span>
-                        </strong>
+                                <span class="like-num"> {{ article.number_of_likes }}</span>
+                            </strong>
                         </div>
                     </div>
                     <!-- Comment icon with comment count for article -->
@@ -110,7 +114,9 @@
                     <!-- Allow author of comment to see and use delete icon if logged in -->
                     {% if request.user.username == comment.name %}
                     <div class="text-center">
-                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-link"><img src="{% static '../static/icons/delete_article.png' %}" alt="delete article" class="icon-delete-btn"></a>
+                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-link"><img
+                                src="{% static '../static/icons/delete_article.png' %}" alt="delete article"
+                                class="icon-delete-btn"></a>
                     </div>
                     {% endif %}
                 </div>

@@ -31,12 +31,12 @@
             <!-- Display text when no articles present, control grid sizing when pagination occurs leaving 1 article on next page -->
             <div class="row justify-content-center">
                 {% if article_list|length == 0 %}
-                    <div class="col-12 text-center">
-                        <p class="section-p">No articles found.</p>
-                        <div class="mb-3 mx-auto text-center">
-                            <a href="{% url 'articles' %}" class="btn btn-custom my-3">Back to Articles</a>
-                        </div>
+                <div class="col-12 text-center">
+                    <p class="section-p">No articles found.</p>
+                    <div class="mb-3 mx-auto text-center">
+                        <a href="{% url 'articles' %}" class="btn btn-custom my-3">Back to Articles</a>
                     </div>
+                </div>
                 {% else %}
                 {% for article in article_list %}
                 {% if article_list|length == 1 %}

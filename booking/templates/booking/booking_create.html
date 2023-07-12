@@ -8,42 +8,42 @@
 
 {% load crispy_forms_tags %}
 <div class="text-center">
-<h1 class="text-center mx-auto section-title my-3" id="booking">Create Booking</h1>
-<form method="post" class="text-center w-75 mx-auto booking-section">
-    {% csrf_token %}
-    <div class="row mx-auto">
-        <div class="col m-4">
-            <h4 class="text-center mb-3">Your Details</h4>
-            {{ form.first_name|as_crispy_field }}
-            {{ form.last_name|as_crispy_field}}
-            {{ form.email|as_crispy_field }}
-            {{ form.dog_name|as_crispy_field }}
-            {{ form.breed|as_crispy_field }}
-            {{ form.color|as_crispy_field }}
-            {{ form.is_vaccinated|as_crispy_field }}
-            {{ form.gender|as_crispy_field }}
+    <h1 class="text-center mx-auto section-title my-3" id="booking">Create Booking</h1>
+    <form method="post" class="text-center w-75 mx-auto booking-section">
+        {% csrf_token %}
+        <div class="row mx-auto">
+            <!-- Calling each form input item to allow for more control in styling -->
+            <div class="col m-4">
+                <h4 class="text-center mb-3">Your Details</h4>
+                {{ form.first_name|as_crispy_field }}
+                {{ form.last_name|as_crispy_field}}
+                {{ form.email|as_crispy_field }}
+                {{ form.dog_name|as_crispy_field }}
+                {{ form.breed|as_crispy_field }}
+                {{ form.color|as_crispy_field }}
+                {{ form.is_vaccinated|as_crispy_field }}
+                {{ form.gender|as_crispy_field }}
+            </div>
+            <div class="col m-4">
+                <h4 class="text-center mb-3">Choose Date & Time</h4>
+                {{ form.date|as_crispy_field }}
+                {{ form.time|as_crispy_field }}
+            </div>
+            <div class="col m-4">
+                <h4 class="text-center mb-3">Book a second dog?<em>(Optional)</em></h4>
+                <div class="mx-auto text-center" id="dog2_section">
+                    {{ form.dog_name2|as_crispy_field }}
+                    {{ form.breed2|as_crispy_field }}
+                    {{ form.color2|as_crispy_field }}
+                    {{ form.is_vaccinated2|as_crispy_field }}
+                    {{ form.gender2|as_crispy_field }}
+                    <p class="p-2"><em class="vaccinations">* Please ensure that your dog's vaccinataions are up to date
+                            to maintain a safe environment for all park users. Dogs that present as visibly ill will not
+                            be admitted. Thank you.</em></p>
+                </div>
+            </div>
         </div>
-        <div class="col m-4">
-            <h4 class="text-center mb-3">Choose Date & Time</h4>
-            {{ form.date|as_crispy_field }}
-            {{ form.time|as_crispy_field }}
-        </div>
-        <div class="col m-4">
-        <h4 class="text-center mb-3">Book a second dog?<em>(Optional)</em></h4>
-        <div class="mx-auto text-center" id="dog2_section">
-            {{ form.dog_name2|as_crispy_field }}
-            {{ form.breed2|as_crispy_field }}
-            {{ form.color2|as_crispy_field }}
-            {{ form.is_vaccinated2|as_crispy_field }}
-            {{ form.gender2|as_crispy_field }}
-        <p class="p-2"><em class="vaccinations">* Please ensure that your dog's vaccinataions are up to date to maintain a safe environment for all park users. Dogs that present as visibly ill will not be admitted. Thank you.</em></p>
-        </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-custom booking-btn">Save</button>
-</form>
+        <button type="submit" class="btn btn-custom booking-btn">Save</button>
+    </form>
 </div>
-
-
-
 {% endblock %}

@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <!-- carousel of images changing every 3 seconds and buttons for user to change the images -->
+    <!-- Carousel of images changing every 3 seconds and buttons for user to change the images -> https://getbootstrap.com/docs/4.0/components/carousel/ -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
@@ -66,6 +66,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6 mb-4">
                 <div class="image-container">
                     <img src="{{ gallery_post.photo.url }}" alt="{{ gallery_post.image_alt }}" class="gallery-image">
+                    <!-- Show overlay with info on hover/touch on mobile, delete button icon for author when logged in -->
                     <div class="image-overlay">
                         {% if user.is_authenticated and gallery_post.photo_by == user %}
                         <form method="POST" action="{% url 'delete_photo' pk=gallery_post.pk %}" class="delete-form">
@@ -96,7 +97,7 @@
     </div>
 
 
-
+    <!-- Delete photo modal -->
     <div id="deleteConfirmModal" class="modal-photo">
         <div class="modal-photo-content w-75 mx-auto my-2 shadow">
             <h2 class="section-title my-3 fs-1" id="benefits">Confirm Deletion</h2>
@@ -107,7 +108,7 @@
             </div>
         </div>
     </div>
-
+    <!-- Delete modal functionality-> https://www.w3schools.com/howto/howto_css_modals.asp -->
     <script>
             // display the confirmation modal
             function displayDeleteModal(button) {
