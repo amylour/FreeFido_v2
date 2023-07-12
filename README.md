@@ -725,7 +725,7 @@ Users articles and comments require approval by the Admin of FreeFido to keep th
   
 Admin can control users booking via the panel.
 
-![dj admin panel bookings](documentation/final_views/dj_booking.png)  
+![dj admin panel bookings](documentation/final_views/djbooking.png)  
 *All bookings are made available to the Admin*
 
 
@@ -804,6 +804,7 @@ Override Django's save method (<https://www.sankalpjonna.com/learn-django/how-to
 TypeError Datetime object issue for same day bookings - (<https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object>)
                                                       - (<https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.>)
 Find the parent form element of delete confirm button (<https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/>)
+Bootstrap documentation for credited components used in project (<https://getbootstrap.com/>)
 
 ### Code
 
