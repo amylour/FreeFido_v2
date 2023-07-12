@@ -805,6 +805,9 @@ TypeError Datetime object issue for same day bookings - (<https://bobbyhadz.com/
                                                       - (<https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.>)
 Find the parent form element of delete confirm button (<https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/>)
 Bootstrap documentation for credited components used in project (<https://getbootstrap.com/>)
+Scrollbar styling ( https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
+Browser autofill styling overrule (<https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css>)
+Django Docs to make model item readonly for search function showing deleted articles (<https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields>)
 
 ### Code
 

@@ -81,14 +81,15 @@ I have had to follow a different approach for validating my HTML for this projec
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files that were created or edited by myself.
 
-| Page | Screenshot | Errors | Warnings |
-| ---- | ---------- | ------ | -------- |
+| Feature | admin.py | forms.py | models.py | urls.py | views.py |
+|---------|----------|----------|-----------|---------|----------|
+| Articles | none | none | none | none | none |
 
 ### CSS Validation 
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested.
 
-![css validation](documentation/testing/css_validation.png)
+![css validation](documentation/testing/css_valid.png)
 
 ### Lighthouse Scores
 
