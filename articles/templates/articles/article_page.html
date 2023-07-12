@@ -30,9 +30,9 @@
                 <div class="col-md-6 jumboimage">
                     <!-- Set placeholder image if user has not submitted the image or if image is unavailable -->
                     {% if "placeholder" in article.featured_image.url %}
-                    <img src="{% static 'images/placeholder_img.png' %}" class="article-img" width="100%">
+                    <img src="{% static 'images/placeholder_img.png' %}" class="article-img" alt="placeholder image">
                     {% else %}
-                    <img src=" {{ article.featured_image.url }}" class="article-img" width="100%">
+                    <img src=" {{ article.featured_image.url }}" class="article-img" alt="featured image">
                     {% endif %}
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <div class="col-4">
                         <div class="d-flex flex-row flex-md-column">
                             <!-- Allow logged in users to interact with like icon -->
-                            <strong>
+                            <div>
                                 {% if user.is_authenticated %}
                                 <form class="d-inline" action="{% url 'article_like' article.slug %}" method="POST">
                                     {% csrf_token %}
@@ -75,8 +75,8 @@
                                 <span class="like-icon"><img src="{% static 'icons/heart.png' %}" class="like-icon"
                                         alt="pawprint heart outline like icon"></span>
                                 {% endif %}
-                                <span class="like-num"> {{ article.number_of_likes }}</span>
-                            </strong>
+                                <strong><span class="like-num"> {{ article.number_of_likes }}</span></strong>
+                                </div>
                         </div>
                     </div>
                     <!-- Comment icon with comment count for article -->

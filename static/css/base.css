@@ -403,7 +403,8 @@ footer {
     line-height: 3rem;
 }
 
-#booking {
+#booking,
+#booking-rules {
     display: inline-block;
     border-bottom: 10px dashed var(--blue);
     line-height: 3rem;
@@ -875,6 +876,11 @@ tr {
     border-radius: 20px;
     background-color: #4ce0c27a;
     padding: 10px;
+}
+
+.t-ball {
+    height: 80px;
+    width: 80px;
 }
 
 /* images */

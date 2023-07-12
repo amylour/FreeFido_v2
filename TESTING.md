@@ -49,21 +49,21 @@ I have had to follow a different approach for validating my HTML for this projec
 | Articles | 0 | 0 |
 | Add Article | 0 | 0 |
 | View Article | ![screenshot of view article page validation](documentation/testing/) |  |  |
-| Edit Article | ![screenshot of edit article page validation](documentation/testing/) |  |  |
+| Edit Article | 0 | 0 |
 | Delete Article | ![screenshot of delete article page validation](documentation/testing/) |  |  |
-| Delete Comment | ![screenshot of delete comment page validation](documentation/testing/) |  |  |
+| Delete Comment | 0 | 0 |
 | Booking | ![screenshot of add article page validation](documentation/testing/) |  |  |
-| Create Booking | ![screenshot of create booking page validation](documentation/testing/) |  |  |
-| Edit Booking | ![screenshot of edit booking page validation](documentation/testing/) |  |  |
-| Delete Booking| ![screenshot of delete booking page validation](documentation/testing/) |  |  |
+| Create Booking | 0 | 0 |
+| Edit Booking | 0 | 0 |
+| Delete Booking| 0 | 0 |
 | Gallery | ![screenshot of gallery page validation](documentation/testing/) |  |  |
-| Add Photo | ![screenshot of add photo page validation](documentation/testing/) |  |  |
-| Delete Photo Modal | ![screenshot of delete photo modal validation](documentation/testing/) |  |  |
-| Visit Us | ![screenshot of visit us page validation](documentation/testing/) |  |  |
+| Add Photo | 0 | 0 |
+| Delete Photo Modal | 0 | 0 |
+| Visit Us | 0 | 0 |
 | Forgot Password | ![screenshot of forgot password page validation](documentation/testing/) | 0 | 0 |
-| Error 400 | ![screenshot of error 400 page validation](documentation/testing/) |  |  |
-| Error 404 | ![screenshot of error 404 page validation](documentation/testing/) |  |  |
-| Error 500 | ![screenshot of error 500 page validation](documentation/testing/) |  |  |
+| Error 403 | 0 | 0 |
+| Error 404 | 0 | 0 |
+| Error 500 | 0  | 0 |
 
 
 ### JavaScript Validation
