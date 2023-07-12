@@ -808,6 +808,7 @@ Bootstrap documentation for credited components used in project (<https://getboo
 Scrollbar styling ( https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
 Browser autofill styling overrule (<https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css>)
 Django Docs to make model item readonly for search function showing deleted articles (<https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields>)
+Django cleaned data how to (<https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true>)
 
 ### Code
 

@@ -43,6 +43,8 @@ I have had to follow a different approach for validating my HTML for this projec
 
 All HTML pages were validated and received a 'No errors or warning to show' result as shown above.
 
+Initially my Profile and Article Page HTML were receiving [errors](documentation/testing/extra_p_tag.png) of having an extra p tag due to Summernotes rendering. I fixed this issue by replacing the p tags with divs, redeployed and checked for any styling issues. All clear on re-validation thankfully.
+
 | Page | Errors | Warnings |
 | ---- | ------ | -------- | 
 | Home | 0 | 0 |
@@ -87,7 +89,13 @@ All HTML pages were validated and received a 'No errors or warning to show' resu
 
 | Feature | admin.py | forms.py | models.py | urls.py | views.py |
 |---------|----------|----------|-----------|---------|----------|
-| Articles | none | none | none | none | none |
+| Articles | no errors | no errors | no errors | no errors | no errors |   
+| Booking  | no errors | no errors | no errors | no errors | no errors |
+| FreeFido main app | na | na | na | no errors | na |
+| Gallery | no errors | no errors | no errors | no errors | no errors |
+| Home | na | na | na | no errors | no errors |
+| Profiles | no errors | no errors | no errors | no errors | no errors |
+| Visit | na | na | na | no errors | no errors |
 
 ### CSS Validation 
 
@@ -223,6 +231,7 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 | 6   | Wrong photo deletion - Delete icon was deleting the most recently uploaded photograph instead of the actual photo it was connected to | Yes | Typo - Developer Error, delete photo form was calling photo.pk instead of the id of the actual photo, photo.id. Delete Modal created to help call and confirm correct image | Checking code and my database schema to understand what I've done wrong, W3Schools modal for deletion [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp)  | 4baa2c5 + 994c522 |
 | 7   | Profile page not displaying in deployed Heroku app due to missing profile image | Yes | Developer error with forgetting 'is not none' for displaying image placeholder and file path error with '/' | The lovely Joanne from Tutor Support helped me to spot my error. After a long day of coding I needed to take a break and rest my eyes so I wouldn't make the mistake again. | 7157472 + 723adca |
 |  8  | Footer image not showing in deployed version, image is '404 not found', footer image is displayed using 'background-image: url(' ')' in CSS file | Yes - through using a different method | Footer background image added in HTML file instead, all checks were carried out for file path issues, static issues, CSS issues to understand why the 'background-image' property wouldn't render the image but from reading it is understood that there can be issues with Django and CSS properties where the image is called by URL -> source [Stackoverflow](https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django) | No credit needed for new fix as just normal CSS, will pursue understanding of working with Django, Heroku and deploying with images as values in CSS file | 4d90033 |
+
 
 
 ### Known Bugs
