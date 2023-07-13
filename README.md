@@ -252,35 +252,41 @@ Planning my project thoroughly from the start allowed me to identify areas of im
 
 ## Structural Plane
 
-From initial concept to finished product, icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from Flaticon and my colour scheme, I created my navbar icons. I edited my Login/Logout icons with a pawprint to have them fit the theme better.
+From initial concept to finished product, icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Bootstrap classes and components were used to help control the flexibility of the site alongside overriding some classes with my own CSS to style as much of the form inputs that I could. Site graphic components were created by myself in Figma and Procreate. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from Flaticon and my colour scheme, I created my navbar icons in Figma. Each icon was placed on a colour-themed rectangle with border-radius:30px and exported as PNGs. I edited my Login/Logout icons with a pawprint in the center of lock to have them fit the dog theme better.
 
 ![navbar icons](documentation/final_views/icons_row.png)  
 *Navigation icons for FreeFido*
+
   
 Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
   
 ![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
 *Navigation bar tooltips demonstrated on Desktop*
-  
+
+ 
 Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
   
 ![image with rounded corners](documentation/final_views/article_card_br.png)  
 *Article card from the Articles section with rounded corner styling*
-  
+
+ 
 Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
   
 ![header with underline](documentation/final_views/header_underline.png)  
 *Sign Up page header with purple underline for Authentication related sections*  
+  
 
 A favicon was added of a purple tennis ball to fit with the theme of the website, keeping it playful.
 
 ![tennis ball favicon](documentation/final_views/ball_favicon.png)  
 *Ball Favicon*
+  
 
 I utilised webkits to change the appearance of my scrollbar to include rounded endpoints and a muted, purple/teal colour-gradient. This was especially so the smaller scrollbar within the profile dashboard would fit in with the projects design.  
   
 ![scrollbar](documentation/final_views/scrollbar.png)  
 *Modified Scrollbar*
+  
 
 To allow for ease of responsiveness, each section was designed keeping in mind the switch from 'row' to 'column' when moving from Desktop to Mobile/Tablet view. This approach allowed me to add more features to the project early on by reusing and repurposing sections of code.
 
@@ -301,6 +307,8 @@ Originally I had planned for the home page to be mostly icon based for quick and
     <summary>Mobile/Tablet Home Page Wireframe</summary>  
     <img src="documentation/wireframes/mt_home.png">  
 </details>
+  
+The hero image of the beagle and patterned background was created in Figma. The beagle was removed from it's photo background and placed over an SVG that I edited on [Pattern Monster](https://pattern.monster/memphis-1/). The corners were then rounded.
 
 <details>
     <summary>Mobile/Tablet Sign Up Page Wireframe</summary>  
@@ -390,9 +398,31 @@ Through the Admin Django Dashboard, the connected user_id to all data entered to
 
 ### Security
 
-- AllAuth
-- Defensive Design
-- CSRF Tokens
+A number of security steps were taken in this project in order to protect the user's submitted data. Unlike a strictly informative website, FreeFido allows the user to become part of the community and avail of it's booking services. To meet the strict internet standards of protecting a user's data, the following processes were included in the project's development.
+
+**AllAuth**
+Django AllAuth is an installable framework that takes care of the user registration and authentication process. Authentication was needed to determine when a user was registered or unregistered and it controlled what content was accessible on FreeFido. The setup of AllAuth included:
+
+- installing it to my workspace dependencies
+- adding it to my INSTALLED_APPS in my settings.py
+- sourcing the AUTHENTICATION_BACKENDS from the AllAuth docs for my settings.py
+- adding its URL to my projects 'urls.py'
+- run database migrations to create the tables needed for AllAuth
+- (For this version of FreeFido, to meet MVP, email and social accounts were not configured as part of the feedback/sign up options to the user. They will be included with the next release.)
+  
+**Defensive Design**
+FreeFido was developed to ensure a smooth user experience, to the best of my current learning experience with Django. 
+
+- Input validation and error messages provide feedback to the user to guide them towards the desired outcome. 
+- Unregistered users are diverted to the Sign Up page from restricted access pages. 
+- Authentication processes control edit/delete icons to reveal them to the content author only. 
+- Deletion of data is confirmed through an additional modal, double-checking with the user.
+- Error pages are displayed with 'Take me home' buttons to help users get back on track. 
+- Testing and validation of features completes the process.
+
+**CSRF Tokens**
+CSRF (Cross-Site Request Forgery) tokens are included in every form to help authenticate the request with the server when the form is submitted. Absence of these tokens can leave a site vulnerable to attackers who may steal a users data.
+  
 
 ## Features
 
@@ -432,9 +462,9 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 </details>
 
 ![Profile Icon](documentation/final_views/profileicon_nav.png)  
-*Registered, Logged In view with Profile Icon*
-    
-    
+*Registered, Logged In view with Profile Icon*  
+  
+ 
 **Home Page**
 
 <details open>
@@ -450,7 +480,8 @@ In the Home Page 'Hero' section, when a user is not registered they will see a '
 <details>
     <summary>About Page - Visible to all Users</summary>  
     <img src="documentation/final_views/about.png">  
-</details>
+</details>  
+
 
 The 'About' section of the Home Page contains three sections of information for the user, 'About', 'Safety', 'Benefits'. These sections display paragraphs and bulleted lists of information about the park and its positive values and benefits. Within each paragraph is a colour-coded word which acts as a link to bring the user to an important section of the website.
 
@@ -477,10 +508,12 @@ The 'About' section of the Home Page contains three sections of information for 
 On successful Sign In, the user is greeted with feedback through a message which confirms sign in. The 'open padlock' Log In icon now changes to a 'closed padlock' Log Out icon that the user can click to begin the Log Out process.
 
 ![incorrect username/email warning](documentation/final_views/incorrect_sign_in.png)  
-*User is given feedback if they submit incorrect details where one item is correct and the other is incorrect*
+*User is given feedback if they submit incorrect details where one item is correct and the other is incorrect*  
+
 
 ![fill out field warning](documentation/final_views/fill_field_warning.png)  
-*Django built in field warnings for incorrect/forgotten fields input*
+*Django built in field warnings for incorrect/forgotten fields input*  
+
 
 ![Sign In message and Log In icon change](documentation/final_views/signin_message.png)  
 *Sign In message and Log In icon change*
@@ -530,15 +563,18 @@ Modal appears over the Profile page and allows users to edit their Profile Pictu
 </details>
 
 ![site pagination arrow for moving page every 6 articles](documentation/final_views/site_pag.png)  
-*Site pagination kicks in to display 6 articles per page. Arrows at the base of the article section allow users to move forward and back*
+*Site pagination kicks in to display 6 articles per page. Arrows at the base of the article section allow users to move forward and back*  
+
 
 Unregistered Users are free to read the articles and comments left on FreeFido but they cannot 'Like/Comment' them until they have signed up and logged in.
 
 ![like/comment count under article](documentation/final_views/like_comment.png)  
-*A Likes and Comments counter is visible under every article. Logged-In Users can interact by clicking the heart outline to like. 'Heart outline' icon is replaced by filled Heart icon*
+*A Likes and Comments counter is visible under every article. Logged-In Users can interact by clicking the heart outline to like. 'Heart outline' icon is replaced by filled Heart icon*  
+
 
 ![zero likes icon](documentation/final_views/zerolikes.png)  
-*Likes icon is represented by an outlined heart icon. When it receives a like from the logged-in user, it becomes a filled heart icon*
+*Likes icon is represented by an outlined heart icon. When it receives a like from the logged-in user, it becomes a filled heart icon*  
+
 
 <details open>
     <summary>Add a Comment - Registered User View</summary>  
@@ -636,9 +672,11 @@ For the author of the comment, when logged in, a trash icon will appear to allow
   
 ![past booking warning](documentation/final_views/past_book.png)  
 *Warning shown to Users if they choose a date in the past, can only save a booking with a valid date/time*  
+ 
   
 ![unavaialable date/time](documentation/final_views/unavailable_datetime.png)  
-*If a date/time combo is unavailable then the user is informed via warning message - future version of the booking system will have shaded out portions for the unavailable dates/times to make it easier on the user*
+*If a date/time combo is unavailable then the user is informed via warning message - future version of the booking system will have shaded out portions for the unavailable dates/times to make it easier on the user*  
+
 
 ![booking saved message](documentation/final_views/booking_saved_msg.png)  
 *User feedback is delivered by message once a booking has been submitted through creation or edit- message disappears after 3 seconds*
@@ -728,37 +766,46 @@ These templates were added to this project in order to give the user the functio
 
 **Admin Panel**
 
-Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users.
+Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users. To access the Admin panel the Admin user adds '/admin/' to the end of the URL to display [https://freefido.herokuapp.com/admin/](https://freefido.herokuapp.com/admin/). A username and password is requested. For FreeFido, Admin approval is needed for articles and comments to keep the site on topic and to prevent spamming. Registered users' have instant access to make a booking and upload images.
 
 ![django admin panel view](documentation/final_views/dj_adminpanel.png)  
-*Django Admin panel view for FreeFido Administrator - content selection menu on left hand side*
+*Django Admin panel view for FreeFido Administrator - content selection menu on left hand side*  
+
 
 Users articles and comments require approval by the Admin of FreeFido to keep the website content on topic. Admin can change the status of articles from 'Draft' to 'Published'.
 
+<details>
+    <summary>Dropdown menu allowing Admin to 'publish' a users article</summary>  
+    <img src="documentation/final_views/draft_art.png">  
+</details>  
 
-![dj admin panel articles approval](documentation/final_views/draft_art.png)  
-*Dropdown menu allowing Admin to 'publish' a users article*  
-    
-    
-![dj admin panel comments approval](documentation/final_views/comment_apprv.png)  
-*Dropdown menu allowing Admin to 'approve' a users comment*
   
-Admin can control users booking via the panel.
+<details>
+    <summary>Dropdown menu allowing Admin to 'approve' a users comment</summary>  
+    <img src="documentation/final_views/comment_apprv.png">  
+</details>
+    
 
-![dj admin panel bookings](documentation/final_views/djbooking.png)  
-*All bookings are made available to the Admin*
+Admin can control users booking via the panel.  
+  
+Dropdown menu allowing Admin to 'approve' a users comment
 
+<details>
+    <summary>All bookings are made available to the Admin</summary>  
+    <img src="documentation/final_views/djbooking.png">  
+</details>
 
 
 ## Future Features
 
-- Admin key icon for superuser login
-- Updated Booking system using django agenda/scheduler that shows unavailable dates and times
-- Downloable app with quicker access to booking system for regular users
-- Member to member contact via DM, connecting profiles to allow for sharing bookings with compatible dogs
-- Merchandise section with dog training items/treats available for collection at the Freefido coffee hut at dog park entrance
-- Book a Trainer/Join training classes
-- Quick info about local area for visitors eg pet stores/vets/dog-friendly restaurants
+- Admin key icon for superuser login: A 'key' icon appears in the footer for the Admin user that brings them directly to the admin panel without having to type it in.
+- Social account login: Allowing popular social account login to the FreeFido site will speed up the registration and booking process.
+- Updated Booking system using Django Agenda/Scheduler that shows unavailable dates and times: I did investigate this feature, I figured a way that I believe will work but it requires more learning on my part to execute it smoothly. I reminded myself of meeting the MVP.
+- Downloable app with quicker access to booking system for regular users: I can envison FreeFido as an app that connects multiple private dog park spaces and alot more people. This would build the community. Each location would have it's own model for booking, with a menu to allow users to choose available parks or perhaps free parks within 20km.
+- Member to member contact via DM, connecting profiles to allow for sharing bookings with compatible dogs: Community will drive the success of FreeFido and allowing users to add compatible dogs and people to their bookings opens up the parks to group training sessions, doggie birthday parties and new friendships.
+- Merchandise section with dog training items/treats available for collection at the Freefido coffee hut at dog park entrance: I would like to utilise the website's logo and designs to sell merchandise and grow the FreeFido brand.
+- Book a Trainer/Join training classes: This option can be easily added to the booking system with a payment or voucher system to allow users to book a trainer or group to help with any dog training/behavioural issues.
+- Quick info about local area for visitors eg pet stores/vets/dog-friendly restaurants: Visitors new to the area with their dogs would benefit to quick access to all relevant information to make their stay better and safer.
 
 ## Technologies & Languages Used
 
@@ -772,12 +819,11 @@ Admin can control users booking via the panel.
 - [Figma](https://www.figma.com) for project design planning and wireframe creation.
 - [Adobe Color](https://color.adobe.com) for colour theme creation and accessibility checkers.
 - [Django](https://www.djangoproject.com/) was used as the Python framework for the site.
-- [Cloudinary]()
-- [ElephantSQL]()
-- [Heroku]()
+- [Cloudinary](https://cloudinary.com/) was used for cloud media storage of user uploaded images.
+- [ElephantSQL](https://www.elephantsql.com/) was used to host the PostgreSQL database needed to collect and recall the users data.
+- [Heroku](https://www.heroku.com) was used to host the FreeFido application.
 - [WAVE](https://wave.webaim.org/) to evaluate the accessibility of the site.
 - [Procreate](https://procreate.com/) for image creation and editing.
-- 
 
 ### Libraries & Frameworks
 
@@ -799,7 +845,8 @@ Admin can control users booking via the panel.
 - [Tiny Png](https://tinypng.com/) for file size reduction.
 - [Lucidchart](https://www.lucidchart.com/pages) for ERD (entity relationship diagram) creation.
 - [Trello](https://www.trello.com) for intial project agile planning.
-- [Perplexity AI](https://www.perplexity.ai/) for breaking down Python concepts and documentation into more understandable chunks.
+- [Perplexity AI](https://www.perplexity.ai/) for breaking down Python concepts and Django documentation into more understandable chunks.
+- [Pattern Monster](https://pattern.monster/) for the hero image pattern SVG.
 
 ## Testing
 
@@ -817,26 +864,55 @@ Admin can control users booking via the panel.
 
 ## Credits
 
-- Django save method in models.py (<https://docs.djangoproject.com/en/4.2/ref/models/instances/>)
-- Django UserCreationForm | Creating New User (<https://www.javatpoint.com/django-usercreationform>)
-- Advanced User Profile creation using allauth/signals (<https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m>)
-- Override Django's save method (<https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models>)
-- TypeError Datetime object issue for same day bookings - (<https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object>)
-                                                      - (<https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.>)
-- Find the parent form element of delete confirm button (<https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/>)
-- Bootstrap documentation for credited components used in project (<https://getbootstrap.com/>)
-- Scrollbar styling ( https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
-- Browser autofill styling overrule (<https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css>)
-- Django Docs to make model item readonly for search function showing deleted articles (<https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields>)
-- Django cleaned data how to (<https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true>)
-
 ### Code
+The following blogs/tutorials complemented my learning for this project, alongside the [Code Institute's](https://codeinstitute.net/ie/) Learning Content.
+
+- [Django Docs](https://www.djangoproject.com/)
+- [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Code Institute's](https://github.com/Code-Institute-Org>) Blog/Boutique Ado walkthroughs
+- [Daisy McGirr's](https://www.youtube.com/@IonaFrisbee) easy to follow Django Recipe App tutorial for understanding how to use Django's MVT framework
+- [Adel Codes - Youtube - Service Appointment Sys using Django](https://www.youtube.com/watch?v=HTHqEr3R_Kw&t=81s)
+- [Django save method](https://docs.djangoproject.com/en/4.2/ref/models/instances/) in models.py  
+- [Django UserCreationForm](https://www.javatpoint.com/django-usercreationform>) Creating New Users 
+- [Advanced User Profile creation using allauth/signals](<https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m)
+- [Override Django's save method](https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models)
+- TypeError Datetime object issue for same day bookings - [#1](https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object)
+                                                      - [#2](https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.)
+- Find the [parent form element](https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/) of delete confirm button
+- [Scrollbar styling](https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
+- [Browser autofill styling overrule](https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css)
+- [Django Docs](https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields) to make model item readonly for search function showing deleted articles
+- [Django cleaned data how to](https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true)
 
 ### Media
 
-- Code Institute Student Channel on Youtube: for guidance on project setup, tips and guidance.
-- [Daisy McGirr's Youtube playlist on Django](https://www.youtube.com/@IonaFrisbee) a great help for understanding how to get a Django project moving from the beginning stages.
-- [Adel Codes - Youtube - Service Appointment Sys using Django](https://www.youtube.com/watch?v=HTHqEr3R_Kw&t=81s)
+The following sites were used to gather the photographic media used in FreeFido:
+
+- [Pexels](https://www.pexels.com/)
+- [Unsplash](https://unsplash.com/)
+ <details>
+   <summary>Credit to the following photographers</summary>
+   - https://www.dreamstime.com/stock-photo-beagle-dog-tennis-ball-wants-to-play-image93818038 - beagle image
+   - jack russell running towards Photo by Matthias Zomer: https://www.pexels.com/photo/dog-running-on-grass-422220
+   - dogs with fence Photo by Flo Dnd: https://www.pexels.com/photo/dogs-running-together-12951462/
+   - dogs run Photo by Gili  Pup: https://www.pexels.com/photo/dogs-playing-in-the-field-11178657/
+   - dog on log Photo by chepté cormani: https://www.pexels.com/photo/dog-with-ball-in-mouth-jumping-over-a-fallen-tree-trunk-3013467/
+   - snoozer Photo by Engin Akyurt: https://www.pexels.com/photo/close-up-photography-of-short-coated-white-dog-sleeping-on-green-grass-1458421/
+   - shitzu close up Photo by Damian Barczak: https://www.pexels.com/photo/close-up-shot-of-an-adorable-yorkshire-terrier-running-while-looking-at-camera-7460161/
+   - corgi bichon Photo by Chris Duan: https://www.pexels.com/photo/photo-of-dogs-running-14520087/
+   - dog with hat https://www.pexels.com/photo/shiba-inu-wearing-beanie-hat-4588048/
+   - sheltie https://pixabay.com/tr/photos/k%C3%B6pek-shetland-koyun-evcil-hayvan-8078576/
+   - beach dachshund https://www.pexels.com/@ionelceban/
+   - forest dogs https://www.pexels.com/search/elina%20volk/
+   - party dog https://www.pexels.com/photo/a-black-and-tan-dog-7683158/
+   - frenchie https://pixabay.com/ja/photos/%E7%8A%AC-%E3%83%9C%E3%82%B9%E3%83%88%E3%83%B3%E3%83%86%E3%83%AA%E3%82%A2-%E5%8F%8B%E9%81%94-%E7%B9%81%E6%AE%96-4990023/
+   - surprise doggo Photo by Karolina Grabowska: https://www.pexels.com/photo/photo-of-a-dog-running-5705625/
+   - dobbie Photo by Aysun Kahraman Öktem: https://www.pexels.com/photo/dog-with-stick-5938159/
+   - husky zoom Photo by Kateryna Babaieva: https://www.pexels.com/photo/two-siberian-husky-running-in-snowy-park-3715581/
+   - husky smile Photo by cosmindoro: <https://www.pexels.com/photo/close-up-shot-of-a-siberian-husky-7175485/>
+ </details>
+
+ Additional photos were added by users or from my own pets.
 
 ### Additional reading/tutorials/books/blogs
 
