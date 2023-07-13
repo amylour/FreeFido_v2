@@ -447,7 +447,7 @@ In the Home Page 'Hero' section, when a user is not registered they will see a '
 
 **About Page**
 
-<details open>
+<details>
     <summary>About Page - Visible to all Users</summary>  
     <img src="documentation/final_views/about.png">  
 </details>
@@ -549,6 +549,7 @@ A comment box is visible to logged-in users only. Their comment is submitted for
 
 ![comment awaiting approval message](documentation/final_views/approval_comment.png)  
 *Comment is awaiting approval message displayed after comment submit*
+  
 
 <details>
     <summary>Delete Comment - Registered User View for Comment Author only</summary>  
@@ -576,12 +577,12 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/art_eddel_reg.png">  
 </details>
 
-<details open>
+<details>
     <summary>Edit Article Page - Only accessible to the Article Author</summary>  
     <img src="documentation/final_views/edit_article.png">  
 </details>
 
-<details open>
+<details>
     <summary>Edit Article Message</summary>  
     <img src="documentation/final_views/art_updated_msg.png">  
 </details>
@@ -589,7 +590,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 
 **Delete Article**
 
-<details open>
+<details>
     <summary>Delete Article Page - Only accessible to the Article Author </summary>  
     <img src="documentation/final_views/delete_article.png">  
 </details>
@@ -620,7 +621,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 </details>
 
 
-<details open>
+<details>
     <summary>Bookings Page - Max Bookings Reached</summary>  
     <img src="documentation/final_views/maxbooking.png">  
 </details>
@@ -645,7 +646,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 
 **Edit Booking**
 
-<details open>
+<details>
     <summary>Edit Booking Page - Visible for Logged-In Users who have made a previous Booking</summary>  
     <img src="documentation/final_views/booking_e.png">  
 </details>
@@ -657,6 +658,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <summary>Delete Booking Page - Visible for Logged-In Users who have made a previous Booking</summary>  
     <img src="documentation/final_views/booking_d.png">  
 </details>
+  
 
 ![deleted booking message](documentation/final_views/booking_del_msg.png)  
 *User feedback is delivered by message once a booking has been deleted - message dissappears after 3 seconds*
@@ -670,7 +672,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/gallery.png">  
 </details>
 
-<details open>
+<details>
     <summary>Gallery Page - Unregistered User view with photo info on hover(Desktop)/touch (on Mobile)</summary>  
     <img src="documentation/final_views/gal_unreg_info.png">  
 </details>
@@ -689,14 +691,16 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/gal_reg_del.png">  
 </details>
 
-<details open>
+<details>
     <summary>Delete Photo Page</summary>  
     <img src="documentation/final_views/del_photo_modal.png">  
 </details>
+  
 
 ![delete photo user message, successful deletion](documentation/final_views/photo_del_msg.png)  
 *User feedback is provided by message, informing user that the photo has been deleted successfully - message disappears after 3 seconds*
 
+<hr>
 
 **Visit Us**
 
@@ -704,7 +708,12 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <summary>Visit Us Page</summary>  
     <img src="documentation/final_views/visit.png">  
 </details>
+  
+Tis page offers the user business information including opening hours and address. An embedded interactive Google Map allows the user to see FreeFido's location without leaving the site. If they require driving directions to the park, they can click on the map's 'View larger map' link to go to Google Maps in a new browser tab.
 
+For future development, this page will hold the 'Feedback' feature for registered users to leave a review of the park. 
+
+<hr>
 
 **403, 404, 500 Pages**
 
@@ -808,18 +817,18 @@ Admin can control users booking via the panel.
 
 ## Credits
 
-Django save method in models.py (<https://docs.djangoproject.com/en/4.2/ref/models/instances/>)
-Django UserCreationForm | Creating New User (<https://www.javatpoint.com/django-usercreationform>)
-Advanced User Profile creation using allauth/signals (<https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m>)
-Override Django's save method (<https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models>)
-TypeError Datetime object issue for same day bookings - (<https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object>)
+- Django save method in models.py (<https://docs.djangoproject.com/en/4.2/ref/models/instances/>)
+- Django UserCreationForm | Creating New User (<https://www.javatpoint.com/django-usercreationform>)
+- Advanced User Profile creation using allauth/signals (<https://dev.to/thepylot/create-advanced-user-sign-up-view-in-django-step-by-step-k9m>)
+- Override Django's save method (<https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models>)
+- TypeError Datetime object issue for same day bookings - (<https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object>)
                                                       - (<https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.>)
-Find the parent form element of delete confirm button (<https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/>)
-Bootstrap documentation for credited components used in project (<https://getbootstrap.com/>)
-Scrollbar styling ( https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
-Browser autofill styling overrule (<https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css>)
-Django Docs to make model item readonly for search function showing deleted articles (<https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields>)
-Django cleaned data how to (<https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true>)
+- Find the parent form element of delete confirm button (<https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/>)
+- Bootstrap documentation for credited components used in project (<https://getbootstrap.com/>)
+- Scrollbar styling ( https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
+- Browser autofill styling overrule (<https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css>)
+- Django Docs to make model item readonly for search function showing deleted articles (<https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields>)
+- Django cleaned data how to (<https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true>)
 
 ### Code
 
