@@ -29,7 +29,7 @@ Return back to the [README.md](README.md) file.
 
 ### HTML Validation
 
-For validation of my HTML files I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+For my HTML files I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
 I have had to follow a different approach for validating my HTML for this project as the majority of my pages are developed using Jinja syntax such as '{% extends "base.html" %}' and '{{ form|crispy }}' and most require user authentication. The HTML validator will throw errors if I were to use my website's URL so I have had to follow the below approach for every page:
 
@@ -43,7 +43,7 @@ I have had to follow a different approach for validating my HTML for this projec
 
 All HTML pages were validated and received a 'No errors or warning to show' result as shown above.
 
-Initially my Profile and Article Page HTML were receiving [errors](documentation/testing/extra_p_tag.png) of having an extra p tag due to Summernotes rendering. I fixed this issue by replacing the p tags with divs, redeployed and checked for any styling issues. All clear on re-validation thankfully.
+Initially my Profile and Article Page HTML were receiving [errors](documentation/testing/artview_p_error.png) [error code generated from Summernote code](documentation/testing/extra_p_tag.png) of having an extra p tag due to Summernotes rendering. I fixed this issue by replacing the p tags with divs, redeployed and checked for any styling issues. All clear on re-validation thankfully.
 
 
 | HTML Source Code/Page | Errors | Warnings |
@@ -104,7 +104,7 @@ Initially my Profile and Article Page HTML were receiving [errors](documentation
 
 ### CSS Validation 
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested.
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested. Warnings were present, these were related to my use of variables for colors and fonts in my CSS file.
 
 ![css validation](documentation/testing/css_valid.png)
   
@@ -112,7 +112,7 @@ Initially my Profile and Article Page HTML were receiving [errors](documentation
    
 ### Lighthouse Scores
 
-Lighthouse testing was carried out in Incognito mode to acheive the best result. Performance was lower than preferred due to the site being image heavy. Images used in the sites design were saved in webp and png format, and compressed using [tinypng.com](www.tinypng.com) and [Convertio](www.convertio.co) to offer the best chance for a decent performance score. The CDNs used for Bootstrap were also noted in the Lighthouse report as causing issue with performance. This report will be reviewed for future development of Freefido to raise this score.
+Lighthouse testing was carried out in Incognito mode to acheive the best result. Performance was lower than preferred due to the site being image heavy. Images used in the sites design were saved in webp and png format, and compressed using [tinypng](https://tinypng.com/) and [Convertio](https://www.convertio.co) to offer the best chance for a decent performance score. The CDNs used for Bootstrap were also noted in the Lighthouse report as causing issue with performance. This report will be reviewed for future development of Freefido to raise this score.
 
 **Desktop**  
 
@@ -128,13 +128,13 @@ Lighthouse testing was carried out in Incognito mode to acheive the best result.
 *Mobile Home Page*  
   
 ![Lighthouse scores mobile](documentation/testing/mob_art_lh.png) 
-*Mobile Home Page*
+*Mobile Article Page*
   
 <hr>  
 
 ### Wave Accessibility Evaluation
 
-![WAVE Web Accessibility Evaluation Tools](documentation/testing/wave_rep.png)  
+![WAVE Web Accessibility Evaluation Tools](documentation/testing/wave_report.png)  
   
 Accessibility was included in every planning stage for FreeFido, through the use of the WAVE report tool I could ensure that any necessary changes were made to make the website as accessible as it could be. A minor contrast issue with a word rendered in orange for the feature theme and the absence of text in article image cards, due to their design, was noted in the report. These will be considered in the next version of FreeFido to better it's score.
   
@@ -150,12 +150,17 @@ Testing was carried out on desktop using a Chrome browser to ensure all forms ta
 
 ### Browser Compatibility
 
-Freefido was tested on the following browsers:
+Freefido was tested on the following browsers, new users were created, old users data edited and all features were tested:
 
-- Chrome v
-- Firefox v
-- Edge v
+- Chrome v114.0.5735.199
+- Firefox v114.0.2
+- Edge v114.0.1823.79
 - Safari v
+
+| Browser | Issue | Functionality |
+|---------|-------|---------------|
+| FireFox | Profile Edit/Upload Image - File input 'Browse' Button centered in input field | Button works as expected |
+| FireFox | Profile Dashboard - scrollbars following Mozilla styling | No issue |
 
 
 
@@ -171,7 +176,7 @@ Freefido was tested on the following browsers:
 
 ### Testing User Stories
 
-User Stories are documented in the FreeFido [GitHub Projects Board](https://github.com/users/amylour/projects/4). User Stories are numbered, with Acceptance Criteria and Tasks detailed within. Testing was carried out on Dev Tools for desktop/tablet/mobile, by creating 2 accounts for test users: FidoTest1 and FidoTest2, and following through by ensuring that the Acceptance Criteria were met. All features were tested to ensure that they provided the user with the expected output and action.
+User Stories are documented in the FreeFido [GitHub Projects Board](https://github.com/users/amylour/projects/4). User Stories are numbered, with Acceptance Criteria and Tasks detailed within. Testing was carried out on Dev Tools for desktop/tablet/mobile, by creating multiple accounts for test users: FidoTest1, FidoTest2, FidoTest3 etc and following through by ensuring that the Acceptance Criteria were met. All features were tested to ensure that they provided the user with the expected output and action.
 
 
 | User Story                 | Acceptance Criteria Met?  | Tested | Response     | Pass/Fail | Fix     |
@@ -200,7 +205,7 @@ User Stories are documented in the FreeFido [GitHub Projects Board](https://gith
 | #22 - Like/Unlike Article  | Yes                       | Yes    | No issues    | Pass      |    -    |
 | #23 - Comment on a Post    | Yes                       | Yes    | No issues    | Pass      |    -    |
 | #24 - Gallery Page         | Yes                       | Yes    | No issues    | Pass      |    -    |
-| #24(mistake-allocated #24 twice) | Alert Messages | Yes | Yes   | No issues    | Pass      |    -    |
+| #24(mistake-allocated #24 twice) | Alert Messages | Yes   | No issues    | Pass      |    -    |
 | #25 - Create Article       | Yes                       | Yes    | No issues    | Pass      |    -    |
 | #26 - Delete Article       | Yes                       | Yes    | No issues    | Pass      |    -    |
 | #27 - Edit Article         | Yes                       | Yes    | No issues    | Pass      |    -    |
@@ -213,22 +218,23 @@ User Stories are documented in the FreeFido [GitHub Projects Board](https://gith
 | #34 - Delete Review        | Feature not included in this version - 'Could Have' item | | | | |
 | #35 - Delete Photo         | Yes                       | Yes    | No issues    | Pass      |    -    |
 
-
+<hr>
+  
 ### Dev Tools/Real World Device Testing
 
 Responsiveness testing was carried out using Google Dev Tools on the devices detailed within the below table. Responsiveness was evident on all features throughout all tested devices. Occassionally I would have to refresh the page by clicking the 'FreeFido' logo as the page would load zoomed in or out on the simualted device. When refreshed and CSS checked the desired outcome was observed. I put this down to a caching issue in Chrome as this issue was not observed when testing on the available real world devices.
   
 
-*Dev Tools Device Testing - all features tested, issues noted below*
+**Dev Tools Device Testing - all features tested, issues noted below**
 | Device  | Feature    | Issue  | Fix  |
 | ------- | ---------- | ------ |------|
 | iPhone 4 | Messages | Text overlap with 'x' close button, article image squashed | Separate media query created for screens max-width: 350px to cope with iPhone4 320px screen width, message font size reduced, article image size reduced |
 | iPhone12 Pro | All features | No issues | None needed |
 | Samsung Galaxy A51 | All features | No issues | None needed |
 | iPad Pro | All features | No issues | None needed |
+   
   
-
-*Real World Device Testing*
+**Real World Device Testing**
 | Device      | Feature    | Issue  | Fix  | 
 | ------------| ---------- | ------ |------|
 | OPPO Reno 8 Lite |   All features    | No issues | None needed |
@@ -238,7 +244,9 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 | Acer Aspire 3 2019 laptop | All features | No issues | None needed |
 
 
-## Bugs
+## Bugs  
+  
+As this was my first Django/Database project, most of the bugs that I encountered were learning and teething issues. The below bugs are bugs that I spent a longer length of time investigating or required the assistance of Tutor Support.
 
 | No. | Bug | Solved | Fix | Solution Credit | Commit no. |
 | --- | ---------------- | ---- | ------------- | -------------- | ------------|
@@ -255,4 +263,11 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 
 ### Known Bugs
 
-There are currently no known bugs, if you find one then please do let me know :smile:
+- An error is logged in the console for the deployed FreeFido site:
+   'alert.js:21 Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
+    at Q.close (alert.js:21:22)
+    at (index):337:19'
+    
+From reading through the linked lines of JS, it seems that the error stems from an issue with calling 'EVENT_CLOSE', originating from the Bootstrap library. Other members of my group experienced the same error in their console. There were no issues with closing the modals in my features and their functionality. I will pursue this issue in future developments as I believe it may stem from a third-party library clash.
+
+There are currently no other known bugs, if you find one then please do let me know :smile:
