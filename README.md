@@ -847,6 +847,7 @@ Dropdown menu allowing Admin to 'approve' a users comment
 - [Trello](https://www.trello.com) for intial project agile planning.
 - [Perplexity AI](https://www.perplexity.ai/) for breaking down Python concepts and Django documentation into more understandable chunks.
 - [Pattern Monster](https://pattern.monster/) for the hero image pattern SVG.
+- [Favicon](https://favicon.io/) for converting an icon into favicon.
 
 ## Testing
 
@@ -865,6 +866,7 @@ Dropdown menu allowing Admin to 'approve' a users comment
 ## Credits
 
 ### Code
+
 The following blogs/tutorials complemented my learning for this project, alongside the [Code Institute's](https://codeinstitute.net/ie/) Learning Content.
 
 - [Django Docs](https://www.djangoproject.com/)
@@ -892,8 +894,9 @@ The following sites were used to gather the photographic media used in FreeFido:
 - [Unsplash](https://unsplash.com/)
  <details>
    <summary>Credit to the following photographers</summary>
-   - https://www.dreamstime.com/stock-photo-beagle-dog-tennis-ball-wants-to-play-image93818038 - beagle image
-   - jack russell running towards Photo by Matthias Zomer: https://www.pexels.com/photo/dog-running-on-grass-422220
+   
+   - https://www.dreamstime.com/stock-photo-beagle-dog-tennis-ball-wants-to-play-image93818038 - beagle image  
+   - jack russell running towards Photo by Matthias Zomer: https://www.pexels.com/photo/dog-running-on-grass-422220  
    - dogs with fence Photo by Flo Dnd: https://www.pexels.com/photo/dogs-running-together-12951462/
    - dogs run Photo by Gili  Pup: https://www.pexels.com/photo/dogs-playing-in-the-field-11178657/
    - dog on log Photo by chepté cormani: https://www.pexels.com/photo/dog-with-ball-in-mouth-jumping-over-a-fallen-tree-trunk-3013467/
@@ -910,10 +913,22 @@ The following sites were used to gather the photographic media used in FreeFido:
    - dobbie Photo by Aysun Kahraman Öktem: https://www.pexels.com/photo/dog-with-stick-5938159/
    - husky zoom Photo by Kateryna Babaieva: https://www.pexels.com/photo/two-siberian-husky-running-in-snowy-park-3715581/
    - husky smile Photo by cosmindoro: <https://www.pexels.com/photo/close-up-shot-of-a-siberian-husky-7175485/>
+- french bulldog Photo by Scott Spedding: <https://www.pexels.com/photo/selective-focus-photography-of-short-coated-dog-2918094/>
+
  </details>
 
  Additional photos were added by users or from my own pets.
 
 ### Additional reading/tutorials/books/blogs
 
+- [Python Crash Course](https://www.oreilly.com/library/view/python-crash-course/9781492071266/), Author: Eric Matthes, Publisher: No Starch Press, Year: 2019 Edition.
+- [Geeks for Geeks](https://www.geeksforgeeks.org/python-programming-language/?ref=ghm) for additional Python learning.
+
 ## Acknowledgements
+
+- Many thanks to my husband and son for their continued support and for bringing me snacks when I have spent too long at the computer.
+- Thank you to my mentor Rahul Lakhanpal for his positive support, guidance and advice.
+- Huge thanks to my fellow students and friends, and Code Institute's Slack community for keeping positive the energy up.
+- Thanks to my dogs Poe and Indy for being the inspiration for this project, maybe someday I can make Freefido a reality!
+  ![Poe and Indy](documentation/testing/poe_indy.png)
+  
