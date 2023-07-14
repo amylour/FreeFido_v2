@@ -47,8 +47,9 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Tools \& Programs](#tools--programs)
   - [Testing](#testing)
   - [Deployment](#deployment)
-    - [Heroku deployment](#heroku-deployment)
     - [Cloudinary API](#cloudinary-api)
+    - [Elephant SQL](#elephant-sql)
+    - [Heroku deployment](#heroku-deployment)
     - [Clone project](#clone-project)
     - [Fork Project](#fork-project)
   - [Credits](#credits)
@@ -848,6 +849,7 @@ Dropdown menu allowing Admin to 'approve' a users comment
 - [Perplexity AI](https://www.perplexity.ai/) for breaking down Python concepts and Django documentation into more understandable chunks.
 - [Pattern Monster](https://pattern.monster/) for the hero image pattern SVG.
 - [Favicon](https://favicon.io/) for converting an icon into favicon.
+- [LogoAI](https://www.logoai.com/) for design inspiration using my font and colour choices.
 
 ## Testing
 
@@ -855,9 +857,66 @@ Dropdown menu allowing Admin to 'approve' a users comment
 
 ## Deployment
 
+To begin this project from scratch, you must first create a new GitHub repository using the [Code Institute's Template](https://github.com/Code-Institute-Org/ci-full-template). This template provides the relevant tools to get you started. To use this template:
+
+1. Log in to [GitHub](https://github.com/) or create a new account.
+2. Navigate to the above CI Full Template.
+3. Click '**Use this template**' -> '**Create a new repository**'.
+4. Choose a new repository name and click '**Create repository from template**'.
+5. In your new repository space, click the purple CodeAnywhere (if this is your IDE of choice) button to generate a new workspace.
+
+
+- Once you have created your Django project app and installed any relevant dependencies or libraries, such as the ones listed above, it is important to create a **requirements.txt** file and add all installed libraries to it with the 'pip3 freeze --local > requirements.txt' command in the terminal.
+- An **env.py** file must be created to store all protected data such as the DATABASE_URL and SECRET_KEY. These may be called upon in your project's **settings.py** file along with your Database configurations. The **env.py** file must be added to your **gitignore** file so that your imporatnt, protected information is not pushed to public viewing on GitHub.
+- A **Procfile** must be created within the project repo with the following placed within it: 'web: gunicorn freefido.wsgi'
+- Make the necessary migrations
+
+### Cloudinary API 
+
+Cloudinary provides a cloud hosting solution for media storage. All users uploaded images in the FreeFid project are hosted here.
+
+Set up a new account at [Cloudinary](https://cloudinary.com/) and add your Cloudinary API environment variable to your **env.py** and Heroku Config Vars.
+In your project workspace: 
+
+- Add Cloudinary libraries to INSTALLED_APPS in settings.py 
+- In the order: 
+```
+   'cloudinary_storage',  
+   'django.contrib.staticfiles',  
+   'cloudinary',
+```
+- Set Cloudinary as storage for media and static files in settings.py - STATIC_URL = '/static/':  
+
+```
+  STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]  
+  STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')‌  
+  MEDIA_URL = '/media/'  
+  DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+```
+
+### Elephant SQL
+
+A new database instance can be created on [Elephant SQL](https://www.elephantsql.com/) for your project. 
+
+- Choose a name and select the **Tiny Turtle** plan, which is free.
+- Select your Region and the nearest Data Center to you. 
+- From your user dashboard, retrieve the important 'postgres://....' value. Place the value within your **DATABASE_URL**  in your **env.py** file and follow the below instructions to place it in your Heroku Config Vars.
+
 ### Heroku deployment
 
-### Cloudinary API
+To start the deployment process , please follow the below steps:
+
+1. Log in to [Heroku](https://id.heroku.com/login) or create an account if you are a new user.
+2. Once logged in, in the Heroku Dashboard, navigate to the '**New**' button in the top, right corner, and select '**Create New App**'.
+3. Enter an app name and choose your region. Click '**Create App**'. 
+4. In the Deploy tab, click on the '**Settings**', reach the '**Config Vars**' section and click on '**Reveal Config Vars**'. Here you will enter KEY:VALUE pairs for the app to run successfully. The KEY:VALUE pairs that you will need are your **CLOUDINARY_URL**: **cloudinary://....**, **DATABASE_URL**:**postgres://...**, **DISABLE_COLLECTSTATIC** of value '1' (N.B Remove this Config Var before deployment), **PORT**:**8000** and your **SECRET_KEY** and value. 
+5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects settings.py file -> ['herokuappname', ‘localhost’, ‘8000 port url’].
+6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, save your project, add the files, commit for initial deployment and push the data to GitHub.
+7. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
+8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
+9. Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
+10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project. **PORT:8000 
 
 ### Clone project
 
@@ -930,5 +989,5 @@ The following sites were used to gather the photographic media used in FreeFido:
 - Thank you to my mentor Rahul Lakhanpal for his positive support, guidance and advice.
 - Huge thanks to my fellow students and friends, and Code Institute's Slack community for keeping positive the energy up.
 - Thanks to my dogs Poe and Indy for being the inspiration for this project, maybe someday I can make Freefido a reality!
-  ![Poe and Indy](documentation/testing/poe_indy.png)
+  ![Poe and Indy](documentation/final_views/poe_indy.png)
   
