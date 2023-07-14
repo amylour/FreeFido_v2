@@ -91,13 +91,13 @@ Initially my Profile and Article Page HTML were receiving [validator errors](doc
 
 | Feature | admin.py | forms.py | models.py | urls.py | views.py |
 |---------|----------|----------|-----------|---------|----------|
-| Articles | [no errors](documentation/testing/art_admin.png) | no errors | no errors | no errors | no errors |   
-| Booking  | no errors | no errors | no errors | no errors | no errors |
-| FreeFido main app | na | na | na | no errors | na |
-| Gallery | no errors | no errors | no errors | no errors | no errors |
-| Home | na | na | na | no errors | no errors |
-| Profiles | no errors | no errors | no errors | no errors | no errors |
-| Visit | na | na | na | no errors | no errors |
+| Articles | [no errors](documentation/testing/art_admin.png) | [no errors](documentation/testing/art_forms.png) | [no errors](documentation/testing/art_models.png) | [no errors](documentation/testing/art_urls.png) | [no errors](documentation/testing/art_views.png) |
+| Booking  | [no errors](documentation/testing/book_admion.png) | [no errors](documentation/testing/book_forms.png) | [no errors](documentation/testing/book_models.png) | [no errors](documentation/testing/book_urls.png) | [no errors](documentation/testing/book_views.png) |
+| FreeFido main app | na | na | na | [no errors](documentation/testing/freefido_urls.png) | na |
+| Gallery | [no errors](documentation/testing/gallery_admin.png) | [no errors](documentation/testing/gallery_form.png) | [no errors](documentation/testing/gallery_models.png) | [no errors](documentation/testing/gallery_urls.png) | [no errors](documentation/testing/gallery_views.png) |
+| Home | na | na | na | [no errors](documentation/testing/home_urls.png) | [no errors](documentation/testing/home_views.png) |
+| Profiles | [no errors](documentation/testing/profile_admin.png) | [no errors](documentation/testing/profile_forms.png) | [no errors](documentation/testing/profile_models.png) | [no errors](documentation/testing/profile_urls.png) | [no errors](documentation/testing/profile_views.png) |
+| Visit | na | na | na | [no errors](documentation/testing/visit_urls.png) | [no errors](documentation/testing/visit_views.png) |
 
 <hr>
 
