@@ -160,8 +160,8 @@ Testing was carried out on desktop using a Chrome browser to ensure all forms ta
 | Create Booking (Registered User only) | Yes | Test input and selection from date/time widget/dropdown selection | User is prompted to 'Fill out this Field' for required fields, if date/time is unavailable they are informed by message to pick another date/time | Pass | - |
 | Edit Booking (Registered User)| Yes | Text fields | User may make changes to be saved, prompted to 'Fill out this field' is anything is left blank,  if date/time is unavailable they are informed by message to pick another date/time | Pass | - |
 | Delete Booking (Registered User) | Yes | Click button to choose 'Delete' or 'Return to Bookings' | Booking is deleted or user is returned to bookings page | Pass | - |
-| Upload Image (Registered User) | Image/Text fields | User is prompted to fill out the required fields, user may exit the page using icons if they change their mind | Pass | - |
-| Gallery Image | Hover/touch(on mobile) | User is presented with an overlay on the chosen image giving details on the image, photo uploader receives 'delete' icon when logged in | Pass | - |
+| Upload Image (Registered User) | Yes | Image/Text fields | User is prompted to fill out the required fields, user may exit the page using icons if they change their mind | Pass | - |
+| Gallery Image | Yes | Hover/touch(on mobile) | User is presented with an overlay on the chosen image giving details on the image, photo uploader receives 'delete' icon when logged in | Pass | - |
 | Delete Photo (Registered, Uploader) | Yes | Click to 'Cancel' or 'Delete' | Cancel hides the modal, delete removes image and returns user to gallery | Pass | - |
 | Back to Top button - Gallery Page | Yes | Click | Button returns user to top when clicked | Pass | - |
 | Sign Out (Registered User) | Yes | Click to choose 'It's time to go' or 'Return home' | User is signed out and informed by message on screen, return home button brings user back to home page, still logged in | Pass | - |
@@ -174,13 +174,13 @@ Freefido was tested on the following browsers, new users were created, old users
 - Chrome v114.0.5735.199
 - Firefox v114.0.2
 - Edge v114.0.1823.79
-- Safari v
+- Safari v16.5.1
 
 | Browser | Issue | Functionality |
 |---------|-------|---------------|
 | FireFox | Profile Edit/Upload Image - File input 'Browse' Button centered in input field | Button works as expected |
 | FireFox | Profile Dashboard - scrollbars following Mozilla styling | No issue |
-
+| Safari  | Scrollbars following Safari styling | No issue |
 
 <hr>
 
@@ -270,6 +270,7 @@ As this was my first Django/Database project, most of the bugs that I encountere
 | 6   | Wrong photo deletion - Delete icon was deleting the most recently uploaded photograph instead of the actual photo it was connected to | Yes | Typo - Developer Error, delete photo form was calling photo.pk instead of the id of the actual photo, photo.id. Delete Modal created to help call and confirm correct image | Checking code and my database schema to understand what I've done wrong, W3Schools modal for deletion [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp)  | 4baa2c5 + 994c522 |
 | 7   | Profile page not displaying in deployed Heroku app due to missing profile image | Yes | Developer error with forgetting 'is not none' for displaying image placeholder and file path error with '/' | The lovely Joanne from Tutor Support helped me to spot my error. After a long day of coding I needed to take a break and rest my eyes so I wouldn't make the mistake again. | 7157472 + 723adca |
 |  8  | Footer image not showing in deployed version, image is '404 not found', footer image is displayed using 'background-image: url(' ')' in CSS file | Yes - through using a different method | Footer background image added in HTML file instead, all checks were carried out for file path issues, static issues, CSS issues to understand why the 'background-image' property wouldn't render the image but from reading it is understood that there can be issues with Django and CSS properties where the image is called by URL -> source [Stackoverflow](https://stackoverflow.com/questions/39769469/the-way-to-use-background-image-in-css-files-with-django) | No credit needed for new fix as just normal CSS, will pursue understanding of working with Django, Heroku and deploying with images as values in CSS file | 4d90033 |
+|  9  | RichTextField not displaying feedback to user if left empty in Add Article section | Yes | Additon of CSS line of display: block to widgets CSS | Credit to fellow student [Will Griffiths](https://github.com/Will-Griffiths-Ireland) for finding this bug and it's [fix](https://forum.djangoproject.com/t/ckeditor-no-form-validation-errors/4314/3) | a812c25 |
 
 
 
