@@ -699,6 +699,11 @@ input[type="file"]::file-selector-button {
     width: 550px;
 }
 
+/* fix for feedback not displayed when adding article with no content */
+.invalid-feedback {
+    display: block;
+}
+
 .card {
     --bs-card-border-width: 0px;
     position: relative;
