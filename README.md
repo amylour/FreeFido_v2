@@ -41,6 +41,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
   - [Features](#features)
     - [User View - Registered/Unregistered](#user-view---registeredunregistered)
     - [CRUD Functionality](#crud-functionality)
+    - [Features Showcase](#features-showcase)
   - [Future Features](#future-features)
   - [Technologies \& Languages Used](#technologies--languages-used)
     - [Libraries \& Frameworks](#libraries--frameworks)
@@ -158,7 +159,7 @@ My Sprints are representative of a general timeframe of focus on the stated area
 | #3 | Profile/Articles Features | 27/05/23 -> 06/06/23 |
 | #4 | Booking/Gallery Features | 07/06/23 -> 12/06/23 |
 | #5 | Frontend Development | 13/06/23 -> 20/06/23 |
-| #6 | Testing/Documentation | 04/07/23 -> 11/07/23 |
+| #6 | Testing/Documentation | 04/07/23 -> 14/07/23 |
 
 
 ## User Stories
@@ -465,7 +466,8 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 ![Profile Icon](documentation/final_views/profileicon_nav.png)  
 *Registered, Logged In view with Profile Icon*  
   
- 
+### Features Showcase  
+
 **Home Page**
 
 <details open>
@@ -558,7 +560,7 @@ Modal appears over the Profile page and allows users to edit their Profile Pictu
     <img src="documentation/final_views/articles.png">  
 </details>
 
-<details open>
+<details>
     <summary>Read Article Page - Unregistered User View</summary>  
     <img src="documentation/final_views/art_unregview.png">  
 </details>
@@ -575,7 +577,7 @@ Unregistered Users are free to read the articles and comments left on FreeFido b
 
 ![zero likes icon](documentation/final_views/zerolikes.png)  
 *Likes icon is represented by an outlined heart icon. When it receives a like from the logged-in user, it becomes a filled heart icon*  
-
+  
 
 <details open>
     <summary>Add a Comment - Registered User View</summary>  
@@ -748,7 +750,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/visit.png">  
 </details>
   
-Tis page offers the user business information including opening hours and address. An embedded interactive Google Map allows the user to see FreeFido's location without leaving the site. If they require driving directions to the park, they can click on the map's 'View larger map' link to go to Google Maps in a new browser tab.
+This page offers the user business information including opening hours and address. An embedded interactive Google Map allows the user to see FreeFido's location without leaving the site. If they require driving directions to the park, they can click on the map's 'View larger map' link to go to Google Maps in a new browser tab.
 
 For future development, this page will hold the 'Feedback' feature for registered users to leave a review of the park. 
 
@@ -910,12 +912,19 @@ To start the deployment process , please follow the below steps:
 1. Log in to [Heroku](https://id.heroku.com/login) or create an account if you are a new user.
 2. Once logged in, in the Heroku Dashboard, navigate to the '**New**' button in the top, right corner, and select '**Create New App**'.
 3. Enter an app name and choose your region. Click '**Create App**'. 
-4. In the Deploy tab, click on the '**Settings**', reach the '**Config Vars**' section and click on '**Reveal Config Vars**'. Here you will enter KEY:VALUE pairs for the app to run successfully. The KEY:VALUE pairs that you will need are your **CLOUDINARY_URL**: **cloudinary://....**, **DATABASE_URL**:**postgres://...**, **DISABLE_COLLECTSTATIC** of value '1' (N.B Remove this Config Var before deployment), **PORT**:**8000** and your **SECRET_KEY** and value. 
+4. In the Deploy tab, click on the '**Settings**', reach the '**Config Vars**' section and click on '**Reveal Config Vars**'. Here you will enter KEY:VALUE pairs for the app to run successfully. The KEY:VALUE pairs that you will need are your: 
+   
+   - **CLOUDINARY_URL**: **cloudinary://....** 
+   - **DATABASE_URL**:**postgres://...** 
+   - **DISABLE_COLLECTSTATIC** of value '1' (N.B Remove this Config Var before deployment),
+   -  **PORT**:**8000**
+   -  **SECRET_KEY** and value  
+  
 5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects settings.py file -> ['herokuappname', ‘localhost’, ‘8000 port url’].
 6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, save your project, add the files, commit for initial deployment and push the data to GitHub.
 7. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
 8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
-9. Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
+9.  Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
 10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project. **PORT:8000 
 
 ### Clone project
@@ -940,7 +949,7 @@ The following blogs/tutorials complemented my learning for this project, alongsi
 - TypeError Datetime object issue for same day bookings - [#1](https://bobbyhadz.com/blog/python-check-if-variable-is-datetime-object)
                                                       - [#2](https://bobbyhadz.com/blog/python-typeerror-datetime-datetime-object-is-not-callable#:~:text=The%20Python%20%22TypeError%3A%20'datetime,and%20the%20built%2Din%20classes.)
 - Find the [parent form element](https://www.geeksforgeeks.org/difference-between-dom-parentnode-and-parentelement-in-javascript/) of delete confirm button
-- [Scrollbar styling](https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
+- [Scrollbar styling](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2)
 - [Browser autofill styling overrule](https://stackoverflow.com/questions/2338102/override-browser-form-filling-and-input-highlighting-with-html-css)
 - [Django Docs](https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.readonly_fields) to make model item readonly for search function showing deleted articles
 - [Django cleaned data how to](https://overiq.com/django-1-10/django-form-basics/?utm_content=cmp-true)
@@ -988,6 +997,7 @@ The following sites were used to gather the photographic media used in FreeFido:
 - Many thanks to my husband and son for their continued support and for bringing me snacks when I have spent too long at the computer.
 - Thank you to my mentor Rahul Lakhanpal for his positive support, guidance and advice.
 - Huge thanks to my fellow students and friends, and Code Institute's Slack community for keeping positive the energy up.
-- Thanks to my dogs Poe and Indy for being the inspiration for this project, maybe someday I can make Freefido a reality!
+- Thanks to my dogs Poe and Indy for being the inspiration for this project, maybe someday I can make Freefido a reality!  
+  
   ![Poe and Indy](documentation/final_views/poe_indy.png)
   
