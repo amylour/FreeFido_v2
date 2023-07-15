@@ -283,4 +283,6 @@ As this was my first Django/Database project, most of the bugs that I encountere
     
 From reading through the linked lines of JS, it seems that the error stems from an issue with calling 'EVENT_CLOSE', originating from the Bootstrap library. Other members of my group experienced the same error in their console. There were no issues with closing the modals in my features and their functionality. I will pursue this issue in future developments as I believe it may stem from a third-party library clash.
 
+- The scrollbar redesign did not translate over to Mozilla and Safari browsers, further learning about webkits is needed to push the design across all browsers.
+
 There are currently no other known bugs, if you find one then please do let me know :smile:

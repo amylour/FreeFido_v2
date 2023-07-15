@@ -6,7 +6,9 @@
 
 FreeFido is a social media and booking app for a private dog park. FreeFido has been developed as part of the Code Institute's Full-Stack Developer course as my 4th project - focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality. It is for educational purposes only.
 
-View live site here : [FreeFido](https://freefido.herokuapp.com/)
+View live site here : [FreeFido](https://freefido.herokuapp.com/)  
+  
+For Admin access with relevant sign-in information: [Freefido Admin](https://freefido.herokuapp.com/admin/)
 
 <hr>
 
@@ -20,6 +22,7 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
   - [Design Inspiration](#design-inspiration)
     - [Colour Scheme](#colour-scheme)
     - [Font](#font)
+- [Project Planning](#project-planning)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
   - [Agile Methodologies - Project Management](#agile-methodologies---project-management)
@@ -38,16 +41,18 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
     - [Wireframes](#wireframes)
     - [Database Schema - Entity Relationship Diagram](#database-schema---entity-relationship-diagram)
     - [Security](#security)
-  - [Features](#features)
-    - [User View - Registered/Unregistered](#user-view---registeredunregistered)
-    - [CRUD Functionality](#crud-functionality)
-    - [Features Showcase](#features-showcase)
+- [Features](#features)
+  - [User View - Registered/Unregistered](#user-view---registeredunregistered)
+  - [CRUD Functionality](#crud-functionality)
+  - [Feature Showcase](#feature-showcase)
   - [Future Features](#future-features)
-  - [Technologies \& Languages Used](#technologies--languages-used)
-    - [Libraries \& Frameworks](#libraries--frameworks)
-    - [Tools \& Programs](#tools--programs)
-  - [Testing](#testing)
-  - [Deployment](#deployment)
+- [Technologies \& Languages Used](#technologies--languages-used)
+  - [Libraries \& Frameworks](#libraries--frameworks)
+  - [Tools \& Programs](#tools--programs)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Connecting to GitHub](#connecting-to-github)
+  - [Django Project Setup](#django-project-setup)
     - [Cloudinary API](#cloudinary-api)
     - [Elephant SQL](#elephant-sql)
     - [Heroku deployment](#heroku-deployment)
@@ -63,14 +68,14 @@ View live site here : [FreeFido](https://freefido.herokuapp.com/)
 
 FreeFido is an social media and booking app for a private dog park. Users are invited to:
 
-- Join the Freefido community
+- Join the FreeFido community
 - Create their own profiles
 - Add and interact with articles
 - Create and manage their bookings
 - Upload their favourite snaps from the park
 - Discover more about the dog park
 
-FreeFido is accessible via all browsers with full responsiveness on different screen sizes. Its aim is to create a safe, informed community of dog owners who can interact and share with each other and avail of the essential booking feature to reserve a spot in the secure, private dog park. I have created this site to meet the needs of the growing private dog park business. Private dog parks have become a highly sought after service for dog owners to exercise and train their dogs in a safe, secure area, without the fear of a strange dog running up to them. Dog reactivity is unfortunately on the rise at public dog parks due to some dog owners being unaware of dog body language and basic etiquette. FreeFido aims to offer a starting point for creating a community of regular users of this dog park who can book one hour slots through the basic booking system. In future development of this project, I hope to offer users an upgraded booking system with payment options, the opportunity to connect with other parks users with compatible dogs via adding a friend and direct messaging, hire a trainer and purchase merchandise and training equipment.
+FreeFido is accessible via all browsers with full responsiveness on different screen sizes. Its aim is to create a safe, informed community of dog owners who can interact and share with each other and avail of the essential booking feature to reserve a spot in the secure, private dog park. I have created this site to meet the needs of the growing private dog park business. Private dog parks have become a highly sought after service for dog owners to exercise and train their dogs in a safe, secure area, without the fear of a strange dog running up to them. Dog reactivity is unfortunately on the rise at public dog parks due to some dog owners being unaware of dog body language and basic etiquette. FreeFido aims to offer a starting point for creating a community of regular users of this dog park who can book one hour slots through the basic booking system. In future development of this project, I hope to offer users an upgraded booking system with payment options, the opportunity to connect with other parks users with compatible dogs via adding a friend and direct messaging. Other features will inlcude the option to hire a trainer and purchase merchandise and training equipment.
 
 
 # UX - User Experience
@@ -87,17 +92,17 @@ I was really excited to get working on this project's frontend as I could see th
 
 ### Colour Scheme
 
-As mentioned above, the colour scheme and logo drove the design of the website. I wanted to create a 'fun' environment for the user to create the connection with the enjoyment that they would have with their dog at the park. The colours represent different sections/features of the website. I balanced the vibrant shades with a classic, #fff white background and an off-black shade of #0d0d0d, as I felt that it yielded a slightly more matte effect that #000 black. This combination also yielded a high contrast ratio of 19.44 for accessibility, with my colour scheme also passing a Colour Blind Safe check via [Adobe Color](https://color.adobe.com/create/color-wheel). This check was important for accessibility as the colours would form the base for my page and feature icons. Each colour in the scheme was also contrast checked with black #0d0d0d to ensure no contrast issue, all passed.
+As mentioned above, the colour scheme and logo drove the design of the website. I wanted to create a 'fun' environment for the user to create the connection with the enjoyment that they would have with their dog at the park. The colours represent different sections/features of the website. I balanced the vibrant shades with a classic, ```#fff``` white background and an off-black shade of ```#0d0d0d```, as I felt that it yielded a slightly more matte effect that ```#000``` black. This combination also yielded a high contrast ratio of 19.44 for accessibility, with my colour scheme also passing a Colour Blind Safe check via [Adobe Color](https://color.adobe.com/create/color-wheel). This check was important for accessibility as the colours would form the base for my page and feature icons. Each colour in the scheme was also contrast checked with black ```#0d0d0d``` to ensure no contrast issue, all passed.
 
 The corresponding sections and colours and identifying CSS variables are:
 
-- Authentication: #AC44F2 '--purple'
-- Gallery: #3BD952 '--green'
-- User Profile: #F29F05 '--orange'
-- Visiting Information: #F25C5C '--coral'
-- Booking: #4CE0C3 '--blue'
+- Authentication: ```#AC44F2``` '--purple'
+- Gallery: ```#3BD952``` '--green'
+- User Profile: ```#F29F05``` '--orange'
+- Visiting Information: ```#F25C5C``` '--coral'
+- Booking: ```#4CE0C3``` '--blue'
 
-For the Login/Logout icon, a grey #a6a6a6 was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
+For the Login/Logout icon, a grey ```#a6a6a6``` was used as a base colour. I felt this grey helped to balance the colours and prevent the icons from 'popping' too much for the eye in the navigation bar.
 
 ![balancing colours for website text,background and Login/Logout icon](documentation/final_views/safe_colours.png)  
 *Black, white and grey used for backgrounds, text and Login/Logout icon*
@@ -115,24 +120,26 @@ Using [Google Fonts](https://fonts.google.com/), I imported 'Outfit' and 'Montse
 ![outfit font design sheet](documentation/final_views/outfit.png)  
 *Outfit, a Google Font designed by Rodrigo Fuenzalida*
 
-In development, 'Outfit' was identified by variable '--title', whilst 'Montserrat' was set as '--main-font' within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
-
+In development, 'Outfit' was identified by variable ```--title```, whilst 'Montserrat' was set as ```--main-font``` within the CSS file. Similar to my setup for the project's colours, using variables helped to speed up the frontend process.
+  
+# Project Planning  
+ 
 ## Strategy Plane
 
-The project goal was to build a simple booking app for a service. The 'product' was a one hour slot in a private, secure dog park and the 'user' was dog owners, trainers and walkers. As the service itself was uncomplicated, I aimed to create an easy, uncomplicated booking system for the user. Through planning and design prep work, I realised that there was an opportunity to treat this service like a 'brand' and develop the idea further. A social element was born from this with an idea for dog owners to be able to share advice and images of their furry friends on the website. This would hopefully help to create a happy group of park users who would recommend the park to others, share articles outside of the core group, and attract more users to sign up. Following common social-media design trends, I planned to use icons, high-quality, photographic images and an attractive, connected colour scheme.
+The project goal was to build a simple booking app for a service. The 'product' was a one hour slot in a private, secure dog park and the 'users' were dog owners, trainers and walkers. As the service itself was uncomplicated, I aimed to create an easy, uncomplicated booking system for the user. Through planning and design prep work, I realised that there was an opportunity to treat this service like a 'brand' and develop the idea further. A social element was born from this with an idea for dog owners to be able to share advice and images of their furry friends on the website. This would hopefully help to create a happy group of park users who would recommend the park to others, share articles outside of the core group, and attract more users to sign up. Following common social-media design trends, I planned to use icons, high-quality, photographic images and an attractive, connected colour scheme.
 
 ### Site Goals
 
 - Create a safe, happy environment for dog owners
 - Use of playful colour to identify connected features of the website, plenty of white space to keep it fresh and to-the-point
-- Commononly used, identifiable icons with some redesigns to fit the theme
+- Commonly-used, identifiable icons with some redesigns to fit the theme
 - Easy UI for quick fulfillment of feature CRUD functionalities
-- UX remains the same whther on mobile, tablet or desktop
+- UX remains the same whether on mobile, tablet or desktop
 - Scalable idea, for addition of future features to easily grow the business
 
 ## Agile Methodologies - Project Management
 
-FreeFido is my first project following Agile planning methods. As someone who loves to prepare and plan, it was a joy to get to know and use. I used my [Github Projects Board](https://github.com/users/amylour/projects/4) to plan and document all of my work, initially I started with a Trello board to allow myself to make some mistakes and gather any scraps of notes or information that I had and then refined them into my Projects board. I'm sure the next time around will be a smoother process.
+FreeFido is my first project following Agile planning methods. As someone who loves to prepare and plan, it was a joy to get to know and use. I used my [Github Projects Board](https://github.com/users/amylour/projects/4) to plan and document all of my work, initially I started with a [Trello](https://trello.com/) board to allow myself to make some mistakes and gather any scraps of notes or information that I had and then refined them into my Projects board. I'm sure the next time around will be a smoother process.
 
 ### MoSCoW Prioritization
 
@@ -221,8 +228,8 @@ User stories and features recorded and managed on GitHub Projects -> (<https://g
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
 | As a **user**, I can **visit the gallery page** so that I can **view the gallery wall of photos** | **COULD HAVE** |
-| As a **user**, I can **click the upload image button on the Gallery page** so that I can **upload an image of my dog have fun in the park** | **COULD HAVE** |
-| As a **user**, I can **click the trash can icon when I hover/click on a photo** so that I can **delete the photo** | **COULD HAVE** |
+| As a **user**, I can **click the upload image button on the Gallery page** so that I can **upload an image of my dog having fun in the park** | **COULD HAVE** |
+| As a **user**, I can **click the 'Trash' icon when I hover/click on a photo** so that I can **delete the photo** | **COULD HAVE** |
 
 ### Epic - Visit Us/Reviews
 
@@ -236,13 +243,13 @@ User stories and features recorded and managed on GitHub Projects -> (<https://g
     
 ## Scope Plane
 
-As this would be a dual learning/building project using technologies that were new to me, such as Django, SQL, Bootstrap and Cloudinary, I was cautious to maintain consistent control over the scope of the project and not let my idea grow too big. With the sheer amount of files, I needed to lockdown my project features early on into manageable blocks so as not to lose track of the MVP. Following my learning of the Django MVC framework I was able to identify how to change the templated structure to produce different website features from my base HTML. This allowed me to build upon my original idea of 'Booking app' only, and to add a social experience around articles and shared images. Following Agile Planning Methodologies, I added my Developer Tasks, User Stories and Testing Tasks as issues on my [GitHub project board](https://github.com/users/amylour/projects/4), and set up Sprints to keep the flow of the project in check.
+As this would be a dual learning/building project using technologies that were new to me, such as Django, SQL, Bootstrap and Cloudinary, I was cautious to maintain consistent control over the scope of the project and not let my idea grow too big. With the sheer amount of files, I needed to lockdown my project features early on into manageable blocks so as not to lose track of the MVP. Following my learning of the Django MVT framework I was able to identify how to change the templated structure to produce different website features from my base HTML. This allowed me to build upon my original idea of 'Booking app' only, and to add a social experience around articles and shared images. Following Agile Planning Methodologies, I added my Developer Tasks, User Stories and Testing Tasks as issues on my [GitHub project board](https://github.com/users/amylour/projects/4), and set up Sprints to keep the flow of the project in check.
 
 Essential features of my project were:
 
 - A striking, accessible website that fulfils user needs
 - Responsive website for users of mobile, tablet and desktop devices
-- User authentication
+- User Authentication
 - User Profile creation and editing
 - Article feature with full CRUD functionality
 - Booking feature with full CRUD functionality
@@ -254,37 +261,43 @@ Planning my project thoroughly from the start allowed me to identify areas of im
 
 ## Structural Plane
 
-From initial concept to finished product, icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Bootstrap classes and components were used to help control the flexibility of the site alongside overriding some classes with my own CSS to style as much of the form inputs that I could. Site graphic components were created by myself in Figma and Procreate. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from Flaticon and my colour scheme, I created my navbar icons in Figma. Each icon was placed on a colour-themed rectangle with border-radius:30px and exported as PNGs. I edited my Login/Logout icons with a pawprint in the center of lock to have them fit the dog theme better.
+From initial concept to finished product, having icons as the navigation area was an idea that I stuck with. I wanted to understand how to implement icon-based UX successfully so that the user can easily understand its purpose. Bootstrap classes and components were used to help control the flexibility of the site alongside overriding some classes with my own CSS to style as much of the form inputs that I could. Site graphic components were created by myself in Figma and Procreate. Combining icons from Google's [Material Symbols & Icons](https://fonts.google.com/icons?icon.set=Material+Icons) pack, icons from [Flaticon](https://www.flaticon.com/) and my colour scheme, I created my navbar icons in Figma. Each icon was placed on a colour-themed rectangle with ```border-radius:30px;``` and exported as PNGs. I edited my Login/Logout icons with a pawprint in the center of lock to have them fit the dog theme better.  
+
 
 ![navbar icons](documentation/final_views/icons_row.png)  
 *Navigation icons for FreeFido*
 
   
-Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.
+Accessibility is very important to me and in case I missed the mark with my icon idea, I ensured that I created tooltips for both mobile and desktop views that reveal the icons purposes on hover with the mouse and hover/light touch on mobile.  
+
   
 ![desktop tooltips](documentation/final_views/tooltip_gif.gif)  
 *Navigation bar tooltips demonstrated on Desktop*
 
  
-Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project. 
+Continuing with a similar shape of the icons, images and buttons on the Freefido website are given a border-radius ranging from 20px - 30px to round off the corners and keep the styling consistent throughout the project.  
+ 
   
 ![image with rounded corners](documentation/final_views/article_card_br.png)  
 *Article card from the Articles section with rounded corner styling*
 
  
 Headings were given thick, dashed, underline styling in the coordinating colour of their feature to mark the beginning of a section.
-  
+
+ 
 ![header with underline](documentation/final_views/header_underline.png)  
 *Sign Up page header with purple underline for Authentication related sections*  
   
 
 A favicon was added of a purple tennis ball to fit with the theme of the website, keeping it playful.
+  
 
 ![tennis ball favicon](documentation/final_views/ball_favicon.png)  
 *Ball Favicon*
   
 
-I utilised webkits to change the appearance of my scrollbar to include rounded endpoints and a muted, purple/teal colour-gradient. This was especially so the smaller scrollbar within the profile dashboard would fit in with the projects design.  
+I utilised webkits to change the appearance of my scrollbar to include rounded endpoints and a muted, purple/teal colour-gradient. This was especially so the smaller scrollbar within the profile dashboard would fit in with the projects design. The scrollbar change was successful in the Chrome browser but did not translate over to the Mozilla or Safari browsers. This will be looked at for the next deployment to hopefully continue the design over all browsers. 
+  
   
 ![scrollbar](documentation/final_views/scrollbar.png)  
 *Modified Scrollbar*
@@ -296,9 +309,10 @@ To allow for ease of responsiveness, each section was designed keeping in mind t
 
 ### Wireframes
 
-The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. [Figma](www.figma.com) is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes. 
+The wireframes for FreeFido were created in Figma and were high-spec from the beginning as I was sure of my design concept. [Figma](www.figma.com) is an easy and fast design system for web and software mockups that allows for great control and testing of ideas particularly within the specific frame sizes which represent different devices. As I was using Bootstrap, I was confident that I had created a modular structure for my feature elements that would suit a grid system and that would allow them to easily work across different devices and screen sizes.
 
-**Mobile/Tablet view for:**
+**Mobile/Tablet view for:**  
+
 - Home
 - Sign Up
 - Profile
@@ -323,6 +337,7 @@ The hero image of the beagle and patterned background was created in Figma. The 
 </details>
 
 **Desktop view for:**
+
 - Home
 - Sign Up
 - Profile
@@ -366,7 +381,7 @@ The hero image of the beagle and patterned background was created in Figma. The 
     <img src="documentation/wireframes/booking_create_desktop.png">  
 </details>
 
-I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django agenda, scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
+I had grand ideas for re-creating this exact booking page in this deployment of FreeFido. However, as this was a learning/building project, my understanding of implementing packages such as Django Agenda, Scheduler and dj-booking reached a point after a few struggles where I felt that it was more important to follow my planning steps for MVP and deliver a basic, functional booking system first. I look forward to developing my booking sytem in the next version of FreeFido.
 
 <details>
     <summary>Desktop Gallery Page Wireframe</summary>  
@@ -390,11 +405,11 @@ Through the early development of FreeFido, I created an Article section to help 
 ![ERD Image](documentation/wireframes/freefidov2.png)  
 *Database Schema (ERD) for FreeFido displaying relationships between feature components saved within the database*
 
-This Entity Relationship Diagram(ERD) demonstrates how each feature interacts with each other and the connected database. Using Django's User Model, and Django AllAuth to carry out all user authentication, a user_id is created when the user registers with their username and email. This allows the user to edit a blank profile, create new articles, add comments and photos which will display their username, and create and manage their bookings. For future development, a Feedback system will be included allowing users to leave a review of the park.
+This Entity Relationship Diagram(ERD) demonstrates how each feature interacts with each other and the connected PostgreSQL Database. Using Django's User Model, and Django AllAuth to carry out all user authentication, a user_id is created when the user registers with their username and email. This allows the user to edit a blank profile, create new articles, add comments and photos which will display their username, and create and manage their bookings. For future development, a Feedback system will be included allowing users to leave a review of the park.
 
 The Profile, Articles and Comments Models were inspired by the blog walkthrough by the Code Institute and the [Recipe App by Daisy McGirr](https://github.com/Daisy-McG/Recipe-Tutorial) during my learning of Django. They helped me to get a good and secure grasp of the templating structure and connected Python files to push my features further, make them my own and then develop my Booking and Gallery Models.
 
-My Booking Model collects data from the user about them and their dog(s) which can be used by the Admin to confirm the booking and entry to the park at their alloted time. The booking form displays a dropdown menu for Breed Choices and the hourly slots that are available for booking. A DateField allows that booking date to be chosen.
+My Booking Model collects data from the user about them and their dog(s) which can be used by the Admin to check the booking and allow entry to the park at their alloted time. The booking form displays a dropdown menu for Breed Choices and the hourly slots that are available for booking. A DateField allows that booking date to be chosen.
 
 Through the Admin Django Dashboard, the connected user_id to all data entered to the site means that the Admin can remove a User and their data completely through the additon of on_delete=models.CASCADE. At the moment, a user can remove any data they share with the site, but they cannot delete their account completely. This feature will come in the next version.
 
@@ -402,7 +417,8 @@ Through the Admin Django Dashboard, the connected user_id to all data entered to
 
 A number of security steps were taken in this project in order to protect the user's submitted data. Unlike a strictly informative website, FreeFido allows the user to become part of the community and avail of it's booking services. To meet the strict internet standards of protecting a user's data, the following processes were included in the project's development.
 
-**AllAuth**
+**AllAuth**  
+
 Django AllAuth is an installable framework that takes care of the user registration and authentication process. Authentication was needed to determine when a user was registered or unregistered and it controlled what content was accessible on FreeFido. The setup of AllAuth included:
 
 - installing it to my workspace dependencies
@@ -412,7 +428,8 @@ Django AllAuth is an installable framework that takes care of the user registrat
 - run database migrations to create the tables needed for AllAuth
 - (For this version of FreeFido, to meet MVP, email and social accounts were not configured as part of the feedback/sign up options to the user. They will be included with the next release.)
   
-**Defensive Design**
+**Defensive Design**  
+
 FreeFido was developed to ensure a smooth user experience, to the best of my current learning experience with Django. 
 
 - Input validation and error messages provide feedback to the user to guide them towards the desired outcome. 
@@ -422,27 +439,28 @@ FreeFido was developed to ensure a smooth user experience, to the best of my cur
 - Error pages are displayed with 'Take me home' buttons to help users get back on track. 
 - Testing and validation of features completes the process.
 
-**CSRF Tokens**
+**CSRF Tokens** 
+
 CSRF (Cross-Site Request Forgery) tokens are included in every form to help authenticate the request with the server when the form is submitted. Absence of these tokens can leave a site vulnerable to attackers who may steal a users data.
   
 
-## Features
+# Features
 
-### User View - Registered/Unregistered
+## User View - Registered/Unregistered
 
 It was important to me from the beginning that FreeFido be accessible to an unregistered user, in some capacitites. I wanted the website to sell the product to a new user quickly by immediately inviting them into the community through the park's information, articles and gallery sections. The following is a breakdown of the site's accessibility for registered/unregistered users:
 
-| Feature   | Unregistered User | Registered User |
+| Feature   | Unregistered User | Registered, Logged-In User |
 |-----------|-------------------|-----------------|
 | Home Page | Visable           | Visable         |
-| Profile   | Not Visible - 'Profile' icon only appears for registered users | Visable and full feature interaction available |
+| Profile   | Not Visible - 'Profile' icon only appears for registered, logged-in users | Visable and full feature interaction available |
 | Articles  | Visable but not interactable via 'Likes/Comments', 'Add Article' button not visible | Visable and full feature interaction available |
 | Booking   | Icon visible but redirected to Sign In page/Sign Up through link | Visable and full feature interaction available |
 | Gallery   | Visable but no option to 'Add Photo' | Visable and full feature interaction available |
 | Visit Us  | Visable and map interaction available | Visible and map interaction available |
 
 
-### CRUD Functionality
+## CRUD Functionality
 
 Users are able to Create, Read, Update and Delete their shared information on FreeFido. Some features make full CRUD functionality available, whilst others present the necessary options only. Here is my CRUD breakdown for FreeFido:
 
@@ -453,7 +471,8 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 | Bookings | Yes | Yes | Yes | Yes |
 | Gallery | Yes | Yes | No - this feature felt unneccessary as it's intention is a 'quick-sharing' of a photo, a minimal amount of information is required and users are able to delete the image if they wish | Yes |
 
-
+## Feature Showcase 
+  
 **Header & Navigation**
 
 *For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
@@ -466,7 +485,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 ![Profile Icon](documentation/final_views/profileicon_nav.png)  
 *Registered, Logged In view with Profile Icon*  
   
-### Features Showcase  
+The 'header.html' has been created as a separate template and using Jinja templating language, called into the 'base.html' using ```{% include 'includes/header.html' %}```. The templating format and file setup took a little while to get used to when putting it together at first but felt very powerful once I became acclimatised to it. 
 
 **Home Page**
 
@@ -475,7 +494,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
     <img src="documentation/final_views/home.png">  
 </details>
 
-In the Home Page 'Hero' section, when a user is not registered they will see a 'Sign Up' button under the section text, which will bring them to the sign up page. When logged in, they will see 'Book Today!' which will bring them to the booking page.
+In the Home Page 'Hero' section, when a user is not registered they will see a 'Sign Up' button under the section text, which will bring them to the Sign Up page. When logged in, they will see 'Book Today!' which will bring them to the booking page.
 
 
 **About Page**
@@ -499,7 +518,8 @@ The 'About' section of the Home Page contains three sections of information for 
     <summary>Sign Up Page</summary>  
     <img src="documentation/final_views/signup.png">  
 </details>
-
+  
+Users are required to add their Email, Username and Password twice, to ensure the correct one is saved. If any field is not filled in appropriately then a display message is used to inform the user with how to procede to complete the form. The Sign up and Sign in pages are created with default templates available with the AllAuth package. 
 
 **Sign In**
 
@@ -508,7 +528,7 @@ The 'About' section of the Home Page contains three sections of information for 
     <img src="documentation/final_views/login.png">  
 </details>
 
-On successful Sign In, the user is greeted with feedback through a message which confirms sign in. The 'open padlock' Log In icon now changes to a 'closed padlock' Log Out icon that the user can click to begin the Log Out process.
+On successful Sign In, the user is greeted with feedback through a message which confirms sign in. The 'open padlock' Log In icon now changes to a 'closed padlock' Log Out icon that the user can click to begin the Log Out process. A 'Forgot Password' page is also re-designed from the AllAuth templates but it's full functionality is not yet activated for this version.
 
 ![incorrect username/email warning](documentation/final_views/incorrect_sign_in.png)  
 *User is given feedback if they submit incorrect details where one item is correct and the other is incorrect*  
@@ -528,9 +548,11 @@ On successful Sign In, the user is greeted with feedback through a message which
     <summary>Sign Out Page</summary>  
     <img src="documentation/final_views/logout.png">  
 </details>
+  
+A user may choose to return to the Home page and stay logged in or leave the site, logged out.
 
 ![sign out message](documentation/final_views/signed_out.png)  
-*User is given feedback in message format to confirm sign out, Profile icon no longer visible in navigation bar - message disappears after 3 seconds*  
+*User is given feedback in message format to confirm sign out, Profile icon no longer visible in navigation bar - message disappears after 3 seconds or if user clicks 'x'*  
 
 <hr>
 
@@ -540,7 +562,10 @@ On successful Sign In, the user is greeted with feedback through a message which
     <summary>Profile Page - Registered Users only</summary>  
     <img src="documentation/final_views/profile.png">  
 </details>
-
+  
+The user profile is created upon registration and displays a placeholder image and 'Edit Profile' button to allow the user to personalise their view. With future releases this page will be accessible to other users and allow connection, currently it is only viewable to the user.
+  
+![placeholder profile image](documentation/final_views/placeholder_profile.html)
 
 **Profile Edit**
 
@@ -549,7 +574,7 @@ On successful Sign In, the user is greeted with feedback through a message which
     <img src="documentation/final_views/edit_profile.png">  
 </details>
 
-Modal appears over the Profile page and allows users to edit their Profile Picture, Display Name (Display Name will be required for the future features of leaving Feedback/Reviews and Direct Messaging) and Bio. Using the RichTextField input field, user's have more control of the formatting of their text if they wish.
+Modal appears over the Profile page and allows users to edit their Profile Picture, Display Name (Display Name will be required for the future features of leaving Feedback/Reviews, Adding Friends and Direct Messaging) and Bio. Using the RichTextField input field, user's have more control of the formatting of their text if they wish.
 
 <hr>
 
@@ -563,7 +588,9 @@ Modal appears over the Profile page and allows users to edit their Profile Pictu
 <details>
     <summary>Read Article Page - Unregistered User View</summary>  
     <img src="documentation/final_views/art_unregview.png">  
-</details>
+</details>  
+  
+Unregistered Users have access to all articles available on FreeFido. When registered and logged in, they may access the 'Add Article' button, 'Like/Unlike' icon and leave a comment for Admin approval. Articles created are displayed on individual 'cards' which display in rows for larger screens and columns for portrait, mobile view.
 
 ![site pagination arrow for moving page every 6 articles](documentation/final_views/site_pag.png)  
 *Site pagination kicks in to display 6 articles per page. Arrows at the base of the article section allow users to move forward and back*  
@@ -603,7 +630,9 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 <details open>
     <summary>Create Article Page - Registered, Logged In User View</summary>  
     <img src="documentation/final_views/add_article.png">  
-</details>
+</details>  
+  
+The user may create an article and include their own image or allow a placeholder image. Feedback is given to the user to guide them if they do not fill out the required sections appropriately. The Submit button saves the article for Admin approval. Once approved, the article will appear on the main page.
 
 ![feedback that article is awaiting spproval by Admin](documentation/final_views/art_approve.png)  
 *Admin approval is required for articles to keep FreeFido on topic. Feedback is provided to the user by message that the article is awaiting approval*
@@ -620,6 +649,8 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <summary>Edit Article Page - Only accessible to the Article Author</summary>  
     <img src="documentation/final_views/edit_article.png">  
 </details>
+  
+If a user spots a typo, error or wants to add new information to their article, then they may edit the article and submit for immediate reposting. A certain amount of trust exists between Admin and the FreeFido community to hope that no inappropriate or off-topic content will be shared, which will result in an immediate deletion of the user's account by the Admin. These issues will be locked down in the future development of FreeFido to allow certain content/words to be flagged and removed by the Admin or not allow the form to be submitted in the first place. Community guidelines will also be developed.
 
 <details>
     <summary>Edit Article Message</summary>  
@@ -643,7 +674,9 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 <details open>
     <summary>Search Function - Visible on Article pages only</summary>  
     <img src="documentation/final_views/search.png">  
-</details>
+</details>  
+  
+A user may search for something particular using the 'Search' field, which only appears on article related pages. If the search yields no results then the user is informed and provided with a link back to the articles.
 
 <details>
     <summary>Search Function No Articles Found - Visible on Article pages only</summary>  
@@ -655,10 +688,11 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 **Bookings**
 
 <details open>
-    <summary>Bookings Page - Registered Users only</summary>  
+    <summary>Bookings Page - Registered, logged-in Users only</summary>  
     <img src="documentation/final_views/booking.png">  
 </details>
-
+  
+The booking system that has been created for FreeFido is a basic booking system that 'gets the job done' for the starting business. The user may create, edit and delete their bookings, they are informed if a date/time is unavailable and they see a display message if their booking is saved. For future development, the UI of this booking system will improve to make unavailable times shaded-out/hidden and the user will receive confirmation emails for all bookings saved. Only 4 bookings may be held for each user and currently this includes past bookings, which the user must delete themselves. This is to remind the user of all bookings incase they may have forgotten and not attended their booked time slot, making it unavailable for someone else. In the future booking feature, the user will receive an email informing them that they have missed a booking, the booking will be flagged with a red text message on the dashboard and the user will be reminded that repeated no-shows for bookings will have their access to bookings revoked for a period of time.
 
 <details>
     <summary>Bookings Page - Max Bookings Reached</summary>  
@@ -673,6 +707,9 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/booking_c.png">  
 </details>  
   
+For creating a booking, the user is informed of the necessary fields to be filled in to secure the booking via feedback. The user may add a second dog if they wish, or leave this to another time. A dropdown selection of 'Breed Choices' is made available for quicker booking, with 'Other' included for mixed breeds. This information is important to the FreeFido staff member who maybe operating the gate for allowing entry. The dog's appearance will help them to identify and confirm the booking along with the human user information.
+Date and time is selectable via a calendar widget for date and dropdown selection menu displaying the hour slots from 8am to 8pm. FreeFido is super kind and opens every single day of the year for it's community members.
+
 ![past booking warning](documentation/final_views/past_book.png)  
 *Warning shown to Users if they choose a date in the past, can only save a booking with a valid date/time*  
  
@@ -692,7 +729,6 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/booking_e.png">  
 </details>
 
-
 **Delete Booking**
 
 <details>
@@ -700,6 +736,7 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/booking_d.png">  
 </details>
   
+A user may delete thier booking or return to the booking page incase they clicked the delete icon in error.
 
 ![deleted booking message](documentation/final_views/booking_del_msg.png)  
 *User feedback is delivered by message once a booking has been deleted - message dissappears after 3 seconds*
@@ -709,9 +746,11 @@ For the author of the comment, when logged in, a trash icon will appear to allow
 **Gallery**
 
 <details open>
-    <summary>Gallery Page - Registered User View with 'Add Photo' icon, Unregistered User View without icon</summary>  
+    <summary>Gallery Page - Registered, Logged-In User View with 'Add Photo' icon, Unregistered User View without icon</summary>  
     <img src="documentation/final_views/gallery.png">  
 </details>
+  
+The FreeFido Gallery page allows the user and Admin to quickly upload snapshots from the park's activities to create a continuous flow of updated images. An overlay on hover/touch on mobile shows the user brief information about the photograph. The carousel of images at the top of the page shows some highlighted photos. For future development this carousel will display a collection of randomly selected images from the bulk of images availabale and stored in the Cloudinary database.    
 
 <details>
     <summary>Gallery Page - Unregistered User view with photo info on hover(Desktop)/touch (on Mobile)</summary>  
@@ -724,6 +763,8 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <summary>Add Photo Page - Registered Users only</summary>  
     <img src="documentation/final_views/add_photo.png">  
 </details>
+  
+All fields are required for the Upload Image form to be submitted and saved correctly. Feedback prompts the user if they have neglected a field.
 
 **Delete Photo**
 
@@ -737,7 +778,8 @@ For the author of the comment, when logged in, a trash icon will appear to allow
     <img src="documentation/final_views/del_photo_modal.png">  
 </details>
   
-
+If a user no longer wants their image to appear, or if they have made a mistake, thay may delete their image. Admin approval is not needed for images to be posted and future development will include community posting guidelines and a form of AI software to check the image for any unwanted content.  
+   
 ![delete photo user message, successful deletion](documentation/final_views/photo_del_msg.png)  
 *User feedback is provided by message, informing user that the photo has been deleted successfully - message disappears after 3 seconds*
 
@@ -769,7 +811,7 @@ These templates were added to this project in order to give the user the functio
 
 **Admin Panel**
 
-Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users. To access the Admin panel the Admin user adds '/admin/' to the end of the URL to display [https://freefido.herokuapp.com/admin/](https://freefido.herokuapp.com/admin/). A username and password is requested. For FreeFido, Admin approval is needed for articles and comments to keep the site on topic and to prevent spamming. Registered users' have instant access to make a booking and upload images.
+Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users. To access the Admin panel the Admin user adds '/admin/' to the end of the URL to display [https://freefido.herokuapp.com/admin/](https://freefido.herokuapp.com/admin/). A username and password is requested. For FreeFido, Admin approval is needed for articles and comments to keep the site on topic and to prevent spamming. Registered, logged-in users' have instant access to make a booking and upload images.
 
 ![django admin panel view](documentation/final_views/dj_adminpanel.png)  
 *Django Admin panel view for FreeFido Administrator - content selection menu on left hand side*  
@@ -778,18 +820,18 @@ Through Django's built-in Administration Panel, the Admin has full access over t
 Users articles and comments require approval by the Admin of FreeFido to keep the website content on topic. Admin can change the status of articles from 'Draft' to 'Published'.
 
 <details>
-    <summary>Dropdown menu allowing Admin to 'publish' a users article</summary>  
+    <summary>Dropdown menu allowing Admin to 'publish' a users article, 'Save' button must be clicked to confirm</summary>  
     <img src="documentation/final_views/draft_art.png">  
 </details>  
 
   
 <details>
-    <summary>Dropdown menu allowing Admin to 'approve' a users comment</summary>  
+    <summary>Dropdown menu allowing Admin to 'approve' a users comment, 'Go' must be clicked to confirm</summary>  
     <img src="documentation/final_views/comment_apprv.png">  
 </details>
     
 
-Admin can control users booking via the panel.  
+Admin can control users bookings via the panel.  
   
 Dropdown menu allowing Admin to 'approve' a users comment
 
@@ -801,16 +843,16 @@ Dropdown menu allowing Admin to 'approve' a users comment
 
 ## Future Features
 
-- Admin key icon for superuser login: A 'key' icon appears in the footer for the Admin user that brings them directly to the admin panel without having to type it in.
-- Social account login: Allowing popular social account login to the FreeFido site will speed up the registration and booking process.
-- Updated Booking system using Django Agenda/Scheduler that shows unavailable dates and times: I did investigate this feature, I figured a way that I believe will work but it requires more learning on my part to execute it smoothly. I reminded myself of meeting the MVP.
-- Downloable app with quicker access to booking system for regular users: I can envison FreeFido as an app that connects multiple private dog park spaces and alot more people. This would build the community. Each location would have it's own model for booking, with a menu to allow users to choose available parks or perhaps free parks within 20km.
-- Member to member contact via DM, connecting profiles to allow for sharing bookings with compatible dogs: Community will drive the success of FreeFido and allowing users to add compatible dogs and people to their bookings opens up the parks to group training sessions, doggie birthday parties and new friendships.
-- Merchandise section with dog training items/treats available for collection at the Freefido coffee hut at dog park entrance: I would like to utilise the website's logo and designs to sell merchandise and grow the FreeFido brand.
-- Book a Trainer/Join training classes: This option can be easily added to the booking system with a payment or voucher system to allow users to book a trainer or group to help with any dog training/behavioural issues.
-- Quick info about local area for visitors eg pet stores/vets/dog-friendly restaurants: Visitors new to the area with their dogs would benefit to quick access to all relevant information to make their stay better and safer.
+- **Admin key icon for superuser login**: A 'key' icon appears in the footer for the Admin user that brings them directly to the admin panel without having to type it in.
+- **Social account login**: Allowing popular social account login to the FreeFido site will speed up the registration and booking process.
+- **Updated Booking system using Django Agenda/Scheduler that shows unavailable dates and times**: I did investigate this feature, I figured a way that I believe will work but it requires more learning on my part to execute it smoothly. I reminded myself of meeting the MVP.
+- **Downloable app with quicker access to booking system for regular users**: I can envison FreeFido as an app that connects multiple private dog park spaces and alot more people. This would build the community. Each location would have it's own model for booking, with a menu to allow users to choose available parks or perhaps free parks within 20km.
+- **Member to member contact via DM, connecting profiles to allow for sharing bookings with compatible dogs**: Community will drive the success of FreeFido and allowing users to add compatible dogs and people to their bookings opens up the parks to group training sessions, doggie birthday parties and new friendships.
+- **Merchandise section with dog training items/treats available for collection at the Freefido coffee hut at dog park entrance**: I would like to utilise the website's logo and designs to sell merchandise and grow the FreeFido brand.
+- **Book a Trainer/Join training classes**: This option can be easily added to the booking system with a payment or voucher system to allow users to book a trainer or group to help with any dog training/behavioural issues.
+- **Quick info about local area for visitors eg pet stores/vets/dog-friendly restaurants**: Visitors new to the area with their dogs would benefit to quick access to all relevant information to make their stay better and safer.
 
-## Technologies & Languages Used
+# Technologies & Languages Used
 
 - HTML
 - CSS
@@ -828,7 +870,7 @@ Dropdown menu allowing Admin to 'approve' a users comment
 - [WAVE](https://wave.webaim.org/) to evaluate the accessibility of the site.
 - [Procreate](https://procreate.com/) for image creation and editing.
 
-### Libraries & Frameworks
+## Libraries & Frameworks
 
 - Bootstrap v5.2.3
 - Django v3.2.19
@@ -840,8 +882,10 @@ Dropdown menu allowing Admin to 'approve' a users comment
 - Django Summernote v0.8.2
 - Python Slugify v8.0.1
 - Pillow v9.5
+  
+Further information is available in the [requirements.txt file](requirements.txt)
 
-### Tools & Programs
+## Tools & Programs
 
 - [EZGif](<https://ezgif.com/>) for gif conversion.
 - [Convertio](https://convertio.co/) for file conversion to PNG, WEBP.
@@ -853,11 +897,13 @@ Dropdown menu allowing Admin to 'approve' a users comment
 - [Favicon](https://favicon.io/) for converting an icon into favicon.
 - [LogoAI](https://www.logoai.com/) for design inspiration using my font and colour choices.
 
-## Testing
+# Testing
 
 - For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
-## Deployment
+# Deployment
+  
+## Connecting to GitHub  
 
 To begin this project from scratch, you must first create a new GitHub repository using the [Code Institute's Template](https://github.com/Code-Institute-Org/ci-full-template). This template provides the relevant tools to get you started. To use this template:
 
@@ -867,10 +913,22 @@ To begin this project from scratch, you must first create a new GitHub repositor
 4. Choose a new repository name and click '**Create repository from template**'.
 5. In your new repository space, click the purple CodeAnywhere (if this is your IDE of choice) button to generate a new workspace.
 
+## Django Project Setup
 
-- Once you have created your Django project app and installed any relevant dependencies or libraries, such as the ones listed above, it is important to create a **requirements.txt** file and add all installed libraries to it with the 'pip3 freeze --local > requirements.txt' command in the terminal.
-- An **env.py** file must be created to store all protected data such as the DATABASE_URL and SECRET_KEY. These may be called upon in your project's **settings.py** file along with your Database configurations. The **env.py** file must be added to your **gitignore** file so that your imporatnt, protected information is not pushed to public viewing on GitHub.
-- A **Procfile** must be created within the project repo with the following placed within it: 'web: gunicorn freefido.wsgi'
+1. Install Django and supporting libraries: 
+   
+- ```pip3 install 'django<4' gunicorn```
+- ```pip3 install dj_database_url psycopg2```
+- ```pip3 install dj3-cloudinary-storage```  
+  
+2. Once you have installed any relevant dependencies or libraries, such as the ones listed above, it is important to create a **requirements.txt** file and add all installed libraries to it with the ```pip3 freeze --local > requirements.txt``` command in the terminal.  
+3. Create a new Django project in the terminal ```django-admin startproject freefido .```
+4. Create a new app eg. ```python3 mangage.py startapp booking```
+5. Add this to list of INSTALLED_APPS - 'booking',
+6. Create a superuser for the project to allow Admin access: ```
+7. Migrate the changes to the connected database
+8. An **env.py** file must be created to store all protected data such as the **DATABASE_URL** and **SECRET_KEY**. These may be called upon in your project's **settings.py** file along with your Database configurations. The **env.py** file must be added to your **gitignore** file so that your important, protected information is not pushed to public viewing on GitHub.
+9. A **Procfile** must be created within the project repo with the following placed within it: ```web: gunicorn freefido.wsgi```
 - Make the necessary migrations
 
 ### Cloudinary API 
