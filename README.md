@@ -485,7 +485,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 ![Profile Icon](documentation/final_views/profileicon_nav.png)  
 *Registered, Logged In view with Profile Icon*  
   
-As mentioned in the [Structural Plane](#structural-plane) section above, the icon navigation bar allows the user to make their way around the FreeFido site. The icons have a small amount of animation when hovered/clikced on and to reinforce the icon meaning, have tooltips on hover/touch (on mobile) that display their intention.
+As mentioned in the [Structural Plane](#structural-plane) section above, the icon navigation bar allows the user to make their way around the FreeFido site. The icons have a small amount of animation when hovered/clicked on and to reinforce the icon meaning, have tooltips on hover/touch (on mobile) that display their intention.
   
 The 'header.html' has been created as a separate template and using Jinja templating language, called into the 'base.html' using ```{% include 'includes/header.html' %}```. The templating format and file setup took a little while to get used to when putting it together at first but felt very powerful once I became acclimatised to it. 
 
@@ -494,7 +494,7 @@ The 'header.html' has been created as a separate template and using Jinja templa
     <img src="documentation/final_views/footer.png">  
 </details>
 
-The FreeFido footer has been created with a 'wave' background in grey, to complement the whitespace. The social-media icons, from [Flaticon](https://www.flaticon.com), open in a new tab when clicked. Tooltips are again used for those who may not be familiar with the icons. FreeFido does not have any active social media currently so the Facebook link only brings the user to the Facebook sign up page. Twitter,LinkedIn and GitHub bring the user to my own personal accounts connected to the production of this project.
+The FreeFido footer has been created with a 'wave' background in grey, to complement the whitespace. The social-media icons, from [Flaticon](https://www.flaticon.com), open in a new tab when clicked. Tooltips are again used for those who may not be familiar with the icons. FreeFido does not have any active social media currently so the Facebook link only brings the user to the Facebook sign up page. Twitter, LinkedIn and GitHub bring the user to my own personal accounts connected to the production of this project.
 
 **Home Page**
 
@@ -574,8 +574,12 @@ A user may choose to return to the Home page and stay logged in or leave the sit
   
 The user profile is created upon registration and displays a placeholder image and 'Edit Profile' button to allow the user to personalise their view. With future releases this page will be accessible to other users and allow connection, currently it is only viewable to the user.
   
-![placeholder profile image](documentation/final_views/placeholder_profile.html)
-
+<details>
+    <summary>Profile Page - Placeholder image for Profile</summary>  
+    <img src="documentation/final_views/placeholder_profile.png">  
+</details>
+  
+  
 **Profile Edit**
 
 <details>
@@ -643,8 +647,11 @@ For the author of the comment, when logged in, a trash icon will appear to allow
   
 The user may create an article and include their own image or allow a placeholder image. Feedback is given to the user to guide them if they do not fill out the required sections appropriately. The Submit button saves the article for Admin approval. Once approved, the article will appear on the main page.  
   
-![placeholder image for articles](documentation/final_views/placeholder_img.png)  
-*Placeholder image for Articles - credit: Pattern Monster with FreeFido purple*  
+
+<details>
+    <summary>Placeholder image for Articles - credit: Pattern Monster with FreeFido purple</summary>  
+    <img src="documentation/final_views/placeholder_img.png">  
+</details>
 
 
 ![feedback that article is awaiting spproval by Admin](documentation/final_views/art_approve.png)  
@@ -844,9 +851,7 @@ Users articles and comments require approval by the Admin of FreeFido to keep th
 </details>
     
 
-Admin can control users bookings via the panel.  
-  
-Dropdown menu allowing Admin to 'approve' a users comment
+Admin can control users bookings via the Django Admin panel.  
 
 <details>
     <summary>All bookings are made available to the Admin</summary>  
