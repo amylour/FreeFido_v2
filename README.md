@@ -473,7 +473,7 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 
 ## Feature Showcase 
   
-**Header & Navigation**
+**Header/Navigation & Footer**
 
 *For features showcase, screenshots of the features in use were taken on Laptop/iPad Pro/iPhone 12 Pro*
 
@@ -484,6 +484,8 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 
 ![Profile Icon](documentation/final_views/profileicon_nav.png)  
 *Registered, Logged In view with Profile Icon*  
+  
+As mentioned in the [Structural Plane](#structural-plane) section above
   
 The 'header.html' has been created as a separate template and using Jinja templating language, called into the 'base.html' using ```{% include 'includes/header.html' %}```. The templating format and file setup took a little while to get used to when putting it together at first but felt very powerful once I became acclimatised to it. 
 
