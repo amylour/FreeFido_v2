@@ -37,7 +37,7 @@ For Admin access with relevant sign-in information: [Freefido Admin](https://fre
     - [Epic - Visit Us/Reviews](#epic---visit-usreviews)
   - [Scope Plane](#scope-plane)
   - [Structural Plane](#structural-plane)
-  - [Skeleton Plane](#skeleton-plane)
+  - [Skeleton \& Surface Planes](#skeleton--surface-planes)
     - [Wireframes](#wireframes)
     - [Database Schema - Entity Relationship Diagram](#database-schema---entity-relationship-diagram)
     - [Security](#security)
@@ -171,7 +171,7 @@ My Sprints are representative of a general timeframe of focus on the stated area
 
 ## User Stories
 
-User stories and features recorded and managed on GitHub Projects -> (<https://github.com/users/amylour/projects/4>)
+User stories and features recorded and managed on [GitHub Projects](<https://github.com/users/amylour/projects/4>)
 
 
 ### Visitor User Stories
@@ -305,7 +305,7 @@ I utilised webkits to change the appearance of my scrollbar to include rounded e
 
 To allow for ease of responsiveness, each section was designed keeping in mind the switch from 'row' to 'column' when moving from Desktop to Mobile/Tablet view. This approach allowed me to add more features to the project early on by reusing and repurposing sections of code.
 
-## Skeleton Plane
+## Skeleton & Surface Planes
 
 ### Wireframes
 
@@ -485,9 +485,16 @@ Users are able to Create, Read, Update and Delete their shared information on Fr
 ![Profile Icon](documentation/final_views/profileicon_nav.png)  
 *Registered, Logged In view with Profile Icon*  
   
-As mentioned in the [Structural Plane](#structural-plane) section above
+As mentioned in the [Structural Plane](#structural-plane) section above, the icon navigation bar allows the user to make their way around the FreeFido site. The icons have a small amount of animation when hovered/clikced on and to reinforce the icon meaning, have tooltips on hover/touch (on mobile) that display their intention.
   
 The 'header.html' has been created as a separate template and using Jinja templating language, called into the 'base.html' using ```{% include 'includes/header.html' %}```. The templating format and file setup took a little while to get used to when putting it together at first but felt very powerful once I became acclimatised to it. 
+
+<details open>
+    <summary>Footer - Visible to all Users</summary>  
+    <img src="documentation/final_views/footer.png">  
+</details>
+
+The FreeFido footer has been created with a 'wave' background in grey, to complement the whitespace. The social-media icons, from [Flaticon](https://www.flaticon.com), open in a new tab when clicked. Tooltips are again used for those who may not be familiar with the icons. FreeFido does not have any active social media currently so the Facebook link only brings the user to the Facebook sign up page. Twitter,LinkedIn and GitHub bring the user to my own personal accounts connected to the production of this project.
 
 **Home Page**
 
@@ -521,7 +528,7 @@ The 'About' section of the Home Page contains three sections of information for 
     <img src="documentation/final_views/signup.png">  
 </details>
   
-Users are required to add their Email, Username and Password twice, to ensure the correct one is saved. If any field is not filled in appropriately then a display message is used to inform the user with how to procede to complete the form. The Sign up and Sign in pages are created with default templates available with the AllAuth package. 
+Users are required to add their Email, Username and Password twice, to ensure the correct one is saved. If any field is not filled in appropriately then a display message is used to inform the user with how to procede to complete the form. The Sign up and Sign in pages are created with default templates available with the AllAuth package. These templates are combined with the power of Bootstraps Crispy Forms pack to give extra control over the forms' appearance.
 
 **Sign In**
 
@@ -943,7 +950,7 @@ For adding to **settings.py**:
 
 - ```import os```
 - ```import dj_database_url```
-- ```if os.path.isfile("env.py"):```
+- ```if os.path.exists("env.py"):```
 - ```import env```
 - ```SECRET_KEY = os.environ.get('SECRET_KEY')``` (actual key hidden within env.py)  
 
@@ -964,7 +971,7 @@ os.path.join(BASE_DIR, 'templates'),
 os.path.join(BASE_DIR, 'templates', 'allauth')
 ```
 
-- Create the media, static and templates directories in top level of project file in IDE workspace
+- Create the media, static and templates directories in top level of project file in IDE workspace.
 
 11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn freefido.wsgi```
 12. Make the necessary migrations again.
@@ -1019,15 +1026,37 @@ To start the deployment process , please follow the below steps:
    -  **SECRET_KEY** and value  
   
 5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects **settings.py file** -> ```['herokuappname', ‘localhost’, ‘8000 port url’].```
-6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, save your project, add the files, commit for initial deployment and push the data to GitHub.
+6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, you have ensured that **DEBUG=False**, save your project, add the files, commit for initial deployment and push the data to GitHub.
 7. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
 8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
 9.  Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
-10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project, as can **PORT:8000 **
+10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project, as can **PORT:8000**.
 
 ## Clone project
 
+A local clone of this repository can be made on GitHub. Please follow the below steps:
+
+1. Navigate to GitHub and log in.
+2. The [FreeFido Repository](https://github.com/amylour/FreeFido_v2) can be found at this location.
+3. Above the repository file section, locate the '**Code**' button.
+4. Click on this button and choose your clone method from HTTPS, SSH or GitHub CLI, copy the URL to your clipboard by clicking the '**Copy**' button.
+5. Open your Git Bash Terminal.
+6. Change the current working directory to the location you want the cloned directory to be made.
+7. Type `git clone` and paste in the copied URL from step 4.
+8. Press '**Enter**' for the local clone to be created.
+9. Using the ``pip3 install -r requirements.txt`` command, the dependencies and libraries needed for FreeFido will be installed.
+10. Set up your **env.py** file and from the above steps for Cloudinary and ElephantSQL, gather the Cloudinary API key and the Elephant SQL url for additon to your code.
+11. Ensure that your **env.py** file is placed in your **.gitignore** file and follow the remaining steps in the above Django Project Setup section before pushing your code to GitHub.
+
 ## Fork Project
+
+A copy of the original repository can be made through GitHub. Please follow the below steps to fork this repository:  
+
+1. Navigate to GitHub and log in.  
+2. Once logged in, navigate to this repository using this link [FreeFido Repository](https://github.com/amylour/FreeFido_v2).
+3. Above the repository file section and to the top, right of the page is the '**Fork**' button, click on this to make a fork of this repository.
+4. You should now have access to a forked copy of this repository in your Github account.
+5. Follow the above Django Project Steps if you wish to work on the project.
 
 # Credits
 
@@ -1079,7 +1108,7 @@ The following sites were used to gather the photographic media used in FreeFido:
    - dobbie Photo by Aysun Kahraman Öktem: https://www.pexels.com/photo/dog-with-stick-5938159/
    - husky zoom Photo by Kateryna Babaieva: https://www.pexels.com/photo/two-siberian-husky-running-in-snowy-park-3715581/
    - husky smile Photo by cosmindoro: <https://www.pexels.com/photo/close-up-shot-of-a-siberian-husky-7175485/>
-- french bulldog Photo by Scott Spedding: <https://www.pexels.com/photo/selective-focus-photography-of-short-coated-dog-2918094/>
+   - french bulldog Photo by Scott Spedding: <https://www.pexels.com/photo/selective-focus-photography-of-short-coated-dog-2918094/>
 
  </details>
 
